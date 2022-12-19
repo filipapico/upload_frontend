@@ -1,5 +1,5 @@
-import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
 
 const BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
 
@@ -8,10 +8,11 @@ const BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
 })
 export class UploadService {
 
-  constructor(public http : HttpClient) { }
+  constructor(public http: HttpClient) {
+  }
 
-  getLatestVideos(){
-    return this.http.get(BASE_URL + "/api/latest-videos");
+  getLatestVideos() {
+    return this.http.get<LatestVideos>(BASE_URL + "/api/latest-videos");
   }
 
 }
