@@ -14,7 +14,6 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit(): void {
     this.uploadService.getLatestVideos().subscribe((latestVideos) => {
-      // [0] ERROR BELLOW THAT NEEDS CORRECTION. EITHER HERE OR IN INTERFACE DEFINITION...
       this.latestVideos = latestVideos;
       console.log(this.latestVideos);
     })

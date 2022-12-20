@@ -1,2 +1,10 @@
-<h1>Homepage Works!</h1>
-<div>Hello world</div>
+<div class="container">
+  <div *ngFor="let lv of latestVideos">
+    {{lv.name}}
+    {{lv.created}}
+    {{lv.mid}}
+    {{lv.field_media_tags}}
+    {{lv.name_1}} TO BE REMOVED
+    {{lv.thumbnail__target_id}}
+  </div>
+</div>
