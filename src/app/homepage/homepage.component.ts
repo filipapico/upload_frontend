@@ -7,7 +7,7 @@ import {UploadService} from "../upload.service";
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
-  latestVideos: LatestVideos[] = [];
+  latestVideos: LatestVideo[] = [];
 
   constructor(private uploadService: UploadService) {
   }
@@ -15,7 +15,7 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
     this.uploadService.getLatestVideos().subscribe((latestVideos) => {
       // [0] ERROR BELLOW THAT NEEDS CORRECTION. EITHER HERE OR IN INTERFACE DEFINITION...
-      this.latestVideos[0] = latestVideos;
+      this.latestVideos = latestVideos;
       console.log(this.latestVideos);
     })
   }

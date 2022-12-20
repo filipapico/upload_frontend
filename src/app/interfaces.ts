@@ -1,4 +1,4 @@
-interface LatestVideos {
+interface LatestVideo {
   name: string
   created: string
   mid: string

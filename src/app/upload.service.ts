@@ -12,7 +12,7 @@ export class UploadService {
   }
 
   getLatestVideos() {
-    return this.http.get<LatestVideos>(BASE_URL + "/api/latest-videos");
+    return this.http.get<LatestVideo[]>(BASE_URL + "/api/latest-videos");
   }
 
 }
