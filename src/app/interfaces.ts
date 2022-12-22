@@ -4,5 +4,5 @@ interface LatestVideo {
   mid: string
   field_media_tags: string
   name_1: string //REMOVE from BACKEND it is repeated
-  thumbnail_target_id: string
+  thumbnail__target_id: string
 }
