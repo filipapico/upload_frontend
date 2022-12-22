@@ -11,6 +11,6 @@ export class VideoComponent {
   @Input() created!: string;
   @Input() mid!: string;
   @Input() field_media_tags!: string;
-  @Input() thumbnail_target_id!: string;
+  @Input() thumbnail__target_id!: string;
 
 }
