@@ -6,7 +6,7 @@ import {UploadService} from "../upload.service";
   templateUrl: './video.component.html',
   styleUrls: ['./video.component.scss']
 })
-export class VideoComponent implements OnInit{
+export class VideoComponent {
 
   @Input() name!: string;
   @Input() created!: string;
@@ -15,9 +15,5 @@ export class VideoComponent implements OnInit{
   @Input() thumbnail_target_id!: string;
 
   constructor(private upload : UploadService) { }
-
-  ngOnInit(): void {
-  }
-
 
 }
