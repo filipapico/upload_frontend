@@ -1,5 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
-import {UploadService} from "../upload.service";
+import { Component, Input, } from '@angular/core';
 
 @Component({
   selector: 'app-video',
@@ -13,7 +12,5 @@ export class VideoComponent {
   @Input() mid!: string;
   @Input() field_media_tags!: string;
   @Input() thumbnail_target_id!: string;
-
-  constructor(private upload : UploadService) { }
 
 }
