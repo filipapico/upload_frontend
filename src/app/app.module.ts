@@ -7,13 +7,15 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { VideoComponent } from './video/video.component';
 import { PlaylistComponent } from './playlist/playlist.component';
 import { AppRoutingModule } from './app-routing.module';
+import {MenuComponent} from "./menu/menu.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     HomepageComponent,
     VideoComponent,
-    PlaylistComponent
+    PlaylistComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
