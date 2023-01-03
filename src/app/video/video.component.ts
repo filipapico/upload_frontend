@@ -12,5 +12,6 @@ export class VideoComponent {
   @Input() mid!: string;
   @Input() field_media_tags!: string;
   @Input() thumbnail__target_id!: string;
+  @Input() field_media_oembed_video?: string;
 
 }
