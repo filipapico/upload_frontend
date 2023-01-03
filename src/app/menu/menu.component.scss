@@ -1,1 +1,18 @@
+.container {
+  padding: 10px;
 
+  .menu-item {
+    display: flex;
+
+    .menu-item-logo {
+      flex-basis: 20px;
+      padding: 4px;
+    }
+
+    .menu-item-text{
+      padding: 4px;
+    }
+
+  }
+
+}
