@@ -9,6 +9,7 @@ import { PlaylistComponent } from './playlist/playlist.component';
 import { AppRoutingModule } from './app-routing.module';
 import {MenuComponent} from "./menu/menu.component";
 import { PlaylistsComponent } from './playlists/playlists.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { PlaylistsComponent } from './playlists/playlists.component';
     VideoComponent,
     PlaylistComponent,
     MenuComponent,
-    PlaylistsComponent
+    PlaylistsComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,
