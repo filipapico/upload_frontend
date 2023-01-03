@@ -12,11 +12,11 @@ export class UploadService {
   }
 
   getLatestVideos() {
-    return this.http.get<LatestVideo[]>(BASE_URL + "/api/latest-videos");
+    return this.http.get<Video[]>(BASE_URL + "/api/latest-videos");
   }
 
   getPlaylist(id: number) {
-    return this.http.get<LatestVideo[]>(BASE_URL + "/api/playlist/" + id);
+    return this.http.get<Video[]>(BASE_URL + "/api/playlist/" + id);
   }
 
 }
