@@ -11,6 +11,7 @@ import {MenuComponent} from "./menu/menu.component";
 import { PlaylistsComponent } from './playlists/playlists.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TagsComponent } from './tags/tags.component';
+import { ThematicComponent } from './thematic/thematic.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TagsComponent } from './tags/tags.component';
     MenuComponent,
     PlaylistsComponent,
     SidebarComponent,
-    TagsComponent
+    TagsComponent,
+    ThematicComponent
   ],
   imports: [
     BrowserModule,
