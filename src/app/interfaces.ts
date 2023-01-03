@@ -4,6 +4,7 @@ interface LatestVideo {
   mid: string
   field_media_tags: string
   thumbnail__target_id: string
+  field_media_oembed_video: string
 }
 
 interface Playlist {
