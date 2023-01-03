@@ -1,10 +1,18 @@
-.sidebar-logo {
-  img {
-    width: 50px;
-  }
+.container {
+  width: 200px;
+  margin: auto;
+  padding: 10px;
+  background-color: lightgrey;
 
-  span {
-    padding-left: 10px;
+  .sidebar-logo {
+    img {
+      width: 50px;
+    }
+
+    span {
+      padding-left: 10px;
+    }
+
   }
 
 }
