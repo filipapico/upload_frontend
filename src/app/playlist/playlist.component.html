@@ -1,5 +1,9 @@
-<div *ngFor="let video of playlist">
-  <p>{{video.name}}</p>
-  <iframe width="560" height="315" [src]="video.video_url" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<div *ngIf="playlist">
+  <p> {{playlist[0].field_playlist_category}} </p>
+  <div *ngFor="let video of playlist">
+    <p>{{video.name}}</p>
+    <iframe width="560" height="315" [src]="video.video_url" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+  </div>
 </div>
+
 

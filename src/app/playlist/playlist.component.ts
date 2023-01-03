@@ -26,7 +26,6 @@ export class PlaylistComponent implements OnInit{
           video_url: video_url
         };
       });
-      console.log(this.playlist);
     })
   }
 }
