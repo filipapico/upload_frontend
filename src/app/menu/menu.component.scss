@@ -1,16 +1,19 @@
 .container {
-  padding: 10px;
+  padding: 10px 5px;
 
   .menu-item {
     display: flex;
+    align-items: center;
+    padding: 4px;
+
 
     .menu-item-logo {
       flex-basis: 20px;
-      padding: 4px;
+      color: grey;
     }
 
-    .menu-item-text{
-      padding: 4px;
+    .menu-item-text {
+      color: grey;
     }
 
   }
