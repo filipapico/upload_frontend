@@ -7,7 +7,7 @@ import {UploadService} from "../upload.service";
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
-  latestVideos: LatestVideo[] = [];
+  latestVideos: Video[] = [];
 
   constructor(private uploadService: UploadService) {
   }
@@ -15,7 +15,6 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
     this.uploadService.getLatestVideos().subscribe((latestVideos) => {
       this.latestVideos = latestVideos;
-      console.log(this.latestVideos);
     })
   }
 
