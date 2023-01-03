@@ -4,6 +4,7 @@ import {ActivatedRoute} from "@angular/router";
 import {DomSanitizer} from '@angular/platform-browser';
 
 import {retry} from "rxjs";
+import {Playlist} from "../interfaces";
 
 @Component({
   selector: 'app-playlist',
