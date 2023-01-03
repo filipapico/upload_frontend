@@ -13,14 +13,18 @@
   }
 
   .info-container {
-    h3 {
+    height: 113px;
+
+    h5 {
       color: #FAFAFB;
       font-size: 18px;
-      line-height: 27px;
+      margin: 10px;
     }
 
     p {
       color: silver;
+      font-size: 14px;
+      margin: 10px;
     }
   }
 }
