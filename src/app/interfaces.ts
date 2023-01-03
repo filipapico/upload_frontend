@@ -11,5 +11,6 @@ interface Playlist {
     thumbnail__target_id: string
     field_media_oembed_video: string
     field_playlist_category: string
+    title: string
     video_url: string
 }
