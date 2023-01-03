@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UploadService} from "../upload.service";
+import {Video} from "../interfaces";
 
 @Component({
   selector: 'app-homepage',
