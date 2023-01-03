@@ -1,29 +1,29 @@
 .video-container {
-  width: 443px;
-  height: 323px;
+  width: 343px;
+  height: 250px;
   background: #1C1C24;
   border-radius: 20px;
   margin: 23px;
 
   .image-container {
     img {
-      width: 443px;
-      height: 210px;
+      width: 343px;
+      height: 150px;
     }
   }
 
   .info-container {
-    height: 113px;
+    height: 100px;
 
     h5 {
       color: #FAFAFB;
-      font-size: 18px;
+      font-size: 14px;
       margin: 10px;
     }
 
     p {
       color: silver;
-      font-size: 14px;
+      font-size: 10px;
       margin: 10px;
     }
   }
