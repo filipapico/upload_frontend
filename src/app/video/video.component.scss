@@ -1,0 +1,27 @@
+.video-container {
+  width: 443px;
+  height: 323px;
+  background: #1C1C24;
+  border-radius: 20px;
+  margin: 23px;
+
+  .image-container {
+    img {
+      width: 443px;
+      height: 210px;
+    }
+  }
+
+  .info-container {
+    h3 {
+      color: #FAFAFB;
+      font-size: 18px;
+      line-height: 27px;
+    }
+
+    p {
+      color: silver;
+    }
+  }
+}
+
