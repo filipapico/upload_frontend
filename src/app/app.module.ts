@@ -10,6 +10,7 @@ import { AppRoutingModule } from './app-routing.module';
 import {MenuComponent} from "./menu/menu.component";
 import { PlaylistsComponent } from './playlists/playlists.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { TagsComponent } from './tags/tags.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     PlaylistComponent,
     MenuComponent,
     PlaylistsComponent,
-    SidebarComponent
+    SidebarComponent,
+    TagsComponent
   ],
   imports: [
     BrowserModule,
