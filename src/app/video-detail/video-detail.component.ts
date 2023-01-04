@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {UploadService} from "../upload.service";
 import {Video} from "../interfaces";
@@ -10,8 +10,8 @@ import {Video} from "../interfaces";
 })
 export class VideoDetailComponent {
 
-  id: string;
-  video?: Video[] = [];
+  id: number;
+  video?: Video;
 
   constructor(private route: ActivatedRoute, public uploadService: UploadService) {
     this.id = route.snapshot.params['mid'];
@@ -19,8 +19,9 @@ export class VideoDetailComponent {
 
   ngOnInit(): void {
     this.uploadService.getVideo(this.id).subscribe((video) => {
-      this.video = video;
+      this.video = video[0];
       console.log(this.video);
+
     })
   }
 
