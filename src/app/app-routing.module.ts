@@ -16,7 +16,7 @@ const routes: Routes = [
   // {path: 'channel', component: } ADD CHANNEL COMPONENT HERE
   {path: 'thematics', component: ThematicsComponent},
   {path: 'playlists', component: PlaylistsComponent},
-  {path: 'playlist/:id', component: PlaylistComponent},
+  {path: 'playlist/:title', component: PlaylistComponent},
 ];
 
 @NgModule({

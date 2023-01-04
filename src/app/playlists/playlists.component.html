@@ -1,5 +1,5 @@
 <p>Playlists</p>
 
-<div *ngFor="let playlist of playlists">
+<div *ngFor="let playlist of playlists" [routerLink]="['/playlist', title">
   <p>{{playlist.title}}</p>
 </div>

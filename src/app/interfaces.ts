@@ -18,11 +18,13 @@ interface Playlist {
   field_playlist_category: string
   title: string
   video_url: string
+  nid: number
 }
 export {Playlist};
 
 
 interface Playlists {
   title : string
+  nid: number
 }
 export {Playlists};
