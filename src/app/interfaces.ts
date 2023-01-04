@@ -9,7 +9,6 @@ interface Video {
   field_comments: string
   field_categories: string
 }
-
 export {Video};
 
 interface Playlist {
@@ -20,5 +19,10 @@ interface Playlist {
   title: string
   video_url: string
 }
-
 export {Playlist};
+
+
+interface Playlists {
+  title : string
+}
+export {Playlists};
