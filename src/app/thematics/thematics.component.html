@@ -2,7 +2,8 @@
   <div *ngFor="let t of thematics" class="thematic-item">
     <div class="thematic-header">
       <div class="thematic-thumbnail">
-        <img src="https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_thumbnail}}">
+        <div style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_thumbnail}}');"></div>
+<!--        <img src="https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_thumbnail}}">-->
       </div>
       <div>
         <h4>{{t.title}}</h4>

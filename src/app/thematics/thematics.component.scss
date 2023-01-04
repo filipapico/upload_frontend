@@ -10,14 +10,24 @@
     .thematic-header {
       display: flex;
 
-      .thematic-thumbnail img {
+      .thematic-thumbnail {
+        display: flex;
+        justify-content: center;
         width: 50px;
         height: 50px;
-        border-radius: 50px;
         margin: 6px;
+
+        div {
+          display: block;
+          background-size: cover;
+          width: 100%;
+          border-radius: 50%;
+          padding-bottom: 57%;
+          background-position: center;
+        }
       }
 
-      h4, p{
+      h4, p {
         margin: 2px
       }
     }
