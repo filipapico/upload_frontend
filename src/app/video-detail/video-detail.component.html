@@ -1,1 +1,9 @@
-<p>video-detail works!</p>
+<div class="video-detail-container" *ngIf="video">
+  <h1>
+    {{video.name}}
+  </h1>
+  <p>
+    {{video.field_categories}}
+  </p>
+
+</div>
