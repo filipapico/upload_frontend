@@ -1,1 +1,17 @@
-<p>thematics works!</p>
+<div class="container" *ngIf="thematics">
+  <div *ngFor="let t of thematics">
+    <div>
+      {{t.field_thematic_thumbnail}}
+    </div>
+    <div>
+      {{t.title}}
+    </div>
+    <div>
+      FALTA NOME CRIADOR DA TEMÁTICA
+    </div>
+    <div>
+      {{t.field_thematic_header_image}}
+    </div>
+  </div>
+</div>
+
