@@ -11,7 +11,7 @@ import {Playlist} from "../interfaces";
   templateUrl: './playlist.component.html',
   styleUrls: ['./playlist.component.scss']
 })
-export class PlaylistComponent implements OnInit{
+export class PlaylistComponent implements OnInit {
   playlist? : Playlist[];
   id : number;
 
