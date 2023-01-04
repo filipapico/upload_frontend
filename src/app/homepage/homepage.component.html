@@ -16,11 +16,13 @@
       <p>SEE ALL</p>
     </div>
     <div class="thematic-header" *ngIf="thematics">
-      <p>{{thematics[0].field_thematic_header_image}}</p>
-
+      <img src="https://dev-project-upskill2-grupo4v2.pantheonsite.io{{thematics[0].field_thematic_header_image}}">
+      <p>{{thematics[0].title}}</p>
+      <p>{{thematics[0].uid}}</p>
     </div>
-
+    <div class="thematic-image" *ngIf="thematics">
+      <img src="https://dev-project-upskill2-grupo4v2.pantheonsite.io{{thematics[0].field_thematic_thumbnail}}">
+    </div>
   </div>
-
 </div>
 
