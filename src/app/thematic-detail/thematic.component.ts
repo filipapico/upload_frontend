@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-  selector: 'app-thematic',
+  selector: 'app-thematic-detail',
   templateUrl: './thematic.component.html',
   styleUrls: ['./thematic.component.scss']
 })
