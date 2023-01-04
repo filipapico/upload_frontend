@@ -1,1 +1,11 @@
+.container{
+  width: 300px;
+  margin: auto;
+  padding: 10px;
 
+  .thematic-header{
+    display: flex;
+    align-items: center;
+  }
+
+}
