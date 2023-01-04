@@ -12,16 +12,11 @@ export class UploadService {
   constructor(public http: HttpClient) {
   }
 
-  getVideo(id: string) {
+  getVideo(id: number) {
     return this.http.get<Video[]>(BASE_URL + "/api/allvideos/" + id);
   }
 
 
-/*
-  getAllVideos() {
-    return this.http.get<Video[]>(BASE_URL + "/api/allvideos");
-  }
-*/
 
   getLatestVideos() {
     return this.http.get<Video[]>(BASE_URL + "/api/latest-videos");
