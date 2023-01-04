@@ -10,7 +10,7 @@ const routes: Routes = [
   {path: '', redirectTo: '/homepage', pathMatch: 'full'},
   {path: 'homepage', component: HomepageComponent},
   {path: 'video', component: VideoComponent},
-  {path: 'video-detail/:id', component: VideoDetailComponent},
+  {path: 'video-detail/:mid', component: VideoDetailComponent},
   {path: 'playlists', component: PlaylistsComponent},
   {path: 'playlist/:id', component: PlaylistComponent},
 ];
