@@ -6,6 +6,7 @@ import {VideoDetailComponent} from "./video-detail/video-detail.component";
 import {PlaylistComponent} from "./playlist/playlist.component";
 import {PlaylistsComponent} from "./playlists/playlists.component";
 import {ThematicComponent} from "./thematic/thematic.component";
+import {ThematicsComponent} from "./thematics/thematics.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/homepage', pathMatch: 'full'},
@@ -13,7 +14,7 @@ const routes: Routes = [
   {path: 'video', component: VideoComponent},
   {path: 'video-detail/:mid', component: VideoDetailComponent},
   // {path: 'channel', component: } ADD CHANNEL COMPONENT HERE
-  {path: 'thematic', component: ThematicComponent},
+  {path: 'thematics', component: ThematicsComponent},
   {path: 'playlists', component: PlaylistsComponent},
   {path: 'playlist/:id', component: PlaylistComponent},
 ];
