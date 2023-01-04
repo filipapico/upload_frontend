@@ -9,7 +9,7 @@ export class VideoComponent {
 
   @Input() name!: string;
   @Input() created!: string;
-  @Input() mid?: string;
+  @Input() mid!: string;
   @Input() field_media_tags!: string;
   @Input() thumbnail__target_id!: string;
   @Input() field_media_oembed_video?: string;
