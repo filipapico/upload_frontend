@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UploadService} from "../upload.service";
-import {Video} from "../interfaces";
+import {Thematic, Video} from "../interfaces";
 
 @Component({
   selector: 'app-homepage',
@@ -9,6 +9,7 @@ import {Video} from "../interfaces";
 })
 export class HomepageComponent implements OnInit {
   latestVideos: Video[] = [];
+  thematics?: Thematic[] ;
 
   constructor(private uploadService: UploadService) {
   }
@@ -16,6 +17,10 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
     this.uploadService.getLatestVideos().subscribe((latestVideos) => {
       this.latestVideos = latestVideos;
+    })
+
+    this.uploadService.getThematics().subscribe((thematics) => {
+      this.thematics = thematics
     })
   }
 

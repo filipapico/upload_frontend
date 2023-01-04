@@ -1,6 +1,6 @@
 <h2>Latest Videos</h2>
 <div class="container">
-  <div class="latest-video">
+  <div class="latest-video-container">
     <app-video *ngFor="let lv of latestVideos"
                [name] = "lv.name"
                [created] = "lv.created"
@@ -10,8 +10,16 @@
                [field_media_oembed_video] = "lv.field_media_oembed_video"
     ></app-video>
   </div>
-  <div class="thematic">
-    <h4>Thematic</h4>
+  <div class="thematic-container">
+    <div class="thematic-info">
+      <p>Thematic Recommendations</p>
+      <p>SEE ALL</p>
+    </div>
+    <div class="thematic-header" *ngIf="thematics">
+      <p>{{thematics[0].field_thematic_header_image}}</p>
+
+    </div>
+
   </div>
 
 </div>
