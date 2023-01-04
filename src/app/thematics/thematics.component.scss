@@ -1,0 +1,18 @@
+.container{
+  display: flex;
+
+  .thematic-item{
+    padding: 10px;
+  }
+
+  .thematic-thumbnail img{
+    width: 50px;
+    border-radius: 50px;
+  }
+
+  .thematic-header img{
+    width: 200px;
+    border-radius: 12px;
+  }
+
+}
