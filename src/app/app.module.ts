@@ -13,6 +13,7 @@ import { SidebarComponent } from './sidebar/sidebar.component';
 import { TagsComponent } from './tags/tags.component';
 import { ThematicComponent } from './thematic/thematic.component';
 import { VideoDetailComponent } from './video-detail/video-detail.component';
+import { ThematicsComponent } from './thematics/thematics.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { VideoDetailComponent } from './video-detail/video-detail.component';
     SidebarComponent,
     TagsComponent,
     ThematicComponent,
-    VideoDetailComponent
+    VideoDetailComponent,
+    ThematicsComponent
   ],
   imports: [
     BrowserModule,
