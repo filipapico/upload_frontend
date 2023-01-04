@@ -12,6 +12,7 @@ const routes: Routes = [
   {path: 'homepage', component: HomepageComponent},
   {path: 'video', component: VideoComponent},
   {path: 'video-detail/:mid', component: VideoDetailComponent},
+  // {path: 'channel', component: } ADD CHANNEL COMPONENT HERE
   {path: 'thematic', component: ThematicComponent},
   {path: 'playlists', component: PlaylistsComponent},
   {path: 'playlist/:id', component: PlaylistComponent},
