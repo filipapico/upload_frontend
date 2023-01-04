@@ -9,7 +9,6 @@ interface Video {
   field_comments: string
   field_categories: string
 }
-export {Video};
 
 interface Playlist {
   name: string
@@ -21,12 +20,22 @@ interface Playlist {
   nid: string
 }
 
-export {Playlist};
-
-
 interface Playlists {
   title : string
   nid: string
 }
 
-export {Playlists};
+interface Thematic{
+  body: string
+  field_thematic_header_image: string
+  field_thematic_links: string
+  field_thematic_tags: string
+  field_thematic_thumbnail: string
+  title: string
+}
+
+interface Thematics{
+  title: string
+}
+
+export {Video, Playlist, Playlists, Thematic, Thematics};
