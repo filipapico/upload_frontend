@@ -1,11 +1,18 @@
-div {
-  background-color: #FFFFFF;
-  padding: 30px;
-  margin: 23px;
-  border-radius: 20px;
-  color: black;
-  cursor: pointer;
+.container {
+  display: flex;
+  flex-wrap: wrap;
+
+  div {
+    background-color: #FFFFFF;
+    padding: 30px;
+    margin: 23px;
+    border-radius: 20px;
+    color: black;
+    cursor: pointer;
+  }
 }
+
+
 
 h2 {
   margin: 23px;

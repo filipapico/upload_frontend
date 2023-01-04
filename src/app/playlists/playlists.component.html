@@ -1,5 +1,7 @@
 <h2>Playlists</h2>
+<div class="container">
+  <div *ngFor="let playlist of playlists" [routerLink]="['/playlist', playlist.nid]">
+    <p>{{playlist.title}}</p>
+  </div>
 
-<div *ngFor="let playlist of playlists" [routerLink]="['/playlist', playlist.nid]">
-  <p>{{playlist.title}}</p>
 </div>
