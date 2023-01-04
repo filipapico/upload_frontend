@@ -16,7 +16,7 @@ export class PlaylistComponent implements OnInit {
   id : number;
 
   constructor(private route: ActivatedRoute, private uploadService: UploadService, private sanitizer : DomSanitizer) {
-    this.id = route.snapshot.params['title']
+    this.id = route.snapshot.params['nid']
   }
 
   ngOnInit(): void {
