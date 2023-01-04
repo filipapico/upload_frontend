@@ -12,4 +12,31 @@ h2 {
   flex-wrap: wrap;
 }
 
+.thematic-container {
+  background-color: #1C1C24;
+  border-radius: 15px;
+  height: 400px;
+
+  .thematic-header {
+    border-top: #FFFFFF 1px solid;
+
+    img {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+    }
+
+    p {
+      margin: 2px;
+      font-size: 10px;
+    }
+  }
+
+  .thematic-image {
+    img {
+      width: 250px;
+    }
+  }
+
+}
 
