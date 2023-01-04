@@ -1,11 +1,13 @@
 <div class="video-container">
   <div classs="video-card" [routerLink]="['/video-detail', mid]">
-    <p>Video works!</p>
-    <h5>{{field_media_tags}}</h5>
-    <img src="https://dev-project-upskill2-grupo4v2.pantheonsite.io{{thumbnail__target_id}}">
-<!--    <iframe width="560" height="315" [src]="field_media_oembed_video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
-    <h5>{{name}}</h5>
-    <p>{{created}}</p>
+    <div class="image-container">
+      <img src="https://dev-project-upskill2-grupo4v2.pantheonsite.io{{thumbnail__target_id}}">
+      <!--    <iframe width="560" height="315" [src]="field_media_oembed_video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+    </div>
+    <div class="info-container">
+      <h5>{{name}}</h5>
+      <p>{{created}}</p>
+    </div>
   </div>
 </div>
 
