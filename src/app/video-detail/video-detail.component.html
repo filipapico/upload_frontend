@@ -9,17 +9,24 @@
     <iframe width="560" height="315" [src]="video_url" title="YouTube video player"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
-    <p>
-      NatGeo Alunos
-    </p>
-    <p>
-      {{video.created}}
-    </p>
-    <p>
-      {{video.field_categories}}
-    </p>
-    <p>
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu mi maximus, aliquam erat ac, commodo ligula. Maecenas pellentesque pellentesque lorem eget egestas. In mattis lacinia nisi id dictum. Curabitur bibendum quam sed convallis pulvinar. Fusce mattis bibendum consequat. Vestibulum sed urna eu ante dictum interdum. Donec porttitor turpis ac consequat tempus. Vestibulum at ex lobortis, aliquam mauris nec, bibendum velit. Maecenas eu metus varius, hendrerit quam nec, tempor purus.
+    <div class="channel-details">
+      <div class="channel-logotype" style="background-image: url({{getLogotype(video.field_logotype)}})">
+      </div>
+      <div>
+        <p>
+          {{video.field_channel}}
+        </p>
+        <p>
+          {{video.created}}
+        </p>
+      </div>
+    </div>
+    <p class="description-box">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu mi maximus, aliquam erat ac, commodo ligula.
+      Maecenas pellentesque pellentesque lorem eget egestas. In mattis lacinia nisi id dictum. Curabitur bibendum quam
+      sed convallis pulvinar. Fusce mattis bibendum consequat. Vestibulum sed urna eu ante dictum interdum. Donec
+      porttitor turpis ac consequat tempus. Vestibulum at ex lobortis, aliquam mauris nec, bibendum velit. Maecenas eu
+      metus varius, hendrerit quam nec, tempor purus.
     </p>
   </div>
 
