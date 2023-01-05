@@ -8,6 +8,7 @@ interface Video {
   field_media_oembed_video: string
   field_comments: string
   field_categories: string
+  field_channel: string
 }
 
 interface Playlist {
@@ -41,3 +42,5 @@ interface Thematics{
 }
 
 export {Video, Playlist, Playlists, Thematic, Thematics};
+
+
