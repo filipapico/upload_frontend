@@ -17,4 +17,8 @@ export class VideoComponent {
   @Input() field_categories?: string
 
 
+    getBackgroundImage(id: string){
+      return `https://dev-project-upskill2-grupo4v2.pantheonsite.io${id}`;
+    }
+
 }
