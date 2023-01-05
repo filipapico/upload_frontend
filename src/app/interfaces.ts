@@ -23,6 +23,7 @@ interface Playlist {
 interface Playlists {
   title : string
   nid: string
+  field_image : string
 }
 
 interface Thematic{
