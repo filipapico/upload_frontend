@@ -1,8 +1,6 @@
 <div class="video-container">
   <div classs="video-card" [routerLink]="['/video-detail', mid]">
-    <div class="image-container">
-      <img src="https://dev-project-upskill2-grupo4v2.pantheonsite.io{{thumbnail__target_id}}">
-      <!--    <iframe width="560" height="315" [src]="field_media_oembed_video" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
+    <div class="image-container" style="background-image: url({{getBackgroundImage(thumbnail__target_id)}})">
     </div>
     <div class="info-container">
       <h5>{{name}}</h5>
@@ -10,5 +8,3 @@
     </div>
   </div>
 </div>
-
-
