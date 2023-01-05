@@ -1,0 +1,27 @@
+.video-detail-container {
+
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  p {
+    font-size: 14px;
+  }
+
+  .vid-detail-box {
+
+    h5 {
+      color: #1E75FF;
+      font-weight: 500;
+    }
+  }
+
+  .vid-suggested-box {
+    background-color: #1C1C24;
+
+
+
+  }
+
+}
+
