@@ -1,15 +1,15 @@
 .container {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: center;
-  background-color: chocolate;
 
   .thematic-item {
     padding: 10px;
 
     .thematic-header {
       display: flex;
+      justify-content: center;
+      width: 260px;
 
       .thematic-thumbnail {
         display: flex;
@@ -28,18 +28,21 @@
         }
       }
 
-      h4, p {
+      h5, p {
         margin: 2px
+      }
+
+      p {
+        font-size: 12px;
       }
     }
 
-    .thematic-header-image{
-      justify-content: center;
-      width: 200px;
-      margin: auto;
+    .thematic-header-image {
+      width: 260px;
+      margin: 0 auto;
 
 
-      div{
+      div {
         display: block;
         background-size: cover;
         width: 100%;
