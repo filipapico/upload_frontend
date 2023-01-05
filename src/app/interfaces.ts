@@ -9,6 +9,7 @@ interface Video {
   field_comments: string
   field_categories: string
   field_channel: string
+  field_logotype: string
 }
 
 interface Playlist {
