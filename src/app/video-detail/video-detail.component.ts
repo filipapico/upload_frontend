@@ -30,4 +30,7 @@ export class VideoDetailComponent {
     })
   }
 
+  getLogotype(logoName: string){
+    return `https://dev-project-upskill2-grupo4v2.pantheonsite.io/sites/default/files/styles/large/public/2023-01/${logoName}`;
+  }
 }
