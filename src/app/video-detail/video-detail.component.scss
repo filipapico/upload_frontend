@@ -14,11 +14,33 @@
       color: #1E75FF;
       font-weight: 500;
     }
+
+    .channel-details {
+      display: flex;
+      flex-direction: row;
+
+      .channel-logotype {
+        width: 69px;
+        height: 69px;
+        border-radius: 100%;
+        border: 1px solid white;
+        background-size: cover;
+        background-position: center;
+        position: relative;
+      }
+    }
+
+
+    .description-box {
+      background-color: #1C1C24;
+      border-radius: 20px;
+      padding: 18px 30px;
+
+    }
   }
 
   .vid-suggested-box {
     background-color: #1C1C24;
-
 
 
   }
