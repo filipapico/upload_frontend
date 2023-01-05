@@ -5,11 +5,14 @@
   border-radius: 20px;
   margin: 23px;
 
+
   .image-container {
-    img {
-      width: 343px;
-      height: 150px;
-    }
+    position: relative;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    width: 100%;
+    padding-bottom: 45%;
   }
 
   .info-container {
