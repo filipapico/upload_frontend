@@ -29,7 +29,7 @@ export class UploadService {
   }
 
   getThematics() {
-    return this.http.get<Thematic[]>(BASE_URL + "/api/thematic")
+    return this.http.get<Thematic[]>(BASE_URL + "/api/thematics")
   }
 
 }

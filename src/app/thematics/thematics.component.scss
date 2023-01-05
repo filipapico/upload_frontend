@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
+  background-color: chocolate;
 
   .thematic-item {
     padding: 10px;
@@ -32,9 +33,26 @@
       }
     }
 
-    .thematic-header-image img {
+    .thematic-header-image{
+      justify-content: center;
+      width: 200px;
+      margin: auto;
+
+
+      div{
+        display: block;
+        background-size: cover;
+        width: 100%;
+        border-radius: 12px;
+        padding-bottom: 57%;
+        background-position: center;
+      }
+
+    }
+
+    /*.thematic-header-image img {
       width: 200px;
       border-radius: 12px;
-    }
+    }*/
   }
 }
