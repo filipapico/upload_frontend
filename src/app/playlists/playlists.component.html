@@ -8,6 +8,7 @@
   </div>
 
   <div class="playlist-container" *ngFor="let playlist of playlists" [routerLink]="['/playlist', playlist.nid]">
+    <img src="https://dev-project-upskill2-grupo4v2.pantheonsite.io{{playlist.field_image}}">
     <p>{{playlist.title}}</p>
   </div>
 </div>

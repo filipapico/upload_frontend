@@ -14,20 +14,28 @@
   .playlist-container {
     background-color: #FFFFFF;
     width: 150px;
-    height: 200px;
+    height: 175px;
     margin: 23px;
     border-radius: 10px;
     color: black;
     cursor: pointer;
 
     img {
-
+      padding: 10px;
+      width: 130px;
+      height: 100px;
+      border-radius: 15px;
     }
   }
 }
 
+p {
+  margin: 10px;
+  text-align: center;
+}
 
 
-h2 {
+
+h2, h4 {
   margin: 23px;
 }
