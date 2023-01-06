@@ -8,8 +8,8 @@ interface Video {
   field_media_oembed_video: string
   field_comments: string
   field_categories: string
-  field_channel: string
   field_logotype: string
+  title: string
 }
 
 interface Playlist {
