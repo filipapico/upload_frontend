@@ -2,14 +2,23 @@
   display: flex;
   flex-wrap: wrap;
 
-  div {
-    background-color: #FFFFFF;
-    padding: 30px;
+  .favourites-videos {
     margin: 23px;
-    border-radius: 20px;
+    width: 300px;
+    height: 200px;
+    background-color: #FFFFFF;
+    border-radius: 10px;
+    color: #1C1C24;
+  }
+
+  .playlist-container {
+    background-color: #FFFFFF;
+    width: 150px;
+    height: 200px;
+    margin: 23px;
+    border-radius: 10px;
     color: black;
     cursor: pointer;
-    display: block;
 
     img {
 

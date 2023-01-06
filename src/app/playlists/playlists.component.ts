@@ -16,7 +16,6 @@ export class PlaylistsComponent implements OnInit {
   ngOnInit(): void {
     this.uploadService.getPlaylists().subscribe((playlists) => {
       this.playlists = playlists;
-
     });
 
   }

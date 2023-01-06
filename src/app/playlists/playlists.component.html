@@ -1,9 +1,13 @@
 <h2>Playlists</h2>
-<div class="container">
-  <div *ngFor="let playlist of playlists" [routerLink]="['/playlist', playlist.nid]">
-    <p>{{playlist.title}}</p>
-<!--    <img src="https://dev-project-upskill2-grupo4v2.pantheonsite.io{{playlist.field_image}}">-->
 
+
+<div class="container">
+  <div class="favourites-videos">
+    <h4>Liked Videos</h4>
+    <p>108 liked videos</p>
   </div>
 
+  <div class="playlist-container" *ngFor="let playlist of playlists" [routerLink]="['/playlist', playlist.nid]">
+    <p>{{playlist.title}}</p>
+  </div>
 </div>
