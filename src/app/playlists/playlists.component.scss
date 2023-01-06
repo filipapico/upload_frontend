@@ -19,12 +19,21 @@
     border-radius: 10px;
     color: black;
     cursor: pointer;
+    position: relative;
 
     img {
       padding: 10px;
       width: 130px;
       height: 100px;
       border-radius: 15px;
+    }
+
+    .logo {
+      position: absolute;
+      top: 0px;
+      width: 50px;
+      height: 50px;
+
     }
   }
 }
