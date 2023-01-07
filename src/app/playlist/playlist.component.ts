@@ -14,6 +14,7 @@ import {Playlist, Playlists} from "../interfaces";
 export class PlaylistComponent implements OnInit {
   playlist?: Playlist[];
   id: number;
+  //videoplaying : Playlist[] = []
 
   constructor(private route: ActivatedRoute, private uploadService: UploadService, private sanitizer: DomSanitizer) {
     this.id = route.snapshot.params['nid']
@@ -30,4 +31,11 @@ export class PlaylistComponent implements OnInit {
       });
     })
   }
+
+/*  clickVideo() {
+    if (this.playlist.includes?(this.videoplaying)){
+      this.playlist?.push(this.videoplaying);
+    }
+  }*/
+
 }
