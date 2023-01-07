@@ -4,7 +4,7 @@ import {ActivatedRoute} from "@angular/router";
 import {DomSanitizer} from '@angular/platform-browser';
 
 import {retry} from "rxjs";
-import {Playlist} from "../interfaces";
+import {Playlist, Playlists} from "../interfaces";
 
 @Component({
   selector: 'app-playlist',
@@ -12,18 +12,19 @@ import {Playlist} from "../interfaces";
   styleUrls: ['./playlist.component.scss']
 })
 export class PlaylistComponent implements OnInit {
-  playlist? : Playlist[];
-  id : number;
+  playlist?: Playlist[];
+  id: number;
 
-  constructor(private route: ActivatedRoute, private uploadService: UploadService, private sanitizer : DomSanitizer) {
+  constructor(private route: ActivatedRoute, private uploadService: UploadService, private sanitizer: DomSanitizer) {
     this.id = route.snapshot.params['nid']
   }
 
   ngOnInit(): void {
-    this.uploadService.getPlaylist(this.id).subscribe((playlist : any) => {
-      this.playlist = playlist.map((v : any) => {
+    this.uploadService.getPlaylist(this.id).subscribe((playlist: any) => {
+      this.playlist = playlist.map((v: any) => {
         let video_url = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + v.field_media_oembed_video.split("?v=")[1]);
-        return {...v,
+        return {
+          ...v,
           video_url: video_url
         };
       });
