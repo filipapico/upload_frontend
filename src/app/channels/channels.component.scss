@@ -1,0 +1,22 @@
+.channels-container {
+
+  .channels-list {
+    display: flex;
+    flex-direction: column;
+
+    .channel-card {
+      width: 50px;
+      height: 45px;
+
+      .channel-cover-photo {
+        //position: relative;
+        border-radius: 10px;
+        background-size: cover;
+        background-position: center;
+        padding-bottom: 45%;
+      }
+    }
+  }
+
+
+}
