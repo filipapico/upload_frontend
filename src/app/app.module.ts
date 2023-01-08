@@ -14,6 +14,7 @@ import { TagsComponent } from './tags/tags.component';
 import { ThematicComponent } from './thematic-detail/thematic.component';
 import { VideoDetailComponent } from './video-detail/video-detail.component';
 import { ThematicsComponent } from './thematics/thematics.component';
+import { ChannelComponent } from './channel/channel.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { ThematicsComponent } from './thematics/thematics.component';
     TagsComponent,
     ThematicComponent,
     VideoDetailComponent,
-    ThematicsComponent
+    ThematicsComponent,
+    ChannelComponent
   ],
   imports: [
     BrowserModule,
