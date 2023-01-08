@@ -1,4 +1,4 @@
-interface Channel {
+interface Channels {
   title: string
   field_author: string
   nid: string
@@ -51,6 +51,6 @@ interface Thematics{
   title: string
 }
 
-export {Channel, Video, Playlist, Playlists, Thematic, Thematics};
+export {Channels, Video, Playlist, Playlists, Thematic, Thematics};
 
 
