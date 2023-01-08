@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Playlists, Thematic, Video} from "./interfaces";
+import {Channels, Playlists, Thematic, Video} from "./interfaces";
 
 const BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
 
@@ -10,6 +10,10 @@ const BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
 export class UploadService {
 
   constructor(public http: HttpClient) {
+  }
+
+  getChannels(){
+    return this.http.get<Channels[]>(BASE_URL + "/api/channels");
   }
 
   getVideo(id: number) {
