@@ -1,3 +1,11 @@
+interface Channel {
+  title: string
+  field_author: string
+  nid: string
+  field_logotype: string
+  field_cover_photo: string
+}
+
 interface Video {
   name: string
   created: string
@@ -10,6 +18,7 @@ interface Video {
   field_categories: string
   field_logotype: string
   title: string
+  nid: string
 }
 
 interface Playlist {
@@ -42,6 +51,6 @@ interface Thematics{
   title: string
 }
 
-export {Video, Playlist, Playlists, Thematic, Thematics};
+export {Channel, Video, Playlist, Playlists, Thematic, Thematics};
 
 
