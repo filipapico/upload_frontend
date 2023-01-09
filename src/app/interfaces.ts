@@ -5,6 +5,7 @@ interface Channels {
   field_logotype: string
   field_cover_photo: string
   field_category: string
+  body: string
 }
 
 interface Video {
