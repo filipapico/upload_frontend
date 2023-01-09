@@ -1,22 +1,20 @@
 .channels-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
 
-  .channels-list {
-    display: flex;
-    flex-direction: column;
 
-    .channel-card {
-      width: 50px;
-      height: 45px;
+  .channel-card {
+    width: 150px;
+    height: 175px;
+    margin: 23px;
 
-      .channel-cover-photo {
-        //position: relative;
-        border-radius: 10px;
-        background-size: cover;
-        background-position: center;
-        padding-bottom: 45%;
-      }
+    .channel-cover-photo {
+      //position: relative;
+      border-radius: 10px;
+      background-size: cover;
+      background-position: center;
+      padding-bottom: 45%;
     }
   }
-
-
 }
