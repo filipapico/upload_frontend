@@ -16,6 +16,10 @@ export class UploadService {
     return this.http.get<Channels[]>(BASE_URL + "/api/channels");
   }
 
+  getChannelVideos(id: number){
+    return this.http.get<Video[]>(BASE_URL + "/api/channel/" + id);
+  }
+
   getVideo(id: number) {
     return this.http.get<Video[]>(BASE_URL + "/api/allvideos/" + id);
   }
