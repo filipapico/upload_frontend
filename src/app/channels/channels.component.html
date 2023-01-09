@@ -1,12 +1,21 @@
 <h1>Channels</h1>
-<div class="channels-container">
-  <div class="channel-card" *ngFor="let channel of channels">
-    <h4>
-      {{channel.title}}
-    </h4>
-    <div class="channel-cover-photo"
-         style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{channel.field_cover_photo}}');">
+<div class="wrapper">
+  <div class="channels-container">
+    <div class="channel-card" *ngFor="let channel of channels" [routerLink]="['/channel', channel.nid]">
+      <h4>
+        {{channel.title}}
+      </h4>
+      <div class="channel-cover-photo"
+           style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{channel.field_cover_photo}}');">
+      </div>
+    </div>
+  </div>
+  <div class="channels-sidebar">
+    <div class="categories-list">
+      List of categories
+    </div>
+    <div class="suggested-channel">
+      Suggested channel (based on what?)
     </div>
   </div>
 </div>
-
