@@ -4,6 +4,7 @@ interface Channels {
   nid: string
   field_logotype: string
   field_cover_photo: string
+  field_category: string
 }
 
 interface Video {
