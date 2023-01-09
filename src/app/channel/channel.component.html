@@ -1,1 +1,25 @@
-<p>channel works!</p>
+<div class="channel-header">
+  <div class="channel-cover-photo"
+       style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{channelCoverPhoto}}');">
+  </div>
+  <div class="channel-logotype"
+       style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{channelLogotype}}');">
+  </div>
+  <h1>
+    {{channelTitle}}
+  </h1>
+  <p>
+    {{channelDescription}}
+  </p>
+</div>
+<div class="channel-videos">
+  <h5>Videos</h5>
+  <app-video *ngFor="let vid of videos"
+             [name]="vid.name"
+             [created]="vid.created"
+             [mid]="vid.mid"
+             [field_media_tags]="vid.field_media_tags"
+             [thumbnail__target_id]="vid.thumbnail__target_id"
+             [field_media_oembed_video]="vid.field_media_oembed_video"
+  ></app-video>
+</div>
