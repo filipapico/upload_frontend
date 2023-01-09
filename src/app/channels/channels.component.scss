@@ -1,20 +1,38 @@
-.channels-container {
+.wrapper {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  .channels-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 
 
-  .channel-card {
-    width: 150px;
-    height: 175px;
-    margin: 23px;
+    .channel-card {
+      width: 150px;
+      height: 175px;
+      margin: 23px;
 
-    .channel-cover-photo {
-      //position: relative;
-      border-radius: 10px;
-      background-size: cover;
-      background-position: center;
-      padding-bottom: 45%;
+      .channel-cover-photo {
+        border-radius: 10px;
+        background-size: cover;
+        background-position: center;
+        padding-bottom: 45%;
+      }
     }
   }
+
+  .channels-sidebar {
+    .categories-list, .suggested-channel {
+      background-color: #1C1C24;
+      border-radius: 10px;
+      margin: 10px auto;
+      padding: 10px;
+    }
+
+
+
+  }
+
+
 }
+
