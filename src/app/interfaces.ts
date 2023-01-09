@@ -21,6 +21,8 @@ interface Video {
   field_logotype: string
   title: string
   nid: string
+  field_cover_photo: string
+  body: string
 }
 
 interface Playlist {
