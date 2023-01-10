@@ -3,8 +3,12 @@ import {UploadService} from "../upload.service";
 import {ActivatedRoute} from "@angular/router";
 import {DomSanitizer} from '@angular/platform-browser';
 
-import {retry} from "rxjs";
+import {elementAt, findIndex, fromEvent, retry} from "rxjs";
 import {Playlist, Playlists} from "../interfaces";
+import * as events from "events";
+import {keyframes} from "@angular/animations";
+
+
 
 @Component({
   selector: 'app-playlist',
@@ -14,7 +18,7 @@ import {Playlist, Playlists} from "../interfaces";
 export class PlaylistComponent implements OnInit {
   playlist?: Playlist[];
   id: number;
-  //videoplaying : Playlist[] = []
+  videoplaying : Playlist[] = []
 
   constructor(private route: ActivatedRoute, private uploadService: UploadService, private sanitizer: DomSanitizer) {
     this.id = route.snapshot.params['nid']
@@ -32,10 +36,10 @@ export class PlaylistComponent implements OnInit {
     })
   }
 
-/*  clickVideo() {
-    if (this.playlist.includes?(this.videoplaying)){
-      this.playlist?.push(this.videoplaying);
-    }
-  }*/
+  clickVideo() {
+    console.log(this.playlist)
+  }
+
+
 
 }

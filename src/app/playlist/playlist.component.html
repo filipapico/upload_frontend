@@ -6,7 +6,7 @@
   </div>
 
   <div *ngIf="playlist" class="videos-list" >
-    <div *ngFor="let video of playlist">
+    <div *ngFor="let video of playlist" (click)="clickVideo()">
       <iframe width="220" height="115" [src]="video.video_url" title="YouTube video player"  allow="picture-in-picture" allowfullscreen></iframe>
       <p>{{video.name}}</p>
     </div>
