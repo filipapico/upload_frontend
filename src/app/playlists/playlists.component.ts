@@ -17,6 +17,5 @@ export class PlaylistsComponent implements OnInit {
     this.uploadService.getPlaylists().subscribe((playlists) => {
       this.playlists = playlists;
     });
-
   }
 }
