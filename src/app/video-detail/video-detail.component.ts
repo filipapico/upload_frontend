@@ -17,7 +17,6 @@ export class VideoDetailComponent {
   latestVideosList: Video[] = [];
 
 
-
   constructor(private route: ActivatedRoute, public uploadService: UploadService, private sanitizer: DomSanitizer) {
     this.id = route.snapshot.params['mid'];
   }
@@ -36,10 +35,6 @@ export class VideoDetailComponent {
     })
 
 
-  }
-
-  getLogotype(logoName: string){
-    return `https://dev-project-upskill2-grupo4v2.pantheonsite.io${logoName}`;
   }
 
 
