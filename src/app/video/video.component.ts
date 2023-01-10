@@ -12,14 +12,16 @@ export class VideoComponent {
   faShareNodes = faShareNodes;
 
   @Input() title!: string;
-  @Input() subtitle!: string;
+  @Input() subtitle?: string;
   @Input() source?: string;
   @Input() mid!: string;
-  @Input() field_media_tags!: string;
+  @Input() field_media_tags?: string;
   @Input() image!: string;
   @Input() logotype?: string;
   @Input() field_media_oembed_video?: string;
   @Input() field_comments?: string;
+  @Input() routerLink?: any;
+
 
 
 
