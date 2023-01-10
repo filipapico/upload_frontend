@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="video-playing" *ngIf="playlist">
+  <div class="video-playing" *ngIf="playlist" (click)="clickVideo()">
     <iframe width="560" height="315" [src]="playlist[0].video_url" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     <h1>{{playlist[0].title}}</h1>
     <p>{{playlist[0].name}}</p>
