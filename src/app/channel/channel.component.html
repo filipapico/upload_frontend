@@ -15,11 +15,11 @@
 <div class="channel-videos">
   <h5>Videos</h5>
   <app-video *ngFor="let vid of videos"
-             [name]="vid.name"
-             [created]="vid.created"
+             [title]="vid.name"
+             [subtitle]="vid.created"
              [mid]="vid.mid"
              [field_media_tags]="vid.field_media_tags"
-             [thumbnail__target_id]="vid.thumbnail__target_id"
+             [image]="vid.thumbnail__target_id"
              [field_media_oembed_video]="vid.field_media_oembed_video"
   ></app-video>
 </div>
