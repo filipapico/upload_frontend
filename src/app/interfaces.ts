@@ -16,6 +16,7 @@ interface Video {
   thumbnail__target_id: string
   field_duration: string
   field_media_oembed_video: string
+  field_description: string
   field_comments: string
   field_categories: string
   field_logotype: string
