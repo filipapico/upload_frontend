@@ -3,20 +3,24 @@
     <h1>
       {{video.name}}
     </h1>
-    <h5>
-      #{{video.field_media_tags}}
-    </h5>
-    <div class="heart-icon" >
+    <div class="details">
+      <h5>
+        #{{video.field_media_tags}}
+      </h5>
+      <span class="heart-icon">
       <fa-icon [icon]="faHeart"></fa-icon>
+    </span>
     </div>
+
     <div class="vid-frame">
-     <iframe class="responsive-iframe" [src]="video_url" title="YouTube video player"
+      <iframe class="responsive-iframe" [src]="video_url" title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen></iframe>
     </div>
 
     <div class="channel-details">
-      <div class="channel-logotype" style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{video.field_logotype}}');">
+      <div class="channel-logotype"
+           style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{video.field_logotype}}');">
       </div>
       <div>
         <p>
@@ -38,6 +42,7 @@
   </div>
   <!-- Right side bar is suggesting more of the latest videos: -->
   <div class="latest-video-container">
+    <h4>Latest Videos</h4>
     <app-video *ngFor="let lv of latestVideosList"
                [name]="lv.name"
                [created]="lv.created"

@@ -12,8 +12,18 @@
   }
 
   .video-detail {
+    .details {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      .heart-icon {
+        font-size: 1.5em;
+      }
+    }
+
     //https://www.w3schools.com/howto/howto_css_responsive_iframes.asp
-    .vid-frame{
+    .vid-frame {
       position: relative;
       overflow: hidden;
       width: 100%;
@@ -45,6 +55,7 @@
         position: relative;
       }
     }
+
     .description-box {
       background-color: #1C1C24;
       border-radius: 20px;
