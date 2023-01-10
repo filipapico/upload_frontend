@@ -1,14 +1,21 @@
-<div class="video-detail-container">
-  <div class="vid-detail-box" *ngIf="video">
+<div class="wrapper">
+  <div class="video-detail" *ngIf="video">
     <h1>
       {{video.name}}
     </h1>
     <h5>
       #{{video.field_media_tags}}
     </h5>
-    <iframe width="560" height="315" [src]="video_url" title="YouTube video player"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
+    <div class="heart-icon" >
+      ❤️
+    </div>
+    <div class="vid-frame">
+     <iframe class="responsive-iframe" [src]="video_url" title="YouTube video player"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>
+
+
     <div class="channel-details">
       <div class="channel-logotype" style="background-image: url({{getLogotype(video.field_logotype)}})">
       </div>
@@ -22,20 +29,27 @@
       </div>
     </div>
     <p class="description-box">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu mi maximus, aliquam erat ac, commodo ligula.
-      Maecenas pellentesque pellentesque lorem eget egestas. In mattis lacinia nisi id dictum. Curabitur bibendum quam
-      sed convallis pulvinar. Fusce mattis bibendum consequat. Vestibulum sed urna eu ante dictum interdum. Donec
-      porttitor turpis ac consequat tempus. Vestibulum at ex lobortis, aliquam mauris nec, bibendum velit. Maecenas eu
-      metus varius, hendrerit quam nec, tempor purus.
-    </p>
-  </div>
+      {{video.field_description || "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu mi maximus, aliquam erat ac, commodo ligula.\n" +
+    "      Maecenas pellentesque pellentesque lorem eget..." }}
 
-  <div class="vid-suggested-box">
+    </p>
     <p>
-      Por aqui 1 ou 2 suggested videos (quais? same tags?)
+      Comments
     </p>
   </div>
-
+  <!-- Right side bar is suggesting more of the latest videos: -->
+  <div class="latest-video-container">
+    <app-video *ngFor="let lv of latestVideosList"
+               [name]="lv.name"
+               [created]="lv.created"
+               [mid]="lv.mid"
+               [field_media_tags]="lv.field_media_tags"
+               [thumbnail__target_id]="lv.thumbnail__target_id"
+               [field_media_oembed_video]="lv.field_media_oembed_video"
+    ></app-video>
+  </div>
 </div>
+
+
 
 
