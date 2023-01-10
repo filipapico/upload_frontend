@@ -1,8 +1,11 @@
-  <div class="video-card" [routerLink]="['/video-detail', mid]">
-    <div class="image-container" style="background-image: url({{getBackgroundImage(thumbnail__target_id)}})">
+<div class="video-card" [routerLink]="['/video-detail', mid]">
+    <div class="image" style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{image}}');">
+      <div class="logotype" style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{logotype}}');">
+      </div>
     </div>
     <div class="info-container">
-      <h5>{{name}}</h5>
-      <p>{{created}}</p>
+      <p>{{source}}</p>
+      <h5>{{title}}</h5>
+      <p>{{subtitle}}</p>
     </div>
   </div>
