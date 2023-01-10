@@ -4,16 +4,18 @@ import {UploadService} from "../upload.service";
 import {Video} from "../interfaces";
 import {DomSanitizer} from "@angular/platform-browser";
 
+
 @Component({
   selector: 'app-video-detail',
   templateUrl: './video-detail.component.html',
   styleUrls: ['./video-detail.component.scss']
 })
 export class VideoDetailComponent {
-
   id: number;
   video?: Video;
   video_url?: any;
+  latestVideosList: Video[] = [];
+
 
 
   constructor(private route: ActivatedRoute, public uploadService: UploadService, private sanitizer: DomSanitizer) {
@@ -28,9 +30,17 @@ export class VideoDetailComponent {
       return this.video_url;
 
     })
+
+    this.uploadService.getLatestVideos().subscribe((latestVideos) => {
+      this.latestVideosList = latestVideos;
+    })
+
+
   }
 
   getLogotype(logoName: string){
     return `https://dev-project-upskill2-grupo4v2.pantheonsite.io${logoName}`;
   }
+
+
 }
