@@ -3,6 +3,7 @@ import {ActivatedRoute} from "@angular/router";
 import {UploadService} from "../upload.service";
 import {Video} from "../interfaces";
 import {DomSanitizer} from "@angular/platform-browser";
+import {faHeart} from '@fortawesome/free-regular-svg-icons';
 
 
 @Component({
@@ -11,6 +12,7 @@ import {DomSanitizer} from "@angular/platform-browser";
   styleUrls: ['./video-detail.component.scss']
 })
 export class VideoDetailComponent {
+  faHeart = faHeart;
   id: number;
   video?: Video;
   video_url?: any;
