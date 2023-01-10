@@ -44,11 +44,11 @@
   <div class="latest-video-container">
     <h4>Latest Videos</h4>
     <app-video *ngFor="let lv of latestVideosList"
-               [name]="lv.name"
-               [created]="lv.created"
+               [title]="lv.name"
+               [subtitle]="lv.created"
                [mid]="lv.mid"
                [field_media_tags]="lv.field_media_tags"
-               [thumbnail__target_id]="lv.thumbnail__target_id"
+               [image]="lv.thumbnail__target_id"
                [field_media_oembed_video]="lv.field_media_oembed_video"
     ></app-video>
   </div>
