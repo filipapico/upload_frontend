@@ -27,20 +27,37 @@
     right: 25px;
   }
 
+  .icons {
+    color: #979797;
+    position: absolute;
+    top: 216px;
+    right: 34px;
+
+    .share-icon {
+      margin-left: 10px;
+    }
+  }
+
 
   .info-container {
     height: 100px;
+    padding: 0 20px;
+    margin-top: 10px;
 
     h5 {
       color: #FAFAFB;
-      font-size: 14px;
-      margin: 10px;
+      font-size: 13px;
+      margin: 2px 0;
     }
 
     p {
-      color: silver;
+      color: #979797;
       font-size: 10px;
-      margin: 10px;
+      margin: 2px 0;
+    }
+
+    .blue-ref {
+      color: blue;
     }
   }
 }
