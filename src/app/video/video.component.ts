@@ -7,14 +7,15 @@ import {Component, Input} from '@angular/core';
 })
 export class VideoComponent {
 
-  @Input() name!: string;
-  @Input() created!: string;
+  @Input() title!: string;
+  @Input() subtitle!: string;
+  @Input() source?: string;
   @Input() mid!: string;
   @Input() field_media_tags!: string;
-  @Input() thumbnail__target_id!: string;
+  @Input() image!: string;
+  @Input() logotype?: string;
   @Input() field_media_oembed_video?: string;
   @Input() field_comments?: string;
-  @Input() field_categories?: string
 
 
     getBackgroundImage(id: string){
