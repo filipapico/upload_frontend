@@ -11,17 +11,33 @@ export class HomepageComponent implements OnInit {
   latestVideos: Video[] = [];
   thematics?: Thematic[] ;
 
+
   constructor(private uploadService: UploadService) {
   }
 
   ngOnInit(): void {
-    this.uploadService.getLatestVideos().subscribe((latestVideos) => {
-      this.latestVideos = latestVideos;
-    })
+    this.getLatestVideos()
 
     this.uploadService.getThematics().subscribe((thematics) => {
       this.thematics = thematics
     })
   }
+
+  getLatestVideos () {
+    this.uploadService.getLatestVideos().subscribe((latestVideos) => {
+      this.latestVideos = latestVideos;
+    })
+}
+
+/*  pNum = 1;
+
+  pageSelected(selected: any) {
+    if(selected == 'Previous' && this.pNum > 1)    //if prev is clicked, numbers will decrease by 1
+      this.pNum--;
+    else if (selected == 'Next' && this.pNum < this.latestVideos.length)   //if next is clicked numbers will increase by 1
+      this.pNum++;
+
+    this.latestVideos;
+  }*/
 
 }
