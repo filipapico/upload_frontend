@@ -1,4 +1,6 @@
 import {Component, Input} from '@angular/core';
+import {faBookmark} from "@fortawesome/free-regular-svg-icons";
+import {faShareNodes} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-video',
@@ -6,6 +8,8 @@ import {Component, Input} from '@angular/core';
   styleUrls: ['./video.component.scss']
 })
 export class VideoComponent {
+  faBookmark= faBookmark;
+  faShareNodes = faShareNodes;
 
   @Input() title!: string;
   @Input() subtitle!: string;
