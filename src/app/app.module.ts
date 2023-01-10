@@ -16,6 +16,7 @@ import { VideoDetailComponent } from './video-detail/video-detail.component';
 import { ThematicsComponent } from './thematics/thematics.component';
 import { ChannelComponent } from './channel/channel.component';
 import { ChannelsComponent } from './channels/channels.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { ChannelsComponent } from './channels/channels.component';
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
