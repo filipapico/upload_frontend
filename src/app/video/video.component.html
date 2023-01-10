@@ -1,11 +1,16 @@
 <div class="video-card" [routerLink]="['/video-detail', mid]">
-    <div class="image" style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{image}}');">
-      <div class="logotype" style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{logotype}}');">
-      </div>
+  <div class="image" style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{image}}');">
+    <div class="logotype"
+         style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{logotype}}');">
     </div>
-    <div class="info-container">
-      <p>{{source}}</p>
-      <h5>{{title}}</h5>
-      <p>{{subtitle}}</p>
+    <div class="icons">
+      <fa-icon [icon]="faBookmark"></fa-icon>
+      <fa-icon class="share-icon" [icon]="faShareNodes"></fa-icon>
     </div>
   </div>
+  <div class="info-container">
+    <p class="blue-ref">{{source}}</p>
+    <h5>{{title}}</h5>
+    <p>{{subtitle}}</p>
+  </div>
+</div>
