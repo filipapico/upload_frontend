@@ -1,6 +1,6 @@
 <h2>Thematics</h2>
 <div class="container" *ngIf="thematics">
-  <div *ngFor="let t of thematics" class="thematic-item">
+  <div *ngFor="let t of thematics" class="thematic-item" [routerLink]="['/thematic-detail', t.nid]">
     <div class="thematic-header">
       <div class="thematic-thumbnail">
         <div style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_thumbnail}}');"></div>
@@ -15,4 +15,3 @@
     </div>
   </div>
 </div>
-
