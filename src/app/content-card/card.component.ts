@@ -3,11 +3,11 @@ import {faBookmark} from "@fortawesome/free-regular-svg-icons";
 import {faShareNodes} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
-  selector: 'app-video',
-  templateUrl: './video.component.html',
-  styleUrls: ['./video.component.scss']
+  selector: 'app-content-card',
+  templateUrl: './card.component.html',
+  styleUrls: ['./card.component.scss']
 })
-export class VideoComponent {
+export class CardComponent {
   faBookmark= faBookmark;
   faShareNodes = faShareNodes;
 
@@ -21,8 +21,6 @@ export class VideoComponent {
   @Input() field_media_oembed_video?: string;
   @Input() field_comments?: string;
   @Input() routerLink?: any;
-
-
 
 
 }
