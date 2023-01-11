@@ -37,23 +37,28 @@ interface Playlist {
 }
 
 interface Playlists {
-  title : string
+  title: string
   nid: string
-  field_image : string
+  field_image: string
 }
 
-interface Thematic{
-  body: string
-  field_thematic_header_image: string
-  field_thematic_links: string
-  field_thematic_tags: string
-  field_thematic_thumbnail: string
+interface Thematic {
   title: string
   uid: string
+  body: string
+  field_thematic_links: string
+  field_thematic_tags: string
+  field_thematic_header_image: string
+  field_thematic_thumbnail: string
+  field_media_oembed_video_1: string
+
 }
 
-interface Thematics{
+interface Thematics {
   title: string
+  uid: string
+  field_thematic_thumbnail: string
+  field_thematic_header_image: string
 }
 
 export {Channels, Video, Playlist, Playlists, Thematic, Thematics};
