@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from "@angular/router";
 import {HomepageComponent} from "./homepage/homepage.component";
-import {VideoComponent} from "./video/video.component";
+import {CardComponent} from "./content-card/card.component";
 import {VideoDetailComponent} from "./video-detail/video-detail.component";
 import {PlaylistComponent} from "./playlist/playlist.component";
 import {PlaylistsComponent} from "./playlists/playlists.component";
@@ -15,9 +15,8 @@ const routes: Routes = [
   {path: 'homepage', component: HomepageComponent},
   {path: 'channel/:nid', component: ChannelComponent},
   {path: 'channels', component: ChannelsComponent},
-  {path: 'video', component: VideoComponent},
+  {path: 'card', component: CardComponent},
   {path: 'video-detail/:mid', component: VideoDetailComponent},
-  // {path: 'channel', component: } ADD CHANNEL COMPONENT HERE
   {path: 'thematics', component: ThematicsComponent},
   {path: 'playlists', component: PlaylistsComponent},
   {path: 'playlist/:nid', component: PlaylistComponent},
