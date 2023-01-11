@@ -18,6 +18,7 @@ import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ContentcardComponent } from './contentcard/contentcard.component';
 import {ThematicComponent} from "./thematic/thematic.component";
+import { CommentsComponent } from './comments/comments.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import {ThematicComponent} from "./thematic/thematic.component";
     ThematicComponent,
     ChannelComponent,
     ChannelsComponent,
-    ContentcardComponent
+    ContentcardComponent,
+    CommentsComponent
   ],
   imports: [
     BrowserModule,
