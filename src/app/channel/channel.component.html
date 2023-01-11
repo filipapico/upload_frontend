@@ -1,26 +1,30 @@
-<div class="channel-header">
-  <div class="channel-cover-photo"
-       style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{channelCoverPhoto}}');">
+<div class="channel-container">
+  <div class="channel-header">
+    <div class="channel-cover-photo"
+         style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{channelCoverPhoto}}');">
+      <div class="channel-logotype"
+           style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{channelLogotype}}');">
+      </div>
+    </div>
+    <h1>
+      {{channelTitle}}
+    </h1>
+    <p>
+      {{channelDescription}}
+    </p>
   </div>
-  <div class="channel-logotype"
-       style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{channelLogotype}}');">
+  <h2>Videos</h2>
+  <div class="channel-videos">
+    <app-content-card *ngFor="let vid of videos"
+                      [title]="vid.name"
+                      [subtitle]="vid.created"
+                      [mid]="vid.mid"
+                      [field_media_tags]="vid.field_media_tags"
+                      [image]="vid.thumbnail__target_id"
+                      [logotype]="vid.field_logotype"
+                      [field_media_oembed_video]="vid.field_media_oembed_video"
+    ></app-content-card>
   </div>
-  <h1>
-    {{channelTitle}}
-  </h1>
-  <p>
-    {{channelDescription}}
-  </p>
-</div>
-<div class="channel-videos">
-  <h5>Videos</h5>
-  <app-content-card *ngFor="let vid of videos"
-             [title]="vid.name"
-             [subtitle]="vid.created"
-             [mid]="vid.mid"
-             [field_media_tags]="vid.field_media_tags"
-             [image]="vid.thumbnail__target_id"
-             [logotype] = "vid.field_logotype"
-             [field_media_oembed_video]="vid.field_media_oembed_video"
-  ></app-content-card>
+ <!-- insert comments component -->
+
 </div>
