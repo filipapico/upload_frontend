@@ -43,7 +43,7 @@
   <!-- Right side bar is suggesting more of the latest videos: -->
   <div class="latest-video-container">
     <h4>Latest Videos</h4>
-    <app-video *ngFor="let lv of latestVideosList"
+    <app-content-card *ngFor="let lv of latestVideosList"
                [title]="lv.name"
                [subtitle]="lv.created"
                [mid]="lv.mid"
@@ -51,7 +51,7 @@
                [image]="lv.thumbnail__target_id"
                [logotype] = "lv.field_logotype"
                [field_media_oembed_video]="lv.field_media_oembed_video"
-    ></app-video>
+    ></app-content-card>
   </div>
 </div>
 

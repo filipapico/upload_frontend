@@ -1,7 +1,7 @@
 <h1>Channels</h1>
 <div class="wrapper">
   <div class="channels-container">
-    <app-video *ngFor="let channel of channels"
+    <app-content-card *ngFor="let channel of channels"
                [source] = "channel.field_category"
                [title] = "channel.title"
                [subtitle] = "channel.field_author"
@@ -9,7 +9,7 @@
                [image] = "channel.field_cover_photo"
                [logotype] = "channel.field_logotype"
                [routerLink]="['/channel', channel.nid]"
-    ></app-video>
+    ></app-content-card>
   </div>
   <div class="channels-sidebar">
     <div class="categories-list">
