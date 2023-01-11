@@ -4,11 +4,11 @@ import {HomepageComponent} from "./homepage/homepage.component";
 import {VideoDetailComponent} from "./video-detail/video-detail.component";
 import {PlaylistComponent} from "./playlist/playlist.component";
 import {PlaylistsComponent} from "./playlists/playlists.component";
+import {ThematicComponent} from "./thematic/thematic.component";
 import {ThematicsComponent} from "./thematics/thematics.component";
 import {ChannelsComponent} from "./channels/channels.component";
 import {ChannelComponent} from "./channel/channel.component";
 import {ContentcardComponent} from "./contentcard/contentcard.component";
-import {ThematicComponent} from "./thematic/thematic.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/homepage', pathMatch: 'full'},
