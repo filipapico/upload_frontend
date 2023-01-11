@@ -17,6 +17,7 @@ import {ChannelsComponent} from './channels/channels.component';
 import {FontAwesomeModule} from '@fortawesome/angular-fontawesome';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ContentcardComponent } from './contentcard/contentcard.component';
+import {ThematicComponent} from "./thematic/thematic.component";
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ContentcardComponent } from './contentcard/contentcard.component';
     TagsComponent,
     VideoDetailComponent,
     ThematicsComponent,
+    ThematicComponent,
     ChannelComponent,
     ChannelsComponent,
     ContentcardComponent
