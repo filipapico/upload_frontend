@@ -5,7 +5,7 @@ import {CardComponent} from "./content-card/card.component";
 import {VideoDetailComponent} from "./video-detail/video-detail.component";
 import {PlaylistComponent} from "./playlist/playlist.component";
 import {PlaylistsComponent} from "./playlists/playlists.component";
-import {ThematicComponent} from "./thematic-detail/thematic.component";
+import {ThematicComponent} from "./thematic/thematic.component";
 import {ThematicsComponent} from "./thematics/thematics.component";
 import {ChannelsComponent} from "./channels/channels.component";
 import {ChannelComponent} from "./channel/channel.component";
@@ -18,7 +18,7 @@ const routes: Routes = [
   {path: 'card', component: CardComponent},
   {path: 'video-detail/:mid', component: VideoDetailComponent},
   {path: 'thematics', component: ThematicsComponent},
-  {path: 'thematic-detail/:nid', component: ThematicComponent},
+  {path: 'thematic/:nid', component: ThematicComponent},
   {path: 'playlists', component: PlaylistsComponent},
   {path: 'playlist/:nid', component: PlaylistComponent},
 ];

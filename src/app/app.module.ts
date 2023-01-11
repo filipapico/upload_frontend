@@ -11,7 +11,7 @@ import {MenuComponent} from "./menu/menu.component";
 import { PlaylistsComponent } from './playlists/playlists.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { TagsComponent } from './tags/tags.component';
-import { ThematicComponent } from './thematic-detail/thematic.component';
+import { ThematicComponent } from './thematic/thematic.component';
 import { VideoDetailComponent } from './video-detail/video-detail.component';
 import { ThematicsComponent } from './thematics/thematics.component';
 import { ChannelComponent } from './channel/channel.component';
