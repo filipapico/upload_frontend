@@ -1,18 +1,38 @@
+.channel-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 
-.channel-header {
-  .channel-cover-photo {
-    background-size: cover;
-    background-position: center;
-    padding-bottom: 45%;
+  .channel-header {
+    .channel-cover-photo {
+      background-size: cover;
+      background-position: center;
+      padding-bottom: 28%;
+      position: relative;
+      width: 100%;
+
+      .channel-logotype {
+        width: 100px;
+        height: 100px;
+        border-radius: 100%;
+        border: 1px solid white;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        right: 50px;
+        top: 80%;
+      }
+    }
   }
 
-  .channel-logotype {
-    width: 69px;
-    height: 69px;
-    border-radius: 100%;
-    border: 1px solid white;
-    background-size: cover;
-    background-position: center;
-    position: relative;
+  .channel-videos {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
+
+
 }
+
