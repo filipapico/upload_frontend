@@ -12,11 +12,11 @@ export class UploadService {
   constructor(public http: HttpClient) {
   }
 
-  getChannels(){
+  getChannels() {
     return this.http.get<Channels[]>(BASE_URL + "/api/channels");
   }
 
-  getChannelVideos(id: number){
+  getChannelVideos(id: number) {
     return this.http.get<Video[]>(BASE_URL + "/api/channel/" + id);
   }
 
@@ -26,6 +26,10 @@ export class UploadService {
 
   getLatestVideos() {
     return this.http.get<Video[]>(BASE_URL + "/api/latest-videos?page=" + 0);
+  }
+
+  getThematicDetails(id: number) {
+    return this.http.get<Thematic>(BASE_URL + "api/thematic/" + id)
   }
 
   getPlaylists() {
