@@ -29,7 +29,7 @@ export class UploadService {
   }
 
   getThematicDetails(id: number) {
-    return this.http.get<Thematic>(BASE_URL + "/api/thematic/" + id)
+    return this.http.get<Thematic[]>(BASE_URL + "/api/thematic/" + id)
   }
 
   getPlaylists() {
