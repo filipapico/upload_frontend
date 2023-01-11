@@ -18,7 +18,7 @@
 
 <div class="container">
   <div class="latest-video-container">
-    <app-content-card *ngFor="let lv of latestVideos"
+    <app-contentcard *ngFor="let lv of latestVideos"
                [source] = "lv.title"
                [title] = "lv.name"
                [subtitle] = "lv.created"
@@ -28,7 +28,7 @@
                [logotype] = "lv.field_logotype"
                [field_media_oembed_video] = "lv.field_media_oembed_video"
                [routerLink]="['/video-detail', lv.mid]"
-    ></app-content-card>
+    ></app-contentcard>
   </div>
 
   <!--REPLACED WITH THE THEMATICS COMPONENT, LATER TO BE IMPROVED WITH NGCLASS TO SHOW ONLY ONE ITEM

@@ -35,9 +35,5 @@ export class VideoDetailComponent {
     this.uploadService.getLatestVideos().subscribe((latestVideos) => {
       this.latestVideosList = latestVideos;
     })
-
-
   }
-
-
 }

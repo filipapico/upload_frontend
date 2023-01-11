@@ -15,7 +15,7 @@
   </div>
   <h2>Videos</h2>
   <div class="channel-videos">
-    <app-content-card *ngFor="let vid of videos"
+    <app-contentcard *ngFor="let vid of videos"
                       [title]="vid.name"
                       [subtitle]="vid.created"
                       [mid]="vid.mid"
@@ -23,7 +23,7 @@
                       [image]="vid.thumbnail__target_id"
                       [logotype]="vid.field_logotype"
                       [field_media_oembed_video]="vid.field_media_oembed_video"
-    ></app-content-card>
+    ></app-contentcard>
   </div>
  <!-- insert comments component -->
 

@@ -2,12 +2,14 @@ import {Component, Input} from '@angular/core';
 import {faBookmark} from "@fortawesome/free-regular-svg-icons";
 import {faShareNodes} from "@fortawesome/free-solid-svg-icons";
 
+
+
 @Component({
-  selector: 'app-content-card',
-  templateUrl: './card.component.html',
-  styleUrls: ['./card.component.scss']
+  selector: 'app-contentcard',
+  templateUrl: './contentcard.component.html',
+  styleUrls: ['./contentcard.component.scss']
 })
-export class CardComponent {
+export class ContentcardComponent {
   faBookmark= faBookmark;
   faShareNodes = faShareNodes;
 
@@ -21,6 +23,4 @@ export class CardComponent {
   @Input() field_media_oembed_video?: string;
   @Input() field_comments?: string;
   @Input() routerLink?: any;
-
-
 }
