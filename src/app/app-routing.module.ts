@@ -18,7 +18,7 @@ const routes: Routes = [
   {path: 'card', component: CardComponent},
   {path: 'video-detail/:mid', component: VideoDetailComponent},
   {path: 'thematics', component: ThematicsComponent},
-  {path: 'thematic-detail', component: ThematicComponent},
+  {path: 'thematic-detail/:nid', component: ThematicComponent},
   {path: 'playlists', component: PlaylistsComponent},
   {path: 'playlist/:nid', component: PlaylistComponent},
 ];
