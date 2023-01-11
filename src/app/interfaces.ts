@@ -1,13 +1,3 @@
-interface Channels {
-  title: string
-  field_author: string
-  nid: string
-  field_logotype: string
-  field_cover_photo: string
-  field_category: string
-  body: string
-}
-
 interface Video {
   name: string
   created: string
@@ -26,6 +16,34 @@ interface Video {
   body: string
 }
 
+interface Channels {
+  title: string
+  field_author: string
+  nid: string
+  field_logotype: string
+  field_cover_photo: string
+  field_category: string
+  body: string
+}
+
+interface Thematic {
+  title: string
+  uid: string
+  body: string
+  field_thematic_links: string
+  field_thematic_tags: string
+  field_thematic_header_image: string
+  field_thematic_thumbnail: string
+  field_media_oembed_video_1: string
+}
+
+interface Thematics {
+  title: string
+  uid: string
+  field_thematic_thumbnail: string
+  field_thematic_header_image: string
+}
+
 interface Playlist {
   name: string
   thumbnail__target_id: string
@@ -42,25 +60,4 @@ interface Playlists {
   field_image: string
 }
 
-interface Thematic {
-  title: string
-  uid: string
-  body: string
-  field_thematic_links: string
-  field_thematic_tags: string
-  field_thematic_header_image: string
-  field_thematic_thumbnail: string
-  field_media_oembed_video_1: string
-
-}
-
-interface Thematics {
-  title: string
-  uid: string
-  field_thematic_thumbnail: string
-  field_thematic_header_image: string
-}
-
-export {Channels, Video, Playlist, Playlists, Thematic, Thematics};
-
-
+export {Video, Channels, Thematic, Thematics, Playlist, Playlists};
