@@ -2,12 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {UploadService} from "../upload.service";
 import {ActivatedRoute} from "@angular/router";
 import {DomSanitizer} from '@angular/platform-browser';
-
-import {elementAt, findIndex, fromEvent, retry} from "rxjs";
-import {Playlist, Playlists} from "../interfaces";
-import * as events from "events";
-import {keyframes} from "@angular/animations";
-
+import {Playlist} from "../interfaces";
 
 
 @Component({
