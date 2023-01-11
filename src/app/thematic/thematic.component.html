@@ -1,26 +1,16 @@
-<div class="container" [routerLink]='[id]'>
-  <div>
-THEMATIC DETAILS
+<div class="container">
+  <h1>{{thematic[0].title}}</h1>
+  <div
+    style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{thematic[0].field_thematic_header_image}}');"></div>
+  <div
+    style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{thematic[0].field_thematic_thumbnail}}');"></div>
+  <div>TEASER MISSING??</div>
+  <div>BODY - {{thematic[0].body}}</div>
+  <div>LINKS - {{thematic[0].field_thematic_links}}</div>
+  <div *ngFor="let t of thematic">
+    {{t.field_media_oembed_video_1}}
   </div>
-
 </div>
-
-<!-- MIGHT BE USEFUL, FROM TEMATICS
-<div *ngFor="let t of thematics" class="thematic-item">
-  <div class="thematic-header">
-    <div class="thematic-thumbnail">
-      <div style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_thumbnail}}');"></div>
-    </div>
-    <div>
-      <h4>{{t.title}}</h4>
-      <p>{{t.uid}}</p>
-    </div>
-  </div>
-  <div class="thematic-header-image">
-    <img src="https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_header_image}}">
-  </div>
-</div>-->
-
 
 <!--SUGGESTED THEMATICS
 
