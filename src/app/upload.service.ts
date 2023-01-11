@@ -25,7 +25,7 @@ export class UploadService {
   }
 
   getLatestVideos() {
-    return this.http.get<Video[]>(BASE_URL + "/api/latest-videos");
+    return this.http.get<Video[]>(BASE_URL + "/api/latest-videos?page=" + 0);
   }
 
   getPlaylists() {
