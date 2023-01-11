@@ -1,11 +1,31 @@
-.container{
-  width: 300px;
-  margin: auto;
-  padding: 10px;
+.container {
 
-  .thematic-header{
-    display: flex;
-    align-items: center;
+  .thematic-header-image {
+    width: 100px;
+    margin: 0 auto;
+
+    div {
+      display: block;
+      background-size: cover;
+      width: 100%;
+      padding-bottom: 57%;
+      background-position: center;
+    }
   }
 
+  .thematic-thumbnail {
+    width: 100px;
+
+    div {
+      display: block;
+      background-size: cover;
+      width: 100%;
+      padding-bottom: 57%;
+      background-position: center;
+    }
+  }
+
+  .thematic-body{
+    padding: 10px
+  }
 }
