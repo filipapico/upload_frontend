@@ -27,6 +27,7 @@ interface Channels {
 }
 
 interface Thematic {
+  nid: string
   title: string
   uid: string
   body: string
@@ -38,6 +39,7 @@ interface Thematic {
 }
 
 interface Thematics {
+  nid: string
   title: string
   uid: string
   field_thematic_thumbnail: string
