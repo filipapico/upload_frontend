@@ -1,22 +1,42 @@
-<h1>Channels</h1>
 <div class="wrapper">
-  <div class="channels-container">
-    <app-contentcard *ngFor="let channel of channels"
-               [source] = "channel.field_category"
-               [title] = "channel.title"
-               [subtitle] = "channel.field_author"
-               [mid] = "channel.nid"
-               [image] = "channel.field_cover_photo"
-               [logotype] = "channel.field_logotype"
-               [routerLink]="['/channel', channel.nid]"
-    ></app-contentcard>
-  </div>
-  <div class="channels-sidebar">
-    <div class="categories-list">
-      List of categories
-    </div>
-    <div class="suggested-channel">
-      Suggested channel (based on what?)
+  <h1>Channels</h1>
+  <div class="categories-list">
+    <div class="categories" *ngFor="let channel of channels">
+      {{channel.field_category}}
     </div>
   </div>
+
+  <div class="all-channels">
+    <div class="channels-container">
+      <app-contentcard *ngFor="let channel of channels"
+                       [source]="channel.field_category"
+                       [title]="channel.title"
+                       [subtitle]="channel.field_author"
+                       [mid]="channel.nid"
+                       [image]="channel.field_cover_photo"
+                       [logotype]="channel.field_logotype"
+                       [routerLink]="['/channel', channel.nid]"
+      ></app-contentcard>
+    </div>
+    <div class="channels-sidebar">
+
+      <div class="suggested-channel">
+        Suggestion? Based on?
+        <div *ngIf="channels">
+          <!-- just an example, will adapt later -->
+          <app-contentcard [source]="channels[5].field_category"
+                           [title]="channels[5].title"
+                           [subtitle]="channels[5].field_author"
+                           [mid]="channels[5].nid"
+                           [image]="channels[5].field_cover_photo"
+                           [logotype]="channels[5].field_logotype"
+                           [routerLink]="['/channel', channels[5].nid]"
+          ></app-contentcard>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+
 </div>
