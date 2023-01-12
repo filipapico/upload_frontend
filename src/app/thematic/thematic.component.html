@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="thematic-main">
+  <div class="thematic-header">
     <!--HEADER IMAGE-->
     <div class="thematic-header-image">
       <div
@@ -10,33 +10,42 @@
       <div
         style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{thematic[0].field_thematic_thumbnail}}');"></div>
     </div>
-
     <h1>{{thematic[0].title}}</h1>
     <!--TEASER-->
     <div class="thematic-teaser">{{thematic[0].field_thematic_teaser}}</div>
+  </div>
+  <div class="thematic-body">
+    <div class="thematic-main">
+      <!--BODY-->
+      <div>{{thematic[0].body}}</div>
 
-    <!--BODY-->
-    <div class="thematic-body">{{thematic[0].body}}</div>
-
-    <!--TESTING LINKS - Sanitizing needed-->
-    <h4>Related links</h4>
-    <div *ngFor="let t of thematic">
-      <a [href]=t.field_thematic_links>{{t.field_thematic_links}}</a>
+      <!--TESTING LINKS - Sanitizing needed-->
+      <h4>Related links</h4>
+      <div class="thematic-links">
+        <div *ngFor="let t of thematic">
+          <a [href]=t.field_thematic_links>{{t.field_thematic_links}}</a>
+        </div>
+      </div>
+      <h4>Thematic videos</h4>
+      <div class="thematic-videos">
+        <p>...TO BE ADDED...</p>
+        <!--NEED TO ADD VIDEOS using tag id?!? + Sanitizing needed-->
+        <!--<app-contentcard *ngFor="let t of thematic"
+                         [field_media_oembed_video]="t.field_media_oembed_video_1">
+        </app-contentcard>-->
+      </div>
+    </div>
+    <div class="thematic-lateral">
+      <h4>Suggested thematics</h4>
+      <div class="thematic-suggested">
+        <p>Last thematic added</p>
+        <p>Last thematic read</p>
+      </div>
     </div>
 
-    <!--NEED TO ADD VIDEOS using tag id?!? + Sanitizing needed-->
-    <!--<app-contentcard *ngFor="let t of thematic"
-                     [field_media_oembed_video]="t.field_media_oembed_video_1">
-    </app-contentcard>-->
-
   </div>
-  <div class="thematic-lateral">
-    <h4>Suggested thematics</h4>
-    <li>Last thematic added</li>
-    <li>Last thematic read</li>
-  </div>
-
 </div>
+
 
 <!--SUGGESTED THEMATICS - TO BE DONE-->
 <!--<div class="thematic-header">

@@ -1,18 +1,21 @@
 .container {
-  display: flex;
 
-  .thematic-main {
-    width: 70%;
-    padding: 10px;
+  .thematic-header {
+    padding-top: 20px;
+    padding-right: 10px;
 
     .thematic-header-image {
+      padding: 20px;
 
       div {
         display: block;
         background-size: cover;
         width: 100%;
-        padding-bottom: 57%;
+        height: 250px;
+        //padding-bottom: 57%;
         background-position: center;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
       }
     }
 
@@ -32,15 +35,35 @@
       padding: 10px;
       font-size: 12px;
     }
-
-    .thematic-body {
-      padding: 10px
-    }
   }
 
-  .thematic-lateral{
-    width: 30%;
-    padding: 10px;
+  .thematic-body {
+    display: flex;
+
+    .thematic-main {
+      width: 70%;
+      padding: 10px;
+
+      div {
+        padding: 10px;
+      }
+
+      .thematic-links {
+        border: 1px solid darkgray;
+        border-radius: 12px;
+      }
+    }
+
+    .thematic-lateral {
+      width: 30%;
+      padding: 10px;
+
+      .thematic-suggested {
+        border: 1px solid darkgray;
+        border-radius: 12px;
+      }
+    }
+
   }
 
 }
