@@ -21,6 +21,24 @@
       justify-content: space-evenly;
       width: 70%;
     }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+
+      .last-seen-container {
+        background-color: #1C1C24;
+        border-radius: 15px;
+        margin: 23px;
+
+        .card-info {
+          display: flex;
+          justify-content: space-between;
+          border-bottom: #FFFFFF 1px solid;
+          margin: 10px;
+        }
+      }
+    }
   }
 
 }
