@@ -2,9 +2,9 @@
   <h1>Channels</h1>
   <div class="categories-list" *ngIf="categories">
     <div class="categories" *ngFor="let category of categories">
-      <div (click)="targetChannels(category.tid)">
+      <p (click)="targetChannels(category.tid)">
         {{category.name}}
-      </div>
+      </p>
     </div>
   </div>
 
