@@ -17,29 +17,39 @@
     }
   }
 
-  .all-channels {
+.main-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+
+  .channels-container {
     display: flex;
     flex-direction: row;
-
-    .channels-container {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 
 
-      .channel-card {
-        width: 150px;
-        height: 175px;
-        margin: 23px;
+    .channel-card {
+      width: 150px;
+      height: 175px;
+      margin: 23px;
 
-        .channel-cover-photo {
-          border-radius: 10px;
-          background-size: cover;
-          background-position: center;
-          padding-bottom: 45%;
-        }
+      .channel-cover-photo {
+        border-radius: 10px;
+        background-size: cover;
+        background-position: center;
+        padding-bottom: 45%;
       }
     }
   }
+
+  .channels-sidebar {
+    width: 30%;
+  }
+
+}
+
+
+
 }
 
