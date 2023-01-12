@@ -35,11 +35,11 @@ interface Thematic {
   title: string
   uid: string
   body: string
-  field_thematic_links: string
+  field_thematic_teaser: string
   field_thematic_tags: string
   field_thematic_header_image: string
   field_thematic_thumbnail: string
-  field_media_oembed_video_1: string
+  field_thematic_links: string
 }
 
 interface Thematics {
