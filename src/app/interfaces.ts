@@ -18,6 +18,7 @@ interface Video {
 
 interface Categories {
   name: string
+  tid: string
 }
 
 interface Channels {
@@ -64,6 +65,8 @@ interface Playlists {
   title: string
   nid: string
   field_image: string
+  field_playlist_category: string
+  tid: string
 }
 
 export {Video, Categories, Channels, Thematic, Thematics, Playlist, Playlists};
