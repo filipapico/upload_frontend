@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {faHouse, faBarsStaggered, faClapperboard, faPlay} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-menu',
@@ -6,5 +7,9 @@ import { Component } from '@angular/core';
   styleUrls: ['./menu.component.scss']
 })
 export class MenuComponent {
+  faHouse = faHouse;
+  faBarsStaggered = faBarsStaggered;
+  faClapperboard = faClapperboard;
+  faPlay = faPlay;
 
 }
