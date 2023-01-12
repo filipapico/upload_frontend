@@ -2,13 +2,13 @@
   <h1>Channels</h1>
   <div class="categories-list" *ngIf="categories">
     <div class="categories" *ngFor="let category of categories">
-      <div (click)="targetChannels(category.tid)">
+      <p (click)="targetChannels(category.tid)">
         {{category.name}}
-      </div>
+      </p>
     </div>
   </div>
 
-  <div class="all-channels">
+  <div class="main-section">
     <div class="channels-container">
       <app-contentcard type="channels" *ngFor="let channel of channels"
                        [source]="channel.field_category"
@@ -20,24 +20,13 @@
                        [routerLink]="['/channel', channel.nid]"
       ></app-contentcard>
     </div>
-    <div class="channels-sidebar">
-
-      <div class="suggested-channel">
-        Suggestion? Based on?
-    <!--    <div *ngIf="channels">
-          <app-contentcard [source]="channels[5].field_category"
-                           [title]="channels[5].title"
-                           [subtitle]="channels[5].field_author"
-                           [mid]="channels[5].nid"
-                           [image]="channels[5].field_cover_photo"
-                           [logotype]="channels[5].field_logotype"
-                           [routerLink]="['/channel', channels[5].nid]"
-          ></app-contentcard>
-        </div>-->
-
-      </div>
-    </div>
+    <app-suggestioncard class="channels-sidebar" *ngIf="channels"
+                        [type]="['Last Seen']"
+                        [title]=channels[0].title
+                        [uid]=channels[0].nid
+                        [field_thematic_header_image]=channels[0].field_cover_photo
+                        [field_thematic_thumbnail]=channels[0].field_cover_photo
+                        [routerLink]="['/channel', channels[0].nid]"
+    ></app-suggestioncard>
   </div>
-
-
 </div>
