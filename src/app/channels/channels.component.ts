@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {UploadService} from "../upload.service";
 import {DomSanitizer} from "@angular/platform-browser";
-import {Channels} from "../interfaces";
+import {Categories, Channels} from "../interfaces";
 
 @Component({
   selector: 'app-channels',
@@ -11,6 +11,7 @@ import {Channels} from "../interfaces";
 })
 export class ChannelsComponent {
 
+  categories?: Categories[]; //array of all the categories
   channels?: Channels[];
 
   constructor(private route: ActivatedRoute, public uploadService: UploadService, private sanitizer: DomSanitizer) {
@@ -21,5 +22,9 @@ export class ChannelsComponent {
         this.channels = channels;
       }
     )
+
+    this.uploadService.getCategories().subscribe((categories) => {
+      this.categories = categories;
+    })
   }
 }
