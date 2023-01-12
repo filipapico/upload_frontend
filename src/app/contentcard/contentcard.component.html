@@ -1,16 +1,16 @@
-<div class="video-card" [routerLink]="routerLink">
+<div class="video-card" [ngClass]="type" [routerLink]="routerLink">
   <div class="image" style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{image}}');">
     <div class="logotype"
          style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{logotype}}');">
     </div>
     <div class="icons">
-      <fa-icon [icon]="faBookmark"></fa-icon>
+      <fa-icon class="heart-icon" [icon]="faHeart"></fa-icon>
       <fa-icon class="share-icon" [icon]="faShareNodes"></fa-icon>
     </div>
   </div>
   <div class="info-container">
     <p class="blue-ref">{{source}}</p>
     <h5>{{title}}</h5>
-    <p>{{subtitle}}</p>
+    <p class="card-subtitle">{{subtitle}}</p>
   </div>
 </div>

@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {faBookmark} from "@fortawesome/free-regular-svg-icons";
+import {faHeart,faBookmark} from "@fortawesome/free-regular-svg-icons";
 import {faShareNodes} from "@fortawesome/free-solid-svg-icons";
 
 
@@ -10,6 +10,7 @@ import {faShareNodes} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./contentcard.component.scss']
 })
 export class ContentcardComponent {
+  faHeart = faHeart;
   faBookmark= faBookmark;
   faShareNodes = faShareNodes;
 
@@ -23,5 +24,7 @@ export class ContentcardComponent {
   @Input() field_media_oembed_video?: string;
   @Input() field_comments?: string;
   @Input() routerLink?: any;
+  @Input() type?: string;
+
 
 }

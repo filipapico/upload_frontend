@@ -10,7 +10,7 @@
 
   <div class="all-channels">
     <div class="channels-container">
-      <app-contentcard *ngFor="let channel of channels"
+      <app-contentcard type="channels" *ngFor="let channel of channels"
                        [source]="channel.field_category"
                        [title]="channel.title"
                        [subtitle]="channel.field_author"
@@ -24,8 +24,7 @@
 
       <div class="suggested-channel">
         Suggestion? Based on?
-        <div *ngIf="channels">
-          <!-- just an example, will adapt later -->
+    <!--    <div *ngIf="channels">
           <app-contentcard [source]="channels[5].field_category"
                            [title]="channels[5].title"
                            [subtitle]="channels[5].field_author"
@@ -34,7 +33,7 @@
                            [logotype]="channels[5].field_logotype"
                            [routerLink]="['/channel', channels[5].nid]"
           ></app-contentcard>
-        </div>
+        </div>-->
 
       </div>
     </div>
