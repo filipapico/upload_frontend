@@ -1,33 +1,45 @@
 <div class="container">
-  <h1>{{thematic[0].title}}</h1>
-  <div class="thematic-header-image">
-    <div
-      style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{thematic[0].field_thematic_header_image}}');"></div>
+  <div class="thematic-main">
+    <!--HEADER IMAGE-->
+    <div class="thematic-header-image">
+      <div
+        style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{thematic[0].field_thematic_header_image}}');"></div>
+    </div>
+    <!--THUMBNAIL-->
+    <div class="thematic-thumbnail">
+      <div
+        style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{thematic[0].field_thematic_thumbnail}}');"></div>
+    </div>
+
+    <h1>{{thematic[0].title}}</h1>
+    <!--TEASER-->
+    <div class="thematic-teaser">{{thematic[0].field_thematic_teaser}}</div>
+
+    <!--BODY-->
+    <div class="thematic-body">{{thematic[0].body}}</div>
+
+    <!--TESTING LINKS - Sanitizing needed-->
+    <h4>Related links</h4>
+    <div *ngFor="let t of thematic">
+      <a [href]=t.field_thematic_links>{{t.field_thematic_links}}</a>
+    </div>
+
+    <!--NEED TO ADD VIDEOS using tag id?!? + Sanitizing needed-->
+    <!--<app-contentcard *ngFor="let t of thematic"
+                     [field_media_oembed_video]="t.field_media_oembed_video_1">
+    </app-contentcard>-->
+
   </div>
-  <div class="thematic-thumbnail">
-    <div
-      style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{thematic[0].field_thematic_thumbnail}}');"></div>
+  <div class="thematic-lateral">
+    <h4>Suggested thematics</h4>
+    <li>Last thematic added</li>
+    <li>Last thematic read</li>
   </div>
-
-
-  <div>TEASER MISSING??</div>
-  <div class="thematic-body">{{thematic[0].body}}</div>
-
-  <!--TESTING LINKS - Sanitizing needed-->
-  <div *ngFor="let t of thematic">
-    <a [href]=t.field_thematic_links>1</a>
-  </div>
-
-  <!--ADDED VIDEOS using thematic view, other possibility via tag id?!? - Sanitizing needed-->
-  <app-contentcard *ngFor="let t of thematic"
-                   [field_media_oembed_video]="t.field_media_oembed_video_1">
-  </app-contentcard>
 
 </div>
 
-<!--SUGGESTED THEMATICS
-<div class="thematic-header">
-  <h4>Temáticas sugeridas</h4>
+<!--SUGGESTED THEMATICS - TO BE DONE-->
+<!--<div class="thematic-header">
   <div>VER TODAS</div>
 </div>
 <div>
