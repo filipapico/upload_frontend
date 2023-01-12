@@ -30,7 +30,10 @@
 
 
 .videos-list {
-  margin-top: 50px;
+  margin: 23px;
+  border: 1px solid #656161;
+  border-radius: 20px;
+  height: fit-content;
 
   app-comments {
     .comments-container {
@@ -44,8 +47,11 @@
     margin: 30px;
   }
 
-  iframe {
-    border: #e8e5e5 2px solid;
+  img {
+    border: #656161 2px solid;
+    border-radius: 20px;
+    width: 200px;
+    height: 100px;
   }
 
   p {

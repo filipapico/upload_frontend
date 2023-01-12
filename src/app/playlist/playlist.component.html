@@ -11,7 +11,8 @@
     <h4>{{indexVideo + 1}}/{{playlist.length}}</h4>
     <div *ngFor="let video of playlist" (click)="getVideo(playlist.indexOf(video))">
       <p>{{playlist.indexOf(video) + 1}}</p>
-      <iframe width="220" height="115" [src]="video.video_url" title="YouTube video player"  allow="picture-in-picture" allowfullscreen></iframe>
+      <img src="https://dev-project-upskill2-grupo4v2.pantheonsite.io{{video.thumbnail__target_id}}">
+<!--      <iframe width="220" height="115" [src]="video.video_url" title="YouTube video player"  allow="picture-in-picture" allowfullscreen></iframe>-->
       <p>{{video.name}}</p>
     </div>
   </div>
