@@ -12,16 +12,17 @@
 
   <div>TEASER MISSING??</div>
   <div class="thematic-body">{{thematic[0].body}}</div>
-  <div>
-    <a [href]=thematic[0].field_thematic_links>lal</a>
-<!--    <iframe width="220" height="115" [src]=thematic[0].field_thematic_links></iframe>-->
 
-    {{thematic[0].field_thematic_links[0]}}
-    {{thematic[0].field_thematic_links[1]}}
-  </div>
+  <!--TESTING LINKS - Sanitizing needed-->
   <div *ngFor="let t of thematic">
-    {{t.field_media_oembed_video_1}}
+    <a [href]=t.field_thematic_links>1</a>
   </div>
+
+  <!--ADDED VIDEOS using thematic view, other possibility via tag id?!? - Sanitizing needed-->
+  <app-contentcard *ngFor="let t of thematic"
+                   [field_media_oembed_video]="t.field_media_oembed_video_1">
+  </app-contentcard>
+
 </div>
 
 <!--SUGGESTED THEMATICS
