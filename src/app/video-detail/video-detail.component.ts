@@ -18,14 +18,6 @@ export class VideoDetailComponent {
   video_url?: any;
   latestVideosList: Video[] = [];
 
-  @Input() name?: string;
-  @Input() field_media_tags?: string;
-  @Input() field_logotype?: string;
-  @Input() title?:  string;
-  @Input() created?: string;
-  @Input() field_description?: string
-  @Input() field_media_oembed_video?: string
-
 
   constructor(private route: ActivatedRoute, public uploadService: UploadService, private sanitizer: DomSanitizer) {
     this.id = route.snapshot.params['mid'];
