@@ -28,7 +28,7 @@ export class PlaylistsComponent implements OnInit {
     console.log(tid)
     if (this.playlists) {
       this.playlists.forEach((playlist) => {
-        if (playlist.tid === tid){
+        if (tid === playlist.tid){
           tid.push(this.listTid)
         }
         console.log(this.listTid)
