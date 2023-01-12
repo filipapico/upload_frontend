@@ -2,7 +2,7 @@ import {Component} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {UploadService} from "../upload.service";
 import {DomSanitizer} from "@angular/platform-browser";
-import {Channels, Video} from "../interfaces";
+import {Video} from "../interfaces";
 
 @Component({
   selector: 'app-channel',
