@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {UploadService} from "../upload.service";
 import {Video} from "../interfaces";
@@ -17,6 +17,14 @@ export class VideoDetailComponent {
   video?: Video;
   video_url?: any;
   latestVideosList: Video[] = [];
+
+  @Input() name?: string;
+  @Input() field_media_tags?: string;
+  @Input() field_logotype?: string;
+  @Input() title?:  string;
+  @Input() created?: string;
+  @Input() field_description?: string
+  @Input() field_media_oembed_video?: string
 
 
   constructor(private route: ActivatedRoute, public uploadService: UploadService, private sanitizer: DomSanitizer) {
