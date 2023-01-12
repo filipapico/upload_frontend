@@ -27,4 +27,11 @@ export class ChannelsComponent {
       this.categories = categories;
     })
   }
+
+  targetChannels(id: string){
+    this.uploadService.getCategoryChannels(id).subscribe((channels: Channels[]) => {
+      this.channels = channels;
+    })
+
+  }
 }
