@@ -1,8 +1,10 @@
 <div class="wrapper">
   <h1>Channels</h1>
-  <div class="categories-list">
+  <div class="categories-list" *ngIf="categories">
     <div class="categories" *ngFor="let category of categories">
-      {{category.name}}
+      <div (click)="targetChannels(category.tid)">
+        {{category.name}}
+      </div>
     </div>
   </div>
 
