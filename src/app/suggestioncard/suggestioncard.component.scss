@@ -1,27 +1,47 @@
-.suggestioncard-container {
+.card-container {
   background-color: #1C1C24;
   border-radius: 15px;
-  height: 400px;
   margin: 23px;
 
-  .thematic-header {
-    border-top: #FFFFFF 1px solid;
+  .card-info {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: #FFFFFF 1px solid;
+    margin: 10px;
+  }
+
+
+  p {
+    margin: 7px;
+  }
+
+
+  .card-thumbnail {
+    margin-left: 10px;
+    margin-top: 10px;
+    display: flex;
+
+    .thumbnail-title {
+      margin: 10px;
+    }
 
     img {
-      width: 75px;
-      height: 75px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
     }
 
-    p {
+    p, h6 {
       margin: 2px;
       font-size: 10px;
     }
   }
 
-  .thematic-image {
+  .card-image {
     img {
-      width: 250px;
+      width: 220px;
+      border-radius: 20px;
+      margin: 10px;
     }
   }
 
