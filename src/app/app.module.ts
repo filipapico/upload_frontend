@@ -20,6 +20,7 @@ import { ContentcardComponent } from './contentcard/contentcard.component';
 import {ThematicComponent} from "./thematic/thematic.component";
 import { CommentsComponent } from './comments/comments.component';
 import { SuggestioncardComponent } from './suggestioncard/suggestioncard.component';
+import { SuggestionlistComponent } from './suggestionlist/suggestionlist.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { SuggestioncardComponent } from './suggestioncard/suggestioncard.compone
     ChannelsComponent,
     ContentcardComponent,
     CommentsComponent,
-    SuggestioncardComponent
+    SuggestioncardComponent,
+    SuggestionlistComponent
   ],
   imports: [
     BrowserModule,
