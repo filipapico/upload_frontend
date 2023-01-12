@@ -1,22 +1,28 @@
-h2 {
-  margin-left: 23px;
-  margin-bottom: 0px;
-}
+.wrapper {
 
-.research {
-  margin-left: 23px;
-  margin-top: 10px;
-  height: 30px;
-  border-radius: 10px;
-}
+  h2 {
+    margin-left: 23px;
+    margin-bottom: 0px;
+  }
 
-.container {
-  display: flex;
-}
+  .research {
+    margin-left: 23px;
+    margin-top: 10px;
+    height: 30px;
+    border-radius: 10px;
+  }
 
-.latest-video-container {
-  display: flex;
-  flex-wrap: wrap;
+  .container {
+    display: flex;
+
+    .latest-video-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      width: 70%;
+    }
+  }
+
 }
 
 
