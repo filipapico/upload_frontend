@@ -1,3 +1,18 @@
+.category-container {
+  display: flex;
+  margin-left: 23px;
+
+  .category {
+    background-color: #3b3838;
+    border-radius: 20px;
+    margin-left: 10px;
+
+    p {
+      color: #FFFFFF;
+    }
+  }
+}
+
 .container {
   display: flex;
   flex-wrap: wrap;

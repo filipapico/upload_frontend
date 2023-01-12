@@ -1,9 +1,14 @@
 <h2>Playlists</h2>
 
+<div class="category-container">
+  <div class="category" *ngFor="let category of categories" (click)="categorySelected(category.tid)">
+    <p>{{category.name}}</p>
+  </div>
+</div>
 
 <div class="container">
   <div class="favourites-videos">
-    <h4>Liked Videos</h4>
+    <h4>Favourite Videos</h4>
     <p>108 liked videos</p>
   </div>
 
