@@ -31,14 +31,39 @@
                        [routerLink]="['/video-detail', lv.mid]"
       ></app-contentcard>
     </div>
-    <app-suggestioncard *ngIf="thematics"
-                        [type]="['Thematics']"
-                        [title]=thematics[0].title
-                        [uid]=thematics[0].uid
-                        [field_thematic_header_image]=thematics[0].field_thematic_header_image
-                        [field_thematic_thumbnail]=thematics[0].field_thematic_thumbnail
-                        [routerLink]="['/thematics', thematics]"
-    ></app-suggestioncard>
+
+    <div class="sidebar">
+      <app-suggestioncard *ngIf="thematics"
+                          [type]="['Thematics']"
+                          [title]=thematics[0].title
+                          [uid]=thematics[0].uid
+                          [field_thematic_header_image]=thematics[0].field_thematic_header_image
+                          [field_thematic_thumbnail]=thematics[0].field_thematic_thumbnail
+                          [routerLink]="['/thematics', thematics]"
+      ></app-suggestioncard>
+      <div class="last-seen-container">
+        <div class="card-info">
+          <h5>Last Seen</h5>
+          <p>SEE ALL</p>
+        </div>
+        <app-contentcard [title]="latestVideos[5].name"
+                         [subtitle]="latestVideos[5].created"
+                         [mid]="latestVideos[5].mid"
+                         [field_media_tags]="latestVideos[5].field_media_tags"
+                         [image]="latestVideos[5].thumbnail__target_id"
+                         [logotype]="latestVideos[5].field_logotype"
+                         [field_media_oembed_video]="latestVideos[5].field_media_oembed_video"
+        ></app-contentcard>
+        <app-contentcard [title]="latestVideos[6].name"
+                         [subtitle]="latestVideos[6].created"
+                         [mid]="latestVideos[6].mid"
+                         [field_media_tags]="latestVideos[6].field_media_tags"
+                         [image]="latestVideos[6].thumbnail__target_id"
+                         [logotype]="latestVideos[6].field_logotype"
+                         [field_media_oembed_video]="latestVideos[6].field_media_oembed_video"
+        ></app-contentcard>
+      </div>
+    </div>
   </div>
 </div>
 
