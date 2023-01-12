@@ -23,4 +23,5 @@ export class ContentcardComponent {
   @Input() field_media_oembed_video?: string;
   @Input() field_comments?: string;
   @Input() routerLink?: any;
+
 }

@@ -2,6 +2,7 @@
   display: flex;
 }
 
+
 .video-playing {
   margin: 23px;
   background-color: #262525;
@@ -24,13 +25,19 @@
     color: #ffffff;
     margin-top: 0px;
     margin-left: 23px;
-
-
   }
 }
 
+
 .videos-list {
   margin-top: 50px;
+
+  app-comments {
+    .comments-container {
+      margin: 23px;
+      padding: 20px;
+    }
+  }
 
   div {
     display: flex;
@@ -43,11 +50,13 @@
 
   p {
     margin: 15px;
-    font-size: 12px;
+    font-size: 15px;
   }
 
   h4 {
     text-align: center;
   }
 }
+
+
 

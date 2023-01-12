@@ -19,6 +19,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ContentcardComponent } from './contentcard/contentcard.component';
 import {ThematicComponent} from "./thematic/thematic.component";
 import { CommentsComponent } from './comments/comments.component';
+import { SuggestioncardComponent } from './suggestioncard/suggestioncard.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { CommentsComponent } from './comments/comments.component';
     ChannelComponent,
     ChannelsComponent,
     ContentcardComponent,
-    CommentsComponent
+    CommentsComponent,
+    SuggestioncardComponent
   ],
   imports: [
     BrowserModule,

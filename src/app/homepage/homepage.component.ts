@@ -37,5 +37,8 @@ export class HomepageComponent implements OnInit {
     this.uploadService.getLatestVideos().subscribe((latestVideos) => {
       this.latestVideos = latestVideos;
     })
+    this.uploadService.getThematics().subscribe((thematics) => {
+      this.thematics = thematics
+    })
   }
 }
