@@ -16,6 +16,10 @@ interface Video {
   body: string
 }
 
+interface Categories {
+  name: string
+}
+
 interface Channels {
   title: string
   field_author: string
@@ -62,4 +66,4 @@ interface Playlists {
   field_image: string
 }
 
-export {Video, Channels, Thematic, Thematics, Playlist, Playlists};
+export {Video, Categories, Channels, Thematic, Thematics, Playlist, Playlists};
