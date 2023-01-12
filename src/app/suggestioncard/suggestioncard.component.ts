@@ -7,9 +7,10 @@ import {Component, Input} from '@angular/core';
 })
 export class SuggestioncardComponent {
 
+  @Input() type?: any;
   @Input() title!: string;
   @Input() field_thematic_header_image?: string
   @Input() field_thematic_thumbnail?: string
   @Input() uid?: string
-
+  @Input() routerLink?: any
 }
