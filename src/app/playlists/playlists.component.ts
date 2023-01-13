@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UploadService} from "../upload.service";
 import {Categories, Playlists} from "../interfaces";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-playlists',
@@ -10,30 +11,25 @@ import {Categories, Playlists} from "../interfaces";
 export class PlaylistsComponent implements OnInit {
   playlists?: Playlists[] = [];
   categories?: Categories[];
-  listTid? = [];
+  id?: any = ""
 
-  constructor(private uploadService: UploadService) {
+  constructor(private route: ActivatedRoute, private uploadService: UploadService,) {
   }
 
   ngOnInit(): void {
-    this.uploadService.getPlaylists().subscribe((playlists) => {
+    this.uploadService.getPlaylists(this.id).subscribe((playlists) => {
       this.playlists = playlists;
     });
+
     this.uploadService.getCategories().subscribe((categories) => {
       this.categories = categories;
     })
   }
 
   categorySelected(tid: any) {
-    console.log(tid)
-    if (this.playlists) {
-      this.playlists.forEach((playlist) => {
-        if (tid === playlist.tid){
-          tid.push(this.listTid)
-        }
-        console.log(this.listTid)
-      })
-    }
+    this.uploadService.getPlaylists(tid).subscribe((playlists) => {
+      this.playlists = playlists;
+    });
   }
 
 }
