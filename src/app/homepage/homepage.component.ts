@@ -25,7 +25,7 @@ export class HomepageComponent implements OnInit {
   }
 
   pageSelected(selected: any) {
-    if (selected == 'Previous')    //if prev is clicked, numbers will decrease by 1
+    if (selected == 'Previous' && this.pNum > 0)    //if prev is clicked, numbers will decrease by 1
       this.pNum--;
     else if (selected == 'Next')   //if next is clicked numbers will increase by 1
       this.pNum++;
