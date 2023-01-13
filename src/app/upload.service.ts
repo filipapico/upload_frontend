@@ -42,8 +42,8 @@ export class UploadService {
     return this.http.get<Thematic[]>(BASE_URL + "/api/thematics")
   }
 
-  getThematicsTags() {
-    return this.http.get<Tags[]>(BASE_URL + "/api/thematics")
+  getAllTags() {
+    return this.http.get<Tags[]>(BASE_URL + "/api/tags")
   }
 
   getThematicDetails(id: string) {
