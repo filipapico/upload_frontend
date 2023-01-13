@@ -39,7 +39,6 @@ interface Thematics {
   field_thematic_header_image: string
 }
 
-//Maybe update to thematicsTags (used in other contexts?)
 interface Tags{
   tid: string
   name: string
