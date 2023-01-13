@@ -10,7 +10,7 @@ import {Thematic, Video} from "../interfaces";
 export class HomepageComponent implements OnInit {
   latestVideos: Video[] = [];
   thematics?: Thematic[];
-  pNum: number = 0;
+  pNum: any = 0;
 
 
   constructor(private uploadService: UploadService) {
@@ -24,17 +24,17 @@ export class HomepageComponent implements OnInit {
     })
   }
 
-/*  pageSelected(selected: any) {
+  pageSelected(selected: any) {
     if (selected == 'Previous')    //if prev is clicked, numbers will decrease by 1
       this.pNum--;
     else if (selected == 'Next')   //if next is clicked numbers will increase by 1
       this.pNum++;
 
     this.getVideos();
-  }*/
+  }
 
   getVideos() {
-    this.uploadService.getLatestVideos().subscribe((latestVideos) => {
+    this.uploadService.getLatestVideos(this.pNum).subscribe((latestVideos) => {
       this.latestVideos = latestVideos;
     })
     this.uploadService.getThematics().subscribe((thematics) => {

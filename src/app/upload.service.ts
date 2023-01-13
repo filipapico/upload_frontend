@@ -32,8 +32,8 @@ export class UploadService {
     return this.http.get<Video[]>(BASE_URL + "/api/allvideos/" + id);
   }
 
-  getLatestVideos() {
-    return this.http.get<Video[]>(BASE_URL + "/api/latest-videos?page=" + 0);
+  getLatestVideos(pNum: number) {
+    return this.http.get<Video[]>(BASE_URL + "/api/latest-videos?page=" + pNum);
   }
 
   getThematicDetails(id: number) {
