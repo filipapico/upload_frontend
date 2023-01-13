@@ -40,11 +40,11 @@ export class UploadService {
     return this.http.get<Thematic[]>(BASE_URL + "/api/thematic/" + id)
   }
 
-  getPlaylists() {
-    return this.http.get<Playlists[]>(BASE_URL + "/api/playlists")
+  getPlaylists(id: string) {
+    return this.http.get<Playlists[]>(BASE_URL + "/api/playlists/" + id);
   }
 
-  getPlaylist(id: number) {
+  getPlaylist(id: string) {
     return this.http.get<Video[]>(BASE_URL + "/api/playlist/" + id);
   }
 
