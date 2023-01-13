@@ -20,7 +20,7 @@ export class ThematicsComponent {
       //console.log(this.thematics)
     })
 
-    this.uploadService.getTags().subscribe((tags)=>{
+    this.uploadService.getThematicsTags().subscribe((tags)=>{
       this.tags = tags
     })
   }
