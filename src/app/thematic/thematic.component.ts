@@ -10,7 +10,7 @@ import {UploadService} from "../upload.service";
 })
 
 export class ThematicComponent {
-  id!: number
+  id!: string
   thematic!: Thematic[]
 
   constructor(private route: ActivatedRoute, private uploadService: UploadService) {
@@ -22,6 +22,7 @@ export class ThematicComponent {
       this.thematic = thematic
       console.log("this thematic details", this.thematic)
     })
+
   }
 
 }

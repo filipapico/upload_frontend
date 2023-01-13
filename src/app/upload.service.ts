@@ -24,6 +24,7 @@ export class UploadService {
     return this.http.get<Channels[]>(BASE_URL + "/api/channels");
   }
 
+  // QUESTION Maybe update all ids to type string? Since our APIs always return strings?
   getChannelVideos(id: number) {
     return this.http.get<Video[]>(BASE_URL + "/api/channel/" + id);
   }
@@ -36,7 +37,7 @@ export class UploadService {
     return this.http.get<Video[]>(BASE_URL + "/api/latest-videos?page=" + pNum);
   }
 
-  getThematicDetails(id: number) {
+  getThematicDetails(id: string) {
     return this.http.get<Thematic[]>(BASE_URL + "/api/thematic/" + id)
   }
 
@@ -55,4 +56,7 @@ export class UploadService {
   getTags(){
     return this.http.get<Tags[]>(BASE_URL + "/api/thematics")
   }
+
+
+
 }
