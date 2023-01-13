@@ -84,4 +84,4 @@ interface Playlists {
   tid: string
 }
 
-export {Video, Categories, Channels, Thematics, Tags, Thematic, ThematicLink, Playlist, Playlists};
+export {Video, Categories, Channels, Thematics, Tags, Thematic, ThematicLink, ThematicLinks, Playlist, Playlists};

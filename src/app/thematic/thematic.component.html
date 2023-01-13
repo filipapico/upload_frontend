@@ -22,10 +22,15 @@
       <!--TESTING LINKS - Sanitizing needed-->
       <h4>Related links</h4>
       <div class="thematic-links">
+        <div *ngFor="let t of thematicLinks">
+          <a [href]=t.uri>{{t.title}}</a>
+        </div>
+      </div>
+      <!--<div class="thematic-links">
         <div *ngFor="let t of thematic">
           <a [href]=t.field_thematic_links>{{t.field_thematic_links}}</a>
         </div>
-      </div>
+      </div>-->
       <h4>Thematic videos</h4>
       <div class="thematic-videos">
         <p>...TO BE ADDED...</p>

@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Categories, Channels, Playlists, Thematic, Tags, ThematicLink, Video} from "./interfaces";
+import {Categories, Channels, Playlists, Thematic, Tags, ThematicLink, ThematicLinks, Video} from "./interfaces";
 
 const BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
 
@@ -51,7 +51,7 @@ export class UploadService {
   }
 
   getThematicLinks(id: string) {
-    return this.http.get<ThematicLink[]>(BASE_URL + "/node/" + id + "?_format=json")
+    return this.http.get<ThematicLinks>(BASE_URL + "/node/" + id + "?_format=json")
   }
 
   getPlaylists(id: string) {
