@@ -17,12 +17,10 @@ export class ThematicsComponent {
   ngOnInit(): void {
     this.uploadService.getThematics().subscribe((thematics) => {
       this.thematics = thematics
-      //console.log(this.thematics)
     })
 
     this.uploadService.getAllTags().subscribe((tags)=>{
       this.tags = tags
-      console.log("tags",this.tags)
     })
   }
 }
