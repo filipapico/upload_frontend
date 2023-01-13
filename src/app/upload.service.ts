@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Categories, Channels, Playlists, Thematic, Video} from "./interfaces";
+import {Categories, Channels, Playlists, Tags, Thematic, Video} from "./interfaces";
 
 const BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
 
@@ -52,4 +52,7 @@ export class UploadService {
     return this.http.get<Thematic[]>(BASE_URL + "/api/thematics")
   }
 
+  getTags(){
+    return this.http.get<Tags[]>(BASE_URL + "/api/thematics")
+  }
 }

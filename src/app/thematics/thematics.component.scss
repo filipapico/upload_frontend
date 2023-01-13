@@ -1,61 +1,79 @@
 .container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
 
-  .thematic-item {
-    padding: 10px;
-
-    .thematic-header {
+  .tags{
+    .tags-items {
       display: flex;
-      justify-content: center;
-      width: 260px;
+      flex-wrap: wrap;
 
-      .thematic-thumbnail {
+      .tags-item {
+        color: lightgrey;
+        padding: 4px 6px;
+        border: 1px solid lightgrey;
+        margin: 2px;
+        border-radius: 6px;
+      }
+    }
+  }
+
+  .thematics {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    .thematic-item {
+      padding: 10px;
+
+      .thematic-header {
         display: flex;
         justify-content: center;
-        width: 50px;
-        height: 50px;
-        margin: 6px;
+        width: 260px;
+
+        .thematic-thumbnail {
+          display: flex;
+          justify-content: center;
+          width: 50px;
+          height: 50px;
+          margin: 6px;
+
+          div {
+            display: block;
+            background-size: cover;
+            width: 100%;
+            border-radius: 50%;
+            padding-bottom: 57%;
+            background-position: center;
+          }
+        }
+
+        h5, p {
+          margin: 2px
+        }
+
+        p {
+          font-size: 12px;
+        }
+      }
+
+      .thematic-header-image {
+        width: 260px;
+        margin: 0 auto;
+
 
         div {
           display: block;
           background-size: cover;
           width: 100%;
-          border-radius: 50%;
+          border-radius: 12px;
           padding-bottom: 57%;
           background-position: center;
         }
+
       }
 
-      h5, p {
-        margin: 2px
-      }
-
-      p {
-        font-size: 12px;
-      }
-    }
-
-    .thematic-header-image {
-      width: 260px;
-      margin: 0 auto;
-
-
-      div {
-        display: block;
-        background-size: cover;
-        width: 100%;
+      /*.thematic-header-image img {
+        width: 200px;
         border-radius: 12px;
-        padding-bottom: 57%;
-        background-position: center;
-      }
-
+      }*/
     }
-
-    /*.thematic-header-image img {
-      width: 200px;
-      border-radius: 12px;
-    }*/
   }
 }

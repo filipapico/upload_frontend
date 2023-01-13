@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {UploadService} from "../upload.service";
-import {Thematic} from "../interfaces";
+import {Tags, Thematic} from "../interfaces";
 
 @Component({
   selector: 'app-thematics',
@@ -9,6 +9,7 @@ import {Thematic} from "../interfaces";
 })
 export class ThematicsComponent {
   thematics!: Thematic[];
+  tags!: Tags[]
 
   constructor(private uploadService: UploadService) {
   }
@@ -17,6 +18,10 @@ export class ThematicsComponent {
     this.uploadService.getThematics().subscribe((thematics) => {
       this.thematics = thematics
       //console.log(this.thematics)
+    })
+
+    this.uploadService.getTags().subscribe((tags)=>{
+      this.tags = tags
     })
   }
 }

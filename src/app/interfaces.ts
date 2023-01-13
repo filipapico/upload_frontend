@@ -74,4 +74,4 @@ interface Tags{
   name: string
 }
 
-export {Video, Categories, Channels, Thematic, Thematics, Playlist, Playlists};
+export {Video, Categories, Channels, Thematic, Thematics, Playlist, Playlists, Tags};
