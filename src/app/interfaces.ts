@@ -69,4 +69,9 @@ interface Playlists {
   tid: string
 }
 
+interface Tags{
+  tid: string
+  name: string
+}
+
 export {Video, Categories, Channels, Thematic, Thematics, Playlist, Playlists};
