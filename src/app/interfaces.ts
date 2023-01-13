@@ -31,6 +31,20 @@ interface Channels {
   body: string
 }
 
+interface Thematics {
+  nid: string
+  title: string
+  uid: string
+  field_thematic_thumbnail: string
+  field_thematic_header_image: string
+}
+
+//Maybe update to thematicsTags (used in other contexts?)
+interface Tags{
+  tid: string
+  name: string
+}
+
 interface Thematic {
   nid: string
   title: string
@@ -43,12 +57,13 @@ interface Thematic {
   field_thematic_links: string
 }
 
-interface Thematics {
-  nid: string
+interface ThematicLink {
+  uri: string
   title: string
-  uid: string
-  field_thematic_thumbnail: string
-  field_thematic_header_image: string
+}
+
+interface ThematicLinks {
+  field_thematic_links: ThematicLink[]
 }
 
 interface Playlist {
@@ -69,9 +84,4 @@ interface Playlists {
   tid: string
 }
 
-interface Tags{
-  tid: string
-  name: string
-}
-
-export {Video, Categories, Channels, Thematic, Thematics, Playlist, Playlists, Tags};
+export {Video, Categories, Channels, Thematics, Tags, Thematic, ThematicLink, Playlist, Playlists};
