@@ -4,6 +4,7 @@
   <div class="category" *ngFor="let category of categories" (click)="categorySelected(category.tid)">
     <p>{{category.name}}</p>
   </div>
+  <p (click)="categorySelected(id)">CLEAR</p>
 </div>
 
 <div class="container">

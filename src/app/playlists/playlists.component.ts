@@ -29,6 +29,7 @@ export class PlaylistsComponent implements OnInit {
   categorySelected(tid: any) {
     this.uploadService.getPlaylists(tid).subscribe((playlists) => {
       this.playlists = playlists;
+      console.log(tid)
     });
   }
 
