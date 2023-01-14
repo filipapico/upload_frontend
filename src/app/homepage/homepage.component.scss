@@ -1,4 +1,5 @@
 .wrapper {
+  display: flex;
 
   h2 {
     margin-left: 23px;
@@ -12,10 +13,9 @@
     border-radius: 10px;
   }
 
-  .container {
-    display: flex;
+  .latest-video-container {
 
-    .latest-video-container {
+    .latest-video {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
@@ -24,6 +24,7 @@
     .sidebar {
       display: flex;
       flex-direction: column;
+      width: 35%;
 
       .last-seen-container {
         background-color: #1C1C24;

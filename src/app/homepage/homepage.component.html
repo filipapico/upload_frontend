@@ -1,68 +1,70 @@
 <div class="wrapper">
-  <h2>Latest Videos</h2>
+  <div class="container" >
+    <h2>Latest Videos</h2>
 
-  <div class="pagination">
-   <div class="page-item">
-      <a class="page-link" (click)="pageSelected('Previous')">←</a>
+    <div class="pagination">
+      <div class="page-item">
+        <a class="page-link" (click)="pageSelected('Previous')">←</a>
+      </div>
+      <div class="page-number" *ngIf="pNum">
+        <a class="page-link" (click)="pageSelected(pNum)"> {{pNum}} </a>
+      </div>
+      <div class="page-item">
+        <a class="page-link" (click)="pageSelected('Next')">→</a>
+      </div>
     </div>
-    <div class="page-number" *ngIf="pNum">
-      <a class="page-link" (click)="pageSelected(pNum)"> {{pNum}} </a>
-    </div>
-    <div class="page-item">
-      <a class="page-link" (click)="pageSelected('Next')">→</a>
-    </div>
-  </div>
 
-  <div>
-    <input placeholder="Search" class="search">
-  </div>
+    <div>
+      <input placeholder="Search" class="search">
+    </div>
 
-  <div class="container">
     <div class="latest-video-container">
-      <app-contentcard *ngFor="let lv of latestVideos"
-                       [source]="lv.title"
-                       [title]="lv.name"
-                       [subtitle]="lv.created"
-                       [mid]="lv.mid"
-                       [field_media_tags]="lv.field_media_tags"
-                       [image]="lv.thumbnail__target_id"
-                       [logotype]="lv.field_logotype"
-                       [field_media_oembed_video]="lv.field_media_oembed_video"
-                       [routerLink]="['/video-detail', lv.mid]"
-      ></app-contentcard>
-    </div>
-
-    <div class="sidebar">
-      <app-suggestioncard *ngIf="thematics"
-                          [type]="['Thematics']"
-                          [title]=thematics[0].title
-                          [uid]=thematics[0].uid
-                          [field_thematic_header_image]=thematics[0].field_thematic_header_image
-                          [field_thematic_thumbnail]=thematics[0].field_thematic_thumbnail
-                          [routerLink]="['/thematics', thematics]"
-      ></app-suggestioncard>
-      <div class="last-seen-container">
-        <div class="card-info">
-          <h5>Last Seen</h5>
-          <p>SEE ALL</p>
-        </div>
-        <app-contentcard [title]="latestVideos[5].name"
-                         [subtitle]="latestVideos[5].created"
-                         [mid]="latestVideos[5].mid"
-                         [field_media_tags]="latestVideos[5].field_media_tags"
-                         [image]="latestVideos[5].thumbnail__target_id"
-                         [logotype]="latestVideos[5].field_logotype"
-                         [field_media_oembed_video]="latestVideos[5].field_media_oembed_video"
-        ></app-contentcard>
-        <app-contentcard [title]="latestVideos[6].name"
-                         [subtitle]="latestVideos[6].created"
-                         [mid]="latestVideos[6].mid"
-                         [field_media_tags]="latestVideos[6].field_media_tags"
-                         [image]="latestVideos[6].thumbnail__target_id"
-                         [logotype]="latestVideos[6].field_logotype"
-                         [field_media_oembed_video]="latestVideos[6].field_media_oembed_video"
+      <div class="latest-video">
+        <app-contentcard *ngFor="let lv of latestVideos"
+                         [source]="lv.title"
+                         [title]="lv.name"
+                         [subtitle]="lv.created"
+                         [mid]="lv.mid"
+                         [field_media_tags]="lv.field_media_tags"
+                         [image]="lv.thumbnail__target_id"
+                         [logotype]="lv.field_logotype"
+                         [field_media_oembed_video]="lv.field_media_oembed_video"
+                         [routerLink]="['/video-detail', lv.mid]"
         ></app-contentcard>
       </div>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <app-suggestioncard *ngIf="thematics"
+                        [type]="['Thematics']"
+                        [title]=thematics[0].title
+                        [uid]=thematics[0].uid
+                        [field_thematic_header_image]=thematics[0].field_thematic_header_image
+                        [field_thematic_thumbnail]=thematics[0].field_thematic_thumbnail
+                        [routerLink]="['/thematics', thematics]"
+    ></app-suggestioncard>
+    <div class="last-seen-container">
+      <div class="card-info">
+        <h5>Last Seen</h5>
+        <p>SEE ALL</p>
+      </div>
+      <app-contentcard [title]="latestVideos[5].name"
+                       [subtitle]="latestVideos[5].created"
+                       [mid]="latestVideos[5].mid"
+                       [field_media_tags]="latestVideos[5].field_media_tags"
+                       [image]="latestVideos[5].thumbnail__target_id"
+                       [logotype]="latestVideos[5].field_logotype"
+                       [field_media_oembed_video]="latestVideos[5].field_media_oembed_video"
+      ></app-contentcard>
+      <app-contentcard [title]="latestVideos[6].name"
+                       [subtitle]="latestVideos[6].created"
+                       [mid]="latestVideos[6].mid"
+                       [field_media_tags]="latestVideos[6].field_media_tags"
+                       [image]="latestVideos[6].thumbnail__target_id"
+                       [logotype]="latestVideos[6].field_logotype"
+                       [field_media_oembed_video]="latestVideos[6].field_media_oembed_video"
+      ></app-contentcard>
     </div>
   </div>
 </div>
