@@ -2,6 +2,7 @@
   background-color: #1C1C24;
   border-radius: 15px;
   margin: 23px;
+  justify-content: center;
 
   .card-info {
     display: flex;
@@ -39,10 +40,11 @@
 
   .card-image {
     img {
-      width: 300px;
+      width: 320px;
+      margin: 20px;
       border-radius: 20px;
-      margin-left: 40px;
-      margin-top: 10px;
+      justify-content: center;
+
     }
   }
 
