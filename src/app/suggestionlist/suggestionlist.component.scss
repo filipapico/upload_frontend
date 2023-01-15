@@ -1,18 +1,7 @@
 .container {
-  background-color: #292932;
-  padding: 6px;
-  margin: 10px;
-  border-radius: 12px;
-  width: 310px;
-
-  h4 {
-    padding-bottom: 10px;
-    border-bottom: 1px solid darkgray;
-  }
 
   .suggestion-list {
     display: flex;
-    //justify-content: center;
 
     div.suggestion-thumbnail {
       display: flex;
@@ -31,8 +20,9 @@
       }
     }
 
-    p{
-      font-size: smaller;
+    .suggestion-element {
+      display: flex;
+      align-items: center;
     }
   }
 }
