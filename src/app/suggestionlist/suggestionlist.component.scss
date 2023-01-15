@@ -1,17 +1,38 @@
 .container {
   background-color: #292932;
   padding: 6px;
+  margin: 10px;
   border-radius: 12px;
-  width: 100%;
+  width: 310px;
 
   h4 {
     padding-bottom: 10px;
     border-bottom: 1px solid darkgray;
   }
 
-  .suggestion-list p {
-  }
+  .suggestion-list {
+    display: flex;
+    //justify-content: center;
 
-  .suggestion-footer {
+    div.suggestion-thumbnail {
+      display: flex;
+      justify-content: center;
+      width: 50px;
+      height: 50px;
+      margin: 6px;
+
+      div {
+        display: block;
+        background-size: cover;
+        width: 100%;
+        border-radius: 50%;
+        padding-bottom: 57%;
+        background-position: center;
+      }
+    }
+
+    p{
+      font-size: smaller;
+    }
   }
 }
