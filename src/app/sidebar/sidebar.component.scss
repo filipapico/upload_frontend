@@ -3,6 +3,9 @@
   margin: auto;
   padding: 10px;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  background-color: cornflowerblue;
 
   img{
     width: 160px;
