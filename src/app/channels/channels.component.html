@@ -13,7 +13,7 @@
       <app-contentcard type="channels" *ngFor="let channel of channels"
                        [source]="channel.field_category"
                        [title]="channel.title"
-                       [subtitle]="channel.field_author"
+                       [subtitle]="channel.uid"
                        [mid]="channel.nid"
                        [image]="channel.field_cover_photo"
                        [logotype]="channel.field_logotype"
