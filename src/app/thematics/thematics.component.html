@@ -37,7 +37,10 @@
       </div>
     </div>
     <div class="thematics-suggestion">
-      <app-suggestionlist></app-suggestionlist>
+      <app-suggestionlist *ngFor="let t of thematics"
+                          [listThumbnail]="t.field_thematic_thumbnail"
+                          [listElement]="t.title">
+      </app-suggestionlist>
     </div>
   </div>
 </div>
