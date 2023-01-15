@@ -21,6 +21,7 @@ import {ThematicComponent} from "./thematic/thematic.component";
 import { CommentsComponent } from './comments/comments.component';
 import { SuggestioncardComponent } from './suggestioncard/suggestioncard.component';
 import { SuggestionlistComponent } from './suggestionlist/suggestionlist.component';
+import { UsersloginComponent } from './userslogin/userslogin.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { SuggestionlistComponent } from './suggestionlist/suggestionlist.compone
     ContentcardComponent,
     CommentsComponent,
     SuggestioncardComponent,
-    SuggestionlistComponent
+    SuggestionlistComponent,
+    UsersloginComponent
   ],
   imports: [
     BrowserModule,
