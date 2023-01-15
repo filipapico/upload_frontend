@@ -8,14 +8,26 @@
 </div>
 
 <div class="container">
-  <div class="favourites-videos">
+
+  <!--  <div class="favourites-videos">
     <h4>Favourite Videos</h4>
     <p>108 liked videos</p>
   </div>
 
-  <div class="playlist-container" *ngFor="let playlist of playlists" [routerLink]="['/playlist', playlist.nid]">
+<div class="playlist-container" *ngFor="let playlist of playlists" [routerLink]="['/playlist', playlist.nid]">
     <img src="https://dev-project-upskill2-grupo4v2.pantheonsite.io{{playlist.field_image}}">
     <p>{{playlist.title}}</p>
     <img class="logo" src="../../assets/playlist-icon.png">
+  </div>-->
+
+  <div class="playlist-container">
+    <app-contentcard *ngFor="let playlist of playlists" class="playlist-container"
+                     [title]="playlist.title"
+                     [source]="playlist.field_playlist_category"
+                     [logotype]="playlist.user_picture"
+                     [image]="playlist.user_picture"
+                     [routerLink]="['/playlist', playlist.nid]"
+    ></app-contentcard>
   </div>
+
 </div>
