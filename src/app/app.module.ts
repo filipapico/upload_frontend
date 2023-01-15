@@ -22,6 +22,7 @@ import { CommentsComponent } from './comments/comments.component';
 import { SuggestioncardComponent } from './suggestioncard/suggestioncard.component';
 import { SuggestionlistComponent } from './suggestionlist/suggestionlist.component';
 import { UsersloginComponent } from './userslogin/userslogin.component';
+import { SidecardComponent } from './sidecard/sidecard.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { UsersloginComponent } from './userslogin/userslogin.component';
     CommentsComponent,
     SuggestioncardComponent,
     SuggestionlistComponent,
-    UsersloginComponent
+    UsersloginComponent,
+    SidecardComponent
   ],
   imports: [
     BrowserModule,
