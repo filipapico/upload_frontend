@@ -73,14 +73,17 @@ interface Playlist {
   title: string
   video_url: string
   nid: string
+  uid: string
+  user_picture: string
 }
 
 interface Playlists {
   title: string
   nid: string
-  field_image: string
   field_playlist_category: string
   tid: string
+  name: string
+  user_picture: string
 }
 
 export {Video, Categories, Channels, Thematics, Tags, Thematic, ThematicLink, ThematicLinks, Playlist, Playlists};
