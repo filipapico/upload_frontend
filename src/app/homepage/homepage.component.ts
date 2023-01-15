@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {UploadService} from "../upload.service";
 import {Channels, Thematic, Video} from "../interfaces";
+import {faAngleRight, faAngleLeft} from "@fortawesome/free-solid-svg-icons";
+
 
 @Component({
   selector: 'app-homepage',
@@ -12,6 +14,8 @@ export class HomepageComponent implements OnInit {
   thematics?: Thematic[];
   channels?: Channels[];
   pNum: any = 0;
+  faAngleRight = faAngleRight;
+  faAngleLeft = faAngleLeft;
 
 
   constructor(private uploadService: UploadService) {
