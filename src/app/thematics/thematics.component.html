@@ -14,23 +14,30 @@
     </div>
   </div>
   <!--THEMATICS-->
-  <h4>All thematics</h4>
-  <div class="thematics" *ngIf="thematics">
-    <div *ngFor="let t of thematics" class="thematic-item" [routerLink]="['/thematic', t.nid]">
-      <div class="thematic-header">
-        <div class="thematic-thumbnail">
-          <div
-            style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_thumbnail}}');"></div>
-        </div>
-        <div>
-          <h5>{{t.title}}</h5>
-          <p>{{t.uid}}</p>
+  <div class="main-content">
+    <div class="thematics-all">
+      <h4>All thematics</h4>
+      <div class="thematics" *ngIf="thematics">
+        <div *ngFor="let t of thematics" class="thematic-item" [routerLink]="['/thematic', t.nid]">
+          <div class="thematic-header">
+            <div class="thematic-thumbnail">
+              <div
+                style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_thumbnail}}');"></div>
+            </div>
+            <div>
+              <h5>{{t.title}}</h5>
+              <p>{{t.uid}}</p>
+            </div>
+          </div>
+          <div class="thematic-header-image">
+            <div
+              style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_header_image}}');"></div>
+          </div>
         </div>
       </div>
-      <div class="thematic-header-image">
-        <div
-          style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_header_image}}');"></div>
-      </div>
+    </div>
+    <div class="thematics-suggestion">
+      <app-suggestionlist></app-suggestionlist>
     </div>
   </div>
 </div>
