@@ -1,3 +1,14 @@
+/*interface Comment {
+  entity_id: string,
+  entity_type: string,
+  comment_type: string,
+  field_name: string,
+  name: string,
+  mail: string,
+  subject: string,
+  comment_body: string
+}*/
+
 interface Video {
   name: string
   created: string
@@ -23,12 +34,12 @@ interface Categories {
 
 interface Channels {
   title: string
-  field_author: string
   nid: string
   field_logotype: string
   field_cover_photo: string
   field_category: string
   body: string
+  uid: string
 }
 
 interface Thematics {
@@ -39,7 +50,7 @@ interface Thematics {
   field_thematic_header_image: string
 }
 
-interface Tags{
+interface Tags {
   tid: string
   name: string
 }
