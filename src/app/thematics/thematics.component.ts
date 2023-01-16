@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {UploadService} from "../upload.service";
-import {Tags, Thematic} from "../interfaces";
+import {Thematics, Tags} from "../interfaces";
 
 @Component({
   selector: 'app-thematics',
@@ -8,7 +8,7 @@ import {Tags, Thematic} from "../interfaces";
   styleUrls: ['./thematics.component.scss']
 })
 export class ThematicsComponent {
-  thematics!: Thematic[];
+  thematics!: Thematics[]
   tags!: Tags[]
 
   constructor(private uploadService: UploadService) {
@@ -17,10 +17,12 @@ export class ThematicsComponent {
   ngOnInit(): void {
     this.uploadService.getThematics().subscribe((thematics) => {
       this.thematics = thematics
+      console.log(this.thematics)
     })
 
-    this.uploadService.getAllTags().subscribe((tags)=>{
+    this.uploadService.getAllTags().subscribe((tags) => {
       this.tags = tags
+      console.log(this.tags)
     })
   }
 }

@@ -7,7 +7,7 @@
     <div class="tags-items">
       <div class="tags-item">ALL</div>
       <!--add ngFor-->
-      <div class="tags-item" *ngFor="let t of tags">
+      <div class="tags-item" *ngFor="let t of tags.slice(0,5)">
         <div>{{t.name}}</div>
       </div>
       <div class="tags-item">➡</div>
@@ -17,7 +17,7 @@
   <div class="main-content">
     <div class="thematics-all">
       <h4>All thematics</h4>
-      <div class="thematics" *ngIf="thematics">
+      <div class="thematics">
         <div *ngFor="let t of thematics" class="thematic-item" [routerLink]="['/thematic', t.nid]">
           <div class="thematic-header">
             <div class="thematic-thumbnail">
