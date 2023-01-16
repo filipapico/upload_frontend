@@ -21,7 +21,6 @@ export class ThematicsComponent {
 
     this.uploadService.getAllTags().subscribe((tags) => {
       this.tags = tags
-      //console.log("tidinit",this.tid)
     })
   }
 
