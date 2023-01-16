@@ -19,8 +19,12 @@ export class UploadService {
 
   postComments(url: string, body: {}, headers: any) {
     return this.http.post(url, body, headers).subscribe((data) => {
-      // console.log(data);
+       console.log(data);
     });
+  }
+
+  getComments(type: string){
+    return this.http.get<Comment[]>(BASE_URL + "/api/comments/" + type);
   }
 
 
@@ -38,7 +42,7 @@ export class UploadService {
 
   //
   // QUESTION Maybe update all ids to type string? Since our APIs always return strings...
-  getChannelVideos(id: number) {
+  getChannelVideos(id: string) {
     return this.http.get<Video[]>(BASE_URL + "/api/channel/" + id);
   }
 
