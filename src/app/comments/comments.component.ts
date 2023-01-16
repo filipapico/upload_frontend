@@ -44,14 +44,14 @@ export class CommentsComponent {
   tokenValue?: any;
 
   ngOnInit(): void {
-    this.uploadService.getToken().subscribe((token) => {
+    /*this.uploadService.getToken().subscribe((token) => {
       this.tokenValue = token;
       console.log(this.tokenValue);
-    })
+    })*/
   }
 
   customHeaders = new HttpHeaders({
-    'X-CSRF-Token': JSON.stringify(this.tokenValue),
+    // 'X-CSRF-Token': JSON.stringify(this.tokenValue),
     'Accept': 'application/vnd.api+json'
   });
 
@@ -63,11 +63,11 @@ export class CommentsComponent {
       "entity_type": [{"value": "node"}],
       "comment_type": [{"target_id": "channel_comments"}],
       "field_name": [{"value": "field_comment"}],
-      "field_comment_name": [{"value": [comment.username]}],
-      "field_email": [{"value": [comment.email]}],
+      "field_comment_name": [{"value": comment.username}],
+      "field_email": [{"value": comment.email}],
       "subject": [{"value": ""}],
       "comment_body": [
-      {"value": [comment.comment], "format": "plain_text"}
+      {"value": comment.comment, "format": "plain_text"}
     ]
     }
     console.log(myComment);
