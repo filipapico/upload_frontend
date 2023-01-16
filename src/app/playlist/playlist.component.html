@@ -6,7 +6,6 @@
     <app-comments></app-comments>
   </div>
 
-
   <div *ngIf="playlist" class="videos-list" >
     <h4>{{indexVideo + 1}}/{{playlist.length}}</h4>
     <div *ngFor="let video of playlist" (click)="getVideo(playlist.indexOf(video))">

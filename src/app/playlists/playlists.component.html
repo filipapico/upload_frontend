@@ -1,25 +1,13 @@
-<h2>Playlists</h2>
+<h2 (click)="categorySelected(id)">Playlists</h2>
 
 <div class="category-container">
   <div class="category" *ngFor="let category of categories" (click)="categorySelected(category.tid)">
     <p>{{category.name}}</p>
   </div>
-    <p (click)="categorySelected(id)">ALL</p>
+  <p (click)="categorySelected(id)" class="category">ALL</p>
 </div>
 
 <div class="container">
-
-  <!--  <div class="favourites-videos">
-    <h4>Favourite Videos</h4>
-    <p>108 liked videos</p>
-  </div>
-
-<div class="playlist-container" *ngFor="let playlist of playlists" [routerLink]="['/playlist', playlist.nid]">
-    <img src="https://dev-project-upskill2-grupo4v2.pantheonsite.io{{playlist.field_image}}">
-    <p>{{playlist.title}}</p>
-    <img class="logo" src="../../assets/playlist-icon.png">
-  </div>-->
-
   <div class="playlist-container" *ngFor="let playlist of playlists">
     <app-contentcard
                      [title]="playlist.title"
@@ -33,5 +21,4 @@
       <img src="assets/bookmark-playlist-big.png">
     </div>
   </div>
-
 </div>

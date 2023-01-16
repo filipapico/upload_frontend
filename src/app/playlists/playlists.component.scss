@@ -16,6 +16,7 @@
 
   .playlist-container {
     position: relative;
+    cursor: pointer;
   }
 
   .playlist-icon {
@@ -34,6 +35,10 @@ p {
   color: #FFFFFF;
   margin: 10px;
   text-align: center;
+}
+
+h2 {
+  cursor: pointer;
 }
 
 
