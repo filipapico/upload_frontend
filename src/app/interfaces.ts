@@ -87,6 +87,7 @@ interface Playlists {
   tid: string
   name: string
   user_picture: string
+  thumbnail__target_id: string
 }
 
 export {Video, Categories, Channels, Tags, Thematic, ThematicLink, ThematicLinks, Playlist, Playlists};
