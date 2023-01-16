@@ -24,9 +24,9 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
     this.getVideos();
 
-      this.uploadService.getThematics().subscribe((thematics) => {
+      /*this.uploadService.getThematics().subscribe((thematics) => {
       this.thematics = thematics;
-    })
+    })*/
   }
 
   pageSelected(selected: any) {
@@ -42,9 +42,9 @@ export class HomepageComponent implements OnInit {
     this.uploadService.getLatestVideos(this.pNum).subscribe((latestVideos) => {
       this.latestVideos = latestVideos;
     })
-    this.uploadService.getThematics().subscribe((thematics) => {
+    /*this.uploadService.getThematics().subscribe((thematics) => {
       this.thematics = thematics
-    })
+    })*/
     this.uploadService.getChannels().subscribe((channels) => {
         this.channels = channels;
       }
