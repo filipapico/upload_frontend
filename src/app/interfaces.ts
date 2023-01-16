@@ -1,13 +1,16 @@
-/*interface Comment {
+interface Comment {
   entity_id: string,
   entity_type: string,
   comment_type: string,
   field_name: string,
-  name: string,
-  mail: string,
+  field_comment_name: string
+  field_email: string,
   subject: string,
   comment_body: string
-}*/
+  nid: string
+  mid: string
+  created: string
+}
 
 interface Video {
   name: string
@@ -106,4 +109,4 @@ interface Playlists {
   created: string
 }
 
-export {Video, Categories, Channels, Thematics, Tags, Thematic, ThematicLink, ThematicLinks, Playlist, Playlists};
+export {Video, Categories, Channels, Comment, Thematics, Tags, Thematic, ThematicLink, ThematicLinks, Playlist, Playlists};
