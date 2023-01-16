@@ -59,7 +59,7 @@ export class UploadService {
   }
 
   getThematicsByTag(id: string) {
-    return this.http.get<Thematics[]>(BASE_URL + "/api/thematics" + id)
+    return this.http.get<Thematics[]>(BASE_URL + "/api/thematics/" + id)
   }
 
   getThematicDetails(id: string) {
