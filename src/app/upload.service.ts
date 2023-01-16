@@ -8,9 +8,21 @@ const BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
   providedIn: 'root'
 })
 export class UploadService {
-
   constructor(public http: HttpClient) {
   }
+
+  getToken() {
+    let token = this.http.get(BASE_URL + "/session/token");
+    console.log(typeof(token));
+    return token;
+  }
+
+  postComments(url: string, body: {}, headers: any) {
+    return this.http.post(url, body, headers).subscribe((data) => {
+      // console.log(data);
+    });
+  }
+
 
   getCategories() {
     return this.http.get<Categories[]>(BASE_URL + "/api/categories");
@@ -61,5 +73,6 @@ export class UploadService {
   getPlaylist(id: string) {
     return this.http.get<Video[]>(BASE_URL + "/api/playlist/" + id);
   }
+
 
 }
