@@ -21,13 +21,14 @@
   </div>-->
 
   <div class="playlist-container">
-    <app-contentcard *ngFor="let playlist of playlists" class="playlist-container"
+   <app-contentcard *ngFor="let playlist of playlists" class="playlist-container"
                      [title]="playlist.title"
-                     [source]="playlist.field_playlist_category"
+                     [source]="playlist.name"
                      [logotype]="playlist.user_picture"
-                     [image]="playlist.user_picture"
+                     [image]="playlist.thumbnail__target_id"
                      [routerLink]="['/playlist', playlist.nid]"
     ></app-contentcard>
+
   </div>
 
 </div>

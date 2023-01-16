@@ -10,22 +10,20 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class PlaylistsComponent implements OnInit {
   playlists?: Playlists[] = [];
-  playlist?: Playlist[] = [];
   categories?: Categories[];
   id?: any = ""
 
 
+
   constructor(private route: ActivatedRoute, private uploadService: UploadService,) {
-    // this.id = route.snapshot.params['nid']
+    //this.id = route.snapshot.params['nid']
   }
 
   ngOnInit(): void {
     this.uploadService.getPlaylists(this.id).subscribe((playlists) => {
       this.playlists = playlists;
     });
-    this.uploadService.getPlaylist(this.id).subscribe((playlist: any) => {
-      this.playlist = playlist;
-    });
+
     this.uploadService.getCategories().subscribe((categories) => {
       this.categories = categories;
     })
@@ -37,6 +35,5 @@ export class PlaylistsComponent implements OnInit {
       console.log(tid)
     });
   }
-
 }
 
