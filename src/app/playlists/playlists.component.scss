@@ -11,10 +11,22 @@
 }
 
 .container {
+  display: flex;
+  flex-wrap: wrap;
+
   .playlist-container {
-    display: flex;
-    flex-wrap: wrap;
+    position: relative;
   }
+
+  .playlist-icon {
+    img {
+      position: absolute;
+      width: 50px;
+      top: 80px;
+      left: 30px;
+    }
+  }
+
 }
 
 

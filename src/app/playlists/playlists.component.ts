@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UploadService} from "../upload.service";
-import {Categories, Playlist, Playlists} from "../interfaces";
+import {Categories, Playlists} from "../interfaces";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
@@ -14,9 +14,7 @@ export class PlaylistsComponent implements OnInit {
   id?: any = ""
 
 
-
   constructor(private route: ActivatedRoute, private uploadService: UploadService,) {
-    //this.id = route.snapshot.params['nid']
   }
 
   ngOnInit(): void {

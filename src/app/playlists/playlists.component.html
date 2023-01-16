@@ -20,15 +20,18 @@
     <img class="logo" src="../../assets/playlist-icon.png">
   </div>-->
 
-  <div class="playlist-container">
-   <app-contentcard *ngFor="let playlist of playlists" class="playlist-container"
+  <div class="playlist-container" *ngFor="let playlist of playlists">
+    <app-contentcard
                      [title]="playlist.title"
                      [source]="playlist.name"
                      [logotype]="playlist.user_picture"
                      [image]="playlist.thumbnail__target_id"
+                     [subtitle]="playlist.created"
                      [routerLink]="['/playlist', playlist.nid]"
-    ></app-contentcard>
-
+   ></app-contentcard>
+    <div class="playlist-icon">
+      <img src="assets/bookmark-playlist-big.png">
+    </div>
   </div>
 
 </div>
