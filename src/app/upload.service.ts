@@ -13,7 +13,7 @@ export class UploadService {
 
   getToken() {
     let token = this.http.get(BASE_URL + "/session/token");
-    console.log(typeof(token));
+    console.log(typeof (token));
     return token;
   }
 
@@ -51,11 +51,15 @@ export class UploadService {
   }
 
   getThematics() {
-    return this.http.get<Thematics[]>(BASE_URL + "/api/thematic")
+    return this.http.get<Thematics[]>(BASE_URL + "/api/thematics")
   }
 
   getAllTags() {
     return this.http.get<Tags[]>(BASE_URL + "/api/tags")
+  }
+
+  getThematicsByTag(id: string) {
+    return this.http.get<Thematics[]>(BASE_URL + "/api/thematics" + id)
   }
 
   getThematicDetails(id: string) {
@@ -73,6 +77,5 @@ export class UploadService {
   getPlaylist(id: string) {
     return this.http.get<Video[]>(BASE_URL + "/api/playlist/" + id);
   }
-
 
 }
