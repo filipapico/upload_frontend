@@ -1,7 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {UploadService} from "../upload.service";
-import {ActivatedRoute} from "@angular/router";
-import {DomSanitizer} from "@angular/platform-browser";
 import {HttpHeaders} from "@angular/common/http";
 
 
@@ -11,34 +9,27 @@ import {HttpHeaders} from "@angular/common/http";
   styleUrls: ['./comments.component.scss']
 })
 export class CommentsComponent {
+  @Input() gravatar?: string;
+  @Input() username!: string;
+  @Input() created!: string;
+  @Input() comment_body!: string;
 
   constructor(public uploadService: UploadService) {
   }
 
-/*    testComment1 = {
-      "entity_id": [{"target_id": 19}],
-      "entity_type": [{"value": "node"}],
-      "comment_type": [{"target_id": "channel_comments"}],
-      "field_name": [{"value": "field_comment"}],
-      "field_comment_name": [{"value": "Agathe"}],
-      "field_email": [{"value": "agathe@gmail.com"}],
-      "subject": [{"value": "Hello World"}],
+  /*let mediaCommentStructure = {
+      "entity_id": [{"target_id": 55}],
+      "entity_type": [{"value": "media"}],
+      "comment_type": [{"target_id": "media_comments"}],
+      "field_name": [{"value": "field_comments"}],
+      "field_media_comment_name": [{"value": "Agathe"}],
+      "field_media_email": [{"value": "agathe@gmail.com"}],
+      "subject": [{"value": "Media comment"}],
       "comment_body": [
-        {"value": "<p>See you later!</p>", "format": "plain_text"}
+        {"value": "Trying media comment", "format": "plain_text"}
       ]
     }*/
 
-
-  /*  testComment2 = {
-    entity_id: [{"target_id": 19}],
-    entity_type: [{"value": "node"}],
-    comment_type: [{"target_id": "channel_comments"}],
-    field_name: [{"value": "field_comment"}],
-    name: "",
-    mail: "",
-    subject: "",
-    comment_body: ""
-  }*/
 
   commentUrl = 'https://dev-project-upskill2-grupo4v2.pantheonsite.io/comment';
   tokenValue?: any;
@@ -58,7 +49,7 @@ export class CommentsComponent {
 
   onCommentSubmit(comment: { username: string, email: string, comment: string }) {
 
-   let myComment = {
+   let channelComment = {
       "entity_id": [{"target_id": 19}],
       "entity_type": [{"value": "node"}],
       "comment_type": [{"target_id": "channel_comments"}],
@@ -70,8 +61,7 @@ export class CommentsComponent {
       {"value": comment.comment, "format": "plain_text"}
     ]
     }
-    console.log(myComment);
-    this.uploadService.postComments(this.commentUrl, myComment, this.customHeaders);
+    this.uploadService.postComments(this.commentUrl, channelComment, this.customHeaders);
   }
 
 }
