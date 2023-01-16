@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UploadService} from "../upload.service";
-import {Channels, Thematic, Video} from "../interfaces";
+import {Channels, Thematic, Thematics, Video} from "../interfaces";
 import {faAngleRight, faAngleLeft} from "@fortawesome/free-solid-svg-icons";
 
 
@@ -11,7 +11,7 @@ import {faAngleRight, faAngleLeft} from "@fortawesome/free-solid-svg-icons";
 })
 export class HomepageComponent implements OnInit {
   latestVideos: Video[] = [];
-  thematics?: Thematic[];
+  thematics?: Thematics[];
   channels?: Channels[];
   pNum: any = 0;
   faAngleRight = faAngleRight;
@@ -24,9 +24,9 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
     this.getVideos();
 
-      /*this.uploadService.getThematics().subscribe((thematics) => {
+      this.uploadService.getThematics().subscribe((thematics) => {
       this.thematics = thematics;
-    })*/
+    })
   }
 
   pageSelected(selected: any) {
@@ -42,9 +42,9 @@ export class HomepageComponent implements OnInit {
     this.uploadService.getLatestVideos(this.pNum).subscribe((latestVideos) => {
       this.latestVideos = latestVideos;
     })
-    /*this.uploadService.getThematics().subscribe((thematics) => {
+    this.uploadService.getThematics().subscribe((thematics) => {
       this.thematics = thematics
-    })*/
+    })
     this.uploadService.getChannels().subscribe((channels) => {
         this.channels = channels;
       }
