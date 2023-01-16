@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
-import {Thematic, ThematicLink} from "../interfaces";
+import {Thematic, ThematicLink, Video} from "../interfaces";
 import {UploadService} from "../upload.service";
 
 @Component({
@@ -10,24 +10,37 @@ import {UploadService} from "../upload.service";
 })
 
 export class ThematicComponent {
-  id!: string
-  thematic!: Thematic[]
+  id_thematic!: string
+  thematicDetails!: Thematic[]
   thematicLinks!: ThematicLink[]
+  thematicVideos!: Video[]
+  id_tag!: string
 
   constructor(private route: ActivatedRoute, private uploadService: UploadService) {
-    this.id = route.snapshot.params['nid']
+    this.id_thematic = route.snapshot.params['nid']
+    //this.id_tag =
   }
 
   ngOnInit(): void {
-    this.uploadService.getThematicDetails(this.id).subscribe((thematic) => {
-      this.thematic = thematic
+    this.uploadService.getThematicDetails(this.id_thematic).subscribe((thematicDetails) => {
+      this.thematicDetails = thematicDetails
+      console.log("id them", this.id_thematic)
+      console.log("id tag", this.id_tag)
       //console.log("this thematic details", this.thematic)
     })
 
-    this.uploadService.getThematicLinks(this.id).subscribe((thematicLinks) => {
+    this.uploadService.getThematicLinks(this.id_thematic).subscribe((thematicLinks) => {
       this.thematicLinks = thematicLinks.field_thematic_links
     })
 
+    this.uploadService.getVideosByTag("5").subscribe((thematicVideos) => {
+      this.thematicVideos = thematicVideos
+    })
   }
 
+  getVideos(id_tag: string) {
+    this.uploadService.getVideosByTag(id_tag).subscribe((thematicVideos) => {
+      this.thematicVideos = thematicVideos
+    })
+  }
 }

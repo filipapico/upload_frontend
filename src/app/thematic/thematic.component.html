@@ -3,45 +3,42 @@
     <!--HEADER IMAGE-->
     <div class="thematic-header-image">
       <div
-        style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{thematic[0].field_thematic_header_image}}');"></div>
+        style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{thematicDetails[0].field_thematic_header_image}}');"></div>
     </div>
     <!--THUMBNAIL-->
     <div class="thematic-thumbnail">
       <div
-        style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{thematic[0].field_thematic_thumbnail}}');"></div>
+        style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{thematicDetails[0].field_thematic_thumbnail}}');"></div>
     </div>
-    <h1>{{thematic[0].title}}</h1>
+    <h1>{{thematicDetails[0].title}}</h1>
     <!--TEASER-->
-    <div class="thematic-teaser">{{thematic[0].field_thematic_teaser}}</div>
+    <div class="thematic-teaser">{{thematicDetails[0].field_thematic_teaser}}</div>
   </div>
   <div class="thematic-body">
     <div class="thematic-main">
       <!--BODY-->
-      <div>{{thematic[0].body}}</div>
+      <div>{{thematicDetails[0].body}}</div>
 
-      <!--TESTING LINKS - Sanitizing needed-->
+      <!--LINKS-->
       <h4>Related links</h4>
       <div class="thematic-links">
         <div *ngFor="let t of thematicLinks">
           <a [href]=t.uri>{{t.title}}</a>
         </div>
       </div>
-      <!--<div class="thematic-links">
-        <div *ngFor="let t of thematic">
-          <a [href]=t.field_thematic_links>{{t.field_thematic_links}}</a>
-        </div>
-      </div>-->
       <h4>Thematic videos</h4>
-      <div class="thematic-videos">
-        <p>...TO BE ADDED...</p>
-        <!--NEED TO ADD VIDEOS using tag id?!? + Sanitizing needed-->
-        <!--<app-contentcard *ngFor="let t of thematic"
-                         [field_media_oembed_video]="t.field_media_oembed_video_1">
-        </app-contentcard>-->
+      <div class="thematic-videos" *ngIf="thematicVideos">
+        <app-contentcard *ngFor="let tv of thematicVideos"
+                         [image]="tv.field_cover_photo"
+                         [title]="tv.title"
+                         [subtitle]="tv.name"
+                         [field_media_oembed_video]="tv.field_media_oembed_video"
+                         [logotype]="tv.field_logotype"
+
+        ></app-contentcard>
       </div>
     </div>
-
-<!--    SUGGESTION LIST-->
+    <!--    SUGGESTION LIST-->
     <app-suggestionlist></app-suggestionlist>
     <!--<div class="thematic-lateral">
       <h4>Suggested thematics</h4>
@@ -53,23 +50,3 @@
 
   </div>
 </div>
-
-
-<!--SUGGESTED THEMATICS - TO BE DONE-->
-<!--<div class="thematic-header">
-  <div>VER TODAS</div>
-</div>
-<div>
-  <div>
-    THUMBNAIL TEMÁTICA
-  </div>
-  <div>
-    TITULO TEMÁTICA
-  </div>
-  <div>
-    NOME CRIADOR DA TEMÁTICA
-  </div>
-  <div>
-    IMAGEM HEADER TEMÁTICA
-  </div>
-</div>-->
