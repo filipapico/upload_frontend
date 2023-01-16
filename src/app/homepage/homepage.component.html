@@ -20,17 +20,17 @@
 
     <div class="latest-video-container">
       <div class="latest-video">
-        <app-contentcard *ngFor="let lv of latestVideos"
-                         [source]="lv.title"
-                         [title]="lv.name"
-                         [subtitle]="lv.created"
-                         [mid]="lv.mid"
-                         [field_media_tags]="lv.field_media_tags"
-                         [image]="lv.thumbnail__target_id"
-                         [logotype]="lv.field_logotype"
-                         [field_media_oembed_video]="lv.field_media_oembed_video"
-                         [routerLink]="['/video-detail', lv.mid]"
-        ></app-contentcard>
+                  <app-contentcard *ngFor="let lv of latestVideos"
+                                   [source]="lv.title"
+                                   [title]="lv.name"
+                                   [subtitle]="lv.created"
+                                   [mid]="lv.mid"
+                                   [field_media_tags]="lv.field_media_tags"
+                                   [image]="lv.thumbnail__target_id"
+                                   [logotype]="lv.field_logotype"
+                                   [field_media_oembed_video]="lv.field_media_oembed_video"
+                                   [routerLink]="['/video-detail', lv.mid]"
+                  ></app-contentcard>
       </div>
     </div>
   </div>

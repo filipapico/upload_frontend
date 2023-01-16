@@ -3,7 +3,7 @@
   width: 100%;
 
   .container {
-    width: 65%;
+    width: 70%;
     h2 {
       margin-left: 23px;
       margin-bottom: 0px;
@@ -21,6 +21,7 @@
       margin-top: 10px;
       height: 30px;
       border-radius: 10px;
+      position: center;
     }
 
     .latest-video-container {
@@ -33,7 +34,7 @@
 
 
     .sidebar {
-      width: 35%;
+      width: 30%;
 
       display: flex;
       flex-direction: column;
