@@ -5,7 +5,7 @@
     </h1>
     <div class="details">
       <h5>
-        #{{video.field_media_tags}}
+        {{getHashtag(video.field_media_tags)}}
       </h5>
       <span class="heart-icon">
       <fa-icon [icon]="faHeart"></fa-icon>
@@ -19,7 +19,7 @@
     </div>
 
     <div class="channel-details">
-      <div class="channel-logotype"
+      <div *ngIf="video.field_logotype" class="channel-logotype"
            style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{video.field_logotype}}');">
       </div>
       <div>
