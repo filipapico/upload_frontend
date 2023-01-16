@@ -17,6 +17,7 @@
 
   .main-content {
     display: flex;
+    flex-wrap: wrap;
     padding: 12px;
 
     .thematics-all {
@@ -32,7 +33,6 @@
 
           .thematic-header {
             display: flex;
-            width: 260px;
 
             .thematic-thumbnail {
               display: flex;
@@ -61,7 +61,7 @@
           }
 
           .thematic-header-image {
-            width: 260px;
+            width: 340px;
             margin: 0 auto;
 
             div {
