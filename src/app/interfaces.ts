@@ -77,6 +77,12 @@ interface ThematicLinks {
   field_thematic_links: ThematicLink[]
 }
 
+/*Might not be necessary!?
+interface VideoTags {
+  mid: string
+  field_media_oembed_video: string
+}*/
+
 interface Playlist {
   name: string
   thumbnail__target_id: string
