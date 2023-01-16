@@ -70,6 +70,10 @@ export class UploadService {
     return this.http.get<ThematicLinks>(BASE_URL + "/node/" + id + "?_format=json")
   }
 
+  getVideosByTag(id_tag: string) {
+    return this.http.get<Video[]>(BASE_URL + "/api/videos-tags/" + id_tag)
+  }
+
   getPlaylists(id: string) {
     return this.http.get<Playlists[]>(BASE_URL + "/api/playlists/" + id);
   }
