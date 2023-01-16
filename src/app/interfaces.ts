@@ -42,6 +42,14 @@ interface Channels {
   uid: string
 }
 
+interface Thematics{
+  nid: string
+  title: string
+  field_thematic_thumbnail: string
+  field_thematic_header_image: string
+  uid: string
+}
+
 interface Tags {
   tid: string
   name: string
@@ -90,4 +98,4 @@ interface Playlists {
   thumbnail__target_id: string
 }
 
-export {Video, Categories, Channels, Tags, Thematic, ThematicLink, ThematicLinks, Playlist, Playlists};
+export {Video, Categories, Channels, Thematics, Tags, Thematic, ThematicLink, ThematicLinks, Playlist, Playlists};
