@@ -1,9 +1,7 @@
 <div class="video-card" [ngClass]="type" [routerLink]="routerLink">
   <div class="image" style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{image}}');">
-    <div *ngIf="logotype">
-      <div class="logotype"
-           style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{logotype}}');">
-      </div>
+    <div *ngIf="logotype" class="logotype"
+         style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{logotype}}');">
     </div>
     <div class="icons">
       <fa-icon class="heart-icon" [icon]="faHeart"></fa-icon>
