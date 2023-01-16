@@ -48,6 +48,7 @@ interface Thematics{
   field_thematic_thumbnail: string
   field_thematic_header_image: string
   uid: string
+  field_thematic_tags: string
 }
 
 interface Tags {
