@@ -25,6 +25,4 @@ export class ContentcardComponent {
   @Input() field_comments?: string;
   @Input() routerLink?: any;
   @Input() type?: string;
-
-
 }
