@@ -29,12 +29,13 @@
         <p>
           {{video.created}}
         </p>
+        <p>
+          {{video.field_duration}} duration
+        </p>
       </div>
     </div>
-    <p class="description-box">
-      {{video.field_description || "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu mi maximus, aliquam erat ac, commodo ligula.\n" +
-    "      Maecenas pellentesque pellentesque lorem eget..." }}
-
+    <p class="description-box" *ngIf="video.field_description">
+      {{video.field_description}}
     </p>
     <app-comments></app-comments>
   </div>
