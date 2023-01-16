@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {UploadService} from "../upload.service";
 import {Video} from "../interfaces";
@@ -43,5 +43,16 @@ export class VideoDetailComponent {
     this.uploadService.getLatestVideos(0).subscribe((latestVideos) => {
       this.latestVideosList = latestVideos;
     })
+  }
+
+  getHashtag(tags: string) {
+    return tags
+      .split(',')
+      .map(this.getTag)
+      .join('');
+  }
+
+  getTag(item: string) {
+    return `#${item.trim()} `;
   }
 }
