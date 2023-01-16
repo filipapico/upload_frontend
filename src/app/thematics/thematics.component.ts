@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {UploadService} from "../upload.service";
-import {Thematics, Tags} from "../interfaces";
+import {Thematics, Tags, Thematic} from "../interfaces";
 
 @Component({
   selector: 'app-thematics',
@@ -21,6 +21,13 @@ export class ThematicsComponent {
 
     this.uploadService.getAllTags().subscribe((tags) => {
       this.tags = tags
+      //console.log("tidinit",this.tid)
+    })
+  }
+
+  getThematicsByTag(id:string) {
+    this.uploadService.getThematicsByTag(id).subscribe((thematicTags) => {
+      this.thematics=thematicTags
     })
   }
 }

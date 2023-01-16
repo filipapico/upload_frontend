@@ -1,14 +1,13 @@
 <div class="container">
   <h1>Thematics</h1>
   <!--TAGS-->
-  <!--add ngIf to TAGS-->
   <div class="tags">
     <h4>Choose your tematic by tag</h4>
     <div class="tags-items">
       <div class="tags-item">ALL</div>
-      <!--add ngFor-->
-      <div class="tags-item" *ngFor="let t of tags.slice(0,5)">
-        <div>{{t.name}}</div>
+      <!-- Only show first 5 elements <div class="tags-item" *ngFor="let t of tags.slice(0,5)">-->
+      <div class="tags-item" *ngFor="let t of tags">
+        <div (click)="getThematicsByTag(t.tid)">{{t.name}}</div>
       </div>
       <div class="tags-item">➡</div>
     </div>
@@ -46,4 +45,3 @@
     </div>
   </div>
 </div>
-
