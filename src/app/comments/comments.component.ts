@@ -9,27 +9,16 @@ import {HttpHeaders} from "@angular/common/http";
   styleUrls: ['./comments.component.scss']
 })
 export class CommentsComponent {
+
   @Input() gravatar?: string;
-  @Input() username!: string;
-  @Input() created!: string;
-  @Input() comment_body!: string;
+  @Input() username?: string;
+  @Input() created?: string;
+  @Input() comment_body?: string;
+  @Input() contentID?: number;
+  @Input() entityType?: string;
 
   constructor(public uploadService: UploadService) {
   }
-
-  /*let mediaCommentStructure = {
-      "entity_id": [{"target_id": 55}],
-      "entity_type": [{"value": "media"}],
-      "comment_type": [{"target_id": "media_comments"}],
-      "field_name": [{"value": "field_comments"}],
-      "field_media_comment_name": [{"value": "Agathe"}],
-      "field_media_email": [{"value": "agathe@gmail.com"}],
-      "subject": [{"value": "Media comment"}],
-      "comment_body": [
-        {"value": "Trying media comment", "format": "plain_text"}
-      ]
-    }*/
-
 
   commentUrl = 'https://dev-project-upskill2-grupo4v2.pantheonsite.io/comment';
   tokenValue?: any;
@@ -48,20 +37,36 @@ export class CommentsComponent {
 
 
   onCommentSubmit(comment: { username: string, email: string, comment: string }) {
+    let commentBody;
+    if(this.entityType == "node") {
+      commentBody = {
+        "entity_id": [{"target_id": this.contentID}],
+        "entity_type": [{"value": "node"}],
+        "comment_type": [{"target_id": "channel_comments"}],
+        "field_name": [{"value": "field_comment"}],
+        "field_comment_name": [{"value": comment.username}],
+        "field_email": [{"value": comment.email}],
+        "subject": [{"value": ""}],
+        "comment_body": [
+          {"value": comment.comment, "format": "plain_text"}
+        ]
+      }
 
-   let channelComment = {
-      "entity_id": [{"target_id": 19}],
-      "entity_type": [{"value": "node"}],
-      "comment_type": [{"target_id": "channel_comments"}],
-      "field_name": [{"value": "field_comment"}],
-      "field_comment_name": [{"value": comment.username}],
-      "field_email": [{"value": comment.email}],
-      "subject": [{"value": ""}],
-      "comment_body": [
-      {"value": comment.comment, "format": "plain_text"}
-    ]
+    } else {
+      commentBody = {
+        "entity_id": [{"target_id": this.contentID}],
+        "entity_type": [{"value": "media"}],
+        "comment_type": [{"target_id": "media_comments"}],
+        "field_name": [{"value": "field_comments"}],
+        "field_media_comment_name": [{"value": comment.username}],
+        "field_media_email": [{"value": comment.email}],
+        "subject": [{"value": "Media comment"}],
+        "comment_body": [
+          {"value": comment.comment, "format": "plain_text"}
+        ]
+      }
     }
-    this.uploadService.postComments(this.commentUrl, channelComment, this.customHeaders);
+    this.uploadService.postComments(this.commentUrl, commentBody, this.customHeaders);
   }
 
 }
