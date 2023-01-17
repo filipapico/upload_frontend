@@ -5,7 +5,7 @@
 
 .video-playing {
   margin: 23px;
-  background-color: #262525;
+  //background-color: #262525;
   border-radius: 20px;
   backdrop-filter: blur(20px);
 
@@ -31,9 +31,10 @@
 
 .videos-list {
   margin: 23px;
-  border: 1px solid #656161;
+  border: 2px solid #3b3838;
   border-radius: 20px;
   height: fit-content;
+  width: 30%;
 
   app-comments {
     .comments-container {
@@ -48,7 +49,7 @@
   }
 
   img {
-    border: #656161 2px solid;
+    border: #3b3838 2px solid;
     border-radius: 20px;
     width: 200px;
     height: 100px;
@@ -56,7 +57,7 @@
 
   p {
     margin: 15px;
-    font-size: 15px;
+    font-size: 13px;
   }
 
   h4 {
