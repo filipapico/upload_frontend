@@ -28,14 +28,13 @@
       </div>
       <h4>Thematic videos</h4>
       <div class="thematic-videos" *ngIf="thematicVideos">
+<!--        add fields-->
         <app-contentcard *ngFor="let tv of thematicVideos"
-                         [image]="tv.field_cover_photo"
-                         [title]="tv.title"
-                         [subtitle]="tv.name"
-                         [field_media_oembed_video]="tv.field_media_oembed_video"
-                         [logotype]="tv.field_logotype"
-
+                         [source]="tv.title"
+                         [title]="tv.name"
+                         [image]="tv.thumbnail__target_id"
         ></app-contentcard>
+        <!--[type]=""-->
       </div>
     </div>
     <!--    SUGGESTION LIST-->
