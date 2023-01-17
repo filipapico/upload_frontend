@@ -1,0 +1,51 @@
+.card-container {
+  background-color: #1C1C24;
+  border-radius: 15px;
+  margin: 23px;
+  justify-content: center;
+
+  .card-info {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: #FFFFFF 1px solid;
+    margin: 10px;
+  }
+
+
+  p {
+    margin: 7px;
+  }
+
+
+  .card-thumbnail {
+    margin-left: 10px;
+    margin-top: 10px;
+    display: flex;
+
+    .thumbnail-title {
+      margin: 10px;
+    }
+
+    img {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+    }
+
+    p, h6 {
+      margin: 2px;
+      font-size: 13px;
+    }
+  }
+
+  .card-image {
+    img {
+      width: 320px;
+      margin: 20px;
+      border-radius: 20px;
+      justify-content: center;
+
+    }
+  }
+
+}
