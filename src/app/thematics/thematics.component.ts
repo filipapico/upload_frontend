@@ -19,7 +19,7 @@ export class ThematicsComponent {
       this.thematics = thematics
     })
 
-    this.uploadService.getAllTags().subscribe((tags) => {
+    this.uploadService.getTagsInThematics().subscribe((tags) => {
       this.tags = tags
     })
   }
