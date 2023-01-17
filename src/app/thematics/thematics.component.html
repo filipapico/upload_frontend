@@ -37,14 +37,11 @@
     </div>
     <!--THEMATICS SUGGESTION-->
     <div class="main-content-lateral">
-      <div class="thematics-suggestion">
-        <h4>Newest thematics</h4>
-        <app-suggestionlist *ngFor="let t of thematics"
-                            [listThumbnail]="t.field_thematic_thumbnail"
-                            [listElement]="t.title">
-        </app-suggestionlist>
-        <div class="suggestion-footer">SHOW ALL</div>
-      </div>
+      <h4>Newest thematics</h4>
+      <app-suggestionlist *ngFor="let t of thematics.slice(0,3)"
+                          [listThumbnail]="t.field_thematic_thumbnail"
+                          [listElement]="t.title">
+      </app-suggestionlist>
     </div>
   </div>
 </div>
