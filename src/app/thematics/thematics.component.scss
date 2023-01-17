@@ -82,7 +82,7 @@
       }
     }
     //  SUGGESTION CONTENT
-    .main-content-lateral {
+    .suggestion-list-card {
       background-color: #1C1C24;
       margin: 10px;
       border-radius: 12px;
@@ -96,13 +96,13 @@
         border-bottom: 1px solid darkgray;
       }
 
-      .suggestion-footer {
+      /*.suggestion-footer {
         background-color: #282831;
         text-align: center;
         padding: 10px;
         border-bottom-left-radius: 12px;
         border-bottom-right-radius: 12px;
-      }
+      }*/
     }
   }
 }
