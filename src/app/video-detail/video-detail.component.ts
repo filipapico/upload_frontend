@@ -5,7 +5,6 @@ import {Video} from "../interfaces";
 import {DomSanitizer} from "@angular/platform-browser";
 import {faHeart} from '@fortawesome/free-regular-svg-icons';
 
-
 @Component({
   selector: 'app-video-detail',
   templateUrl: './video-detail.component.html',
@@ -17,6 +16,8 @@ export class VideoDetailComponent implements OnChanges {
   video?: Video;
   video_url?: any;
   latestVideosList: Video[] = [];
+  mediaEntityType = "media";
+
 
   @Input() id_video?: string
 
