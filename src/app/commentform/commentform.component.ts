@@ -16,6 +16,7 @@ export class CommentformComponent {
   @Input() contentID?: number;
   @Input() entityType?: string;
 
+
   constructor(public uploadService: UploadService) {
   }
 
