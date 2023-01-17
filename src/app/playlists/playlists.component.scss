@@ -2,7 +2,7 @@
   display: flex;
   margin-left: 23px;
 
-  .category {
+  .category-list, .category {
     background-color: #3b3838;
     border-radius: 20px;
     margin-left: 10px;
@@ -37,7 +37,7 @@ p {
   text-align: center;
 }
 
-h2 {
+h1 {
   cursor: pointer;
 }
 

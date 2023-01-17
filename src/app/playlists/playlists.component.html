@@ -1,7 +1,7 @@
-<h2 (click)="categorySelected(id)">Playlists</h2>
+<h1 (click)="categorySelected(id)">Playlists</h1>
 
 <div class="category-container">
-  <div class="category" *ngFor="let category of categories" (click)="categorySelected(category.tid)">
+  <div class="category-list" *ngFor="let category of categories" (click)="categorySelected(category.tid)">
     <p>{{category.name}}</p>
   </div>
   <p (click)="categorySelected(id)" class="category">ALL</p>
