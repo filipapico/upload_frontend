@@ -2,6 +2,10 @@
   <div class="container" >
     <h2>Latest Videos</h2>
 
+    <div>
+      <input placeholder="Search" class="search">
+    </div>
+
     <div class="pagination">
       <div class="page-item">
         <a class="page-link" (click)="pageSelected('Previous')"><fa-icon [icon]="faAngleLeft"></fa-icon></a>
@@ -12,10 +16,6 @@
       <div class="page-item">
         <a class="page-link" (click)="pageSelected('Next')"><fa-icon [icon]="faAngleRight"></fa-icon></a>
       </div>
-    </div>
-
-    <div>
-      <input placeholder="Search" class="search">
     </div>
 
     <div class="latest-video-container">
