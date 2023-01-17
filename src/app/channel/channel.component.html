@@ -26,32 +26,15 @@
                      [routerLink]="['/video-detail', vid.mid]"
     ></app-contentcard>
   </div>
-
- <app-comments
-  [entityType]="channelEntityType"
-  [contentID]="nid">
-  </app-comments>
-
-
-
+  <app-commentform
+    [entityType]="channelEntityType"
+    [contentID]="nid">
+  </app-commentform>
   <div *ngIf="channelComments">
-    <div *ngFor="let comment of channelComments">
-      <div class="user-comment">
-        <div class="gravatar-box">
-          <div class="gravatar"
-               style="background-image: url('https://img1.gratispng.com/20180408/edw/kisspng-user-computer-icons-gravatar-blog-happy-woman-5aca6d038826d9.7357010215232156195577.jpg');">
-          </div>
-        </div>
-        <div class="comment-text">
-          <p style="font-weight:bold">{{comment.field_comment_name}} <span style="color:#979797">{{comment.created}}</span></p>
-          <p>
-            {{comment.comment_body}}
-          </p>
-        </div>
-      </div>
-    </div>
+    <app-comments *ngFor="let comment of channelComments"
+                  [username]="comment.field_comment_name"
+                  [created]="comment.created"
+                  [comment_body]="comment.comment_body">
+    </app-comments>
   </div>
-
-
-
 </div>
