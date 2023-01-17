@@ -1,7 +1,7 @@
 import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {UploadService} from "../upload.service";
-import {Video} from "../interfaces";
+import {Video, Comment} from "../interfaces";
 import {DomSanitizer} from "@angular/platform-browser";
 import {faHeart} from '@fortawesome/free-regular-svg-icons';
 
@@ -17,6 +17,7 @@ export class VideoDetailComponent implements OnChanges {
   video_url?: any;
   latestVideosList: Video[] = [];
   mediaEntityType = "media";
+  mediaComments? : Comment[] = [];
 
 
   @Input() id_video?: string
@@ -49,6 +50,11 @@ export class VideoDetailComponent implements OnChanges {
 
     this.uploadService.getLatestVideos(0).subscribe((latestVideos) => {
       this.latestVideosList = latestVideos;
+    })
+
+    //getting comments of that specific video:
+    this.uploadService.getComments("media", this.id).subscribe((comments) => {
+      this.mediaComments = comments;
     })
   }
 
