@@ -17,7 +17,6 @@ export class HomepageComponent implements OnInit {
   faAngleRight = faAngleRight;
   faAngleLeft = faAngleLeft;
 
-
   constructor(private uploadService: UploadService) {
   }
 

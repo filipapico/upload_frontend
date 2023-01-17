@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <div class="container" >
+  <div class="container">
     <h2>Latest Videos</h2>
 
     <div>
@@ -35,7 +35,7 @@
     </div>
   </div>
 
-  <div class="sidebar">
+  <div class="right-sidebar">
     <app-suggestioncard *ngIf="thematics"
                         [type]="['Thematics']"
                         [title]=thematics[0].title
@@ -44,11 +44,14 @@
                         [field_thematic_thumbnail]=thematics[0].field_thematic_thumbnail
                         [routerLink]="['/thematics', thematics]"
     ></app-suggestioncard>
-    <app-suggestionlist *ngFor="let c of channels"
-                        [listThumbnail]="c.field_logotype"
-                        [listElement]="c.title">
-    </app-suggestionlist>
+    <!--TO MAYBE LATER BE IMPROVED?!-->
+    <div class="suggestion-list-card">
+      <h4>Newest channels</h4>
+      <app-suggestionlist *ngFor="let c of channels"
+                          [listThumbnail]="c.field_logotype"
+                          [listElement]="c.title">
+      </app-suggestionlist>
+    </div>
   </div>
 </div>
-
 
