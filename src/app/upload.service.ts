@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {Categories, Channels, Playlists, Thematic, Tags, ThematicLinks, Video, Thematics} from "./interfaces";
+import {Categories, Channels, Playlists, Thematic, Tags, ThematicLinks, Video, Thematics, Comment} from "./interfaces";
 
 const BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
 
@@ -19,12 +19,12 @@ export class UploadService {
 
   postComments(url: string, body: {}, headers: any) {
     return this.http.post(url, body, headers).subscribe((data) => {
-       console.log(data);
+      console.log(data);
     });
   }
 
-  getComments(type: string){
-    return this.http.get<Comment[]>(BASE_URL + "/api/comments/" + type);
+  getComments(type: string, id: number) {
+    return this.http.get<Comment[]>(BASE_URL + "/api/comments/" + type + "/" + id);
   }
 
 
@@ -42,7 +42,7 @@ export class UploadService {
 
   //
   // QUESTION Maybe update all ids to type string? Since our APIs always return strings...
-  getChannelVideos(id: string) {
+  getChannelVideos(id: number) {
     return this.http.get<Video[]>(BASE_URL + "/api/channel/" + id);
   }
 
