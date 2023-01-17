@@ -13,9 +13,11 @@
   <div class="main-content">
     <div class="main-content-center">
       <div class="thematics-all">
-        <h4>All thematics</h4>
+        <!--TO BE CORRECTED - Name of the tag being shown OR mark upper tags as active with ngClass
+        <h4>{{thematics[0].title}}</h4>-->
         <div class="thematics">
-          <div *ngFor="let t of thematics" class="thematic-item" [routerLink]="['/thematic', t.nid]">
+          <div *ngFor="let t of thematics" class="thematic-item"
+               [routerLink]="['/thematic', t.nid]">
             <div class="thematic-header">
               <div class="thematic-thumbnail">
                 <div
@@ -43,7 +45,8 @@
       <h4>Newest thematics</h4>
       <app-suggestionlist *ngFor="let t of thematics.slice(0,5)"
                           [listThumbnail]="t.field_thematic_thumbnail"
-                          [listElement]="t.title">
+                          [listElement]="t.title"
+                          [id_element]="t.nid">
       </app-suggestionlist>
     </div>
   </div>
