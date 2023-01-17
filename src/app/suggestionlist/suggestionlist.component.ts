@@ -10,5 +10,6 @@ export class SuggestionlistComponent {
   @Input() listTitle!: string
   @Input() listThumbnail!: string
   @Input() listElement!:string
+  @Input() id_element!: string
 
 }
