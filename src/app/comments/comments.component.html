@@ -1,54 +1,15 @@
-<div class="comments-container">
-  <h3>Comments</h3>
-  <div class="comment-box">
-    <div class="gravatar-box">
-      <div class="gravatar"
-           style="background-image: url('https://img.favpng.com/16/11/7/gravatar-computer-icons-blog-png-favpng-Jr68yZHtrGj5dSUqHSXaJDQ4f.jpg');">
-      </div>
-    </div>
-    <form #commentForm="ngForm" class="inputs" (ngSubmit)="onCommentSubmit(commentForm.value)">
-      <input type="text" id="username-input" name="username" required
-             minlength="4" maxlength="20" placeholder="Name" ngModel>
-      <input type="text" id="email-input" name="email" required
-             minlength="4" maxlength="40" placeholder="E-mail" ngModel>
-      <input type="text" id="comment-input" name="comment" required
-             minlength="4" maxlength="200" placeholder="Message" ngModel>
-      <input type="submit" value="Submit">
-    </form>
-  </div>
-
-
-<!--
-  <div class="user-comment">
-    <div class="gravatar-box">
-      <div class="gravatar"
-           style="background-image: url('https://img1.gratispng.com/20180408/edw/kisspng-user-computer-icons-gravatar-blog-happy-woman-5aca6d038826d9.7357010215232156195577.jpg');">
-      </div>
-    </div>
-    <div class="comment-text">
-      <p style="font-weight:bold">Fernando <span style="color:#979797">55 min ago</span></p>
-      <p>
-        Sed blandit est ut tempor consectetur. Vestibulum sollicitudin ex ac metus lobortis, in scelerisque augue
-        fringilla. Curabitur eget tortor in sem sodales sodales. Donec sit amet efficitur quam. Ut quis condimentum
-        dolor.
-      </p>
+<div class="user-comment">
+  <div class="gravatar-box">
+    <div class="gravatar"
+         style="background-image: url('https://img1.gratispng.com/20180408/edw/kisspng-user-computer-icons-gravatar-blog-happy-woman-5aca6d038826d9.7357010215232156195577.jpg');">
     </div>
   </div>
--->
-
-  <div class="user-comment">
-    <div class="gravatar-box">
-      <div class="gravatar"
-           style="background-image: url('https://img1.gratispng.com/20180408/edw/kisspng-user-computer-icons-gravatar-blog-happy-woman-5aca6d038826d9.7357010215232156195577.jpg');">
-      </div>
-    </div>
-    <div class="comment-text">
-      <p style="font-weight:bold">{{username}} <span style="color:#979797">{{created}}</span></p>
-      <p>
-        {{comment_body}}
-      </p>
-    </div>
+  <div class="comment-text">
+    <p style="font-weight:bold">{{username}} <span style="color:#979797">{{created}}</span>
+    </p>
+    <p>
+      {{comment_body}}
+    </p>
   </div>
-
-
 </div>
+
