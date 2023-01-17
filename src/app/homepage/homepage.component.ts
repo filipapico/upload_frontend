@@ -10,12 +10,13 @@ import {faAngleRight, faAngleLeft} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
-  latestVideos: Video[] = [];
+  latestVideos?: Video[];
   thematics?: Thematics[];
   channels?: Channels[];
   pNum: any = 0;
   faAngleRight = faAngleRight;
   faAngleLeft = faAngleLeft;
+  value?: string;
 
   constructor(private uploadService: UploadService) {
   }
@@ -48,5 +49,13 @@ export class HomepageComponent implements OnInit {
         this.channels = channels;
       }
     )
+  }
+
+  changeSearch(e: any){
+    const v = e.target.value;
+    this.uploadService.getSearchVideos(v).subscribe((search) => {
+      this.latestVideos = search;
+      console.log(v)
+    })
   }
 }
