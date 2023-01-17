@@ -96,6 +96,7 @@ interface Playlist {
   nid: string
   uid: string
   user_picture: string
+  mid: string
 }
 
 interface Playlists {

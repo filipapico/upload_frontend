@@ -11,7 +11,7 @@ import {Playlist} from "../interfaces";
   styleUrls: ['./playlist.component.scss']
 })
 export class PlaylistComponent implements OnInit {
-  playlist?: Playlist[] = []
+  playlist?: Playlist[];
   id: any;
   indexVideo: number = 0;
 

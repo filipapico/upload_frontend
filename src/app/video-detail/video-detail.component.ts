@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {UploadService} from "../upload.service";
 import {Video} from "../interfaces";
@@ -11,27 +11,33 @@ import {faHeart} from '@fortawesome/free-regular-svg-icons';
   templateUrl: './video-detail.component.html',
   styleUrls: ['./video-detail.component.scss']
 })
-export class VideoDetailComponent {
+export class VideoDetailComponent implements OnChanges {
   faHeart = faHeart;
-  id: number;
+  id!: number;
   video?: Video;
   video_url?: any;
   latestVideosList: Video[] = [];
 
-  @Input() name?: string
-  @Input() field_media_tags?: string
-  @Input() field_logotype?: string
-  @Input() title?: string
-  @Input() created?: string
-  @Input() field_duration?: string
-  @Input() field_description? :string
-
+  @Input() id_video?: string
 
   constructor(private route: ActivatedRoute, public uploadService: UploadService, private sanitizer: DomSanitizer) {
-    this.id = route.snapshot.params['mid'];
+  }
+
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.id_video && changes['id_video'] ) {
+      this.id = parseInt(this.id_video);
+      this.refresh();
+    }
   }
 
   ngOnInit(): void {
+    if (!this.id_video) {
+      this.id = this.route.snapshot.params['mid'];
+      this.refresh()
+    }
+  }
+
+  refresh() {
     this.uploadService.getVideo(this.id).subscribe((video) => {
       this.video = video[0];
 
