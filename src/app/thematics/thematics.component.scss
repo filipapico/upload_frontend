@@ -18,113 +18,119 @@
   .main-content {
     display: flex;
     flex-wrap: wrap;
-    padding: 12px;
 
-    .thematics-all {
-      width: 70%;
+    .main-content-center {
+      display: flex;
+      flex-wrap: wrap;
+      width: 60%;
+      padding: 12px;
 
-      .thematics {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+      .thematics-all {
 
-        .thematic-item {
-          padding: 10px;
+        .thematics {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: center;
 
-          .thematic-header {
-            display: flex;
+          .thematic-item {
+            padding: 10px;
 
-            .thematic-thumbnail {
+            .thematic-header {
               display: flex;
-              justify-content: center;
-              width: 50px;
-              height: 50px;
-              margin: 6px;
+
+              .thematic-thumbnail {
+                display: flex;
+                justify-content: center;
+                width: 50px;
+                height: 50px;
+                margin: 6px;
+
+                div {
+                  display: block;
+                  background-size: cover;
+                  width: 100%;
+                  border-radius: 50%;
+                  padding-bottom: 57%;
+                  background-position: center;
+                }
+              }
+
+              h5, p {
+                margin: 2px
+              }
+
+              p {
+                font-size: 12px;
+              }
+            }
+
+            .thematic-header-image {
+              width: 340px;
+              margin: 0 auto;
 
               div {
                 display: block;
                 background-size: cover;
                 width: 100%;
-                border-radius: 50%;
+                border-radius: 12px;
                 padding-bottom: 57%;
                 background-position: center;
               }
             }
-
-            h5, p {
-              margin: 2px
-            }
-
-            p {
-              font-size: 12px;
-            }
           }
+        }
+      }
 
-          .thematic-header-image {
-            width: 340px;
-            margin: 0 auto;
+      //  SUGGESTION CONTENT
+      .thematics-suggestion {
+        background-color: #1C1C24;
+        margin: 10px;
+        border-radius: 12px;
+        width: 310px;
+        height: 100%;
+
+        h4 {
+          padding-left: 16px;
+          margin-bottom: 0;
+          padding-bottom: 10px;
+          border-bottom: 1px solid darkgray;
+        }
+
+        .suggestion-list {
+          display: flex;
+          //justify-content: center;
+
+          div.suggestion-thumbnail {
+            display: flex;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            margin: 6px;
 
             div {
               display: block;
               background-size: cover;
               width: 100%;
-              border-radius: 12px;
+              border-radius: 50%;
               padding-bottom: 57%;
               background-position: center;
             }
           }
-        }
-      }
-    }
 
-    //  SUGGESTION CONTENT
-    .thematics-suggestion {
-      background-color: #1C1C24;
-      margin: 10px;
-      border-radius: 12px;
-      width: 310px;
-      height: 100%;
-
-      h4 {
-        padding-left: 16px;
-        margin-bottom: 0;
-        padding-bottom: 10px;
-        border-bottom: 1px solid darkgray;
-      }
-
-      .suggestion-list {
-        display: flex;
-        //justify-content: center;
-
-        div.suggestion-thumbnail {
-          display: flex;
-          justify-content: center;
-          width: 50px;
-          height: 50px;
-          margin: 6px;
-
-          div {
-            display: block;
-            background-size: cover;
-            width: 100%;
-            border-radius: 50%;
-            padding-bottom: 57%;
-            background-position: center;
+          p {
+            font-size: smaller;
           }
         }
 
-        p {
-          font-size: smaller;
+        .suggestion-footer {
+          background-color: #282831;
+          text-align: center;
+          padding: 10px;
+          border-bottom-left-radius: 12px;
+          border-bottom-right-radius: 12px;
         }
       }
-
-      .suggestion-footer {
-        background-color: #282831;
-        text-align: center;
-        padding: 10px;
-        border-bottom-left-radius: 12px;
-        border-bottom-right-radius: 12px;
-      }
     }
+
   }
 }

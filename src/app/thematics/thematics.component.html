@@ -11,34 +11,40 @@
   </div>
   <!--THEMATICS-->
   <div class="main-content">
-    <div class="thematics-all">
-      <h4>All thematics</h4>
-      <div class="thematics">
-        <div *ngFor="let t of thematics" class="thematic-item" [routerLink]="['/thematic', t.nid]">
-          <div class="thematic-header">
-            <div class="thematic-thumbnail">
+    <div class="main-content-center">
+      <div class="thematics-all">
+        <h4>All thematics</h4>
+        <div class="thematics">
+          <div *ngFor="let t of thematics" class="thematic-item" [routerLink]="['/thematic', t.nid]">
+            <div class="thematic-header">
+              <div class="thematic-thumbnail">
+                <div
+                  style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_thumbnail}}');"></div>
+              </div>
+              <div>
+                <h5>{{t.title}}</h5>
+                <p>{{t.uid}}</p>
+              </div>
+            </div>
+            <div class="thematic-header-image">
               <div
-                style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_thumbnail}}');"></div>
+                style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_header_image}}');"></div>
             </div>
-            <div>
-              <h5>{{t.title}}</h5>
-              <p>{{t.uid}}</p>
-            </div>
-          </div>
-          <div class="thematic-header-image">
-            <div
-              style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_header_image}}');"></div>
           </div>
         </div>
       </div>
+
     </div>
-    <div class="thematics-suggestion">
-      <h4>Newest thematics</h4>
-      <app-suggestionlist *ngFor="let t of thematics"
-                          [listThumbnail]="t.field_thematic_thumbnail"
-                          [listElement]="t.title">
-      </app-suggestionlist>
-      <div class="suggestion-footer">SHOW MORE</div>
+    <!--THEMATICS SUGGESTION-->
+    <div class="main-content-lateral">
+      <div class="thematics-suggestion">
+        <h4>Newest thematics</h4>
+        <app-suggestionlist *ngFor="let t of thematics"
+                            [listThumbnail]="t.field_thematic_thumbnail"
+                            [listElement]="t.title">
+        </app-suggestionlist>
+        <div class="suggestion-footer">SHOW ALL</div>
+      </div>
     </div>
   </div>
 </div>
