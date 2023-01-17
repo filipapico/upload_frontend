@@ -1,12 +1,9 @@
 <div class="wrapper">
   <div class="video-detail" *ngIf="video">
-    <h1>
-      {{video.name}}
-    </h1>
+    <h1>{{video.name}}</h1>
+
     <div class="details">
-      <h5>
-        {{getHashtag(video.field_media_tags)}}
-      </h5>
+      <h5>{{getHashtag(video.field_media_tags)}}</h5>
       <span class="heart-icon">
       <fa-icon [icon]="faHeart"></fa-icon>
     </span>
@@ -23,17 +20,12 @@
            style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{video.field_logotype}}');">
       </div>
       <div>
-        <p>
-          {{video.title}}
-        </p>
-        <p>
-          {{video.created}}
-        </p>
-        <p>
-          {{video.field_duration}} duration
-        </p>
+        <h4>{{video.title}}</h4>
+        <p>{{video.created}}</p>
+        <p>{{video.field_duration}} duration </p>
       </div>
     </div>
+
     <p class="description-box" *ngIf="video.field_description">
       {{video.field_description}}
     </p>
