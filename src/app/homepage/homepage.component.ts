@@ -13,12 +13,14 @@ export class HomepageComponent implements OnInit {
   latestVideos?: Video[];
   thematics?: Thematics[];
   channels?: Channels[];
+  allVideos?: Video[];
+  id: any = "";
   pNum: any = 0;
   faAngleRight = faAngleRight;
   faAngleLeft = faAngleLeft;
 
   public keyword = 'name';
-  data = this.latestVideos;
+  data = this.allVideos;
 
 
   constructor(private uploadService: UploadService) {
@@ -52,9 +54,13 @@ export class HomepageComponent implements OnInit {
     this.uploadService.getChannels().subscribe((channels) => {
         this.channels = channels;
       })
+    this.uploadService.getVideo(this.id).subscribe((allVideos) => {
+      this.allVideos = allVideos;
+      console.log(allVideos)
+    })
   }
 
-  changeSearch(e: any){
+  changeSearch(e : any){
     const v = e.target.value;
     this.uploadService.getSearchVideos(v).subscribe((search) => {
       this.latestVideos = search;

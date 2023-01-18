@@ -6,10 +6,10 @@
       <input placeholder="Search" class="search" (change)="changeSearch($event)">
     </div>-->
 
-    <div class="ng-autocomplete" *ngIf="latestVideos">
+    <div *ngIf="allVideos">
       <ng-autocomplete
-        [data]="latestVideos"
-        [searchKeyword]="keyword" (click)="changeSearch($event)"
+        [data]="allVideos"
+        [searchKeyword]="keyword" (change)="changeSearch($event)"
         [itemTemplate]="itemTemplate"
         [notFoundTemplate]="notFoundTemplate"
         placeholder="Search movie"

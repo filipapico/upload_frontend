@@ -54,7 +54,7 @@ export class UploadService {
     return this.http.get<Video[]>(BASE_URL + "/api/latest-videos?page=" + pNum);
   }
 
-  getSearchVideos(value : string) {
+  getSearchVideos(value: number) {
     return this.http.get<Video[]>(BASE_URL + "/api/latest-videos/" + value)
   }
 
