@@ -8,6 +8,8 @@ const BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
   providedIn: 'root'
 })
 export class UploadService {
+  favorites: string[] = [] = JSON.parse(localStorage.getItem("favorites") || "[]");
+
   constructor(public http: HttpClient) {
   }
 
@@ -88,6 +90,27 @@ export class UploadService {
 
   getPlaylist(id: string) {
     return this.http.get<Video[]>(BASE_URL + "/api/playlist/" + id);
+  }
+
+  getFavorites() {
+    let ids = this.favorites.join(",");
+    return this.http.get<Video[]>(BASE_URL + "/api/allvideos/" + ids);
+  }
+
+  isFavorite(id: string) {
+    return this.favorites.includes(id);
+  }
+
+  toggleFavorito(id: string) {
+    if (this.isFavorite(id)) {
+      //remover o id dos favoritos
+      this.favorites.splice(this.favorites.indexOf(id), 1)
+    } else {
+      //adicionar o id aos favoritos
+      this.favorites.push(id);
+    }
+
+    localStorage.setItem("favorites", JSON.stringify(this.favorites));
   }
 
 }
