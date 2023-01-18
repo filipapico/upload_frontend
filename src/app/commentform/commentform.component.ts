@@ -1,6 +1,7 @@
 import {Component, Input} from '@angular/core';
 import {UploadService} from "../upload.service";
 import {HttpHeaders} from "@angular/common/http";
+import {Router, NavigationEnd, ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-commentform',
@@ -17,7 +18,7 @@ export class CommentformComponent {
   @Input() entityType?: string;
 
 
-  constructor(public uploadService: UploadService) {
+  constructor(private router: Router, private route: ActivatedRoute, public uploadService: UploadService) {
   }
 
   commentUrl = 'https://dev-project-upskill2-grupo4v2.pantheonsite.io/comment';
@@ -37,6 +38,7 @@ export class CommentformComponent {
 
 
   onCommentSubmit(comment: { username: string, email: string, comment: string }) {
+
     let commentBody;
     if(this.entityType == "node") {
       commentBody = {
@@ -58,7 +60,7 @@ export class CommentformComponent {
         "entity_type": [{"value": "media"}],
         "comment_type": [{"target_id": "media_comments"}],
         "field_name": [{"value": "field_comments"}],
-        "field_media_comment_name": [{"value": comment.username}],
+        "field_comment_name_media": [{"value": comment.username}],
         "field_media_email": [{"value": comment.email}],
         "subject": [{"value": "Media comment"}],
         "comment_body": [
@@ -67,5 +69,19 @@ export class CommentformComponent {
       }
     }
     this.uploadService.postComments(this.commentUrl, commentBody, this.customHeaders);
+
+    this.reloadPage();
+    // this.refreshComponent();
+
   }
+
+   reloadPage(){
+     location.reload()
+   }
+
+/*  refreshComponent(){
+    this.router.navigate(['./comments.component.html']);
+  }*/
+
+
 }
