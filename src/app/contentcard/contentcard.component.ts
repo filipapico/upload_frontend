@@ -1,7 +1,8 @@
 import {Component, Input} from '@angular/core';
 import {faHeart,faBookmark} from "@fortawesome/free-regular-svg-icons";
+import {faHeart as faHeartFull} from "@fortawesome/free-solid-svg-icons";
 import {faShareNodes} from "@fortawesome/free-solid-svg-icons";
-
+import {UploadService} from "../upload.service";
 
 
 @Component({
@@ -11,6 +12,7 @@ import {faShareNodes} from "@fortawesome/free-solid-svg-icons";
 })
 export class ContentcardComponent {
   faHeart = faHeart;
+  faHeartFull = faHeartFull;
   faBookmark= faBookmark;
   faShareNodes = faShareNodes;
 
@@ -25,4 +27,19 @@ export class ContentcardComponent {
   @Input() field_comments?: string;
   @Input() routerLink?: any;
   @Input() type?: string;
+
+
+  constructor(private uploadService: UploadService) { }
+
+  get favorite() {
+    if (this.mid)
+      return this.uploadService.isFavorite(this.mid);
+    return false;
+  }
+
+  toggleFavorite() {
+    if (this.mid)
+      this.uploadService.toggleFavorito(this.mid);
+  }
+
 }
