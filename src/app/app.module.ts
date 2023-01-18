@@ -1,6 +1,7 @@
 import {NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 import {HttpClientModule} from "@angular/common/http";
+import {AutocompleteLibModule} from 'angular-ng-autocomplete';
 
 import {AppComponent} from './app.component';
 import {HomepageComponent} from './homepage/homepage.component';
@@ -46,6 +47,7 @@ import { CommentformComponent } from './commentform/commentform.component';
     UsersloginComponent,
     SidecardComponent,
     CommentformComponent
+
   ],
   imports: [
     BrowserModule,
@@ -53,7 +55,8 @@ import { CommentformComponent } from './commentform/commentform.component';
     AppRoutingModule,
     FontAwesomeModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AutocompleteLibModule
   ],
   providers: [],
   bootstrap: [AppComponent],
