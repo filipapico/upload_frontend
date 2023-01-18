@@ -26,6 +26,7 @@ import { UsersloginComponent } from './userslogin/userslogin.component';
 import { SidecardComponent } from './sidecard/sidecard.component';
 import { CommentformComponent } from './commentform/commentform.component';
 import { FlagComponent } from './flag/flag.component';
+import { AvatarModule } from 'ngx-avatar';
 import { MyfavoritesComponent } from './myfavorites/myfavorites.component';
 
 @NgModule({
@@ -60,7 +61,9 @@ import { MyfavoritesComponent } from './myfavorites/myfavorites.component';
     FontAwesomeModule,
     FormsModule,
     ReactiveFormsModule,
-    AutocompleteLibModule
+    AutocompleteLibModule,
+    AvatarModule
+
   ],
   providers: [],
   bootstrap: [AppComponent],
