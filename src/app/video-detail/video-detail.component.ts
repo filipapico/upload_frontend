@@ -4,6 +4,7 @@ import {UploadService} from "../upload.service";
 import {Video, Comment} from "../interfaces";
 import {DomSanitizer} from "@angular/platform-browser";
 import {faHeart} from '@fortawesome/free-regular-svg-icons';
+import {faHeart as faHeartFull} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-video-detail',
@@ -12,6 +13,7 @@ import {faHeart} from '@fortawesome/free-regular-svg-icons';
 })
 export class VideoDetailComponent implements OnChanges {
   faHeart = faHeart;
+  faHeartFull = faHeartFull;
   id!: number;
   video?: Video;
   video_url?: any;
@@ -68,4 +70,17 @@ export class VideoDetailComponent implements OnChanges {
   getTag(item: string) {
     return `#${item.trim()} `;
   }
+
+  toggleFavorite() {
+    if (this.video)
+      this.uploadService.toggleFavorito(this.video.mid);
+      console.log(this.video?.mid)
+  }
+
+  get favorite() {
+    if (this.video)
+      return this.uploadService.isFavorite(this.video.mid);
+    return false;
+  }
+
 }

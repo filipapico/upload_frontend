@@ -4,8 +4,8 @@
 
     <div class="details">
       <h5>{{getHashtag(video.field_media_tags)}}</h5>
-      <span class="heart-icon">
-      <fa-icon [icon]="faHeart"></fa-icon>
+      <span class="heart-icon" (click)="toggleFavorite()" >
+      <fa-icon [icon]="favorite? faHeartFull : faHeart" class="fa-xl"></fa-icon>
     </span>
     </div>
 
