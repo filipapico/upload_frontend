@@ -16,7 +16,10 @@ export class HomepageComponent implements OnInit {
   pNum: any = 0;
   faAngleRight = faAngleRight;
   faAngleLeft = faAngleLeft;
-  value?: string;
+
+  public keyword = 'name';
+  data = this.latestVideos;
+
 
   constructor(private uploadService: UploadService) {
   }
@@ -41,14 +44,14 @@ export class HomepageComponent implements OnInit {
   getVideos() {
     this.uploadService.getLatestVideos(this.pNum).subscribe((latestVideos) => {
       this.latestVideos = latestVideos;
+      console.log(latestVideos)
     })
     this.uploadService.getThematics().subscribe((thematics) => {
       this.thematics = thematics
     })
     this.uploadService.getChannels().subscribe((channels) => {
         this.channels = channels;
-      }
-    )
+      })
   }
 
   changeSearch(e: any){

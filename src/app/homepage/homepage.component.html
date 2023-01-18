@@ -2,9 +2,28 @@
   <div class="container">
     <h2>Latest Videos</h2>
 
-    <div>
+<!--    <div>
       <input placeholder="Search" class="search" (change)="changeSearch($event)">
+    </div>-->
+
+    <div class="ng-autocomplete" *ngIf="latestVideos">
+      <ng-autocomplete
+        [data]="latestVideos"
+        [searchKeyword]="keyword" (click)="changeSearch($event)"
+        [itemTemplate]="itemTemplate"
+        [notFoundTemplate]="notFoundTemplate"
+        placeholder="Search movie"
+      ></ng-autocomplete>
+
+      <ng-template #itemTemplate let-item>
+        <a [innerHTML]="item.name"></a>
+      </ng-template>
+
+      <ng-template #notFoundTemplate let-notFound>
+        <div [innerHTML]="notFound"></div>
+      </ng-template>
     </div>
+
 
     <div class="pagination">
       <div class="page-item">
