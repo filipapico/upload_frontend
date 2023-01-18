@@ -9,6 +9,7 @@ import {ThematicsComponent} from "./thematics/thematics.component";
 import {ChannelsComponent} from "./channels/channels.component";
 import {ChannelComponent} from "./channel/channel.component";
 import {ContentcardComponent} from "./contentcard/contentcard.component";
+import {MyfavoritesComponent} from "./myfavorites/myfavorites.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/homepage', pathMatch: 'full'},
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path: 'thematics', component: ThematicsComponent},
   {path: 'playlists', component: PlaylistsComponent},
   {path: 'playlist/:nid', component: PlaylistComponent},
+  {path: 'favorites', component: MyfavoritesComponent},
 ];
 
 @NgModule({
