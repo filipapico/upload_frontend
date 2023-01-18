@@ -4,6 +4,7 @@ interface Comment {
   comment_type: string,
   field_name: string,
   field_comment_name: string
+  field_comment_name_media: string
   field_email: string,
   subject: string,
   comment_body: string
