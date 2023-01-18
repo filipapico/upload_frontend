@@ -26,6 +26,7 @@ import { UsersloginComponent } from './userslogin/userslogin.component';
 import { SidecardComponent } from './sidecard/sidecard.component';
 import { CommentformComponent } from './commentform/commentform.component';
 import { FlagComponent } from './flag/flag.component';
+import { MyfavoritesComponent } from './myfavorites/myfavorites.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { FlagComponent } from './flag/flag.component';
     UsersloginComponent,
     SidecardComponent,
     CommentformComponent,
-    FlagComponent
+    FlagComponent,
+    MyfavoritesComponent
 
   ],
   imports: [
