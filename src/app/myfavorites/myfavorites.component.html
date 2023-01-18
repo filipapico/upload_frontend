@@ -1,0 +1,18 @@
+<h2>Favorites videos</h2>
+
+<div class="container">
+  <div class="favorites">
+    <app-contentcard *ngFor="let fav of favorites_list"
+                     [source]="fav.title"
+                     [title]="fav.name"
+                     [subtitle]="fav.created"
+                     [mid]="fav.mid"
+                     [field_media_tags]="fav.field_media_tags"
+                     [image]="fav.thumbnail__target_id"
+                     [logotype]="fav.field_logotype"
+                     [field_media_oembed_video]="fav.field_media_oembed_video"
+                     [routerLink]="['/video-detail', fav.mid]"
+    ></app-contentcard>
+  </div>
+</div>
+
