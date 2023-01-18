@@ -1,10 +1,17 @@
-.comments-container {
+.user-comment {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  align-items: start;
+  justify-content: flex-start;
+  margin: 20px auto;
+
+  p {
+    margin: 3px auto;
+  }
 
   .gravatar-box {
-    width: 15%;
-    margin-right: 20px;
+    width: 10%;
+    margin-right: 10px;
 
     .gravatar {
       width: 70px;
@@ -16,54 +23,8 @@
     }
   }
 
-  .comment-box {
-    display: flex;
-    flex-direction: row;
-    color: #979797;
-
-    .inputs {
-      width: 100%;
-      input {
-        all: unset;
-        border-bottom: 1px solid #979797;
-        line-height: 40px;
-        margin-left: 10px;
-      }
-    }
-  }
-
-  button {
-    all: unset;
-    border-radius: 23px;
-    border: 1px solid #979797;
-    box-sizing: border-box;
-    justify-content: flex-end;
-    margin-top: 20px;
-    width: 14%;
-    text-align: center;
-    padding: 5px 0;
-    margin-left: 81%;
-  }
-
-  .user-comment {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-
-    //.gravatar-box {
-    //  width: 25%;
-    //  margin-right: 10px;
-    //
-    //  .gravatar {
-    //    width: 70px;
-    //    height: 70px;
-    //    border-radius: 100%;
-    //    border: 1px solid white;
-    //    background-size: cover;
-    //    background-position: center;
-    //  }
-    //}
-
+  .comment-text {
+    margin-left: 10px;
   }
 }
+
