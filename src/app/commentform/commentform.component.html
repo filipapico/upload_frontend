@@ -7,10 +7,12 @@
       </div>
     </div>
     <form #commentForm="ngForm" class="inputs" (ngSubmit)="onCommentSubmit(commentForm.value)">
-      <input type="text" id="username-input" name="username" required
-             minlength="4" maxlength="20" placeholder="Name" ngModel>
-      <input type="text" id="email-input" name="email" required
-             minlength="4" maxlength="40" placeholder="E-mail" ngModel>
+      <div>
+        <input type="text" id="username-input" name="username" required
+               minlength="4" maxlength="20" placeholder="Name" ngModel>
+        <input type="text" id="email-input" name="email" required
+               minlength="4" maxlength="40" placeholder="E-mail" ngModel>
+      </div>
       <input type="text" id="comment-input" name="comment" required
              minlength="4" maxlength="1000" placeholder="Message" ngModel>
       <input class="submit-button" type="submit" value="Submit">
