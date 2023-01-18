@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UploadService} from "../upload.service";
-import {Categories, Playlists} from "../interfaces";
+import {Categories, Playlists, Video} from "../interfaces";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
@@ -12,6 +12,7 @@ export class PlaylistsComponent implements OnInit {
   playlists?: Playlists[] = [];
   categories?: Categories[];
   id?: any = ""
+  favorites_list? : Video[];
 
 
   constructor(private route: ActivatedRoute, private uploadService: UploadService,) {
@@ -25,6 +26,11 @@ export class PlaylistsComponent implements OnInit {
     this.uploadService.getCategories().subscribe((categories) => {
       this.categories = categories;
     })
+
+    this.uploadService.getFavorites().subscribe((favoritos) => {
+      this.favorites_list = favoritos
+      console.log(this.favorites_list)
+    });
   }
 
   categorySelected(tid: any) {
