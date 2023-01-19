@@ -66,10 +66,11 @@
     <!--TO MAYBE LATER BE IMPROVED?!-->
     <div class="suggestion-list-card">
       <h4>Newest channels</h4>
-      <app-suggestionlist *ngFor="let c of channels"
+      <app-suggestionlist *ngFor="let c of channels| slice:0:5"
                           [listThumbnail]="c.field_logotype"
-                          [listElement]="c.title">
-      </app-suggestionlist>
+                          [listElement]="c.title"
+                          [routerLink]="['/channel', c.nid]"
+      ></app-suggestionlist>
     </div>
   </div>
 </div>
