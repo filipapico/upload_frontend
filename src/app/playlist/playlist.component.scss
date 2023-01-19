@@ -36,32 +36,30 @@
   height: fit-content;
   width: 30%;
 
-  app-comments {
-    .comments-container {
-      margin: 23px;
-      padding: 20px;
-    }
+  h4 {
+    text-align: center;
+  }
+
+  div:hover{
+    transform: scale(1.2);
   }
 
   div {
+    transition: 1s;
     display: flex;
     margin: 30px;
-  }
 
-  img {
-    border: #3b3838 2px solid;
-    border-radius: 20px;
-    width: 200px;
-    height: 100px;
-  }
+    img {
+      border: #3b3838 2px solid;
+      border-radius: 20px;
+      width: 200px;
+      height: 100px;
+    }
 
-  p {
-    margin: 15px;
-    font-size: 13px;
-  }
-
-  h4 {
-    text-align: center;
+    p {
+      margin: 15px;
+      font-size: 13px;
+    }
   }
 }
 

@@ -1,9 +1,5 @@
 <div class="container">
   <div class="video-playing" *ngIf="playlist">
-<!--    <iframe width="560" height="315" [src]="playlist[indexVideo].video_url" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    <h1>{{playlist[indexVideo].title}}</h1>
-    <p>{{playlist[indexVideo].name}}</p>
-    <app-comments></app-comments>-->
     <app-video-detail
      [id_video]="playlist[indexVideo].mid"
     ></app-video-detail>
@@ -11,7 +7,7 @@
 
   <div *ngIf="playlist" class="videos-list" >
     <h4>{{indexVideo + 1}}/{{playlist.length}}</h4>
-    <div *ngFor="let video of playlist" (click)="getVideo(playlist.indexOf(video))">
+    <div *ngFor="let video of playlist" (click)="getVideo(playlist.indexOf(video))" class="div">
       <p>{{playlist.indexOf(video) + 1}}</p>
       <img src="https://dev-project-upskill2-grupo4v2.pantheonsite.io{{video.thumbnail__target_id}}">
       <p>{{video.name}}</p>
