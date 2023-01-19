@@ -103,10 +103,10 @@ export class UploadService {
 
   toggleFavorito(id: string) {
     if (this.isFavorite(id)) {
-      //remover o id dos favoritos
+      //remove id from favorites
       this.favorites.splice(this.favorites.indexOf(id), 1)
     } else {
-      //adicionar o id aos favoritos
+      //add id to favorites
       this.favorites.push(id);
     }
 
