@@ -28,6 +28,7 @@ import { CommentformComponent } from './commentform/commentform.component';
 import { FlagComponent } from './flag/flag.component';
 import { AvatarModule } from 'ngx-avatar';
 import { MyfavoritesComponent } from './myfavorites/myfavorites.component';
+import { GravatarDirective } from './gravatar.directive';
 
 @NgModule({
   declarations: [
@@ -51,7 +52,8 @@ import { MyfavoritesComponent } from './myfavorites/myfavorites.component';
     SidecardComponent,
     CommentformComponent,
     FlagComponent,
-    MyfavoritesComponent
+    MyfavoritesComponent,
+    GravatarDirective
 
   ],
   imports: [
