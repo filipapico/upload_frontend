@@ -25,19 +25,26 @@ export class CommentformComponent {
   tokenValue?: any;
 
   ngOnInit(): void {
-    /*this.uploadService.getToken().subscribe((token) => {
-      this.tokenValue = token;
-      console.log(this.tokenValue);
-    })*/
+
   }
 
-  customHeaders = new HttpHeaders({
-    // 'X-CSRF-Token': JSON.stringify(this.tokenValue),
-    'Accept': 'application/vnd.api+json'
-  });
-
+  //state: guarda comentarios. commentarios acrescentado ao array de comments guardados no state (array de comments)
+  //angular volta a fazer render do component sem fazer refresh
+  //angular state
+  //aceder ao state no FIM do pedido ser feito
+  //a variavel do estado fica aqui: nao no Service
 
   onCommentSubmit(comment: { username: string, email: string, comment: string }) {
+
+/*    this.uploadService.getToken().subscribe((token) => {
+      this.tokenValue = token;
+      console.log(this.tokenValue);
+    });*/
+
+    let customHeaders = new HttpHeaders({
+      // 'X-CSRF-Token': JSON.stringify(this.tokenValue),
+      'Accept': 'application/vnd.api+json'
+    });
 
     let commentBody;
     if(this.entityType == "node") {
@@ -53,7 +60,6 @@ export class CommentformComponent {
           {"value": comment.comment, "format": "plain_text"}
         ]
       }
-
     } else {
       commentBody = {
         "entity_id": [{"target_id": this.contentID}],
@@ -68,20 +74,10 @@ export class CommentformComponent {
         ]
       }
     }
-    this.uploadService.postComments(this.commentUrl, commentBody, this.customHeaders);
-
-    this.reloadPage();
-    // this.refreshComponent();
+    this.uploadService.postComments(this.commentUrl, commentBody, customHeaders);
 
   }
 
-   reloadPage(){
-     location.reload()
-   }
-
-/*  refreshComponent(){
-    this.router.navigate(['./comments.component.html']);
-  }*/
 
 
 }

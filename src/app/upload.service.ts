@@ -21,7 +21,7 @@ export class UploadService {
 
   postComments(url: string, body: {}, headers: any) {
     return this.http.post(url, body, headers).subscribe((data) => {
-      console.log(data);
+      window.location.reload();
     });
   }
 
