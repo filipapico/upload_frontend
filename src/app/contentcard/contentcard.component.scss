@@ -6,9 +6,9 @@
   margin: 23px;
 
   &.channels {
+    /*Channel content card*/
     border-radius: 20px 0 20px 0;
     background: #575757;
-
 
     .image {
       position: relative;
@@ -37,82 +37,90 @@
       top: 216px;
       right: 34px;
 
-      .share-icon, .heart-icon {
+      .share-icon, .bookmark-icon {
         color: whitesmoke;
         margin-left: 10px;
       }
-    }
 
-    .info-container {
-
-      p {
-        color: white;
-      }
-
-      h5 {
-        font-size: 1.2em;
-      }
-
-      .card-subtitle {
+      .heart-icon {
         display: none;
       }
     }
 
+    .info-container {
+      h5, .card-subtitle {
+        margin: 0 0 0 15px;
+        color: whitesmoke;
+      }
 
-  }
+      h5 {
+        font-size: 1em;
+      }
 
-  .image {
-    position: relative;
-    background-size: cover;
-    background-position: center;
-    border-radius: 20px 20px 0 0;
-    width: 100%;
-    padding-bottom: 45%;
-  }
-
-  .logotype {
-    width: 50px;
-    height: 50px;
-    border-radius: 100%;
-    border: 1px solid white;
-    background-size: cover;
-    background-position: center;
-    position: absolute;
-    top: 127px;
-    right: 25px;
-  }
-
-  .icons {
-    color: #979797;
-    position: absolute;
-    top: 216px;
-    right: 34px;
-
-    .share-icon {
-      margin-left: 10px;
+      p{
+        font-size: 0.8em;
+      }
     }
   }
 
-
-  .info-container {
-    height: 100px;
-    padding: 0 20px;
-    margin-top: 10px;
-
-    h5 {
-      color: #FAFAFB;
-      font-size: 13px;
-      margin: 2px 0;
+  &.video {
+    /*Regular content card*/
+    .image {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      border-radius: 20px 20px 0 0;
+      width: 100%;
+      padding-bottom: 45%;
     }
 
-    p {
+    .logotype {
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      border: 1px solid white;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 127px;
+      right: 25px;
+    }
+
+    .icons {
       color: #979797;
-      font-size: 0.8em;
-      margin: 2px 0;
+      position: absolute;
+      top: 216px;
+      right: 34px;
+
+      .share-icon {
+        margin-left: 10px;
+      }
+
+      .bookmark-icon {
+        display: none;
+      }
     }
 
-    .blue-ref {
-      color: #1E75FF;
+    .info-container {
+      height: 100px;
+      padding: 0 20px;
+      margin-top: 10px;
+
+      h5 {
+        color: #FAFAFB;
+        font-size: 13px;
+        margin: 2px 0;
+      }
+
+      p {
+        color: #979797;
+        font-size: 0.8em;
+        margin: 2px 0;
+      }
+
+      .blue-ref {
+        color: #1E75FF;
+      }
     }
   }
 }
