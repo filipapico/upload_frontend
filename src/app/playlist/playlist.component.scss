@@ -42,7 +42,11 @@
 
   div:hover{
     transform: scale(1.2);
+    background-color: #212121;
+    //box-shadow: 2px 2px 2px #000;
+    z-index: 2;
   }
+
 
   div {
     transition: 1s;
