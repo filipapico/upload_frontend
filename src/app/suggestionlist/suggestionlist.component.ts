@@ -7,7 +7,8 @@ import { Component, Input } from '@angular/core';
 })
 export class SuggestionlistComponent {
 
-  @Input() listTitle!: string
+
+  @Input() listTitle?: any
   @Input() listThumbnail!: string
   @Input() listElement!:string
   @Input() id_element!: string
