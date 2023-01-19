@@ -2,7 +2,7 @@
 
 <div class="container">
   <div class="favorites">
-    <app-contentcard *ngFor="let fav of favorites_list"
+    <app-contentcard type="video" *ngFor="let fav of favorites_list"
                      [source]="fav.title"
                      [title]="fav.name"
                      [subtitle]="fav.created"

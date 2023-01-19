@@ -39,7 +39,7 @@
 
     <div class="latest-video-container">
       <div class="latest-video">
-                  <app-contentcard *ngFor="let lv of latestVideos"
+                  <app-contentcard type="video" *ngFor="let lv of latestVideos"
                                    [source]="lv.title"
                                    [title]="lv.name"
                                    [subtitle]="lv.created"

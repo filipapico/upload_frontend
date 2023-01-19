@@ -19,7 +19,7 @@
   </div>
 
   <div class="playlist-container" *ngFor="let playlist of playlists">
-    <app-contentcard
+    <app-contentcard type="video"
                      [title]="playlist.title"
                      [source]="playlist.name"
                      [logotype]="playlist.user_picture"
