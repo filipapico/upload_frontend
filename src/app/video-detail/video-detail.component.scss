@@ -1,6 +1,7 @@
 .wrapper {
   display: flex;
   flex-direction: row;
+  justify-content: center;
 
   p {
     font-size: 14px;
@@ -12,6 +13,9 @@
   }
 
   .video-detail {
+    display: flex;
+    flex-direction: column;
+
     .details {
       display: flex;
       flex-direction: row;
