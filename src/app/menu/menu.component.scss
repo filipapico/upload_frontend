@@ -5,7 +5,7 @@
     display: flex;
     align-items: center;
     padding: 4px;
-
+    cursor: pointer;
 
     .menu-item-logo {
       flex-basis: 25px;
@@ -14,7 +14,6 @@
 
     .menu-item-text {
       color: lightgrey;
-      cursor: pointer
     }
 
   }
