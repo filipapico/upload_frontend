@@ -2,20 +2,20 @@
   <h3>Comments</h3>
   <div class="comment-box">
     <div class="gravatar-box">
-      <div class="gravatar"
-           style="background-image: url('https://img.favpng.com/16/11/7/gravatar-computer-icons-blog-png-favpng-Jr68yZHtrGj5dSUqHSXaJDQ4f.jpg');">
-      </div>
+      <ngx-avatar class="gravatar" name="name"></ngx-avatar>
     </div>
-    <form #commentForm="ngForm" class="inputs" (ngSubmit)="onCommentSubmit(commentForm.value)">
-      <div>
+    <form #commentForm="ngForm" class="comment-inputs" (ngSubmit)="onCommentSubmit(commentForm.value)">
+      <div class="name-email-section">
         <input type="text" id="username-input" name="username" required
                minlength="4" maxlength="20" placeholder="Name" ngModel>
         <input type="text" id="email-input" name="email" required
                minlength="4" maxlength="40" placeholder="E-mail" ngModel>
       </div>
-      <input type="text" id="comment-input" name="comment" required
-             minlength="4" maxlength="1000" placeholder="Message" ngModel>
-      <input class="submit-button" type="submit" value="Submit">
+      <div class="message-section">
+        <input type="text" id="comment-input" name="comment" required
+               minlength="4" maxlength="1000" style="height:100px" placeholder="Message" ngModel>
+      </div>
+      <input id="submit-button" type="submit" value="Submit">
     </form>
   </div>
 </div>
