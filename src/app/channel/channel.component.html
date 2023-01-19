@@ -1,17 +1,26 @@
 <div class="channel-container">
-  <div class="channel-header">
+
+  <div class="banner-header">
     <div class="channel-cover-photo"
          style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{channelCoverPhoto}}');">
       <div class="channel-logotype"
            style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{channelLogotype}}');">
       </div>
     </div>
-    <h1>
-      {{channelTitle}}
-    </h1>
-    <p>
-      {{channelDescription}}
-    </p>
+
+    <div class="text-header">
+      <h1>
+        <span class="bookmark-icon" (click)="uploadService.toggleFavChannel(nid)">
+          <fa-icon [icon]="uploadService.isFavChannel(nid)? faBookmarkFull : faBookmark" class="fa-xl"></fa-icon>
+        </span>
+        {{channelTitle}}
+      </h1>
+      <p>
+        {{channelDescription}}
+      </p>
+    </div>
+
+
   </div>
   <h2>Videos</h2>
   <div class="channel-videos">

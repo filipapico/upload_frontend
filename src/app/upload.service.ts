@@ -22,6 +22,7 @@ export class UploadService {
   postComments(url: string, body: {}, headers: any) {
     return this.http.post(url, body, headers).subscribe((data) => {
       window.location.reload();
+      console.log(data);
     });
   }
 
@@ -97,10 +98,10 @@ export class UploadService {
     return this.http.get<Video[]>(BASE_URL + "/api/allvideos/" + ids);
   }
 
+  //FAVORITE VIDEO
   isFavorite(id: string) {
     return this.favorites.includes(id);
   }
-
   toggleFavorito(id: string) {
     if (this.isFavorite(id)) {
       //remove id from favorites
@@ -109,8 +110,22 @@ export class UploadService {
       //add id to favorites
       this.favorites.push(id);
     }
-
     localStorage.setItem("favorites", JSON.stringify(this.favorites));
+  }
+
+  //FAVORITE CHANNELS
+  favChannel: number[] = [] = JSON.parse(localStorage.getItem("favChannel") || "[]");
+  isFavChannel(id: number) {
+    return this.favChannel.includes(id);
+  }
+  toggleFavChannel(id: number){
+    if (this.isFavChannel(id)) {
+      //remove id from fav (was in the list and user clicks again > removing)
+      this.favChannel.splice(this.favChannel.indexOf(id), 1) //favorite was in the list, deleting it
+    } else {
+      this.favChannel.push(id); //we push it into the list, wasn't fav yet
+    }
+    localStorage.setItem("favChannel", JSON.stringify(this.favChannel));//setting favorites item in the localStorage
   }
 
 }

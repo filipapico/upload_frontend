@@ -3,6 +3,8 @@ import {ActivatedRoute} from "@angular/router";
 import {UploadService} from "../upload.service";
 import {DomSanitizer} from "@angular/platform-browser";
 import {Video, Comment} from "../interfaces";
+import {faBookmark} from '@fortawesome/free-regular-svg-icons';
+import {faBookmark as faBookmarkFull} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-channel',
@@ -10,6 +12,9 @@ import {Video, Comment} from "../interfaces";
   styleUrls: ['./channel.component.scss']
 })
 export class ChannelComponent {
+  faBookmark = faBookmark;
+  faBookmarkFull = faBookmarkFull;
+
   nid: number; //channel id
   videos?: Video[] = []; //array containing the channel's videos
   channelComments?: Comment[] = [];

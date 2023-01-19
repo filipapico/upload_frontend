@@ -5,7 +5,7 @@
   margin: 0;
   padding: 0;
 
-  .channel-header {
+  .banner-header {
     .channel-cover-photo {
       background-size: cover;
       background-position: center;
@@ -25,6 +25,23 @@
         top: 170px;
       }
     }
+
+    .text-header {
+      display: flex;
+      flex-direction: column;
+      margin-top: 30px;
+
+      h1 {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+
+      .bookmark-icon fa-icon {
+        font-size: 1em;
+        margin-right: 20px;
+      }
+    }
+
   }
 
   .channel-videos {
