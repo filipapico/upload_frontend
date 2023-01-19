@@ -29,20 +29,23 @@
     <p class="description-box" *ngIf="video.field_description">
       {{video.field_description}}
     </p>
-    <app-commentform
-      [entityType]="mediaEntityType"
-      [contentID]="id">
-    </app-commentform>
-    <div *ngIf="mediaComments">
-      <app-comments *ngFor="let comment of mediaComments"
-                    [username]="comment.field_comment_name"
-                    [created]="comment.created"
-                    [comment_body]="comment.comment_body">
-      </app-comments>
+    <div class="comments-section">
+      <app-commentform
+        [entityType]="mediaEntityType"
+        [contentID]="id">
+      </app-commentform>
+      <div *ngIf="mediaComments">
+        <app-comments *ngFor="let comment of mediaComments"
+                      [username]="comment.field_comment_name_media"
+                      [created]="comment.created"
+                      [comment_body]="comment.comment_body">
+        </app-comments>
+      </div>
     </div>
   </div>
+
   <!-- Right side bar is suggesting more of the latest videos: -->
-  <!--  <div class="latest-video-container">
+    <div class="latest-video-container">
       <h4>Latest Videos</h4>
       <app-contentcard *ngFor="let lv of latestVideosList"
                  [title]="lv.name"
@@ -53,7 +56,7 @@
                  [logotype] = "lv.field_logotype"
                  [field_media_oembed_video]="lv.field_media_oembed_video"
       ></app-contentcard>
-    </div>-->
+    </div>
 </div>
 
 
