@@ -4,6 +4,10 @@
          style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{logotype}}');">
     </div>
     <div class="icons">
+     <!-- <span class="bookmark-icon" (click)="uploadService.toggleFavChannel(nid)">
+          <fa-icon [icon]="uploadService.isFavChannel(nid)? faBookmarkFull : faBookmark" class="fa-xl"></fa-icon>
+        </span>-->
+      <fa-icon class="bookmark-icon" [icon]="faBookmark"></fa-icon>
       <fa-icon class="heart-icon" [icon]="favorite? faHeartFull : faHeart"></fa-icon>
       <fa-icon class="share-icon" [icon]="faShareNodes"></fa-icon>
     </div>
@@ -11,6 +15,6 @@
   <div class="info-container">
     <p class="blue-ref">{{source}}</p>
     <h5>{{title}}</h5>
-    <p class="card-subtitle">{{subtitle}}</p>
+    <p class="card-subtitle"><span *ngIf="channelAuthor">by </span>{{subtitle || channelAuthor}}</p>
   </div>
 </div>
