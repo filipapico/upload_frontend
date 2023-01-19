@@ -1,4 +1,6 @@
 import {Component, Input} from '@angular/core';
+import {faFlag} from "@fortawesome/free-regular-svg-icons";
+
 
 @Component({
   selector: 'app-comments',
@@ -7,6 +9,8 @@ import {Component, Input} from '@angular/core';
 })
 export class CommentsComponent {
 
+  faFlag = faFlag;
+
   @Input() gravatar?: string;
   @Input() username?: string;
   @Input() created?: string;
@@ -14,6 +18,7 @@ export class CommentsComponent {
   @Input() contentID?: number;
   @Input() entityType?: string;
   @Input() email?: string;
+
 
 
 

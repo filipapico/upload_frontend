@@ -3,7 +3,9 @@
     <ngx-avatar name="{{username}}"></ngx-avatar>
   </div>
   <div class="comment-text">
-    <p style="font-weight:bold">{{username}} <span style="color:#979797">{{created}}</span>
+    <p style="font-weight:bold">{{username}}
+      <span class="comment-date">{{created}}</span>
+      <span class="flag-icon"><fa-icon class="share-icon" [icon]="faFlag"></fa-icon></span>
     </p>
     <p>
       {{comment_body}}

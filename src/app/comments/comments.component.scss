@@ -24,6 +24,16 @@
 
   .comment-text {
     margin-left: 10px;
+
+    .comment-date, .flag-icon {
+      color: #979797;
+      margin-left: 10px;
+      font-weight: lighter;
+    }
+
+    .flag-icon {
+      font-size: smaller;
+    }
   }
 }
 
