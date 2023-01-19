@@ -24,7 +24,7 @@
   </div>
   <h2>Videos</h2>
   <div class="channel-videos">
-    <app-contentcard *ngFor="let vid of videos"
+    <app-contentcard type="video" *ngFor="let vid of videos"
                      [title]="vid.name"
                      [subtitle]="vid.created"
                      [mid]="vid.mid"
