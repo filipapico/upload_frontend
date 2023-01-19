@@ -8,6 +8,14 @@
     margin-left: 10px;
     cursor: pointer;
   }
+
+  .category-list:hover {
+    background-color: #811818;
+    transform: scale(1.1);
+    //box-shadow: 2px 2px 2px #000;
+    z-index: 2;
+  }
+
 }
 
 .container {
@@ -48,6 +56,7 @@
       top: 80px;
       left: 30px;
     }
+
   }
 
 }
