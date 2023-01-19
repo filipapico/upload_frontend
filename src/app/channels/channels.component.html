@@ -11,22 +11,22 @@
   <div class="main-section">
     <div class="channels-container">
       <app-contentcard type="channels" *ngFor="let channel of channels"
-                       [source]="channel.field_category"
                        [title]="channel.title"
-                       [subtitle]="channel.uid"
-                       [mid]="channel.nid"
+                       [channelAuthor]="channel.uid"
+                       [nid]="channel.nid"
                        [image]="channel.field_cover_photo"
                        [logotype]="channel.field_logotype"
                        [routerLink]="['/channel', channel.nid]"
       ></app-contentcard>
     </div>
-    <app-suggestioncard class="channels-sidebar" *ngIf="channels"
+
+<!--    <app-suggestioncard class="channels-sidebar" *ngIf="channels"
                         [type]="['Last Seen']"
                         [title]=channels[0].title
                         [uid]=channels[0].nid
                         [field_thematic_header_image]=channels[0].field_cover_photo
                         [field_thematic_thumbnail]=channels[0].field_cover_photo
                         [routerLink]="['/channel', channels[0].nid]"
-    ></app-suggestioncard>
+    ></app-suggestioncard>-->
   </div>
 </div>
