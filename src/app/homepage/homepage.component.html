@@ -57,15 +57,17 @@
   </div>
 
   <div class="right-sidebar">
-    <app-suggestioncard *ngIf="thematics"
-                        [type]="['Thematics']"
-                        [title]=thematics[0].title
-                        [uid]=thematics[0].uid
-                        [field_thematic_header_image]=thematics[0].field_thematic_header_image
-                        [field_thematic_thumbnail]=thematics[0].field_thematic_thumbnail
-                        [routerLink]="['/thematics', thematics]"
-    ></app-suggestioncard>
-    <!--TO MAYBE LATER BE IMPROVED?!-->
+    <div class="suggestion-card">
+      <h4>Thematics</h4>
+      <app-suggestioncard *ngIf="thematics"
+                          [title]=thematics[0].title
+                          [uid]=thematics[0].uid
+                          [field_thematic_header_image]=thematics[0].field_thematic_header_image
+                          [field_thematic_thumbnail]=thematics[0].field_thematic_thumbnail
+                          [routerLink]="['/thematic', thematics[0].nid]"
+      ></app-suggestioncard>
+    </div>
+
     <div class="suggestion-list-card">
       <h4>Newest channels</h4>
       <app-suggestionlist *ngFor="let c of channels| slice:0:5"
@@ -73,8 +75,9 @@
                           [listElement]="c.title"
                           [routerLink]="['/channel', c.nid]"
       ></app-suggestionlist>
-
+      <h3 routerLink="/channels">SHOW MORE</h3>
     </div>
   </div>
+
 </div>
 

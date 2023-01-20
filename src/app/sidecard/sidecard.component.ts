@@ -10,5 +10,4 @@ export class SidecardComponent {
   @Input() sidecard_title!: string
   @Input() listThumbnail!: string
   @Input() listElement!: string
-
 }
