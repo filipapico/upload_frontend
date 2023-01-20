@@ -3,8 +3,8 @@ import {ActivatedRoute} from "@angular/router";
 import {UploadService} from "../upload.service";
 import {Video, Comment} from "../interfaces";
 import {DomSanitizer} from "@angular/platform-browser";
-import {faHeart} from '@fortawesome/free-regular-svg-icons';
-import {faHeart as faHeartFull} from "@fortawesome/free-solid-svg-icons";
+import {faBookmark} from '@fortawesome/free-regular-svg-icons';
+import {faBookmark as faBookmarkFull} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-video-detail',
@@ -12,14 +12,15 @@ import {faHeart as faHeartFull} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./video-detail.component.scss']
 })
 export class VideoDetailComponent implements OnChanges {
-  faHeart = faHeart;
-  faHeartFull = faHeartFull;
+  faBookmark = faBookmark;
+  faBookmarkFull = faBookmarkFull;
+
   id!: number;
   video?: Video;
   video_url?: any;
   latestVideosList: Video[] = [];
   mediaEntityType = "media";
-  mediaComments? : Comment[] = [];
+  mediaComments?: Comment[] = [];
 
 
   @Input() id_video?: string
@@ -28,7 +29,7 @@ export class VideoDetailComponent implements OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (this.id_video && changes['id_video'] ) {
+    if (this.id_video && changes['id_video']) {
       this.id = parseInt(this.id_video);
       this.refresh();
     }
@@ -74,7 +75,7 @@ export class VideoDetailComponent implements OnChanges {
   toggleFavorite() {
     if (this.video)
       this.uploadService.toggleFavorito(this.video.mid);
-      console.log(this.video?.mid)
+    console.log(this.video?.mid)
   }
 
   get favorite() {

@@ -4,8 +4,8 @@
 
     <div class="details">
       <h5>{{getHashtag(video.field_media_tags)}}</h5>
-      <span class="heart-icon" (click)="toggleFavorite()" >
-      <fa-icon [icon]="favorite? faHeartFull : faHeart" class="fa-xl"></fa-icon>
+      <span class="bookmark-icon" (click)="toggleFavorite()">
+      <fa-icon [icon]="favorite? faBookmarkFull : faBookmark" class="fa-xl"></fa-icon>
     </span>
     </div>
 
@@ -22,12 +22,11 @@
       <div>
         <h4>{{video.title}}</h4>
         <p>{{video.created}}</p>
-        <p>{{video.field_duration}} duration </p>
       </div>
     </div>
 
-    <p class="description-box" *ngIf="video.field_description">
-      {{video.field_description}}
+    <p class="description-box">
+      {{video.field_description || "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}}
     </p>
     <div class="comments-section">
       <app-commentform
@@ -45,18 +44,18 @@
   </div>
 
   <!-- Right side bar is suggesting more of the latest videos: -->
-    <div class="latest-video-container">
-      <h4>Latest Videos</h4>
-      <app-contentcard type="video" *ngFor="let lv of latestVideosList"
-                 [title]="lv.name"
-                 [subtitle]="lv.created"
-                 [mid]="lv.mid"
-                 [field_media_tags]="lv.field_media_tags"
-                 [image]="lv.thumbnail__target_id"
-                 [logotype] = "lv.field_logotype"
-                 [field_media_oembed_video]="lv.field_media_oembed_video"
-      ></app-contentcard>
-    </div>
+<!--  <div class="latest-video-container">
+    <h4>Latest Videos</h4>
+    <app-contentcard type="video" *ngFor="let lv of latestVideosList"
+                     [title]="lv.name"
+                     [subtitle]="lv.created"
+                     [mid]="lv.mid"
+                     [field_media_tags]="lv.field_media_tags"
+                     [image]="lv.thumbnail__target_id"
+                     [logotype]="lv.field_logotype"
+                     [field_media_oembed_video]="lv.field_media_oembed_video"
+    ></app-contentcard>
+  </div>-->
 </div>
 
 
