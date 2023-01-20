@@ -6,22 +6,24 @@
       <input placeholder="Search" class="search" (change)="changeSearch($event)">
     </div>-->
 
-    <div *ngIf="allVideos">
-      <ng-autocomplete
-        [data]="allVideos"
-        [searchKeyword]="keyword" (change)="changeSearch($event)"
-        [itemTemplate]="itemTemplate"
-        [notFoundTemplate]="notFoundTemplate"
-        placeholder="Search movie"
-      ></ng-autocomplete>
+    <div class="autocomplete-search">
+      <div *ngIf="allVideos">
+        <ng-autocomplete
+          [data]="allVideos"
+          [searchKeyword]="keyword" (change)="changeSearch($event)"
+          [itemTemplate]="itemTemplate"
+          [notFoundTemplate]="notFoundTemplate"
+          placeholder="Search video name..."
+        ></ng-autocomplete>
 
-      <ng-template #itemTemplate let-item>
-        <a [innerHTML]="item.name"></a>
-      </ng-template>
+        <ng-template #itemTemplate let-item>
+          <a [innerHTML]="item.name"></a>
+        </ng-template>
 
-      <ng-template #notFoundTemplate let-notFound>
-        <div [innerHTML]="notFound"></div>
-      </ng-template>
+        <ng-template #notFoundTemplate let-notFound>
+          <div [innerHTML]="notFound"></div>
+        </ng-template>
+      </div>
     </div>
 
 
