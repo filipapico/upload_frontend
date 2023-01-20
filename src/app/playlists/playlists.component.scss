@@ -56,11 +56,21 @@
   }
 
   .playlist-icon {
+    position: absolute;
+    //background-image: linear-gradient(to right, #1c1c24, #7c7c7c);
+    background: linear-gradient(#1c1c24, transparent);
+    width: 100px;
+    height: 157px;
+    top: 22px;
+    left: 23px;
+    //opacity: 90%;
+    border-radius: 15px 0px 0px 0px;
+
     img {
       position: absolute;
       width: 50px;
-      top: 80px;
-      left: 30px;
+      top: 65px;
+      left: 24px;
     }
 
   }
