@@ -3,17 +3,23 @@
   margin-left: 23px;
 
   .category-list, .category {
-    background-color: #3b3838;
+/*    background-color: #3b3838;
     border-radius: 20px;
     margin-left: 10px;
-    cursor: pointer;
+    cursor: pointer;*/
+      color: lightgrey;
+      padding: 4px 6px;
+      border: 1px solid lightgrey;
+      margin: 5px;
+      border-radius: 6px;
   }
 
-  .category-list:hover {
+  .category-list:hover , p:hover {
     background-color: #811818;
-    transform: scale(1.1);
+    transform: scale(1.05);
     //box-shadow: 2px 2px 2px #000;
     z-index: 2;
+    cursor: pointer;
   }
 
 }
@@ -64,8 +70,9 @@
 
 p {
   color: #FFFFFF;
-  margin: 10px;
+  margin: 2px;
   text-align: center;
+  font-size: 14px;
 }
 
 h1 {
