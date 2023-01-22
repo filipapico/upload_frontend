@@ -8,12 +8,17 @@
     flex-direction: row;
 
     .categories p {
-      color: white;
-      background-color: #3B3838;
-      border-radius: 20px;
-      padding: 6px 8px;
-      margin: 10px;
-      text-align: center;
+      color: lightgrey;
+      padding: 4px 6px;
+      border: 1px solid lightgrey;
+      margin: 2px;
+      border-radius: 6px;
+
+      &:hover {
+        color: red;
+        border: 1px solid red;
+        font-size: larger;
+      }
     }
   }
 
