@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UploadService} from "../upload.service";
-import {Channels, Thematic, Thematics, Video} from "../interfaces";
+import {Channels, Thematics, Video} from "../interfaces";
 import {faAngleRight, faAngleLeft} from "@fortawesome/free-solid-svg-icons";
-
 
 @Component({
   selector: 'app-homepage',
