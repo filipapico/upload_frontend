@@ -13,12 +13,13 @@ export class ChannelsComponent {
 
   categories?: Categories[]; //array of all the categories
   channels?: Channels[];
+  nid: string = " ";
 
   constructor(private route: ActivatedRoute, public uploadService: UploadService, private sanitizer: DomSanitizer) {
   }
 
   ngOnInit(): void {
-    this.uploadService.getChannels().subscribe((channels) => {
+    this.uploadService.getChannels(this.nid).subscribe((channels) => {
         this.channels = channels;
       }
     )
