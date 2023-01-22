@@ -29,6 +29,7 @@ import { FlagComponent } from './flag/flag.component';
 import { AvatarModule } from 'ngx-avatar';
 import { MyfavoritesComponent } from './myfavorites/myfavorites.component';
 import { GravatarDirective } from './gravatar.directive';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -53,7 +54,8 @@ import { GravatarDirective } from './gravatar.directive';
     CommentformComponent,
     FlagComponent,
     MyfavoritesComponent,
-    GravatarDirective
+    GravatarDirective,
+    FooterComponent
 
   ],
   imports: [

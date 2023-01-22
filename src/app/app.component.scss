@@ -1,5 +1,22 @@
 .app-wrapper {
   display: flex;
-  margin: 0px;
+  margin: 0;
+
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+
+    .main-content {
+      width: 100%;
+    }
+
+    .footer {
+      background-color: black;
+      width: 100%;
+      padding: 10px;
+      position: sticky;
+      bottom: 0;
+    }
+  }
 }
 
