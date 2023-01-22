@@ -5,10 +5,22 @@
   height: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
 
   img {
     width: 160px;
     display: block;
     margin: 0 auto;
   }
+
+  .menu, .tags, .users-login{
+  }
+
+  .footer {
+    //Needs to have the same width as the container (top of this scss, because of position fixed)
+    width: 170px;
+    position: fixed;
+    bottom: 0;
+  }
+
 }
