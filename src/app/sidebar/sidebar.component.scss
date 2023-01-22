@@ -7,13 +7,17 @@
   flex-direction: column;
   position: relative;
 
-  img {
-    width: 160px;
-    display: block;
-    margin: 0 auto;
+  .icon-logo {
+    display: flex;
+
+    img {
+      width: 160px;
+      display: block;
+      margin: 0 auto;
+    }
   }
 
-  .menu, .tags, .users-login{
+  .menu, .tags, .users-login {
   }
 
   .footer {
