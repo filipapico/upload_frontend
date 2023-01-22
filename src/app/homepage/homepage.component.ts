@@ -54,7 +54,7 @@ export class HomepageComponent implements OnInit {
     this.uploadService.getThematics().subscribe((thematics) => {
       this.thematics = thematics
     })
-    this.uploadService.getChannels().subscribe((channels) => {
+    this.uploadService.getChannels("").subscribe((channels) => {
         this.channels = channels;
       })
     this.uploadService.getVideo(this.id).subscribe((allVideos) => {
