@@ -30,6 +30,8 @@ export class ContentcardComponent {
   @Input() routerLink?: any;
   @Input() type?: string;
   @Input() channelAuthor?: string;
+  @Input() field_duration?: string;
+
 
 
 
