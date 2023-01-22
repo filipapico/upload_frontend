@@ -1,10 +1,8 @@
 <div class="wrapper">
   <h1>Channels</h1>
   <div class="categories-list" *ngIf="categories">
-    <div class="categories" *ngFor="let category of categories">
-      <p (click)="targetChannels(category.tid)">
+    <div class="categories" *ngFor="let category of categories" (click)="targetChannels(category.tid)" routerLinkActive="active" >
         {{category.name}}
-      </p>
     </div>
   </div>
 
@@ -20,13 +18,13 @@
       ></app-contentcard>
     </div>
 
-<!--    <app-suggestioncard class="channels-sidebar" *ngIf="channels"
-                        [type]="['Last Seen']"
-                        [title]=channels[0].title
-                        [uid]=channels[0].nid
-                        [field_thematic_header_image]=channels[0].field_cover_photo
-                        [field_thematic_thumbnail]=channels[0].field_cover_photo
-                        [routerLink]="['/channel', channels[0].nid]"
-    ></app-suggestioncard>-->
+    <!--    <app-suggestioncard class="channels-sidebar" *ngIf="channels"
+                            [type]="['Last Seen']"
+                            [title]=channels[0].title
+                            [uid]=channels[0].nid
+                            [field_thematic_header_image]=channels[0].field_cover_photo
+                            [field_thematic_thumbnail]=channels[0].field_cover_photo
+                            [routerLink]="['/channel', channels[0].nid]"
+        ></app-suggestioncard>-->
   </div>
 </div>

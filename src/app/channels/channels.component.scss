@@ -7,53 +7,51 @@
     display: flex;
     flex-direction: row;
 
-    .categories p {
+    .categories {
       color: lightgrey;
       padding: 4px 6px;
       border: 1px solid lightgrey;
       margin: 2px;
       border-radius: 6px;
 
-      &:hover {
+      &:hover, &.active {
         color: red;
         border: 1px solid red;
-        font-size: larger;
       }
     }
   }
 
-.main-section {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-
-  .channels-container {
+  .main-section {
     display: flex;
     flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
+
+    .channels-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
 
 
-    .channel-card {
-      width: 150px;
-      height: 175px;
-      margin: 23px;
+      .channel-card {
+        width: 150px;
+        height: 175px;
+        margin: 23px;
 
-      .channel-cover-photo {
-        border-radius: 10px;
-        background-size: cover;
-        background-position: center;
-        padding-bottom: 45%;
+        .channel-cover-photo {
+          border-radius: 10px;
+          background-size: cover;
+          background-position: center;
+          padding-bottom: 45%;
+        }
       }
     }
+
+    .channels-sidebar {
+      width: 30%;
+    }
+
   }
-
-  .channels-sidebar {
-    width: 30%;
-  }
-
-}
-
 
 
 }
