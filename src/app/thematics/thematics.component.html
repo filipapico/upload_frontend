@@ -6,9 +6,8 @@
     <h4>Choose your tematic by tag</h4>
     <div class="tags-items">
       <div class="tags-item" *ngFor="let t of tags">
-
         <!--RouterlinkActive NOT WORKING YET-->
-        <div (click)="getThematicsByTag(t.tid)">{{t.name.toLowerCase()}}</div>
+        <div (click)="getThematicsByTag(t.tid)">#{{t.name.toLowerCase()}}</div>
       </div>
     </div>
   </div>

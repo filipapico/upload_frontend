@@ -10,6 +10,7 @@ import {Thematics, Tags, Thematic} from "../interfaces";
 export class ThematicsComponent {
   thematics!: Thematics[]
   tags!: Tags[]
+  tagsShowing!: number
 
   constructor(private uploadService: UploadService) {
   }
@@ -24,9 +25,15 @@ export class ThematicsComponent {
     })
   }
 
-  getThematicsByTag(id:string) {
-    this.uploadService.getThematicsByTag(id).subscribe((thematicTags) => {
-      this.thematics=thematicTags
-    })
+
+  getThematicsByTag(id: string) {
+    if (this.tagsShowing < 10) {
+      this.uploadService.getThematicsByTag(id).subscribe((thematicTags) => {
+        this.thematics = thematicTags
+      })
+      this.tagsShowing++
+    } else {
+
+    }
   }
 }
