@@ -12,6 +12,11 @@
         margin: 2px;
         border-radius: 6px;
       }
+      .active{
+        background-color: red;
+        color: red;
+        transition-duration: 50ms;
+      }
     }
   }
 
@@ -22,7 +27,7 @@
     .main-content-center {
       display: flex;
       flex-wrap: wrap;
-      width: 60%;
+      //width: 60%;
       padding: 12px;
 
       .thematics-all {

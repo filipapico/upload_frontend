@@ -1,3 +1,4 @@
+<app-flag></app-flag>
 <div class="container">
   <h1>Thematics</h1>
   <!--TAGS-->
@@ -5,6 +6,8 @@
     <h4>Choose your tematic by tag</h4>
     <div class="tags-items">
       <div class="tags-item" *ngFor="let t of tags">
+
+        <!--RouterlinkActive NOT WORKING YET-->
         <div (click)="getThematicsByTag(t.tid)">{{t.name.toLowerCase()}}</div>
       </div>
     </div>
@@ -16,8 +19,7 @@
         <!--TO BE CORRECTED - Name of the tag being shown OR mark upper tags as active with ngClass
         <h4>{{thematics[0].title}}</h4>-->
         <div class="thematics">
-          <div *ngFor="let t of thematics" class="thematic-item"
-               [routerLink]="['/thematic', t.nid]">
+          <div *ngFor="let t of thematics" class="thematic-item" [routerLink]="['/thematic', t.nid]">
             <div class="thematic-header">
               <div class="thematic-thumbnail">
                 <div
@@ -38,16 +40,13 @@
 
     </div>
     <!--THEMATICS SUGGESTION-->
-    <div>
-
-    </div>
-    <div class="suggestion-list-card">
+    <!--<div class="suggestion-list-card">
       <h4>Newest thematics</h4>
       <app-suggestionlist *ngFor="let t of thematics.slice(0,5)"
                           [listThumbnail]="t.field_thematic_thumbnail"
                           [listElement]="t.title"
                           [id_element]="t.nid">
       </app-suggestionlist>
-    </div>
+    </div>-->
   </div>
 </div>
