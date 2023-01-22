@@ -1,0 +1,12 @@
+.items {
+  display: flex;
+  flex-wrap: wrap;
+
+  .item {
+    color: lightgrey;
+    padding: 4px 6px;
+    border: 1px solid lightgrey;
+    margin: 2px;
+    border-radius: 6px;
+  }
+}
