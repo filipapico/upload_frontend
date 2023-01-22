@@ -11,8 +11,6 @@ export class PaginationComponent {
   thematics!: Thematics[]
 
   @Input() list!: Tags[]
-  @Input() name!: string
-  @Input() test!: string
 
   constructor(private uploadService: UploadService) {
   }

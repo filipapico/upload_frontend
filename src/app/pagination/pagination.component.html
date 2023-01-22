@@ -1,10 +1,10 @@
-<div class="items">
+<nav class="items">
   <c-pagination aria-label="Page navigation">
   <span cPageItem *ngFor="let l of list" class="item">
-    <a cPageLink (click)="getThematicsByTag(l.tid)">{{l.name}}</a>
+    <a cPageLink [routerLink]="" (click)="getThematicsByTag(l.tid)">{{l.name}}</a>
   </span>
   </c-pagination>
-</div>
+</nav>
 
 <!--
 ORIGINAL https://coreui.io/angular/docs/components/pagination
