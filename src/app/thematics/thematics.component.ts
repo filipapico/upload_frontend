@@ -24,12 +24,7 @@ export class ThematicsComponent {
     this.uploadService.getTagsInThematics(1).subscribe((tags) => {
       this.tags = tags
     })
-
-    if (this.tagsShowing <11){
-    } else {
-    }
   }
-
 
   getThematicsByTag(id: string) {
     this.uploadService.getThematicsByTag(id).subscribe((thematicTags) => {

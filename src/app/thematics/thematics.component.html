@@ -4,49 +4,53 @@
   <!--TAGS-->
   <div class="tags" *ngIf="tags">
     <h4>Choose your tematic by tag</h4>
-
-    <app-pagination [list]="tags"></app-pagination>
-
     <div class=" tags-items">
-    <div class="tags-item" *ngFor="let t of tags">
-      <div (click)="getThematicsByTag(t.tid)">#{{t.name.toLowerCase()}}</div>
-    </div>
-  </div>
-</div>
-
-  <!--THEMATICS-->
-<div class="main-content">
-  <div class="main-content-center">
-    <div class="thematics-all">
-      <div class="thematics">
-        <div *ngFor="let t of thematics" class="thematic-item" [routerLink]="['/thematic', t.nid]">
-          <div class="thematic-header">
-            <div class="thematic-thumbnail">
-              <div
-                style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_thumbnail}}');"></div>
-            </div>
-            <div>
-              <h5>{{t.title}}</h5>
-              <p>{{t.uid}}</p>
-            </div>
-          </div>
-          <div class="thematic-header-image">
-            <div
-              style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_header_image}}');"></div>
-          </div>
-        </div>
+      <div class="tags-item" *ngFor="let t of tags">
+        <div (click)="getThematicsByTag(t.tid)">#{{t.name.toLowerCase()}}</div>
       </div>
     </div>
 
+    <!--Testing use of paggination component - links not working yet-->
+    <p>Testing use of paggination component</p>
+    <app-pagination
+      [list]="tags">
+    </app-pagination>
+
   </div>
-  <!--THEMATICS SUGGESTION-->
-  <!--<div class="suggestion-list-card">
-    <h4>Newest thematics</h4>
-    <app-suggestionlist *ngFor="let t of thematics.slice(0,5)"
-                        [listThumbnail]="t.field_thematic_thumbnail"
-                        [listElement]="t.title"
-                        [id_element]="t.nid">
-    </app-suggestionlist>
-  </div>-->
-</div>
+
+  <!--THEMATICS-->
+  <div class="main-content">
+    <div class="main-content-center">
+      <div class="thematics-all">
+        <div class="thematics">
+          <div *ngFor="let t of thematics" class="thematic-item" [routerLink]="['/thematic', t.nid]">
+            <div class="thematic-header">
+              <div class="thematic-thumbnail">
+                <div
+                  style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_thumbnail}}');"></div>
+              </div>
+              <div>
+                <h5>{{t.title}}</h5>
+                <p>{{t.uid}}</p>
+              </div>
+            </div>
+            <div class="thematic-header-image">
+              <div
+                style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_header_image}}');"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!--THEMATICS SUGGESTION-->
+    <!--<div class="suggestion-list-card">
+      <h4>Newest thematics</h4>
+      <app-suggestionlist *ngFor="let t of thematics.slice(0,5)"
+                          [listThumbnail]="t.field_thematic_thumbnail"
+                          [listElement]="t.title"
+                          [id_element]="t.nid">
+      </app-suggestionlist>
+    </div>-->
+  </div>
 </div>
