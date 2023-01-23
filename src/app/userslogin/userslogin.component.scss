@@ -2,6 +2,21 @@
   margin-left: 15px;
 
   h4 {
-    margin-bottom: 10px;
+    margin-bottom: 15px;
+  }
+
+  .login-button {
+    color: lightgrey;
+    padding: 4px 6px;
+    border: 1px solid #b5b5be69;
+    margin: 2px;
+    border-radius: 6px;
+    text-decoration: none;
+
+    &:hover {
+      font-weight: bold;
+      border: 1px solid white;
+
+    }
   }
 }
