@@ -28,6 +28,7 @@ interface Video {
   nid: string
   field_cover_photo: string
   body: string
+  uid: string
 }
 
 interface Likes {
