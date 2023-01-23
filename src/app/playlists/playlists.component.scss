@@ -29,6 +29,7 @@
   flex-wrap: wrap;
 
   .favorites-card {
+    position: relative;
     width: 343px;
     height: 250px;
     background: #1C1C24;
@@ -44,8 +45,25 @@
         img {
           width: 110px;
           height: 100px;
-          border-radius: 10px;
         }
+      }
+    }
+    .favorite-icon {
+      position: absolute;
+      //background-image: linear-gradient(to right, #1c1c24, #7c7c7c);
+      background: linear-gradient(#1c1c24, transparent);
+      width: 116px;
+      height: 200px;
+      top: 0px;
+      left: 0px;
+      //opacity: 90%;
+      border-radius: 15px 0px 0px 0px;
+
+      img {
+        position: absolute;
+        width: 50px;
+        top: 65px;
+        left: 24px;
       }
     }
   }
@@ -80,9 +98,9 @@
 
 p {
   color: #FFFFFF;
-  margin: 2px;
   text-align: center;
   font-size: 14px;
+  font-weight: bold;
 }
 
 h1 {

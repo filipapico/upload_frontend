@@ -9,14 +9,17 @@
 
 <div class="container">
   <div class="favorites-card" routerLink="/favorites" routerLinkActive="active">
-    <p>My favorites</p>
     <div>
       <div *ngFor="let fl of favorites_list | slice:0:6" class="favorites-img">
         <img src="https://dev-project-upskill2-grupo4v2.pantheonsite.io{{fl.thumbnail__target_id}}">
       </div>
     </div>
-
+    <p>My favorites</p>
+    <div class="favorite-icon">
+      <img src="assets/favorite-playlist.png">
+    </div>
   </div>
+
 
   <div class="playlist-container" *ngFor="let playlist of playlists">
     <app-contentcard type="video"
