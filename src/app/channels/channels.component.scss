@@ -7,7 +7,7 @@
     flex-direction: row;
 
     .categories {
-      color: lightgrey;
+      /*color: lightgrey;
       padding: 4px 6px;
       border: 1px solid lightgrey;
       margin: 2px;
@@ -16,7 +16,21 @@
       &:hover, &.active {
         color: red;
         border: 1px solid red;
+      }*/
+
+      color: lightgrey;
+      padding: 4px 6px;
+      border: 1px solid #b5b5be69;
+      margin: 2px;
+      border-radius: 6px;
+      text-decoration: none;
+
+      &:hover {
+        font-weight: bold;
+        border: 1px solid white;
+        cursor: pointer;
       }
+
     }
   }
 
