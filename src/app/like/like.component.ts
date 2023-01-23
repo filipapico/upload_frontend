@@ -5,6 +5,7 @@ import {faThumbsDown} from "@fortawesome/free-regular-svg-icons";
 import {faThumbsDown as faThumbsDownSolid} from "@fortawesome/free-solid-svg-icons";
 import {UploadService} from "../upload.service";
 import {HttpHeaders} from "@angular/common/http";
+import {Likes} from "../interfaces";
 
 @Component({
   selector: 'app-like',
@@ -26,7 +27,16 @@ export class LikeComponent {
     "uid": ["0"]
   }
 
+  likes!: Likes[]
+
   constructor(private uploadService: UploadService) {
+  }
+
+  ngOnInit(): void {
+    this.uploadService.getLikes(this.id_video).subscribe((likes) => {
+      this.likes = likes
+      console.log(this.likes)
+    })
   }
 
 
@@ -45,6 +55,13 @@ export class LikeComponent {
 
     this.uploadService.postLike(urlLike, bodybody, likeHeaders)
     console.log(this.id_video)
-  }
 
+  }
+//NOT THE BEST SOLUTION (REPEATING THE API CALL)
+  getVideosLikes(id: string) {
+    this.uploadService.getLikes(this.id_video).subscribe((likes) => {
+      this.likes = likes
+      console.log(this.likes)
+    })
+  }
 }

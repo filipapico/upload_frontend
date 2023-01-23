@@ -1,6 +1,6 @@
 <div class="container">
-  <fa-icon [icon]="faThumbsUp" (click)="addlikeToVideo('','{}','')"></fa-icon>
-  <span> count |</span>
+  <fa-icon [icon]="faThumbsUp" (click)="addlikeToVideo('','{}',''); getVideosLikes(id_video)"></fa-icon>
+  <span *ngIf="likes"> {{likes[0].count}} |</span>
   <fa-icon [icon]="faThumbsDown"></fa-icon>
   <span> count</span>
 </div>
