@@ -23,6 +23,9 @@
         <h4>{{video.title}}</h4>
         <p>{{video.created}}</p>
       </div>
+      <div>
+        <app-like></app-like>
+      </div>
     </div>
 
     <p class="description-box">
@@ -44,18 +47,18 @@
   </div>
 
   <!-- Right side bar is suggesting more of the latest videos: -->
-<!--  <div class="latest-video-container">
-    <h4>Latest Videos</h4>
-    <app-contentcard type="video" *ngFor="let lv of latestVideosList"
-                     [title]="lv.name"
-                     [subtitle]="lv.created"
-                     [mid]="lv.mid"
-                     [field_media_tags]="lv.field_media_tags"
-                     [image]="lv.thumbnail__target_id"
-                     [logotype]="lv.field_logotype"
-                     [field_media_oembed_video]="lv.field_media_oembed_video"
-    ></app-contentcard>
-  </div>-->
+  <!--  <div class="latest-video-container">
+      <h4>Latest Videos</h4>
+      <app-contentcard type="video" *ngFor="let lv of latestVideosList"
+                       [title]="lv.name"
+                       [subtitle]="lv.created"
+                       [mid]="lv.mid"
+                       [field_media_tags]="lv.field_media_tags"
+                       [image]="lv.thumbnail__target_id"
+                       [logotype]="lv.field_logotype"
+                       [field_media_oembed_video]="lv.field_media_oembed_video"
+      ></app-contentcard>
+    </div>-->
 </div>
 
 
