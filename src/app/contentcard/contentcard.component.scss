@@ -80,6 +80,19 @@
       padding-bottom: 45%;
     }
 
+    .icons {
+      cursor: pointer;
+      color: #979797;
+      position: absolute;
+      top: 247px;
+      right: 29px;
+      font-size: 1.2rem;
+
+       .bookmark-icon {
+        margin-right: 10px;
+      }
+    }
+
     .logotype {
       width: 60px;
       height: 60px;
@@ -103,17 +116,7 @@
 
     }
 
-    .icons {
-      color: #979797;
-      position: absolute;
-      top: 247px;
-      right: 29px;
-      font-size: 1.2rem;
 
-      .share-icon {
-        margin-left: 12px;
-      }
-    }
 
     .info-container {
       height: 100px;
