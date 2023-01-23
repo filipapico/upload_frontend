@@ -6,7 +6,7 @@
     //width: 75%;
 
     h2 {
-      margin-bottom: 0px;
+      margin-bottom: 0;
     }
 
     .pagination {
@@ -31,13 +31,12 @@
       background-color: #1C1C24 !important;
     }*/
 
-    .latest-video-container {
-      .latest-video {
+      .latest-video-container {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
+        justify-content: space-evenly;
       }
-    }
+
   }
   .right-sidebar {
     display: flex;
