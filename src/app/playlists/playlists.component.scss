@@ -3,15 +3,16 @@
   margin-left: 23px;
 
   .category-list, .category {
-/*    background-color: #3b3838;
-    border-radius: 20px;
-    margin-left: 10px;
-    cursor: pointer;*/
-      color: lightgrey;
-      padding: 4px 6px;
-      border: 1px solid lightgrey;
-      margin: 5px;
-      border-radius: 6px;
+    /*    background-color: #3b3838;
+        border-radius: 20px;
+        margin-left: 10px;
+        cursor: pointer;*/
+
+    //color: lightgrey;
+    padding: 0px 6px;
+    border: 1px solid lightgrey;
+    margin: 2px;
+    border-radius: 6px;
   }
 
   .category-list:hover , p:hover {
@@ -100,7 +101,8 @@ p {
   color: #FFFFFF;
   text-align: center;
   font-size: 14px;
-  font-weight: bold;
+  margin: 2px;
+  border-radius: 6px;
 }
 
 h1 {
