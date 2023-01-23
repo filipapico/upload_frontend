@@ -32,20 +32,7 @@ export class ContentcardComponent {
   @Input() channelAuthor?: string;
   @Input() field_duration?: string;
 
-
-
-
   constructor(public uploadService: UploadService) { }
 
-  get favorite() {
-    if (this.mid)
-      return this.uploadService.isFavorite(this.mid);
-    return false;
-  }
-
-  toggleFavorite() {
-    if (this.mid)
-      this.uploadService.toggleFavorito(this.mid);
-  }
 
 }
