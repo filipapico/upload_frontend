@@ -34,6 +34,7 @@ import {FooterComponent} from './footer/footer.component';
 import {CollapseComponent} from './collapse/collapse.component';
 import {CardModule, CollapseModule} from "@coreui/angular";
 import {PaginationComponent} from './pagination/pagination.component';
+import { LikeComponent } from './like/like.component';
 
 @NgModule({
   declarations: [
@@ -61,6 +62,7 @@ import {PaginationComponent} from './pagination/pagination.component';
     FooterComponent,
     CollapseComponent,
     PaginationComponent,
+    LikeComponent,
   ],
   imports: [
     BrowserModule,
