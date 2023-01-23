@@ -20,7 +20,7 @@ export class LikeComponent {
   @Input() id_video!: string
 
   body: {} = {
-    "entity_id": ["51"],
+    "entity_id": [this.id_video],
     "entity_type": ["media"],
     "flag_id": [{"target_id": "like_videos", "target_type": "flag"}],
     "uid": ["0"]
@@ -32,14 +32,19 @@ export class LikeComponent {
 
   addlikeToVideo(urlLike: string, bodyLike: {}, headersLike: any) {
     let likeHeaders = new HttpHeaders({
-      'X-CSRF-Token':'VQrAx6wI4cv-J3BdqLRhIbN5gfUUCGf9sZnR_teei2U',
+      'X-CSRF-Token': 'VQrAx6wI4cv-J3BdqLRhIbN5gfUUCGf9sZnR_teei2U',
       'Accept': 'application/vnd.api+json'
     });
 
-    this.uploadService.postLike(urlLike, bodyLike, likeHeaders)
-    console.log(urlLike)
-    console.log(bodyLike)
-    console.log(headersLike)
+    let bodybody: {} = {
+      "entity_id": [this.id_video],
+      "entity_type": ["media"],
+      "flag_id": [{"target_id": "like_videos", "target_type": "flag"}],
+      "uid": ["0"]
+    }
+
+    this.uploadService.postLike(urlLike, bodybody, likeHeaders)
+    console.log(this.id_video)
   }
 
 }

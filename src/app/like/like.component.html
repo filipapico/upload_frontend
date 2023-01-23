@@ -1,13 +1,9 @@
 <div class="container">
-  <div (click)="addlikeToVideo(
-  'https://dev-project-upskill2-grupo4v2.pantheonsite.io/entity/flagging',
-  '{}','')">LIKELIKE
-  </div>
-  <!--  <div (click)="addlikeToVideo('51')">LIKELIKE</div>-->
-  <fa-icon [icon]="faThumbsUp"></fa-icon>
+  <fa-icon [icon]="faThumbsUp" (click)="addlikeToVideo('','{}','')"></fa-icon>
   <span> count |</span>
   <fa-icon [icon]="faThumbsDown"></fa-icon>
   <span> count</span>
 </div>
 
-<!--<fa-icon [icon]="upbnbService.isFavorite(id) ? faHeartSolid : faHeart"></fa-icon>-->
+<!--FOR LATER - change icon isliked/notliked Localstorage
+<fa-icon [icon]="upbnbService.isFavorite(id) ? faHeartSolid : faHeart"></fa-icon>-->
