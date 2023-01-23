@@ -1,5 +1,5 @@
 import {Component, Input} from '@angular/core';
-import {faHeart,faBookmark} from "@fortawesome/free-regular-svg-icons";
+import {faHeart, faBookmark} from "@fortawesome/free-regular-svg-icons";
 import {faHeart as faHeartFull, faBookmark as faBookmarkFull} from "@fortawesome/free-solid-svg-icons";
 import {faShareNodes} from "@fortawesome/free-solid-svg-icons";
 import {UploadService} from "../upload.service";
@@ -32,7 +32,11 @@ export class ContentcardComponent {
   @Input() channelAuthor?: string;
   @Input() field_duration?: string;
 
-  constructor(public uploadService: UploadService) { }
+  constructor(public uploadService: UploadService) {
+  }
 
-
+  ngOnInit(): void {
+    let titleWords = this.title.split(' ');
+    (titleWords.length > 8) ? this.title = titleWords.slice(0, 7).join(' ').concat('...') : this.title;
+  }
 }
