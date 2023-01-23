@@ -4,12 +4,12 @@ import {Categories, Channels, Playlists, Thematic, Tags, ThematicLinks, Video, T
 
 const BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
 const LIKE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io/entity/flagging";
-let BODYLIKE = {
+/*let BODYLIKE = {
   "entity_id":["87"],
   "entity_type":["media"],
   "flag_id":[{"target_id": "like_videos","target_type": "flag"}],
   "uid": ["0"]
-}
+}*/
 
 @Injectable({
   providedIn: 'root'
@@ -29,7 +29,7 @@ export class UploadService {
   }
 
   postLike(urlLike: string, bodyLike: {}, headersLike: any) {
-    return this.http.post(LIKE_URL, BODYLIKE, headersLike).subscribe((data) => {
+    return this.http.post(LIKE_URL, bodyLike, headersLike).subscribe((data) => {
     })
   }
 
