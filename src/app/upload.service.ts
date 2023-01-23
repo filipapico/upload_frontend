@@ -3,6 +3,7 @@ import {HttpClient} from '@angular/common/http';
 import {Categories, Channels, Playlists, Thematic, Tags, ThematicLinks, Video, Thematics, Comment} from "./interfaces";
 
 const BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
+const FLAG_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io/entity/flagging";
 
 @Injectable({
   providedIn: 'root'
@@ -26,6 +27,11 @@ export class UploadService {
     });
   }
 
+  postLike(urlLike: string, bodyLike: {}, headersLike: any) {
+    return this.http.post(FLAG_URL, bodyLike, headersLike).subscribe((data) => {
+    })
+  }
+
   getComments(type: string, id: number) {
     return this.http.get<Comment[]>(BASE_URL + "/api/comments/" + type + "/" + id);
   }
@@ -40,7 +46,7 @@ export class UploadService {
   }
 
   getChannels(id: string) {
-    return this.http.get<Channels[]>(BASE_URL + "/api/channels/"+ id);
+    return this.http.get<Channels[]>(BASE_URL + "/api/channels/" + id);
   }
 
   //
@@ -102,6 +108,7 @@ export class UploadService {
   isFavorite(id: string) {
     return this.favorites.includes(id);
   }
+
   toggleFavorito(id: string) {
     if (this.isFavorite(id)) {
       //remove id from favorites
@@ -115,10 +122,12 @@ export class UploadService {
 
   //FAVORITE CHANNELS
   favChannel: number[] = [] = JSON.parse(localStorage.getItem("favChannel") || "[]");
+
   isFavChannel(id: number) {
     return this.favChannel.includes(id);
   }
-  toggleFavChannel(id: number){
+
+  toggleFavChannel(id: number) {
     if (this.isFavChannel(id)) {
       //remove id from fav (was in the list and user clicks again > removing)
       this.favChannel.splice(this.favChannel.indexOf(id), 1) //favorite was in the list, deleting it
