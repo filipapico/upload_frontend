@@ -1,9 +1,10 @@
-<!--<fa-icon [icon]="faBars"></fa-icon>-->
 <div class="container" (click)="toggleCollapse()" [attr.aria-expanded]="visible">
   <fa-icon [icon]="faBars"></fa-icon>
   <div [visible]="visible" cCollapse style="max-width: 170px;">
     <c-card>
       <app-menu></app-menu>
+      <app-tags></app-tags>
+      <app-userslogin></app-userslogin>
     </c-card>
   </div>
 </div>

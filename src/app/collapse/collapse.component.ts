@@ -10,7 +10,7 @@ import {CardModule, CollapseModule} from "@coreui/angular";
 
 export class CollapseComponent {
   faBars = faBars;
-  visible: boolean = false;
+  visible = false;
 
   toggleCollapse(): void {
     this.visible = !this.visible;
