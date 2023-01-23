@@ -1,17 +1,17 @@
-<div class="video-card" [ngClass]="type" [routerLink]="routerLink">
-  <div class="image" style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{image}}');">
+<div class="video-card" [ngClass]="type" >
+  <div class="image" [routerLink]="routerLink" style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{image}}');">
     <div *ngIf="logotype" class="logotype"
          style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{logotype}}');">
     </div>
     <p class="duration">{{field_duration}}</p>
-    <div class="icons">
-   <!--   <span class="bookmark-icon" (click)="uploadService.toggleFavChannel(nid)">
-          <fa-icon [icon]="uploadService.isFavChannel(nid)? faBookmarkFull : faBookmark" class="fa-xl"></fa-icon>
-        </span>-->
-      <fa-icon class="bookmark-icon" [icon]="favorite? faBookmarkFull : faBookmark"></fa-icon>
-      <fa-icon class="share-icon" [icon]="faShareNodes"></fa-icon>
-    </div>
   </div>
+  <div class="overlay">
+      <span class="bookmark-icon" (click)="uploadService.toggleFavoriteVideo(mid)">
+        <fa-icon  [icon]="uploadService.isFavoriteVideo(mid)? faBookmarkFull : faBookmark"></fa-icon>
+      </span>
+    <fa-icon class="share-icon" [icon]="faShareNodes"></fa-icon>
+  </div>
+
   <div class="info-container">
     <p class="blue-ref">{{source}}</p>
     <h5>{{title}}</h5>
