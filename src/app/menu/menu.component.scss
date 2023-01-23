@@ -1,22 +1,23 @@
 .container {
-  padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-content: center;
   cursor: pointer;
+  margin-top: 40px;
 
   .menu-item-text {
     margin-top: 10px;
-    color: lightgrey;
+    color: #B5B5BE;
 
     &.active {
-      color: red;
+      color: white;
+      border-left: 2px solid white;
     }
 
     .menu-item-logo {
       flex-basis: 25px;
-      margin-right: 10px;
+      margin: auto 15px;
     }
   }
 }
