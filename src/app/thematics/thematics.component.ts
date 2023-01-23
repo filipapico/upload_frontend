@@ -21,6 +21,7 @@ export class ThematicsComponent {
       this.thematics = thematics
     })
 
+    //To be completed - change "page number" of tags showing (view already updated)
     this.uploadService.getTagsInThematics(1).subscribe((tags) => {
       this.tags = tags
     })
