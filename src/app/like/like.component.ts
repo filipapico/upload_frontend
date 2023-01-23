@@ -16,12 +16,12 @@ export class LikeComponent {
   faThumbsUpSolid = faThumbsUpSolid;
   faThumbsDown = faThumbsDown;
 
-  @Input () id_video!: string
+  @Input() id_video!: string
 
   body: {} = {
-    "entity_id":["51"],
-    "entity_type":["media"],
-    "flag_id":[{"target_id": "like_videos","target_type": "flag"}],
+    "entity_id": ["51"],
+    "entity_type": ["media"],
+    "flag_id": [{"target_id": "like_videos", "target_type": "flag"}],
     "uid": ["0"]
   }
 
@@ -29,6 +29,7 @@ export class LikeComponent {
   }
 
   addlikeToVideo(id:string) {
-    console.log(id)  }
+    console.log(id)
+  }
 
 }
