@@ -30,6 +30,12 @@ interface Video {
   body: string
 }
 
+interface Likes {
+  mid: string
+  name: string
+  count: string
+}
+
 interface Categories {
   name: string
   tid: string
@@ -110,4 +116,4 @@ interface Playlists {
   created: string
 }
 
-export {Video, Categories, Channels, Comment, Thematics, Tags, Thematic, ThematicLink, ThematicLinks, Playlist, Playlists};
+export {Video, Likes, Categories, Channels, Comment, Thematics, Tags, Thematic, ThematicLink, ThematicLinks, Playlist, Playlists};
