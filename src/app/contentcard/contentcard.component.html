@@ -9,7 +9,7 @@
       <span class="bookmark-icon" (click)="$event.stopPropagation(); uploadService.toggleFavoriteVideo(mid)">
         <fa-icon  [icon]="uploadService.isFavoriteVideo(mid)? faBookmarkFull : faBookmark"></fa-icon>
       </span>
-    <fa-icon class="share-icon" [icon]="faShareNodes"></fa-icon>
+      <fa-icon class="share-icon"  [icon]="faShareNodes"></fa-icon>
   </div>
 
   <div class="info-container">

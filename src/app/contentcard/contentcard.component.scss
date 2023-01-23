@@ -10,6 +10,7 @@
     width: 410px;
     height: 290px;
     margin: 10px 5px;
+    position: relative;
 
     .image {
       position: relative;
@@ -33,20 +34,24 @@
     }
 
     .icons {
+      cursor: pointer;
       color: #979797;
       position: absolute;
-      top: 250px;
-      right: 34px;
+      top: 247px;
+      right: 44px;
+      font-size: 1.2rem;
 
-      .share-icon, .bookmark-icon {
+      .share-icon {
         color: whitesmoke;
-        margin-left: 10px;
       }
 
-      .heart-icon {
+      .bookmark-icon {
         display: none;
       }
+
     }
+
+
 
     .info-container {
       h5, .card-subtitle {
@@ -58,7 +63,7 @@
         font-size: 1em;
       }
 
-      p{
+      p {
         font-size: 0.8em;
       }
     }
@@ -88,7 +93,7 @@
       right: 29px;
       font-size: 1.2rem;
 
-       .bookmark-icon {
+      .bookmark-icon {
         margin-right: 10px;
       }
     }
@@ -115,7 +120,6 @@
       padding: 3px;
 
     }
-
 
 
     .info-container {
