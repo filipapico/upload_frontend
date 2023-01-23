@@ -65,8 +65,8 @@ export class UploadService {
     return this.http.get<Thematics[]>(BASE_URL + "/api/thematics")
   }
 
-  getTagsInThematics() {
-    return this.http.get<Tags[]>(BASE_URL + "/api/tags-thematics")
+  getTagsInThematics(pNum: number) {
+    return this.http.get<Tags[]>(BASE_URL + "/api/tags-thematics?page=" + pNum)
   }
 
   getThematicsByTag(id: string) {
