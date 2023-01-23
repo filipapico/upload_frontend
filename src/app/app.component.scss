@@ -2,6 +2,10 @@
   display: flex;
   margin: 0;
 
+  app-sidebar {
+    width: 40%;
+  }
+
   .content {
     display: flex;
     flex-wrap: wrap;
