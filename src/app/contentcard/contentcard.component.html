@@ -13,8 +13,15 @@
   </div>
 
   <div class="info-container">
-    <p class="blue-ref">{{source}}</p>
-    <h5>{{title}}</h5>
+    <p class="blue-ref" *ngIf="source; else noSource">
+      {{source}}
+    </p>
+    <ng-template #noSource>
+      Uploaded by {{uid}}
+    </ng-template>
+    <h5>
+      {{title}}
+    </h5>
     <p class="card-subtitle"><span *ngIf="channelAuthor">by </span>{{subtitle || channelAuthor}}</p>
   </div>
 </div>
