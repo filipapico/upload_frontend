@@ -27,7 +27,6 @@ import {SuggestionlistComponent} from './suggestionlist/suggestionlist.component
 import {UsersloginComponent} from './userslogin/userslogin.component';
 import {SidecardComponent} from './sidecard/sidecard.component';
 import {CommentformComponent} from './commentform/commentform.component';
-import {FlagComponent} from './flag/flag.component';
 import {AvatarModule} from 'ngx-avatar';
 import {MyfavoritesComponent} from './myfavorites/myfavorites.component';
 import {FooterComponent} from './footer/footer.component';
@@ -57,7 +56,6 @@ import { LikeComponent } from './like/like.component';
     UsersloginComponent,
     SidecardComponent,
     CommentformComponent,
-    FlagComponent,
     MyfavoritesComponent,
     FooterComponent,
     CollapseComponent,
