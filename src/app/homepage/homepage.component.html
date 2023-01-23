@@ -26,7 +26,6 @@
       </div>
     </div>
 
-
     <div class="pagination">
       <div class="page-item">
         <a class="page-link" (click)="pageSelected('Previous')"><fa-icon [icon]="faAngleLeft"></fa-icon></a>
@@ -40,8 +39,7 @@
     </div>
 
     <div class="latest-video-container">
-      <div class="latest-video">
-                  <app-contentcard type="video" *ngFor="let lv of latestVideos"
+                  <app-contentcard class="video-card" type="video" *ngFor="let lv of latestVideos"
                                    [source]="lv.title"
                                    [title]="lv.name"
                                    [subtitle]="lv.created"
@@ -53,7 +51,6 @@
                                    [field_media_oembed_video]="lv.field_media_oembed_video"
                                    [routerLink]="['/video-detail', lv.mid]"
                   ></app-contentcard>
-      </div>
     </div>
   </div>
 
