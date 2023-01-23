@@ -1,9 +1,21 @@
 import {Injectable} from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
-import {Categories, Channels, Playlists, Thematic, Tags, ThematicLinks, Video, Thematics, Comment} from "./interfaces";
+import {
+  Categories,
+  Channels,
+  Playlists,
+  Thematic,
+  Tags,
+  ThematicLinks,
+  Video,
+  Thematics,
+  Comment,
+  Likes
+} from "./interfaces";
 
 const BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
 const LIKE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io/entity/flagging";
+
 /*let BODYLIKE = {
   "entity_id":["87"],
   "entity_type":["media"],
@@ -31,6 +43,10 @@ export class UploadService {
   postLike(urlLike: string, bodyLike: {}, headersLike: any) {
     return this.http.post(LIKE_URL, bodyLike, headersLike).subscribe((data) => {
     })
+  }
+
+  getLikes(id_video: string) {
+    return this.http.get<Likes[]>(BASE_URL + "/api/like/videos/" + id_video)
   }
 
   postComments(url: string, body: {}, headers: any) {
