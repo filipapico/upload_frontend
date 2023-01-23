@@ -105,12 +105,12 @@ export class UploadService {
   }
 
   //FAVORITE VIDEO
-  isFavorite(id: string) {
+  isFavoriteVideo(id: string) {
     return this.favorites.includes(id);
   }
 
-  toggleFavorito(id: string) {
-    if (this.isFavorite(id)) {
+  toggleFavoriteVideo(id: string) {
+    if (this.isFavoriteVideo(id)) {
       //remove id from favorites
       this.favorites.splice(this.favorites.indexOf(id), 1)
     } else {
