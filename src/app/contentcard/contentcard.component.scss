@@ -50,10 +50,13 @@
       }
 
     }
-
-
-
     .info-container {
+      height: 100px;
+      padding: 0 20px;
+      margin-top: 10px;
+      position: absolute;
+      bottom: -18px;
+
       h5, .card-subtitle {
         margin: 0 0 0 15px;
         color: whitesmoke;
@@ -118,9 +121,7 @@
       top: 137px;
       font-size: 0.7rem;
       padding: 3px;
-
     }
-
 
     .info-container {
       height: 100px;
