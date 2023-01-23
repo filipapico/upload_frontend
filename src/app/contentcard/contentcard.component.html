@@ -1,5 +1,6 @@
-<div class="video-card" [ngClass]="type" >
-  <div class="image" [routerLink]="routerLink" style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{image}}');">
+<div class="video-card" [ngClass]="type">
+  <div class="image" [routerLink]="routerLink"
+       style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{image}}');">
     <div *ngIf="logotype" class="logotype"
          style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{logotype}}');">
     </div>
@@ -7,9 +8,9 @@
   </div>
   <div class="icons">
       <span class="bookmark-icon" (click)="$event.stopPropagation(); uploadService.toggleFavoriteVideo(mid)">
-        <fa-icon  [icon]="uploadService.isFavoriteVideo(mid)? faBookmarkFull : faBookmark"></fa-icon>
+        <fa-icon [icon]="uploadService.isFavoriteVideo(mid)? faBookmarkFull : faBookmark"></fa-icon>
       </span>
-      <fa-icon class="share-icon"  [icon]="faShareNodes"></fa-icon>
+    <fa-icon class="share-icon" [icon]="faShareNodes"></fa-icon>
   </div>
 
   <div class="info-container">
@@ -17,7 +18,7 @@
       {{source}}
     </p>
     <ng-template #noSource>
-      Uploaded by {{uid}}
+      <p class="blue-ref">by {{uid}}</p>
     </ng-template>
     <h5>
       {{title}}
