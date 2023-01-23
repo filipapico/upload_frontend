@@ -4,8 +4,8 @@
 
     <div class="details">
       <h5>{{getHashtag(video.field_media_tags)}}</h5>
-      <span class="bookmark-icon" (click)="toggleFavorite()">
-      <fa-icon [icon]="favorite? faBookmarkFull : faBookmark" class="fa-xl"></fa-icon>
+      <span class="bookmark-icon" (click)="uploadService.toggleFavoriteVideo(video.mid)">
+      <fa-icon [icon]="uploadService.isFavoriteVideo(video.mid)? faBookmarkFull : faBookmark" class="fa-xl"></fa-icon>
     </span>
     </div>
 

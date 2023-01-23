@@ -71,17 +71,4 @@ export class VideoDetailComponent implements OnChanges {
   getTag(item: string) {
     return `#${item.trim()} `;
   }
-
-  toggleFavorite() {
-    if (this.video)
-      this.uploadService.toggleFavorito(this.video.mid);
-    console.log(this.video?.mid)
-  }
-
-  get favorite() {
-    if (this.video)
-      return this.uploadService.isFavorite(this.video.mid);
-    return false;
-  }
-
 }
