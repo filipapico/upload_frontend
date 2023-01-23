@@ -1,23 +1,36 @@
 import {Injectable} from '@angular/core';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Categories, Channels, Playlists, Thematic, Tags, ThematicLinks, Video, Thematics, Comment} from "./interfaces";
 
 const BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
-const FLAG_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io/entity/flagging";
+const LIKE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io/entity/flagging";
+let BODYLIKE = {
+  "entity_id":["87"],
+  "entity_type":["media"],
+  "flag_id":[{"target_id": "like_videos","target_type": "flag"}],
+  "uid": ["0"]
+}
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class UploadService {
   favorites: string[] = [] = JSON.parse(localStorage.getItem("favorites") || "[]");
 
   constructor(public http: HttpClient) {
   }
 
+  // Save the token value in a constant? Tiago's suggestion... (why is not being used now?!!?)
   getToken() {
     let token = this.http.get(BASE_URL + "/session/token");
     console.log(typeof (token));
     return token;
+  }
+
+  postLike(urlLike: string, bodyLike: {}, headersLike: any) {
+    return this.http.post(LIKE_URL, BODYLIKE, headersLike).subscribe((data) => {
+    })
   }
 
   postComments(url: string, body: {}, headers: any) {
@@ -25,11 +38,6 @@ export class UploadService {
       window.location.reload();
       console.log(data);
     });
-  }
-
-  postLike(urlLike: string, bodyLike: {}, headersLike: any) {
-    return this.http.post(FLAG_URL, bodyLike, headersLike).subscribe((data) => {
-    })
   }
 
   getComments(type: string, id: number) {
