@@ -1,10 +1,18 @@
 .container {
-  font-size: 12px;
+  font-size: 9px;
   color: darkgray;
+  flex: 1;
   text-align: center;
 
   a {
-    color: orangered;
+    text-decoration: none;
+    color: white;
+    curso: pointer;
+
+    &:hover {
+      font-weight: bold;
+      color: #dc2f31;
+    }
   }
 }
 
