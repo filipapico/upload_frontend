@@ -8,21 +8,21 @@
       <div class="tags-item" *ngFor="let t of tags">
         <div (click)="getThematicsByTag(t.tid)">#{{t.name.toLowerCase()}}</div>
       </div>
+      <div>See all tags in thematics</div>
     </div>
-
-    <!--Testing use of paggination component - links not working yet-->
-    <p>Testing use of paggination component</p>
-    <app-pagination
-      [list]="tags">
-    </app-pagination>
-
   </div>
+
+  <!--Testing use of paggination component - links not working yet-->
+  <!--<p>Testing use of paggination component</p>
+  <app-pagination
+    [list]="tags">
+  </app-pagination>-->
 
   <!--THEMATICS-->
   <div class="main-content">
     <div class="main-content-center">
       <div class="thematics-all">
-        <div class="thematics">
+        <div class="thematics" *ngIf="thematics">
           <div *ngFor="let t of thematics" class="thematic-item" [routerLink]="['/thematic', t.nid]">
             <div class="thematic-header">
               <div class="thematic-thumbnail">
