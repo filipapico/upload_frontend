@@ -1,11 +1,6 @@
 <div class="container">
   <h4>TAGS</h4>
-  <div class="tags-items">
-    <div class="tags-item">gamers</div>
-    <div class="tags-item">freefire</div>
-    <div class="tags-item">live</div>
-    <div class="tags-item">games</div>
-    <div class="tags-item">playstation</div>
-    <div class="tags-item">delicious</div>
+  <div class="tags-items" *ngIf="tagsVideos">
+    <div class="tags-item" *ngFor="let tv of tagsVideos">{{tv.name}}</div>
   </div>
 </div>
