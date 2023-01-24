@@ -16,7 +16,8 @@ import {
 const BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
 const LIKE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io/entity/flagging";
 
-/*let BODYLIKE = {
+/*USED FOR TESTING
+let BODYLIKE = {
   "entity_id":["87"],
   "entity_type":["media"],
   "flag_id":[{"target_id": "like_videos","target_type": "flag"}],
@@ -33,52 +34,7 @@ export class UploadService {
   constructor(public http: HttpClient) {
   }
 
-  // Save the token value in a constant? Tiago's suggestion... (why is not being used now?!!?)
-  getToken() {
-    let token = this.http.get(BASE_URL + "/session/token");
-    console.log(typeof (token));
-    return token;
-  }
-
-  postLike(urlLike: string, bodyLike: {}, headersLike: any) {
-    return this.http.post(LIKE_URL, bodyLike, headersLike).subscribe((data) => {
-    })
-  }
-
-  getLikes(id_video: string) {
-    return this.http.get<Likes[]>(BASE_URL + "/api/like/videos/" + id_video)
-  }
-
-  postComments(url: string, body: {}, headers: any) {
-    return this.http.post(url, body, headers).subscribe((data) => {
-      window.location.reload();
-      console.log(data);
-    });
-  }
-
-  getComments(type: string, id: number) {
-    return this.http.get<Comment[]>(BASE_URL + "/api/comments/" + type + "/" + id);
-  }
-
-
-  getCategories() {
-    return this.http.get<Categories[]>(BASE_URL + "/api/categories");
-  }
-
-  getCategoryChannels(id: string) {
-    return this.http.get<Channels[]>(BASE_URL + "/api/categories/channels/" + id);
-  }
-
-  getChannels(id: string) {
-    return this.http.get<Channels[]>(BASE_URL + "/api/channels/" + id);
-  }
-
-  //
-  // QUESTION Maybe update all ids to type string? Since our APIs always return strings...
-  getChannelVideos(id: number) {
-    return this.http.get<Video[]>(BASE_URL + "/api/channel/" + id);
-  }
-
+  //VIDEOS
   getVideo(id: number) {
     return this.http.get<Video[]>(BASE_URL + "/api/allvideos/" + id);
   }
@@ -91,6 +47,56 @@ export class UploadService {
     return this.http.get<Video[]>(BASE_URL + "/api/latest-videos/?name=" + value)
   }
 
+  // TOKEN
+  // Save the token value in a constant? Tiago's suggestion... (why is not being used now?!!?)
+  getToken() {
+    let token = this.http.get(BASE_URL + "/session/token");
+    console.log(typeof (token));
+    return token;
+  }
+
+  //LIKES & DISLIKES
+  postLike(urlLike: string, bodyLike: {}, headersLike: any) {
+    return this.http.post(LIKE_URL, bodyLike, headersLike).subscribe((data) => {
+    })
+  }
+
+  getLikes(id_video: string) {
+    return this.http.get<Likes[]>(BASE_URL + "/api/like/videos/" + id_video)
+  }
+
+  //COMMENTS
+  postComments(url: string, body: {}, headers: any) {
+    return this.http.post(url, body, headers).subscribe((data) => {
+      window.location.reload();
+      console.log(data);
+    });
+  }
+
+  getComments(type: string, id: number) {
+    return this.http.get<Comment[]>(BASE_URL + "/api/comments/" + type + "/" + id);
+  }
+
+  //CATEGORIES
+  getCategories() {
+    return this.http.get<Categories[]>(BASE_URL + "/api/categories");
+  }
+
+  //CHANNELS
+  getChannels(id: string) {
+    return this.http.get<Channels[]>(BASE_URL + "/api/channels/" + id);
+  }
+
+  getCategoryChannels(id: string) {
+    return this.http.get<Channels[]>(BASE_URL + "/api/categories/channels/" + id);
+  }
+
+  // QUESTION Maybe update all ids to type string? Since our APIs always return strings...
+  getChannelVideos(id: number) {
+    return this.http.get<Video[]>(BASE_URL + "/api/channel/" + id);
+  }
+
+  //THEMATICS
   getThematics() {
     return this.http.get<Thematics[]>(BASE_URL + "/api/thematics")
   }
@@ -100,7 +106,7 @@ export class UploadService {
   }
 
   getThematicsByTag(id: string) {
-    return this.http.get<Thematics[]>(BASE_URL + "/api/thematics/" + id)
+    return this.http.get<Thematics[]>(BASE_URL + "/api/thematics-tag/" + id)
   }
 
   getThematicDetails(id: string) {
@@ -115,6 +121,7 @@ export class UploadService {
     return this.http.get<Video[]>(BASE_URL + "/api/videos-tags/" + id_tag)
   }
 
+  //PLAYLISTS
   getPlaylists(id: string) {
     return this.http.get<Playlists[]>(BASE_URL + "/api/playlists/" + id);
   }
@@ -123,6 +130,7 @@ export class UploadService {
     return this.http.get<Video[]>(BASE_URL + "/api/playlist/" + id);
   }
 
+  //FAVORITES
   getFavorites() {
     let ids = this.favorites.join(",");
     return this.http.get<Video[]>(BASE_URL + "/api/allvideos/" + ids);
@@ -160,5 +168,4 @@ export class UploadService {
     }
     localStorage.setItem("favChannel", JSON.stringify(this.favChannel));//setting favorites item in the localStorage
   }
-
 }
