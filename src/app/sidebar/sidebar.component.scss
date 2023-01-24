@@ -20,11 +20,14 @@
   .menu, .tags, .users-login {
   }
 
+
   .footer {
-    //Needs to have the same width as the container (top of this scss, because of position fixed)
-    width: 170px;
+    padding: 3px;
     position: fixed;
     bottom: 0;
+    flex: 1;
+    text-align: center;
+    width: inherit;
   }
 
 }
