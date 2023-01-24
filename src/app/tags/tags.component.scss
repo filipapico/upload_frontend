@@ -17,8 +17,11 @@
       border: 1px solid #b5b5be69;
       margin: 2px;
       border-radius: 6px;
+
+      &:hover {
+        font-weight: bold;
+        border: 1px solid white;
+      }
     }
-
   }
-
 }
