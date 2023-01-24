@@ -7,7 +7,6 @@
   </div>
 
   <div class="main-section">
-    <div class="channels-container">
       <app-contentcard type="channels" *ngFor="let channel of channels"
                        [title]="channel.title"
                        [channelAuthor]="channel.uid"
@@ -16,15 +15,14 @@
                        [logotype]="channel.field_logotype"
                        [routerLink]="['/channel', channel.nid]"
       ></app-contentcard>
-    </div>
-
-    <!--    <app-suggestioncard class="channels-sidebar" *ngIf="channels"
-                            [type]="['Last Seen']"
-                            [title]=channels[0].title
-                            [uid]=channels[0].nid
-                            [field_thematic_header_image]=channels[0].field_cover_photo
-                            [field_thematic_thumbnail]=channels[0].field_cover_photo
-                            [routerLink]="['/channel', channels[0].nid]"
-        ></app-suggestioncard>-->
   </div>
+
+  <app-suggestioncard class="channels-sidebar" *ngIf="channels"
+                      [type]="['Last Seen']"
+                      [title]=channels[0].title
+                      [uid]=channels[0].nid
+                      [field_thematic_header_image]=channels[0].field_cover_photo
+                      [field_thematic_thumbnail]=channels[0].field_cover_photo
+                      [routerLink]="['/channel', channels[0].nid]"
+  ></app-suggestioncard>
 </div>

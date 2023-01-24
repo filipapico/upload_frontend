@@ -1,23 +1,12 @@
 .wrapper {
-  display: flex;
-  flex-direction: column;
+  position: relative;
+  width: 100%;
 
   .categories-list {
     display: flex;
     flex-direction: row;
 
     .categories {
-      /*color: lightgrey;
-      padding: 4px 6px;
-      border: 1px solid lightgrey;
-      margin: 2px;
-      border-radius: 6px;
-
-      &:hover, &.active {
-        color: red;
-        border: 1px solid red;
-      }*/
-
       color: lightgrey;
       padding: 4px 6px;
       border: 1px solid #b5b5be69;
@@ -30,40 +19,30 @@
         border: 1px solid white;
         cursor: pointer;
       }
-
     }
   }
 
   .main-section {
     display: flex;
     flex-direction: row;
-    justify-content: center;
-
-    .channels-container {
-      display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: flex-start;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    position: absolute;
+    right: -10%;
+    width: 100%;
 
 
-      .channel-card {
-        width: 150px;
-        height: 175px;
-        margin: 23px;
-
-        .channel-cover-photo {
-          border-radius: 10px;
-          background-size: cover;
-          background-position: center;
-          padding-bottom: 45%;
-        }
-      }
+    app-contentcard{
+      margin: 10px;
     }
 
-    .channels-sidebar {
-      width: 30%;
-    }
+  }
 
+  .channels-sidebar {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
   }
 
 
