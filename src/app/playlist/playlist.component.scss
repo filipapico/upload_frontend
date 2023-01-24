@@ -31,38 +31,44 @@
 
 .videos-list {
   margin: 23px;
-  border: 2px solid #3b3838;
+  border: 2px solid #1c1c24;
   border-radius: 20px;
   height: fit-content;
   width: 30%;
 
   h4 {
     text-align: center;
+    padding: 10px;
+    background-color: #1c1c24;
   }
 
-  div:hover{
-    transform: scale(1.2);
-    background-color: #212121;
-    //box-shadow: 2px 2px 2px #000;
-    z-index: 2;
+  .video-card:hover {
+    transform: scale(1.01);
+    background-color: #1c1c24;
+    box-shadow: 2px 2px 2px #000;
   }
 
-
-  div {
+  .video-card {
     transition: 1s;
     display: flex;
-    margin: 30px;
+    margin: 10px 2px;
+    justify-content: space-between;
 
-    img {
-      border: #3b3838 2px solid;
-      border-radius: 20px;
-      width: 200px;
+    .image {
+      width: 145px;
       height: 100px;
+      border: #1c1c24 2px solid;
+      border-radius: 20px;
     }
 
     p {
-      margin: 15px;
-      font-size: 13px;
+      font-size: 11px;
+      margin: 10px;
+    }
+
+    .index {
+      font-size: 14px;
+      font-weight: bold;
     }
   }
 }
