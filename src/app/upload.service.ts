@@ -47,6 +47,10 @@ export class UploadService {
     return this.http.get<Video[]>(BASE_URL + "/api/latest-videos/?name=" + value)
   }
 
+  getTagsInVideos(){
+    return this.http.get<Tags[]>(BASE_URL + "/api/tags-videos")
+  }
+
   // TOKEN
   // Save the token value in a constant? Tiago's suggestion... (why is not being used now?!!?)
   getToken() {
