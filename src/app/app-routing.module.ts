@@ -10,12 +10,14 @@ import {ChannelsComponent} from "./channels/channels.component";
 import {ChannelComponent} from "./channel/channel.component";
 import {ContentcardComponent} from "./contentcard/contentcard.component";
 import {MyfavoritesComponent} from "./myfavorites/myfavorites.component";
+import {ChannelplayerComponent} from "./channelplayer/channelplayer.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/homepage', pathMatch: 'full'},
   {path: 'homepage', component: HomepageComponent},
   {path: 'channel/:nid', component: ChannelComponent},
   {path: 'channels', component: ChannelsComponent},
+  {path: 'channelplayer/:nid', component: ChannelplayerComponent},
   {path: 'contentcard', component: ContentcardComponent},
   {path: 'video-detail/:mid', component: VideoDetailComponent},
   {path: 'thematic/:nid', component:ThematicComponent},
