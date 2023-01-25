@@ -2,77 +2,69 @@
   background: #1C1C24;
   border-radius: 20px;
 
-&.channel {
-  /*Video shown in channel page*/
-  width: 350px;
-  height: 260px;
-  margin: 10px 5px;
-  position: relative;
-
-  .image {
+  &.channel {
+    /*Video shown in channel page*/
+    width: 350px;
+    height: 260px;
+    margin: 10px 5px;
     position: relative;
-    background-size: cover;
-    background-position: center;
-    border-radius: 20px 20px 0 0;
-    width: 100%;
-    padding-bottom: 45%;
-  }
 
-  .icons {
-    cursor: pointer;
-    color: #979797;
-    position: absolute;
-    top: 247px;
-    right: 29px;
-    font-size: 1.2rem;
-
-    .bookmark-icon {
-      margin-right: 10px;
-    }
-  }
-
-  .logotype {
-    display: none;
-  }
-
-  .duration {
-    background-color: #171725;
-    border-radius: 5px;
-    left: 16px;
-    position: absolute;
-    top: 137px;
-    font-size: 0.7rem;
-    padding: 3px;
-  }
-
-  .info-container {
-    height: 100px;
-    margin: 10px 0 0 20px;
-    position: absolute;
-    bottom: -12px;
-
-    h5 {
-      color: #FAFAFB;
-      font-size: 13px;
-      margin: 2px 0;
+    .image {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      border-radius: 20px 20px 0 0;
+      width: 100%;
+      padding-bottom: 45%;
     }
 
-    p {
-      color: #979797;
-      font-size: 0.8em;
-      margin: 3px 0;
+    .icons {
+      display: none;
     }
 
-    .blue-ref {
-      color: #1E75FF;
+    .logotype {
+      display: none;
     }
-  }
-  .playlist-icon {
-    display: none;
-  }
+
+    .duration {
+      background-color: #171725;
+      border-radius: 5px;
+      left: 16px;
+      position: absolute;
+      top: 110px;
+      font-size: 0.7rem;
+      padding: 3px;
+    }
+
+    .info-container {
+      height: 100px;
+      margin: 10px 0 0 20px;
+      position: absolute;
+      bottom: -12px;
+
+      h5 {
+        color: #FAFAFB;
+        font-size: 13px;
+        margin: 2px 0;
+      }
+
+      p {
+        color: #979797;
+        font-size: 0.8em;
+        margin: 3px 0;
+      }
+
+      .blue-ref {
+        color: #1E75FF;
+      }
+    }
+
+    .playlist-icon {
+      display: none;
+    }
 
 
-}
+  }
 
 
   &.video {
@@ -148,6 +140,7 @@
         color: #1E75FF;
       }
     }
+
     .playlist-icon {
       display: none;
     }
