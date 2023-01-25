@@ -12,12 +12,17 @@ export class ThematicsComponent implements OnInit {
   tags!: Tags[];
   pageNumber: number = 0;
   visible = false;
+  active = false;
 
   constructor(private uploadService: UploadService) {
   }
 
-  toggleShow(): void {
+  toggleVisible(): void {
     this.visible = !this.visible;
+  }
+
+  toggleActive(): void {
+    this.active = !this.active
   }
 
   ngOnInit(): void {
@@ -48,7 +53,7 @@ export class ThematicsComponent implements OnInit {
       this.uploadService.getTagsInThematics(p).subscribe((tags) => {
         this.tags = tags
       })
-      this.toggleShow()
+      this.toggleVisible()
     }
   }
 

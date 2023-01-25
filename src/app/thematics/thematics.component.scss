@@ -17,6 +17,11 @@
           border: 1px solid white;
           cursor: pointer;
         }
+
+        div.selected {
+          border: 1px solid red;
+          transition-duration: 50ms;
+        }
       }
     }
   }
