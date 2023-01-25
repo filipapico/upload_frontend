@@ -1,23 +1,36 @@
 <div class="wrapper">
   <!--Como voltar a pagina 0 quando carregar no titulo Channels? -->
   <h1 routerLink="channels">Channels</h1>
+  <!-- Categories -->
   <div class="categories-list" *ngIf="categories">
-    <div class="categories" *ngFor="let category of categories" (click)="targetChannels(category.tid)" routerLinkActive="active" >
-        {{category.name}}
+    <div class="categories" *ngFor="let category of categories" (click)="targetChannels(category.tid)"
+         routerLinkActive="active">
+      {{category.name}}
     </div>
   </div>
-
   <div class="main-section">
-      <app-contentcard type="channels" *ngFor="let channel of channels"
-                       [title]="channel.title"
-                       [channelAuthor]="channel.uid"
-                       [nid]="channel.nid"
-                       [image]="channel.field_cover_photo"
-                       [logotype]="channel.field_logotype"
-                       [routerLink]="['/channel', channel.nid]"
-      ></app-contentcard>
+    <!-- Loop through channels -->
+    <div *ngFor="let channel of channels">
+      <div class="channel-card" [routerLink]="['/channel', channel.nid]">
+        <div class="image"
+             style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{channel.field_cover_photo}}');">
+          <div class="logotype"
+               style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{channel.field_logotype}}');">
+          </div>
+        </div>
+        <div class="icons">
+          <fa-icon class="share-icon" [icon]="faShareNodes"></fa-icon>
+        </div>
+        <div class="info-container">
+          <h5>
+            {{channel.title}}
+          </h5>
+          <p class="card-subtitle"><span>by </span>{{channel.uid}}</p>
+        </div>
+      </div>
+    </div>
   </div>
-
+<!-- Sidebar -->
   <app-suggestioncard class="channels-sidebar" *ngIf="channels"
                       [type]="['Last Seen']"
                       [title]=channels[0].title
