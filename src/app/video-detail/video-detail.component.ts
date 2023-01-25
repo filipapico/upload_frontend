@@ -69,6 +69,6 @@ export class VideoDetailComponent implements OnChanges {
   }
 
   getTag(item: string) {
-    return `#${item.trim()} `;
+    return `#${item.trim().toLowerCase()} `;
   }
 }
