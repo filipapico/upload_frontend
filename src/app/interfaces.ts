@@ -6,11 +6,11 @@ interface Comment {
   field_comment_name: string
   field_comment_name_media: string
   field_email: string,
-  subject: string,
   comment_body: string
   nid: string
   mid: string
   created: string
+  cid: string
 }
 
 interface Video {
