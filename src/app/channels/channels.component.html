@@ -1,5 +1,6 @@
 <div class="wrapper">
-  <h1>Channels</h1>
+  <!--Como voltar a pagina 0 quando carregar no titulo Channels? -->
+  <h1 routerLink="channels">Channels</h1>
   <div class="categories-list" *ngIf="categories">
     <div class="categories" *ngFor="let category of categories" (click)="targetChannels(category.tid)" routerLinkActive="active" >
         {{category.name}}
