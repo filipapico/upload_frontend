@@ -29,7 +29,6 @@ import {SidecardComponent} from './sidecard/sidecard.component';
 import {CommentformComponent} from './commentform/commentform.component';
 import {AvatarModule} from 'ngx-avatar';
 import {MyfavoritesComponent} from './myfavorites/myfavorites.component';
-import {FooterComponent} from './footer/footer.component';
 import {CollapseComponent} from './collapse/collapse.component';
 import {CardModule, CollapseModule} from "@coreui/angular";
 import {PaginationComponent} from './pagination/pagination.component';
@@ -57,7 +56,6 @@ import { LikeComponent } from './like/like.component';
     SidecardComponent,
     CommentformComponent,
     MyfavoritesComponent,
-    FooterComponent,
     CollapseComponent,
     PaginationComponent,
     LikeComponent,
