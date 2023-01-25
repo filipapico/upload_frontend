@@ -38,6 +38,6 @@ export class ContentcardComponent {
 
   ngOnInit(): void {
     let titleWords = this.title.split(' ');
-    (titleWords.length > 6) ? this.title = titleWords.slice(0, 7).join(' ').concat('...') : this.title;
+    (titleWords.length > 5) ? this.title = titleWords.slice(0, 6).join(' ').concat('...') : this.title;
   }
 }
