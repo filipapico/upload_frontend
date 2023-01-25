@@ -13,10 +13,10 @@ import {Playlist} from "../interfaces";
 export class PlaylistComponent implements OnInit {
   playlist?: Playlist[];
   id: any;
-  indexVideo: number = 0;
+  //indexVideo: number = 0;
 
   constructor(private route: ActivatedRoute, private uploadService: UploadService, private sanitizer: DomSanitizer) {
-    this.id = route.snapshot.params['nid']
+    //this.id = route.snapshot.params['nid']
   }
 
   ngOnInit(): void {
@@ -33,11 +33,11 @@ export class PlaylistComponent implements OnInit {
   }
 
 
-  getVideo(index: any) {
+/*  getVideo(index: any) {
     console.log(index)
     this.indexVideo = index;
     console.log(this.playlist)
     return this.indexVideo;
-  }
+  }*/
 
 }
