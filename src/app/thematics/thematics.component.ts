@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {UploadService} from "../upload.service";
 import {Thematics, Tags, Thematic} from "../interfaces";
 
@@ -7,24 +7,49 @@ import {Thematics, Tags, Thematic} from "../interfaces";
   templateUrl: './thematics.component.html',
   styleUrls: ['./thematics.component.scss']
 })
-export class ThematicsComponent {
-  thematics!: Thematics[]
-  tags!: Tags[]
-  tagsShowing: number = 0
-  pNum!: number
+export class ThematicsComponent implements OnInit {
+  thematics!: Thematics[];
+  tags!: Tags[];
+  pageNumber: number = 0;
+  visible = false;
 
   constructor(private uploadService: UploadService) {
   }
 
+  toggleShow(): void {
+    this.visible = !this.visible;
+  }
+
   ngOnInit(): void {
+    this.uploadService.getTagsInThematics(0).subscribe((tags) => {
+      this.tags = tags
+      console.log("pnum inicial", this.pageNumber)
+    })
+
     this.uploadService.getThematics().subscribe((thematics) => {
       this.thematics = thematics
     })
+  }
 
-    //To be completed - change "page number" of tags showing (view already updated)
-    this.uploadService.getTagsInThematics(1).subscribe((tags) => {
-      this.tags = tags
-    })
+  getMoreTags(p: number) {
+    if (this.tags.length <= 10) {
+      p++
+      this.pageNumber = p
+      this.uploadService.getTagsInThematics(p).subscribe((tags) => {
+        this.tags = tags
+      })
+    }
+  }
+
+  getLessTags(p: number) {
+    if (this.tags.length <= 10) {
+      p--
+      this.pageNumber = p
+      this.uploadService.getTagsInThematics(p).subscribe((tags) => {
+        this.tags = tags
+      })
+      this.toggleShow()
+    }
   }
 
   getThematicsByTag(id: string) {
@@ -33,3 +58,6 @@ export class ThematicsComponent {
     })
   }
 }
+
+
+

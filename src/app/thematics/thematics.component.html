@@ -4,19 +4,14 @@
   <!--TAGS-->
   <div class="tags" *ngIf="tags">
     <h4>Choose your tematic by tag</h4>
-    <div class=" tags-items">
+    <div class="tags-items">
+      <div class="tags-item" (click)="getLessTags(pageNumber)" *ngIf="this.visible == true && tags.length==10 || tags.length<10">←</div>
       <div class="tags-item" *ngFor="let t of tags">
         <div (click)="getThematicsByTag(t.tid)">#{{t.name.toLowerCase()}}</div>
       </div>
-      <div>See all tags in thematics</div>
+      <div class="tags-item" (click)="getMoreTags(pageNumber);toggleShow()" *ngIf="tags.length==10">→</div>
     </div>
   </div>
-
-  <!--Testing use of paggination component - links not working yet-->
-  <!--<p>Testing use of paggination component</p>
-  <app-pagination
-    [list]="tags">
-  </app-pagination>-->
 
   <!--THEMATICS-->
   <div class="main-content">
