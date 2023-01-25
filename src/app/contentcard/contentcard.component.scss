@@ -2,79 +2,77 @@
   background: #1C1C24;
   border-radius: 20px;
 
-  &.channels {
-    /*Channel content card*/
-    border-radius: 20px 0 20px 0;
-    background: #575757;
-    width: 410px;
-    height: 290px;
-    margin: 10px 5px;
+&.channel {
+  /*Video shown in channel page*/
+  width: 350px;
+  height: 260px;
+  margin: 10px 5px;
+  position: relative;
+
+  .image {
     position: relative;
+    background-size: cover;
+    background-position: center;
+    border-radius: 20px 20px 0 0;
+    width: 100%;
+    padding-bottom: 45%;
+  }
 
-    .image {
-      position: relative;
-      background-size: cover;
-      background-position: center;
-      border-radius: 20px 0 0 0;
-      width: 100%;
-      padding-bottom: 50%;
-    }
+  .icons {
+    cursor: pointer;
+    color: #979797;
+    position: absolute;
+    top: 247px;
+    right: 29px;
+    font-size: 1.2rem;
 
-    .logotype {
-      width: 60px;
-      height: 60px;
-      border-radius: 100%;
-      border: 2px solid white;
-      background-size: cover;
-      background-position: center;
-      position: absolute;
-      top: 170px;
-      right: 25px;
-    }
-
-    .icons {
-      cursor: pointer;
-      color: #979797;
-      position: absolute;
-      top: 247px;
-      right: 44px;
-      font-size: 1.2rem;
-
-      .share-icon {
-        color: whitesmoke;
-      }
-
-      .bookmark-icon {
-        display: none;
-      }
-
-    }
-    .info-container {
-      height: 100px;
-      position: absolute;
-      bottom: -33px;
-
-      h5, .card-subtitle {
-        margin: 0 0 0 15px;
-        color: whitesmoke;
-      }
-
-      h5 {
-        font-size: 1em;
-      }
-
-      p {
-        font-size: 0.8em;
-      }
-
-      .blue-ref {
-        display: none;
-      }
-    }
-    .playlist-icon {
-      display: none;
+    .bookmark-icon {
+      margin-right: 10px;
     }
   }
+
+  .logotype {
+    display: none;
+  }
+
+  .duration {
+    background-color: #171725;
+    border-radius: 5px;
+    left: 16px;
+    position: absolute;
+    top: 137px;
+    font-size: 0.7rem;
+    padding: 3px;
+  }
+
+  .info-container {
+    height: 100px;
+    margin: 10px 0 0 20px;
+    position: absolute;
+    bottom: -12px;
+
+    h5 {
+      color: #FAFAFB;
+      font-size: 13px;
+      margin: 2px 0;
+    }
+
+    p {
+      color: #979797;
+      font-size: 0.8em;
+      margin: 3px 0;
+    }
+
+    .blue-ref {
+      color: #1E75FF;
+    }
+  }
+  .playlist-icon {
+    display: none;
+  }
+
+
+}
 
 
   &.video {
@@ -235,9 +233,9 @@
       background: linear-gradient(#1c1c24, transparent);
       width: 30%;
       height: 65%;
-      top: 0px;
-      left: 0px;
-      border-radius: 15px 0px 0px 0px;
+      top: 0;
+      left: 0;
+      border-radius: 15px 0 0 0;
 
       img {
         position: absolute;
