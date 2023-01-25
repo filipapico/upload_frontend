@@ -27,7 +27,7 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {
     this.getVideos();
 
-      this.uploadService.getThematics().subscribe((thematics) => {
+      this.uploadService.getThematics(0).subscribe((thematics) => {
       this.thematics = thematics;
     })
   }
@@ -47,7 +47,8 @@ export class HomepageComponent implements OnInit {
       this.latestVideos = latestVideos;
       //console.log(latestVideos)
     })
-    this.uploadService.getThematics().subscribe((thematics) => {
+    // IS THE PAGE NUMBER RELEVANT HERE?
+    this.uploadService.getThematics(0).subscribe((thematics) => {
       this.thematics = thematics
     })
     this.uploadService.getChannels("").subscribe((channels) => {
