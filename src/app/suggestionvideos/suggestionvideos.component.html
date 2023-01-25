@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="video-playing" *ngIf="type">
+    <app-video-detail
+      [id_video]="type[indexVideo].mid"
+    ></app-video-detail>
+  </div>
+
+  <div *ngIf="type" class="videos-list" >
+    <h4>{{indexVideo + 1}}/{{type.length}}</h4>
+    <div *ngFor="let video of type" (click)="getVideo(type.indexOf(video))" class="video-card">
+      <p class="index">{{type.indexOf(video) + 1}}</p>
+      <img src="https://dev-project-upskill2-grupo4v2.pantheonsite.io{{video.thumbnail__target_id}}" class="image">
+      <p>{{video.name}}</p>
+    </div>
+  </div>
+</div>
