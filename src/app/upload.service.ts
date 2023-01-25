@@ -47,7 +47,7 @@ export class UploadService {
     return this.http.get<Video[]>(BASE_URL + "/api/latest-videos/?name=" + value)
   }
 
-  getTagsInVideos(){
+  getTagsInVideos() {
     return this.http.get<Tags[]>(BASE_URL + "/api/tags-videos")
   }
 
@@ -101,8 +101,8 @@ export class UploadService {
   }
 
   //THEMATICS
-  getThematics() {
-    return this.http.get<Thematics[]>(BASE_URL + "/api/thematics")
+  getThematics(pNum: number) {
+    return this.http.get<Thematics[]>(BASE_URL + "/api/thematics?page=" + pNum)
   }
 
   getTagsInThematics(pNum: number) {
