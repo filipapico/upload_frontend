@@ -22,17 +22,17 @@
 
 
   <div class="playlist-container" *ngFor="let playlist of playlists">
-    <app-contentcard type="video"
+    <app-contentcard type="playlists"
                      [title]="playlist.title"
                      [source]="playlist.name"
                      [logotype]="playlist.user_picture"
                      [image]="playlist.thumbnail__target_id"
-                     [subtitle]="playlist.created"
+                     [subtitle]="playlist.field_playlist_category"
                      [routerLink]="['/playlist', playlist.nid]"
    ></app-contentcard>
-    <div class="playlist-icon">
+<!--    <div class="playlist-icon">
       <img src="assets/bookmark-playlist-big.png">
-    </div>
+    </div>-->
   </div>
 </div>
 
