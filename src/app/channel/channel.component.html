@@ -1,50 +1,52 @@
 <div class="channel-container" *ngIf="channel">
-  <div class="banner-header">
+  <div class="images-header">
     <div class="channel-cover-photo"
          style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{channel[0].field_cover_photo}}');">
       <div class="channel-logotype"
            style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{channel[0].field_logotype}}');">
       </div>
     </div>
+  </div>
+  <div class="main-section">
     <div class="text-header">
       <h1>
-       <!-- <span class="bookmark-icon" (click)="uploadService.toggleFavChannel(nid)">
-          <fa-icon [icon]="uploadService.isFavChannel(nid)? faBookmarkFull : faBookmark" class="fa-xl"></fa-icon>
-        </span>-->
-        {{channel[0].title}}
+        {{channel[0].title}} <span class="channel-author">by {{channel[0].uid}}</span>
       </h1>
       <p>
         {{channel[0].body}}
       </p>
     </div>
-  </div>
-  <h2>Videos </h2>
-  <div class="channel-videos" *ngIf="videos?.length; else noVideo">
-    <app-contentcard type="video" *ngFor="let vid of videos"
-                     [title]="vid.name"
-                     [subtitle]="vid.created"
-                     [mid]="vid.mid"
-                     [field_media_tags]="vid.field_media_tags"
-                     [image]="vid.thumbnail__target_id"
-                     [logotype]="vid.field_logotype"
-                     [field_media_oembed_video]="vid.field_media_oembed_video"
-                     [routerLink]="['/channelplayer', vid.nid]"
-                     [uid] = "vid.uid"
-    ></app-contentcard>
-    <!--Comments -->
-    <app-commentform
-      [entityType]="channelEntityType"
-      [contentID]="nid">
-    </app-commentform>
-    <div *ngIf="channelComments">
-      <app-comments *ngFor="let comment of channelComments"
-                    [username]="comment.field_comment_name"
-                    [created]="comment.created"
-                    [comment_body]="comment.comment_body">
-      </app-comments>
+
+    <h2>Videos </h2>
+    <!-- Videos -->
+    <div class="channel-videos" *ngIf="videos?.length; else noVideo">
+      <app-contentcard type="channel" *ngFor="let vid of videos"
+                       [source] = "getHashtag(vid.field_media_tags)"
+                       [title]="vid.name"
+                       [subtitle]="vid.created"
+                       [mid]="vid.mid"
+                       [image]="vid.thumbnail__target_id"
+                       [field_duration]="vid.field_duration"
+                       [routerLink]="['/channelplayer', vid.nid]"
+      ></app-contentcard>
     </div>
+    <!--Comments -->
+    <div class="channel-comments">
+      <app-commentform
+        [entityType]="channelEntityType"
+        [contentID]="nid">
+      </app-commentform>
+      <div *ngIf="channelComments">
+        <app-comments *ngFor="let comment of channelComments"
+                      [username]="comment.field_comment_name"
+                      [created]="comment.created"
+                      [comment_body]="comment.comment_body">
+        </app-comments>
+      </div>
+    </div>
+    <ng-template #noVideo>
+      Please be patient, this channel will upload videos soon!
+    </ng-template>
   </div>
-  <ng-template #noVideo>
-    Please be patient, this channel will upload videos soon!
-  </ng-template>
+
 </div>
