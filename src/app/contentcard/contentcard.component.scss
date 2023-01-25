@@ -144,6 +144,22 @@
     .playlist-icon {
       display: none;
     }
+
+    @media only screen and (max-width: 1279px) {
+      width: 356px;
+      height: 266px;
+
+      .logotype {
+        top: 129px;
+        right: 25px;
+      }
+      .duration {
+        top: 117px;
+      }
+      .icons {
+        top: 229px;
+      }
+    }
   }
 
   &.playlists {
@@ -237,7 +253,10 @@
         left: 24px;
       }
     }
+
   }
+
+
 
 }
 
