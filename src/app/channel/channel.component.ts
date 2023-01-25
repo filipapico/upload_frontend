@@ -1,7 +1,6 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {UploadService} from "../upload.service";
-import {DomSanitizer} from "@angular/platform-browser";
 import {Video, Comment, Channels} from "../interfaces";
 import {faBookmark} from '@fortawesome/free-regular-svg-icons';
 import {faBookmark as faBookmarkFull} from "@fortawesome/free-solid-svg-icons";
@@ -21,7 +20,7 @@ export class ChannelComponent {
   channel?: Channels[] = [];
 
 
-  constructor(private route: ActivatedRoute, public uploadService: UploadService, private sanitizer: DomSanitizer) {
+  constructor(private route: ActivatedRoute, public uploadService: UploadService) {
     this.nid = route.snapshot.params['nid'];
   }
 
@@ -38,5 +37,16 @@ export class ChannelComponent {
     this.uploadService.getComments("node", this.nid).subscribe((comments) => {
       this.channelComments = comments;
     })
+  }
+
+  getHashtag(tags: string) {
+    return tags
+      .split(',')
+      .map(this.getTag)
+      .join('');
+  }
+
+  getTag(item: string) {
+    return `#${item.trim().toLowerCase()} `;
   }
 }
