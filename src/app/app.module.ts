@@ -33,6 +33,7 @@ import {CardModule, CollapseModule} from "@coreui/angular";
 import {PaginationComponent} from './pagination/pagination.component';
 import { LikeComponent } from './like/like.component';
 import { SuggestionvideosComponent } from './suggestionvideos/suggestionvideos.component';
+import { ChannelplayerComponent } from './channelplayer/channelplayer.component';
 
 @NgModule({
   declarations: [
@@ -59,6 +60,7 @@ import { SuggestionvideosComponent } from './suggestionvideos/suggestionvideos.c
     PaginationComponent,
     LikeComponent,
     SuggestionvideosComponent,
+    ChannelplayerComponent,
   ],
   imports: [
     BrowserModule,
