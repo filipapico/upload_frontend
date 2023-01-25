@@ -126,8 +126,8 @@ export class UploadService {
   }
 
   //PLAYLISTS
-  getPlaylists(id: string) {
-    return this.http.get<Playlists[]>(BASE_URL + "/api/playlists/" + id);
+  getPlaylists(id: string, pNum: any) {
+    return this.http.get<Playlists[]>(BASE_URL + "/api/playlists/" + id + "?page=" + pNum);
   }
 
   getPlaylist(id: string) {

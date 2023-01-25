@@ -17,13 +17,9 @@ export class HomepageComponent implements OnInit {
   pNum: any = 0;
   faAngleRight = faAngleRight;
   faAngleLeft = faAngleLeft;
-  //link = encodeURI(window.location.href);
-  //message = encodeURIComponent('Hey, I found this video');
-  //title = encodeURIComponent(document.querySelector('title').textContent)
 
   public keyword = 'name';
   data = this.allVideos;
-
 
   constructor(private uploadService: UploadService) {
   }

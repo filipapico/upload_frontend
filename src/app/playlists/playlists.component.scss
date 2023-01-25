@@ -1,3 +1,10 @@
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-right: 30%;
+  margin-left: 30%;
+}
+
 .category-container {
   display: flex;
   flex-wrap: wrap;

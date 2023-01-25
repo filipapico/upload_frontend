@@ -7,6 +7,18 @@
   <p (click)="categorySelected(id)">ALL</p>
 </div>
 
+<div class="pagination">
+  <div class="page-item">
+    <a class="page-link" (click)="pageSelected('Previous')"><fa-icon [icon]="faAngleLeft"></fa-icon></a>
+  </div>
+  <div class="page-number" *ngIf="pNum">
+    <a class="page-link" (click)="pageSelected(pNum)"> {{pNum + 1}}</a>
+  </div>
+  <div class="page-item">
+    <a class="page-link" (click)="pageSelected('Next')"><fa-icon [icon]="faAngleRight"></fa-icon></a>
+  </div>
+</div>
+
 <div class="container">
   <div class="favorites-card" routerLink="/favorites" routerLinkActive="active">
     <div>
@@ -33,6 +45,7 @@
 <!--    <div class="playlist-icon">
       <img src="assets/bookmark-playlist-big.png">
     </div>-->
+
   </div>
 </div>
 

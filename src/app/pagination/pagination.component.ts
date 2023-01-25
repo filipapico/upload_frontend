@@ -20,4 +20,5 @@ export class PaginationComponent {
       this.thematics = thematicTag
     })
   }
+
 }
