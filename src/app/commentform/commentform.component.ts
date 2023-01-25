@@ -1,7 +1,6 @@
 import {Component, Input} from '@angular/core';
 import {UploadService} from "../upload.service";
 import {HttpHeaders} from "@angular/common/http";
-import {Router, NavigationEnd, ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-commentform',
@@ -18,7 +17,7 @@ export class CommentformComponent {
   @Input() entityType?: string;
 
 
-  constructor(private router: Router, private route: ActivatedRoute, public uploadService: UploadService) {
+  constructor(public uploadService: UploadService) {
   }
 
   commentUrl = 'https://dev-project-upskill2-grupo4v2.pantheonsite.io/comment';
@@ -55,7 +54,6 @@ export class CommentformComponent {
         "field_name": [{"value": "field_comment"}],
         "field_comment_name": [{"value": comment.username}],
         "field_email": [{"value": comment.email}],
-        "subject": [{"value": ""}],
         "comment_body": [
           {"value": comment.comment, "format": "plain_text"}
         ]
@@ -68,7 +66,6 @@ export class CommentformComponent {
         "field_name": [{"value": "field_comments"}],
         "field_comment_name_media": [{"value": comment.username}],
         "field_media_email": [{"value": comment.email}],
-        "subject": [{"value": "Media comment"}],
         "comment_body": [
           {"value": comment.comment, "format": "plain_text"}
         ]
