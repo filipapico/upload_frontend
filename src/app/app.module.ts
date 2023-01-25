@@ -24,7 +24,6 @@ import {ThematicComponent} from "./thematic/thematic.component";
 import {CommentsComponent} from './comments/comments.component';
 import {SuggestioncardComponent} from './suggestioncard/suggestioncard.component';
 import {SuggestionlistComponent} from './suggestionlist/suggestionlist.component';
-import {UsersloginComponent} from './userslogin/userslogin.component';
 import {SidecardComponent} from './sidecard/sidecard.component';
 import {CommentformComponent} from './commentform/commentform.component';
 import {AvatarModule} from 'ngx-avatar';
@@ -52,7 +51,6 @@ import { LikeComponent } from './like/like.component';
     CommentsComponent,
     SuggestioncardComponent,
     SuggestionlistComponent,
-    UsersloginComponent,
     SidecardComponent,
     CommentformComponent,
     MyfavoritesComponent,
