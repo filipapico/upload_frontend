@@ -3,6 +3,7 @@ import {ActivatedRoute} from "@angular/router";
 import {UploadService} from "../upload.service";
 import {DomSanitizer} from "@angular/platform-browser";
 import {Categories, Channels} from "../interfaces";
+import {faShareNodes} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-channels',
@@ -10,7 +11,7 @@ import {Categories, Channels} from "../interfaces";
   styleUrls: ['./channels.component.scss']
 })
 export class ChannelsComponent {
-
+  faShareNodes = faShareNodes;
   categories?: Categories[]; //array of all the categories
   channels?: Channels[];
   nid: string = " ";
