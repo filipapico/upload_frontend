@@ -18,7 +18,7 @@
       </p>
     </div>
   </div>
-  <h2>Videos</h2>
+  <h2>Videos </h2>
   <div class="channel-videos" *ngIf="videos?.length; else noVideo">
     <app-contentcard type="video" *ngFor="let vid of videos"
                      [title]="vid.name"
@@ -28,7 +28,7 @@
                      [image]="vid.thumbnail__target_id"
                      [logotype]="vid.field_logotype"
                      [field_media_oembed_video]="vid.field_media_oembed_video"
-                     [routerLink]="['/video-detail', vid.mid]"
+                     [routerLink]="['/channelplayer', vid.nid]"
                      [uid] = "vid.uid"
     ></app-contentcard>
     <!--Comments -->
