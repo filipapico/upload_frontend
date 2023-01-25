@@ -12,7 +12,8 @@
         margin: 2px;
         border-radius: 6px;
       }
-      .active{
+
+      .active {
         background-color: red;
         color: red;
         transition-duration: 50ms;
@@ -32,7 +33,7 @@
 
       .thematics-all {
 
-        h4{
+        h4 {
           text-align: center;
         }
 
@@ -90,8 +91,9 @@
         }
       }
     }
-    //  SUGGESTION CONTENT
-    .suggestion-list-card {
+
+    //  SUGGESTION CONTENT - NOT BEING USED
+    /*.suggestion-list-card {
       background-color: #1C1C24;
       margin: 10px;
       border-radius: 12px;
@@ -105,13 +107,13 @@
         border-bottom: 1px solid darkgray;
       }
 
-      /*.suggestion-footer {
+      .suggestion-footer {
         background-color: #282831;
         text-align: center;
         padding: 10px;
         border-bottom-left-radius: 12px;
         border-bottom-right-radius: 12px;
-      }*/
-    }
+      }
+    }*/
   }
 }
