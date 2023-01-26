@@ -11,6 +11,7 @@ import {ChannelComponent} from "./channel/channel.component";
 import {ContentcardComponent} from "./contentcard/contentcard.component";
 import {MyfavoritesComponent} from "./myfavorites/myfavorites.component";
 import {ChannelplayerComponent} from "./channelplayer/channelplayer.component";
+import {VideotagComponent} from "./videotag/videotag.component";
 
 const routes: Routes = [
   {path: '', redirectTo: '/homepage', pathMatch: 'full'},
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path: 'playlists', component: PlaylistsComponent},
   {path: 'playlist/:nid', component: PlaylistComponent},
   {path: 'favorites', component: MyfavoritesComponent},
+  {path: 'videotag/:tid', component: VideotagComponent}
 ];
 
 @NgModule({
