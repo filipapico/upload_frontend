@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UploadService} from "../upload.service";
 import {Thematics, Tags, Thematic} from "../interfaces";
+import {faAngleLeft, faAngleRight} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-thematics',
@@ -10,11 +11,25 @@ import {Thematics, Tags, Thematic} from "../interfaces";
 export class ThematicsComponent implements OnInit {
   thematics!: Thematics[];
   tags!: Tags[];
-  pageNumber: number = 0;
+  tagPageNumber: number = 0;
+  thematicPageNumber: number = 0
   visible = false;
   active = false;
+  faAngleLeft = faAngleLeft;
+  faAngleRight = faAngleRight;
 
   constructor(private uploadService: UploadService) {
+  }
+
+  ngOnInit(): void {
+    this.uploadService.getTagsInThematics(0).subscribe((tags) => {
+      this.tags = tags
+      console.log("pnum inicial", this.tagPageNumber)
+    })
+
+    this.uploadService.getThematics(0).subscribe((thematics) => {
+      this.thematics = thematics
+    })
   }
 
   toggleVisible(): void {
@@ -25,21 +40,10 @@ export class ThematicsComponent implements OnInit {
     this.active = !this.active
   }
 
-  ngOnInit(): void {
-    this.uploadService.getTagsInThematics(0).subscribe((tags) => {
-      this.tags = tags
-      console.log("pnum inicial", this.pageNumber)
-    })
-
-    this.uploadService.getThematics().subscribe((thematics) => {
-      this.thematics = thematics
-    })
-  }
-
   getMoreTags(p: number) {
     if (this.tags.length <= 10) {
       p++
-      this.pageNumber = p
+      this.tagPageNumber = p
       this.uploadService.getTagsInThematics(p).subscribe((tags) => {
         this.tags = tags
       })
@@ -49,9 +53,30 @@ export class ThematicsComponent implements OnInit {
   getLessTags(p: number) {
     if (this.tags.length <= 10) {
       p--
-      this.pageNumber = p
+      this.tagPageNumber = p
       this.uploadService.getTagsInThematics(p).subscribe((tags) => {
         this.tags = tags
+      })
+      this.toggleVisible()
+    }
+  }
+
+  getMoreThematics(p: number) {
+    if (this.thematics.length <= 6) {
+      p++
+      this.thematicPageNumber = p
+      this.uploadService.getThematics(p).subscribe((thematics) => {
+        this.thematics = thematics
+      })
+    }
+  }
+
+  getLessThematics(p: number) {
+    if (this.thematics.length <= 6) {
+      p--
+      this.thematicPageNumber = p
+      this.uploadService.getThematics(p).subscribe((thematics) => {
+        this.thematics = thematics
       })
       this.toggleVisible()
     }

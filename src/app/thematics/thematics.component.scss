@@ -30,6 +30,15 @@
     display: flex;
     flex-wrap: wrap;
 
+    .pagination{
+      background-color: chocolate;
+      display: flex;
+
+      .page-item{
+        padding: 10px
+      }
+    }
+
     .main-content-center {
       display: flex;
       flex-wrap: wrap;
@@ -37,6 +46,8 @@
       padding: 12px;
 
       .thematics-all {
+
+
 
         h4 {
           text-align: center;

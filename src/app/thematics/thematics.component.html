@@ -5,16 +5,36 @@
   <div class="tags" *ngIf="tags">
     <h4>Choose your tematic by tag</h4>
     <div class="tags-items">
-      <div class="tags-item" (click)="getLessTags(pageNumber)" *ngIf="this.visible == true && tags.length==10 || tags.length<10">←</div>
-      <div class="tags-item" *ngFor="let t of tags">
-        <div (click)="getThematicsByTag(t.tid); toggleActive()" [ngClass]="active ? 'selected':'unselected'">#{{t.name.toLowerCase()}}</div>
+      <div class="tags-item" (click)="getLessTags(tagPageNumber)"
+           *ngIf="this.visible == true && tags.length==10 || tags.length<10">←
       </div>
-      <div class="tags-item" (click)="getMoreTags(pageNumber);toggleVisible()" *ngIf="tags.length==10">→</div>
+      <div class="tags-item" *ngFor="let t of tags">
+        <div (click)="getThematicsByTag(t.tid); toggleActive()" [ngClass]="active ? 'selected':'unselected'">
+          #{{t.name.toLowerCase()}}</div>
+      </div>
+      <div class="tags-item" (click)="getMoreTags(tagPageNumber);toggleVisible()" *ngIf="tags.length==10">→</div>
     </div>
   </div>
 
   <!--THEMATICS-->
   <div class="main-content">
+
+    <!--PAGINATION-->
+<!--    <div class="pagination">
+      <div class="page-item" (click)="getLessThematics(thematicPageNumber)">
+        <fa-icon [icon]="faAngleLeft"></fa-icon>
+      </div>
+      <div class="page-number" *ngIf="thematicPageNumber">
+        <div class="page-link">{{thematicPageNumber+1}}</div>
+      </div>
+      <div class="page-item">
+        <a class="page-link" (click)="getMoreThematics(thematicPageNumber)">
+          <fa-icon [icon]="faAngleRight"></fa-icon>
+        </a>
+      </div>
+    </div>-->
+
+
     <div class="main-content-center">
       <div class="thematics-all">
         <div class="thematics" *ngIf="thematics">
