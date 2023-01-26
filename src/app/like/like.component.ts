@@ -33,10 +33,7 @@ export class LikeComponent {
   }
 
   ngOnInit(): void {
-    this.uploadService.getLikes(this.id_video).subscribe((likes) => {
-      this.likes = likes
-      console.log(this.likes)
-    })
+    this.getVideosLikes();
   }
 
 
@@ -53,12 +50,14 @@ export class LikeComponent {
       "uid": ["0"]
     }
 
-    this.uploadService.postLike(urlLike, bodybody, likeHeaders)
+    this.uploadService.postLike(urlLike, bodybody, likeHeaders).subscribe((data) => {
+      this.getVideosLikes();
+    })
     console.log(this.id_video)
 
   }
 //NOT THE BEST SOLUTION (REPEATING THE API CALL)
-  getVideosLikes(id: string) {
+  getVideosLikes() {
     this.uploadService.getLikes(this.id_video).subscribe((likes) => {
       this.likes = likes
       console.log(this.likes)
