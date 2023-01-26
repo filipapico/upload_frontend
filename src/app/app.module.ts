@@ -25,7 +25,6 @@ import {CommentsComponent} from './comments/comments.component';
 import {SuggestioncardComponent} from './suggestioncard/suggestioncard.component';
 import {SuggestionlistComponent} from './suggestionlist/suggestionlist.component';
 import {SidecardComponent} from './sidecard/sidecard.component';
-import {CommentformComponent} from './commentform/commentform.component';
 import {AvatarModule} from 'ngx-avatar';
 import {MyfavoritesComponent} from './myfavorites/myfavorites.component';
 import {CollapseComponent} from './collapse/collapse.component';
@@ -55,7 +54,6 @@ import { VideotagComponent } from './videotag/videotag.component';
     SuggestioncardComponent,
     SuggestionlistComponent,
     SidecardComponent,
-    CommentformComponent,
     MyfavoritesComponent,
     CollapseComponent,
     PaginationComponent,
