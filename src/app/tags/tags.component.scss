@@ -18,6 +18,11 @@
       margin: 2px;
       border-radius: 6px;
 
+      &.active {
+        color: white;
+        border: 2px solid white;
+      }
+
       &:hover {
         font-weight: bold;
         border: 1px solid white;
