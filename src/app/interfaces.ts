@@ -3,14 +3,18 @@ interface Comment {
   entity_type: string,
   comment_type: string,
   field_name: string,
-  field_comment_name: string
-  field_comment_name_media: string
+  field_comment_name?: string
+  field_comment_name_media?: string
   field_email: string,
   comment_body: string
   nid: string
   mid: string
   created: string
   cid: string
+  field_report_media_comment?: boolean
+  field_report_reason_media?: string
+  field_report_channel_comment?: boolean
+  field_report_reason_channel?: string
 }
 
 interface Video {
@@ -52,7 +56,7 @@ interface Channels {
   uid: string
 }
 
-interface Thematics{
+interface Thematics {
   nid: string
   title: string
   field_thematic_thumbnail: string
@@ -117,4 +121,17 @@ interface Playlists {
   created: string
 }
 
-export {Video, Likes, Categories, Channels, Comment, Thematics, Tags, Thematic, ThematicLink, ThematicLinks, Playlist, Playlists};
+export {
+  Video,
+  Likes,
+  Categories,
+  Channels,
+  Comment,
+  Thematics,
+  Tags,
+  Thematic,
+  ThematicLink,
+  ThematicLinks,
+  Playlist,
+  Playlists
+};
