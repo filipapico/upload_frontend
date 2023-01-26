@@ -61,8 +61,7 @@ export class UploadService {
 
   //LIKES & DISLIKES
   postLike(urlLike: string, bodyLike: {}, headersLike: any) {
-    return this.http.post(LIKE_URL, bodyLike, headersLike).subscribe((data) => {
-    })
+    return this.http.post(LIKE_URL, bodyLike, headersLike)
   }
 
   getLikes(id_video: string) {
@@ -71,10 +70,7 @@ export class UploadService {
 
   //COMMENTS
   postComments(url: string, body: {}, headers: any) {
-    return this.http.post(url, body, headers).subscribe((data) => {
-      window.location.reload();
-      console.log(data);
-    });
+    return this.http.post(url, body, headers);
   }
 
   getComments(type: string, id: number) {
