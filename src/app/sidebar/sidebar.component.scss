@@ -16,10 +16,6 @@
       margin: 0 auto;
     }
   }
-
-  .menu, .tags, .users-login {
-  }
-
   .login {
     margin-left: 15px;
 
@@ -38,10 +34,27 @@
       &:hover {
         font-weight: bold;
         border: 1px solid white;
-
       }
     }
   }
+
+  .languages {
+    margin: 40px 0 0 15px;
+    width: 100%;
+
+    .multilingual {
+      h4 {
+        display: inline;
+      }
+
+      &:hover {
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+
 
   .footer {
     padding: 3px;
