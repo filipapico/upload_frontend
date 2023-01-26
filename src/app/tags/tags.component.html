@@ -3,7 +3,7 @@
   <div class="tags-items" *ngIf="tagsVideos">
     <div *ngFor="let tv of tagsVideos">
       <div class="tags-item" routerLink="videotag/{{tv.tid}}" routerLinkActive="active">
-      {{tv.name}}
+      {{(tv.name).toLowerCase()}}
       </div>
   </div>
 </div>
