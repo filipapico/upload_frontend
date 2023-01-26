@@ -27,7 +27,7 @@ export class ThematicComponent {
       console.log("id tag", this.id_tag)
       //console.log("this thematic details", this.thematic)
 
-      this.uploadService.getVideosByTag([5, 3].join("+")).subscribe((thematicVideos) => {
+      this.uploadService.getVideosByTag([5, 3].join("+"), 0).subscribe((thematicVideos) => {
         this.thematicVideos = thematicVideos
       })
     })
@@ -39,7 +39,7 @@ export class ThematicComponent {
   }
 
   getVideos(id_tag: string) {
-    this.uploadService.getVideosByTag(id_tag).subscribe((thematicVideos) => {
+    this.uploadService.getVideosByTag(id_tag, 0).subscribe((thematicVideos) => {
       this.thematicVideos = thematicVideos
     })
   }
