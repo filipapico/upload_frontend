@@ -117,8 +117,8 @@ export class UploadService {
     return this.http.get<ThematicLinks>(BASE_URL + "/node/" + id + "?_format=json")
   }
 
-  getVideosByTag(id_tag: string) {
-    return this.http.get<Video[]>(BASE_URL + "/api/videos-tags/" + id_tag)
+  getVideosByTag(id_tag: string, pNum: number) {
+    return this.http.get<Video[]>(BASE_URL + "/api/videos-tags/" + id_tag + "?page=" + pNum)
   }
 
   //PLAYLISTS
