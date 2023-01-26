@@ -1,1 +1,13 @@
-<p>videotag works!</p>
+<div *ngIf="videosByTag">
+  <app-contentcard *ngFor="let vt of videosByTag"
+                   [title]="vt.name"
+                   [subtitle]=""
+                   [mid]="vt.mid"
+                   [field_duration]=""
+                   [logotype]=""
+                   [source]=""
+                   [uid]=""
+                   [channelAuthor]=""
+  >
+  </app-contentcard>
+</div>
