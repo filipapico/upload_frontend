@@ -118,7 +118,7 @@ export class UploadService {
   }
 
   getVideosByTag(id_tag: string, pNum: number) {
-    return this.http.get<Video[]>(BASE_URL + "/api/videos-tags/" + id_tag + "?page=" + pNum)
+    return this.http.get<Video[]>(BASE_URL + "/api/videos-tag/" + id_tag + "?page=" + pNum)
   }
 
   //PLAYLISTS
