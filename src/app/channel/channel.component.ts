@@ -15,7 +15,6 @@ export class ChannelComponent {
   faBookmarkFull = faBookmarkFull;
   nid: number; //channel id
   videos?: Video[] = []; //array containing the channel's videos
-  channelComments?: Comment[] = [];
   channelEntityType = "node";
   channel?: Channels[] = [];
 
@@ -32,11 +31,6 @@ export class ChannelComponent {
     this.uploadService.getChannelVideos(this.nid).subscribe((videos) => {
       this.videos = videos;
     });
-
-    //getting comments of that specific channel:
-    this.uploadService.getComments("node", this.nid).subscribe((comments) => {
-      this.channelComments = comments;
-    })
   }
 
   getHashtag(tags: string) {

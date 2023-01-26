@@ -20,7 +20,6 @@ export class VideoDetailComponent implements OnChanges {
   video_url?: any;
   latestVideosList: Video[] = [];
   mediaEntityType = "media";
-  mediaComments?: Comment[] = [];
 
 
   @Input() id_video?: string
@@ -28,6 +27,7 @@ export class VideoDetailComponent implements OnChanges {
   constructor(private route: ActivatedRoute, public uploadService: UploadService, private sanitizer: DomSanitizer) {
   }
 
+  // Detetar mudanca nos inputs
   ngOnChanges(changes: SimpleChanges): void {
     if (this.id_video && changes['id_video']) {
       this.id = parseInt(this.id_video);
@@ -37,8 +37,12 @@ export class VideoDetailComponent implements OnChanges {
 
   ngOnInit(): void {
     if (!this.id_video) {
-      this.id = this.route.snapshot.params['mid'];
-      this.refresh()
+      // Subscrever alteracoes nos parametros de URL
+      this.route.params.subscribe(params => {
+        this.id = params['mid']
+        this.refresh()
+      });
+
     }
   }
 
@@ -53,11 +57,6 @@ export class VideoDetailComponent implements OnChanges {
 
     this.uploadService.getLatestVideos(0).subscribe((latestVideos) => {
       this.latestVideosList = latestVideos;
-    })
-
-    //getting comments of that specific video:
-    this.uploadService.getComments("media", this.id).subscribe((comments) => {
-      this.mediaComments = comments;
     })
   }
 
