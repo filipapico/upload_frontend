@@ -1,13 +1,15 @@
 <div *ngIf="videosByTag">
-  <app-contentcard *ngFor="let vt of videosByTag"
+  <app-contentcard class="video-card" type="video" *ngFor="let vt of videosByTag"
+                   [source]="vt.title"
                    [title]="vt.name"
-                   [subtitle]=""
+                   [subtitle]="vt.created"
+                   [field_duration]="vt.field_duration"
                    [mid]="vt.mid"
-                   [field_duration]=""
-                   [logotype]=""
-                   [source]=""
-                   [uid]=""
-                   [channelAuthor]=""
-  >
+                   [field_media_tags]="vt.field_media_tags"
+                   [image]="vt.thumbnail__target_id"
+                   [logotype]="vt.field_logotype"
+                   [field_media_oembed_video]="vt.field_media_oembed_video"
+                   [routerLink]="['/video-detail', vt.mid]"
+                   [uid]="vt.uid">
   </app-contentcard>
 </div>
