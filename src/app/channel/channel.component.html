@@ -21,7 +21,7 @@
     <!-- Videos -->
     <div class="channel-videos" *ngIf="videos?.length; else noVideo">
       <app-contentcard type="channel" *ngFor="let vid of videos"
-                       [source] = "getHashtag(vid.field_media_tags)"
+                       [source]="getHashtag(vid.field_media_tags)"
                        [title]="vid.name"
                        [subtitle]="vid.created"
                        [mid]="vid.mid"
@@ -32,21 +32,12 @@
     </div>
     <!--Comments -->
     <div class="channel-comments">
-      <app-commentform
-        [entityType]="channelEntityType"
-        [contentID]="nid">
-      </app-commentform>
-      <div *ngIf="channelComments">
-        <app-comments *ngFor="let comment of channelComments"
-                      [username]="comment.field_comment_name"
-                      [created]="comment.created"
-                      [comment_body]="comment.comment_body">
-        </app-comments>
-      </div>
+      <app-comments [entityType]="channelEntityType"
+                    [contentID]="nid">
+      </app-comments>
     </div>
     <ng-template #noVideo>
       Please be patient, this channel will upload videos soon!
     </ng-template>
   </div>
-
 </div>
