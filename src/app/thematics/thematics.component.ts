@@ -86,6 +86,7 @@ export class ThematicsComponent implements OnInit {
     this.uploadService.getThematicsByTag(id).subscribe((thematicTags) => {
       this.thematics = thematicTags
     })
+    this.toggleActive()
   }
 }
 

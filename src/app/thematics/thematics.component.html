@@ -9,7 +9,7 @@
            *ngIf="this.visible == true && tags.length==10 || tags.length<10">←
       </div>
       <div class="tags-item" *ngFor="let t of tags">
-        <div (click)="getThematicsByTag(t.tid); toggleActive()" [ngClass]="active ? 'selected':'unselected'">
+        <div (click)="getThematicsByTag(t.tid)" [ngClass]="active ? 'selected':'unselected'">
           #{{t.name.toLowerCase()}}</div>
       </div>
       <div class="tags-item" (click)="getMoreTags(tagPageNumber);toggleVisible()" *ngIf="tags.length==10">→</div>
