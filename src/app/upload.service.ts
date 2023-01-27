@@ -12,8 +12,13 @@ import {
   Comment,
   Likes
 } from "./interfaces";
+import {Observable} from "rxjs";
+import * as events from "events";
 
-const BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
+// const BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
+let currentLanguage = "/en";
+let BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io/en";
+
 const LIKE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io/entity/flagging";
 
 /*USED FOR TESTING
@@ -33,6 +38,28 @@ export class UploadService {
 
   constructor(public http: HttpClient) {
   }
+
+  switchLanguage(idValue: string) {
+    // (currentLanguage == "/en") ? BASE_URL += "/pt-pt" : BASE_URL += "/en";
+   if(idValue == 'portuguese'){
+     BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io/pt-pt";
+     currentLanguage = "/pt-pt"
+   } else {
+     BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io/en";
+     currentLanguage = "/en"
+   }
+    console.log(BASE_URL);
+
+    // this.refreshLanguage(idValue);
+  };
+
+/*  refreshLanguage(idValue: string){
+    // @ts-ignore
+    document.getElementById(idValue).classList.add('active');
+    console.log(BASE_URL);
+  }*/
+
+
 
   //VIDEOS
   getVideo(id: number) {
