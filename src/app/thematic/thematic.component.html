@@ -14,40 +14,42 @@
       <h1>{{thematicDetails[0].title}}</h1>
     </div>
     <!--BODY-->
-      <div class="thematic-main">
-        <!--TEASER-->
-        <div class="thematic-teaser">{{thematicDetails[0].field_thematic_teaser}}</div>
-        <!--BODY-->
-        <div>{{thematicDetails[0].body}}</div>
-        <!--LINKS-->
-        <h4>Related links</h4>
-        <div class="thematic-links">
-          <div *ngFor="let t of thematicLinks">
-            <a [href]=t.uri>{{t.title}}</a>
-          </div>
+    <div class="thematic-main">
+      <!--TEASER-->
+      <div class="thematic-teaser">{{thematicDetails[0].field_thematic_teaser}}</div>
+      <!--BODY-->
+      <div>{{thematicDetails[0].body}}</div>
+      <!--LINKS-->
+      <h4>Related links</h4>
+      <div class="thematic-links">
+        <div *ngFor="let t of thematicLinks">
+          <a [href]=t.uri>{{t.title}}</a>
         </div>
-        <h4>Thematic videos</h4>
-        <div class="thematic-videos" *ngIf="thematicVideos">
-          <!--        add fields-->
-          <app-contentcard type="video" *ngFor="let tv of thematicVideos"
-                           [source]="tv.title"
-                           [title]="tv.name"
-                           [image]="tv.thumbnail__target_id"
-                           [routerLink]="['/video-detail', tv.mid]"
-          ></app-contentcard>
-          <!--[type]=""-->
-        </div>
+      </div>
+      <h4>Thematic videos</h4>
+
+      <!--ADD PAGINATION-->
+      <div class="thematic-videos" *ngIf="thematicVideos">
+        <app-contentcard type="video" *ngFor="let tv of thematicVideos"
+                         [source]="tv.title"
+                         [title]="tv.name"
+                         [image]="tv.thumbnail__target_id"
+                         [field_duration]="tv.field_duration"
+                         [routerLink]="['/video-detail', tv.mid]"
+                         [uid]="tv.uid"
+        ></app-contentcard>
       </div>
     </div>
+  </div>
 
-    <!--    SUGGESTION LIST-->
-    <app-suggestionlist></app-suggestionlist>
-    <!--<div class="thematic-lateral">
-      <h4>Suggested thematics</h4>
-      <div class="thematic-suggested">
-        <p>Last thematic added</p>
-        <p>Last thematic read</p>
-      </div>
-    </div>-->
+  <!--    SUGGESTION LIST-->
+  <app-suggestionlist></app-suggestionlist>
+  <!--<div class="thematic-lateral">
+    <h4>Suggested thematics</h4>
+    <div class="thematic-suggested">
+      <p>Last thematic added</p>
+      <p>Last thematic read</p>
+    </div>
+  </div>-->
 
 </div>
