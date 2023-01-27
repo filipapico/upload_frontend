@@ -11,7 +11,13 @@
     <a class="login-button" href="https://test-project-upskill2-grupo4v2.pantheonsite.io" target="_blank">Login</a>
   </div>
   <div class="languages">
-    <span class="portuguese multilingual">PT</span> | <span class="english multilingual">EN</span>
+    <span id="portuguese" (click)="uploadService.switchLanguage('portuguese')">
+      PT
+    </span>
+    |
+    <span id="english" (click)="uploadService.switchLanguage('english')">
+    EN
+    </span>
   </div>
   <div class="footer">
     Coded by
