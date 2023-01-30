@@ -13,6 +13,7 @@
       </div>
       <h1>{{thematicDetails[0].title}}</h1>
     </div>
+
     <!--BODY-->
     <div class="thematic-main">
       <!--TEASER-->
@@ -26,30 +27,25 @@
           <a [href]=t.uri>{{t.title}}</a>
         </div>
       </div>
-      <h4>Thematic videos</h4>
 
-      <!--ADD PAGINATION-->
-      <div class="thematic-videos" *ngIf="thematicVideos">
-        <app-contentcard type="video" *ngFor="let tv of thematicVideos"
-                         [source]="tv.title"
-                         [title]="tv.name"
-                         [image]="tv.thumbnail__target_id"
-                         [field_duration]="tv.field_duration"
-                         [routerLink]="['/video-detail', tv.mid]"
-                         [uid]="tv.uid"
-        ></app-contentcard>
+      <!--VIDEOS-->
+      <h4>Thematic videos</h4>
+      <div class="thematic-videos" *ngIf="thematicDetails">
+        <div *ngFor="let td of thematicDetails">
+          <app-videotag [id_tag]=td.tid.toString()>
+          </app-videotag>
+        </div>
       </div>
     </div>
   </div>
-
-  <!--    SUGGESTION LIST-->
-  <app-suggestionlist></app-suggestionlist>
-  <!--<div class="thematic-lateral">
-    <h4>Suggested thematics</h4>
-    <div class="thematic-suggested">
-      <p>Last thematic added</p>
-      <p>Last thematic read</p>
-    </div>
-  </div>-->
-
 </div>
+
+<!--    SUGGESTION LIST-->
+<!--<app-suggestionlist></app-suggestionlist>
+<div class="thematic-lateral">
+  <h4>Suggested thematics</h4>
+  <div class="thematic-suggested">
+    <p>Last thematic added</p>
+    <p>Last thematic read</p>
+  </div>
+</div>-->

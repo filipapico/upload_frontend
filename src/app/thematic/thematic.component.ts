@@ -14,7 +14,6 @@ export class ThematicComponent {
   thematicDetails!: Thematic[]
   thematicLinks!: ThematicLink[]
   thematicVideos!: Video[]
-  id_tag!: string
 
   constructor(private route: ActivatedRoute, private uploadService: UploadService) {
     this.id_thematic = route.snapshot.params['nid']
@@ -23,13 +22,7 @@ export class ThematicComponent {
   ngOnInit(): void {
     this.uploadService.getThematicDetails(this.id_thematic).subscribe((thematicDetails) => {
       this.thematicDetails = thematicDetails
-      console.log("id them", this.id_thematic)
-      console.log("id tag", this.id_tag)
-      //console.log("this thematic details", this.thematic)
-
-      this.uploadService.getVideosByTag([5, 3].join("+"), 0).subscribe((thematicVideos) => {
-        this.thematicVideos = thematicVideos
-      })
+      console.log(this.thematicDetails[0].tid)
     })
 
     this.uploadService.getThematicLinks(this.id_thematic).subscribe((thematicLinks) => {
