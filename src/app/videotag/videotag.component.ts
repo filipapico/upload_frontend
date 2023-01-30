@@ -14,14 +14,23 @@ export class VideotagComponent implements OnInit {
   tag_videos!: Tags[]
 
   constructor(private uploadService: UploadService, private route: ActivatedRoute) {
-    this.id_tag = this.route.snapshot.params['tid']
-    console.log(this.id_tag)
   }
 
   ngOnInit() {
+    this.route.params.subscribe(params => {
+      // Get the updated tag_id from the URL
+      this.id_tag = params['tid'];
+      console.log("2nd tid", this.id_tag)
+      this.refreshVideos()
+    });
     this.uploadService.getVideosByTag(this.id_tag, 0).subscribe((videosByTag) => {
       this.videosByTag = videosByTag
     })
   }
 
+  refreshVideos() {
+    this.uploadService.getVideosByTag(this.id_tag, 0).subscribe((videosByTag) => {
+      this.videosByTag = videosByTag
+    })
+  }
 }
