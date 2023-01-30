@@ -21,8 +21,18 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+
       .heart-icon {
         font-size: 1.5em;
+      }
+
+      .bookmark-icon {
+        cursor: pointer;
+
+        &:hover {
+          color:whitesmoke;
+          font-size: larger;
+        }
       }
     }
 
