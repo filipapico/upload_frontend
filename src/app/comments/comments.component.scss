@@ -4,6 +4,7 @@
   margin-bottom: 30px;
   color: #979797;
 
+
   .gravatar-box {
     margin-right: 20px;
 
@@ -17,7 +18,7 @@
   }
 
   .comment-inputs {
-    width: 90%;
+    width: 100%;
 
     input {
       all: unset;
@@ -53,23 +54,29 @@
       }
     }
 
-    #submit-button {
-      all: unset;
-      border-radius: 23px;
-      border: 1px solid whitesmoke;
-      box-sizing: border-box;
-      color: white;
+    .button {
+      display: flex;
       justify-content: flex-end;
-      margin-top: 20px;
-      width: 14%;
-      text-align: center;
-      padding: 5px 0;
-      margin-left: 81%;
 
-      &:hover {
-        cursor: pointer;
-        background-color: whitesmoke;
-        color: black;
+      #submit-button {
+        flex: 1;
+        bottom: 0;
+        right: 100px;
+        all: unset;
+        border-radius: 23px;
+        border: 1px solid whitesmoke;
+        box-sizing: border-box;
+        color: white;
+        margin-top: 20px;
+        text-align: center;
+        padding: 5px 15px;
+        font-size: 0.8rem;
+
+        &:hover {
+          cursor: pointer;
+          background-color: whitesmoke;
+          color: black;
+        }
       }
     }
   }
@@ -121,7 +128,7 @@
   border-radius: 20px;
 
   .content {
-    width:200px;
+    width: 200px;
     padding: 20px;
 
     h4 {
