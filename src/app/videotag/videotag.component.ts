@@ -13,6 +13,7 @@ export class VideotagComponent implements OnInit {
   tag_videos!: Tags[];
   pageNumber: number = 0;
   visible = false;
+  direction!: string;
 
   @Input() id_tag!: string
 
@@ -20,11 +21,13 @@ export class VideotagComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.visible = false
     if (this.id_tag) {
       this.uploadService.getVideosByTag(this.id_tag, this.pageNumber).subscribe((videosByTag) => {
         this.videosByTag = videosByTag
       })
-    } else{
+    } else {
+      console.log(this.pageNumber)
       this.route.params.subscribe(params => {
         // Get the updated tag_id from the URL
         this.id_tag = params['tid'];
@@ -39,26 +42,63 @@ export class VideotagComponent implements OnInit {
     })
   }
 
-  /*toggleVisible(): void {
+  pagination(direction: string, p: number): void {
+    if (this.pageNumber == 0) {
+      this.toggleVisible()
+      this.changePage(direction, p)
+    } else if (this.pageNumber > 0 && this.videosByTag.length == 6) {
+      this.changePage(direction, p)
+    } else {
+      this.changePage(direction, p)
+    }
+  }
+
+  //OLD
+  changePage(direction: string, p: number): void {
+    if (direction == 'down' && this.pageNumber > 0) {
+      this.pageNumber--
+      console.log(this.pageNumber)
+    } else if (direction == 'up' && this.videosByTag.length == 6) {
+      this.pageNumber++
+    }
+    this.refreshVideos()
+  }
+
+  toggleVisible(): void {
     this.visible = !this.visible;
   }
 
-  getLessVideos(p: number): void {
+  /*getLessVideos(p: number): void {
+    if (this.pageNumber == 1) {
+      if (this.videosByTag.length <= 6) {
+        p--
+        this.pageNumber = p
+        this.refreshVideos()
+        this.toggleVisible()
+      }
+    }
     if (this.videosByTag.length <= 6) {
       p--
       this.pageNumber = p
       this.refreshVideos()
-      this.toggleVisible()
     }
   }
 
   getMoreVideos(p: number): void {
-    if (this.videosByTag.length <= 6) {
-      p++
-      this.pageNumber = p
-      this.refreshVideos()
+    if (this.pageNumber == 0) {
+      if (this.videosByTag.length <= 6) {
+        p++
+        this.pageNumber = p
+        console.log()
+        this.refreshVideos()
+      }
       this.toggleVisible()
+    } else {
+      if (this.videosByTag.length <= 6) {
+        p++
+        this.pageNumber = p
+        this.refreshVideos()
+      }
     }
   }*/
-
 }

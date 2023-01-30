@@ -3,6 +3,21 @@
   LATER ADD TAG NAME?!
   <span>#FAKE</span>
   -->
+  <div class="pagination">
+    <div class="pagination-item" (click)="pagination('down',pageNumber)">
+      <div
+        *ngIf="this.visible == true && videosByTag.length == 6 || videosByTag.length < 6">
+        <
+      </div>
+    </div>
+    <div class="pagination-number">{{pageNumber + 1}}</div>
+    <div class="pagination-item" (click)="pagination('up',pageNumber)">
+      <div
+        *ngIf="videosByTag.length == 6">
+        >
+      </div>
+    </div>
+  </div>
   <div class="videos-tag">
     <app-contentcard class="video-card" type="video" *ngFor="let vt of videosByTag"
                      [title]="vt.name"
@@ -13,14 +28,4 @@
                      [uid]="vt.uid">
     </app-contentcard>
   </div>
-  <!--<div class="pagination">
-    <div (click)="getLessVideos(pageNumber)"
-         *ngIf="this.visible == true && videosByTag.length==6 || videosByTag.length<6">
-      <
-    </div>
-    <div (click)="getMoreVideos(pageNumber)"
-         *ngIf="videosByTag.length==6">
-      >
-    </div>
-  </div>-->
 </div>
