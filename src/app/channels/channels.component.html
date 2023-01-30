@@ -1,6 +1,6 @@
 <div class="wrapper">
   <!--Como voltar a pagina 0 quando carregar no titulo Channels? -->
-  <h1 routerLink="channels">Channels</h1>
+  <h2 routerLink="channels">Channels</h2>
   <!-- Categories -->
   <div class="categories-list" *ngIf="categories">
     <div class="categories" *ngFor="let category of categories" (click)="targetChannels(category.tid)"
@@ -30,13 +30,4 @@
       </div>
     </div>
   </div>
-<!-- Sidebar -->
-  <app-suggestioncard class="channels-sidebar" *ngIf="channels"
-                      [type]="['Last Seen']"
-                      [title]=channels[0].title
-                      [uid]=channels[0].nid
-                      [field_thematic_header_image]=channels[0].field_cover_photo
-                      [field_thematic_thumbnail]=channels[0].field_cover_photo
-                      [routerLink]="['/channel', channels[0].nid]"
-  ></app-suggestioncard>
 </div>
