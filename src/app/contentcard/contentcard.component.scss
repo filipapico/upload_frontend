@@ -62,8 +62,6 @@
     .playlist-icon {
       display: none;
     }
-
-
   }
 
 
@@ -159,6 +157,73 @@
       .icons {
         top: 229px;
       }
+    }
+  }
+
+  &.video-compact {
+    /*Compact video content card*/
+    width: 330px;
+    height: 272px;
+    margin: 10px 5px;
+    position: relative;
+
+    .image {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      border-radius: 20px 20px 0 0;
+      width: 100%;
+      padding-bottom: 51%;
+    }
+
+
+    .logotype {
+      width: 48px;
+      height: 48px;
+      border-radius: 100%;
+      border: 2px solid white;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 145px;
+      right: 25px;
+    }
+
+    .duration {
+      background-color: #171725;
+      border-radius: 5px;
+      left: 16px;
+      position: absolute;
+      top: 125px;
+      font-size: 0.7rem;
+      padding: 3px;
+    }
+
+    .info-container {
+      height: 100px;
+      margin: 10px 0 0 20px;
+      position: absolute;
+      bottom: -12px;
+
+      h5 {
+        color: #FAFAFB;
+        font-size: 13px;
+        margin: 2px 0;
+      }
+
+      p {
+        color: #979797;
+        font-size: 0.8em;
+        margin: 3px 0;
+      }
+
+      .blue-ref {
+        color: #1E75FF;
+      }
+    }
+
+    .playlist-icon,  .icons {
+      display: none;
     }
   }
 

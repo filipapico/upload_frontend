@@ -41,8 +41,8 @@
 
   <!-- Right side bar is suggesting more of the latest videos: -->
     <div class="suggestion-container">
-      <h4>Latest Videos</h4>
-      <app-contentcard type="video" *ngFor="let lv of latestVideosList"
+      <h4>Suggestions</h4>
+      <app-contentcard type="video-compact" *ngFor="let lv of latestVideosList | slice:0:3"
                        [title]="lv.name"
                        [source]="lv.title"
                        [subtitle]="lv.created"
@@ -50,6 +50,7 @@
                        [field_media_tags]="lv.field_media_tags"
                        [image]="lv.thumbnail__target_id"
                        [logotype]="lv.field_logotype"
+                       [field_duration]="lv.field_duration"
                        [field_media_oembed_video]="lv.field_media_oembed_video"
       ></app-contentcard>
     </div>
