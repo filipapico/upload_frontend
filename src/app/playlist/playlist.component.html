@@ -1,6 +1,6 @@
 <div class="container">
   <div class="video-playing" *ngIf="playlist">
-    <app-video-detail
+    <app-video-detail type="playlist"
      [id_video]="playlist[indexVideo].mid"
     ></app-video-detail>
   </div>
@@ -9,7 +9,7 @@
     <h4>{{indexVideo + 1}}/{{playlist.length}}</h4>
     <div *ngFor="let video of playlist" (click)="getVideo(playlist.indexOf(video))" class="video-card">
       <p class="index">{{playlist.indexOf(video) + 1}}</p>
-      <img src="https://dev-project-upskill2-grupo4v2.pantheonsite.io{{video.thumbnail__target_id}}" class="image">
+      <img src="https://dev-project-upskill2-grupo4v2.pantheonsite.io{{video.thumbnail__target_id}}" alt="thumbnail" class="image">
       <p>{{video.name}}</p>
     </div>
   </div>
