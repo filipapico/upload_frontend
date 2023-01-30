@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 import {UploadService} from "../upload.service";
 import {Tags, Video} from "../interfaces";
 import {ActivatedRoute} from "@angular/router";
@@ -10,22 +10,24 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class VideotagComponent implements OnInit {
   videosByTag!: Video[]
-  id_tag!: string
   tag_videos!: Tags[]
+
+  @Input() id_tag!: string
 
   constructor(private uploadService: UploadService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
+    if(this.id_tag){
+      this.uploadService.getVideosByTag(this.id_tag, 0).subscribe((videosByTag) => {
+        this.videosByTag = videosByTag
+      })
+    }
     this.route.params.subscribe(params => {
       // Get the updated tag_id from the URL
       this.id_tag = params['tid'];
-      console.log("2nd tid", this.id_tag)
       this.refreshVideos()
     });
-    this.uploadService.getVideosByTag(this.id_tag, 0).subscribe((videosByTag) => {
-      this.videosByTag = videosByTag
-    })
   }
 
   refreshVideos() {
