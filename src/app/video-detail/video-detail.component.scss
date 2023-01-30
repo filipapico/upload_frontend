@@ -21,6 +21,8 @@
       flex-direction: row;
       justify-content: space-between;
       align-items: center;
+      height: 2em;
+      margin-bottom: 0.8em;
 
       .heart-icon {
         font-size: 1.5em;
@@ -97,7 +99,12 @@
 
   .suggestion-container {
     border-radius: 20px;
-    padding: 0 20px;
+    padding: 0 0 0 25px;
+    margin-top: 10px;
+
+    h4 {
+      margin-bottom: 20px ;
+    }
   }
 
   &.playlist {
