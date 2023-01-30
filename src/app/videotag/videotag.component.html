@@ -12,5 +12,17 @@
                      [routerLink]="['/video-detail', vt.mid]"
                      [uid]="vt.uid">
     </app-contentcard>
-  </div>
 </div>
+  <div class="pagination">
+    <div class="page-item" (click)="getLessVideos(pageNumber)"
+         *ngIf="this.visible == true && videosByTag.length==6 || videosByTag.length<6">
+      <
+    </div>
+    <div class="page-separator"></div>
+    <div class="page-item">
+      <div class="page-link" (click)="getMoreVideos(pageNumber)"
+           *ngIf="videosByTag.length==6">
+        >
+      </div>
+    </div>
+  </div>

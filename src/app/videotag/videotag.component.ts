@@ -9,8 +9,10 @@ import {ActivatedRoute} from "@angular/router";
   styleUrls: ['./videotag.component.scss']
 })
 export class VideotagComponent implements OnInit {
-  videosByTag!: Video[]
-  tag_videos!: Tags[]
+  videosByTag!: Video[];
+  tag_videos!: Tags[];
+  pageNumber: number = 0;
+  visible = false;
 
   @Input() id_tag!: string
 
@@ -18,8 +20,8 @@ export class VideotagComponent implements OnInit {
   }
 
   ngOnInit() {
-    if(this.id_tag){
-      this.uploadService.getVideosByTag(this.id_tag, 0).subscribe((videosByTag) => {
+    if (this.id_tag) {
+      this.uploadService.getVideosByTag(this.id_tag, this.pageNumber).subscribe((videosByTag) => {
         this.videosByTag = videosByTag
       })
     }
@@ -31,8 +33,31 @@ export class VideotagComponent implements OnInit {
   }
 
   refreshVideos() {
-    this.uploadService.getVideosByTag(this.id_tag, 0).subscribe((videosByTag) => {
+    this.uploadService.getVideosByTag(this.id_tag, this.pageNumber).subscribe((videosByTag) => {
       this.videosByTag = videosByTag
     })
   }
+
+  toggleVisible(): void {
+    this.visible = !this.visible;
+  }
+
+  getLessVideos(p: number): void {
+    if (this.videosByTag.length <= 6) {
+      p--
+      this.pageNumber = p
+      this.refreshVideos()
+      this.toggleVisible()
+    }
+  }
+
+  getMoreVideos(p: number): void {
+    if (this.videosByTag.length <= 6) {
+      p++
+      this.pageNumber = p
+      this.refreshVideos()
+      this.toggleVisible()
+    }
+  }
+
 }
