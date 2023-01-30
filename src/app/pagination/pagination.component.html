@@ -1,29 +1,23 @@
-<nav class="items">
-  <c-pagination aria-label="Page navigation">
-  <span cPageItem *ngFor="let l of list" class="item">
-    <a cPageLink [routerLink]="" (click)="getThematicsByTag(l.tid)">{{l.name}}</a>
-  </span>
-  </c-pagination>
-</nav>
-
 <!--
-ORIGINAL https://coreui.io/angular/docs/components/pagination
-<c-pagination aria-label="Page navigation example">
-  <li cPageItem>
-    <a cPageLink [routerLink]>Previous</a>
-  </li>
-  <li cPageItem>
-    <a cPageLink [routerLink]>1</a>
-  </li>
-  <li cPageItem>
-    <a cPageLink [routerLink]>2</a>
-  </li>
-  <li cPageItem>
-    <a cPageLink [routerLink]>3</a>
-  </li>
-  <li cPageItem>
-    <a cPageLink [routerLink]>Next</a>
-  </li>
-</c-pagination>
--->
+<div class="container">
+  <div class="pagination">
+    <div>
+          <span (click)="getLess(pageNumber)"
+                *ngIf="this.list == true && list.length==6 || list.length<6">
+            <
+          </span>
+    </div>
+    <div>
+          <span class="page-link" (click)="getMore(pageNumber)"
+                *ngIf="list.length==6">
+            >
+          </span>
+    </div>
+  </div>
+</div>
 
+&lt;!&ndash;ORIGINAL https://coreui.io/angular/docs/components/pagination&ndash;&gt;
+
+
+
+-->
