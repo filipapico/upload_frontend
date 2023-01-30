@@ -1,5 +1,4 @@
 .wrapper {
-  position: relative;
   width: 100%;
 
   h2 {
@@ -9,6 +8,7 @@
   .categories-list {
     display: flex;
     flex-direction: row;
+    margin-bottom: 30px;
 
     .categories {
       color: lightgrey;
@@ -31,13 +31,12 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    position: absolute;
     width: 100%;
 
     .channel-card {
       border-radius: 20px 0 20px 0;
       background: #575757;
-      width: 250px;
+      width: 350px;
       height: 250px;
       margin: 10px 5px;
       position: relative;
@@ -48,7 +47,7 @@
         background-position: center;
         border-radius: 20px 0 0 0;
         width: 100%;
-        padding-bottom: 64%;
+        padding-bottom: 49%;
       }
 
       .logotype {
@@ -59,7 +58,7 @@
         background-size: cover;
         background-position: center;
         position: absolute;
-        top: 128px;
+        top: 137px;
         right: 19px;
       }
 
