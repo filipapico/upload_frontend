@@ -33,6 +33,7 @@ interface Video {
   field_cover_photo: string
   body: string
   uid: string
+  tid: string
 }
 
 interface Likes {
@@ -80,6 +81,7 @@ interface Thematic {
   field_thematic_header_image: string
   field_thematic_thumbnail: string
   field_thematic_links: string
+  tid: string
 }
 
 interface ThematicLink {
