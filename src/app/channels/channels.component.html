@@ -3,12 +3,12 @@
   <h2 routerLink="channels">Channels</h2>
   <!-- Categories -->
   <div class="categories-list" *ngIf="categories">
-    <div class="categories" *ngFor="let category of categories" (click)="targetChannels(category.tid)"
-         routerLinkActive="active">
+    <div class="categories" *ngFor="let category of categories" (click)="targetChannels(category.tid)">
       {{category.name}}
     </div>
   </div>
   <div class="main-section">
+    <!-- INSERT PAGER HERE? -->
     <!-- Loop through channels -->
     <div *ngFor="let channel of channels">
       <div class="channel-card" [routerLink]="['/channel', channel.nid]">
