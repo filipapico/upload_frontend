@@ -111,3 +111,46 @@
   }
 }
 
+.overlay {
+  width: 300px;
+  background-color: #363535;
+  border-radius: 20px;
+
+  .content {
+    width:200px;
+    padding: 20px;
+
+    h4 {
+      margin: 0px 10px 5px 0px;
+      color: #FFFFFF;
+    }
+
+    .close {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      color: #ffffff;
+    }
+
+    div {
+      display: flex;
+
+      input {
+        line-height: 50px;
+        border-bottom: 1px solid #979797;
+      }
+
+      .report-button {
+        all: unset;
+        border-radius: 23px;
+        border: 1px solid #979797;
+        margin: 30px 10px;
+        padding: 5px;
+        background-color: #530e0e;
+      }
+    }
+
+
+  }
+}
+
