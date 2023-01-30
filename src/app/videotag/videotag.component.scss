@@ -7,4 +7,15 @@
     justify-content: space-around;
   }
 
+  .pagination{
+    background-color: chocolate;
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+
+    div{
+      padding: 0 10px;
+      font-size: 2em;
+    }
+  }
 }

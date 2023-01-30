@@ -24,12 +24,13 @@ export class VideotagComponent implements OnInit {
       this.uploadService.getVideosByTag(this.id_tag, this.pageNumber).subscribe((videosByTag) => {
         this.videosByTag = videosByTag
       })
+    } else{
+      this.route.params.subscribe(params => {
+        // Get the updated tag_id from the URL
+        this.id_tag = params['tid'];
+        this.refreshVideos()
+      });
     }
-    this.route.params.subscribe(params => {
-      // Get the updated tag_id from the URL
-      this.id_tag = params['tid'];
-      this.refreshVideos()
-    });
   }
 
   refreshVideos() {
@@ -38,7 +39,7 @@ export class VideotagComponent implements OnInit {
     })
   }
 
-  toggleVisible(): void {
+  /*toggleVisible(): void {
     this.visible = !this.visible;
   }
 
@@ -58,6 +59,6 @@ export class VideotagComponent implements OnInit {
       this.refreshVideos()
       this.toggleVisible()
     }
-  }
+  }*/
 
 }
