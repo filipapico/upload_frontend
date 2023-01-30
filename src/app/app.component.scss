@@ -1,3 +1,41 @@
+/*
+.app-wrapper {
+  display: grid;
+  gap: 10px;
+  grid-template-areas:
+    "sidebar"
+    "content";
+
+  app-sidebar {
+    grid-area: sidebar;
+  }
+
+  .main-content {
+    grid-area: content;
+  }
+
+  @media (min-width: 500px) {
+    .wrapper {
+      grid-template-columns: 2fr 2fr;
+      grid-template-areas:
+      "sidebar content";
+    }
+  }
+
+    @media (min-width: 700px) {
+      .wrapper {
+        grid-template-columns: 1fr 3fr;
+        grid-template-areas:
+      "sidebar content";
+      }
+    }
+  }
+*/
+
+
+
+
+
 .app-wrapper {
   display: flex;
   justify-content: space-evenly;
@@ -5,6 +43,7 @@
   position: relative;
 
   app-sidebar {
+    //max-width: 16vw;
     max-width: 200px;
     position: fixed;
     left: 0;
@@ -17,8 +56,9 @@
     position: absolute;
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-around;
     left: 200px;
-    padding: 20px 20px 150px 20px;
+    padding: 20px 30px 150px 30px;
   }
 }
 
