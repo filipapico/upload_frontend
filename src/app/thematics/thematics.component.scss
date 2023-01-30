@@ -4,6 +4,7 @@
     .tags-items {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
 
       .tags-item {
         color: lightgrey;
@@ -29,15 +30,7 @@
   .main-content {
     display: flex;
     flex-wrap: wrap;
-
-    .pagination{
-      background-color: chocolate;
-      display: flex;
-
-      .page-item{
-        padding: 10px
-      }
-    }
+    justify-content: center;
 
     .main-content-center {
       display: flex;
@@ -46,7 +39,6 @@
       padding: 12px;
 
       .thematics-all {
-
 
 
         h4 {
@@ -104,6 +96,21 @@
               }
             }
           }
+        }
+      }
+      .pagination {
+        width: 100%;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: center;
+
+        .page-item {
+          padding: 10px;
+          font-size: 2em;
+        }
+        .page-separator{
+          padding-left: 20px;
+          padding-right: 20px;
         }
       }
     }

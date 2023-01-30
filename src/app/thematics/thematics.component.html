@@ -3,41 +3,24 @@
 
   <!--TAGS-->
   <div class="tags" *ngIf="tags">
-    <h4>Choose your tematic by tag</h4>
     <div class="tags-items">
       <div class="tags-item" (click)="getLessTags(tagPageNumber)"
-           *ngIf="this.visible == true && tags.length==10 || tags.length<10">←
+           *ngIf="this.visible == true && tags.length==8 || tags.length<8">←
       </div>
       <div class="tags-item" *ngFor="let t of tags">
         <div (click)="getThematicsByTag(t.tid)" [ngClass]="active ? 'selected':'unselected'">
           #{{t.name.toLowerCase()}}</div>
       </div>
-      <div class="tags-item" (click)="getMoreTags(tagPageNumber);toggleVisible()" *ngIf="tags.length==10">→</div>
+      <div class="tags-item" (click)="getMoreTags(tagPageNumber);toggleVisible()" *ngIf="tags.length==8">→</div>
     </div>
   </div>
 
   <!--THEMATICS-->
   <div class="main-content">
 
-    <!--PAGINATION-->
-<!--    <div class="pagination">
-      <div class="page-item" (click)="getLessThematics(thematicPageNumber)">
-        <fa-icon [icon]="faAngleLeft"></fa-icon>
-      </div>
-      <div class="page-number" *ngIf="thematicPageNumber">
-        <div class="page-link">{{thematicPageNumber+1}}</div>
-      </div>
-      <div class="page-item">
-        <a class="page-link" (click)="getMoreThematics(thematicPageNumber)">
-          <fa-icon [icon]="faAngleRight"></fa-icon>
-        </a>
-      </div>
-    </div>-->
-
-
     <div class="main-content-center">
-      <div class="thematics-all">
-        <div class="thematics" *ngIf="thematics">
+      <div class="thematics-all" *ngIf="thematics">
+        <div class="thematics">
           <div *ngFor="let t of thematics" class="thematic-item" [routerLink]="['/thematic', t.nid]">
             <div class="thematic-header">
               <div class="thematic-thumbnail">
@@ -57,15 +40,20 @@
         </div>
       </div>
 
+      <!--PAGINATION THEMATICS-->
+      <div class="pagination" *ngIf="visiblePagination">
+        <div class="page-item" (click)="getLessThematics(thematicPageNumber)"
+             *ngIf="this.visibleThematics == true && thematics.length==6 || thematics.length<6">
+          <
+        </div>
+        <div class="page-separator"></div>
+        <div class="page-item">
+          <div class="page-link" (click)="getMoreThematics(thematicPageNumber)"
+               *ngIf="thematics.length==6">
+            >
+          </div>
+        </div>
+      </div>
     </div>
-    <!--THEMATICS SUGGESTION-->
-    <!--<div class="suggestion-list-card">
-      <h4>Newest thematics</h4>
-      <app-suggestionlist *ngFor="let t of thematics.slice(0,5)"
-                          [listThumbnail]="t.field_thematic_thumbnail"
-                          [listElement]="t.title"
-                          [id_element]="t.nid">
-      </app-suggestionlist>
-    </div>-->
   </div>
 </div>

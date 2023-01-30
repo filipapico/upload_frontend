@@ -14,6 +14,8 @@ export class ThematicsComponent implements OnInit {
   tagPageNumber: number = 0;
   thematicPageNumber: number = 0
   visible = false;
+  visibleThematics = false;
+  visiblePagination = true;
   active = false;
   faAngleLeft = faAngleLeft;
   faAngleRight = faAngleRight;
@@ -24,7 +26,6 @@ export class ThematicsComponent implements OnInit {
   ngOnInit(): void {
     this.uploadService.getTagsInThematics(0).subscribe((tags) => {
       this.tags = tags
-      console.log("pnum inicial", this.tagPageNumber)
     })
 
     this.uploadService.getThematics(0).subscribe((thematics) => {
@@ -36,8 +37,16 @@ export class ThematicsComponent implements OnInit {
     this.visible = !this.visible;
   }
 
+  toggleVisibleThematics(): void {
+    this.visibleThematics = !this.visibleThematics;
+  }
+
   toggleActive(): void {
     this.active = !this.active
+  }
+
+  togglePagination():void{
+    this.visiblePagination = !this.visiblePagination
   }
 
   getMoreTags(p: number) {
@@ -78,15 +87,17 @@ export class ThematicsComponent implements OnInit {
       this.uploadService.getThematics(p).subscribe((thematics) => {
         this.thematics = thematics
       })
-      this.toggleVisible()
+      this.toggleVisibleThematics()
     }
   }
 
   getThematicsByTag(id: string) {
+    console.log("before",this.visiblePagination)
+    this.togglePagination()
+    console.log("after",this.visiblePagination)
     this.uploadService.getThematicsByTag(id).subscribe((thematicTags) => {
       this.thematics = thematicTags
     })
-    this.toggleActive()
   }
 }
 
