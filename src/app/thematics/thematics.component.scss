@@ -98,19 +98,17 @@
           }
         }
       }
+
       .pagination {
-        width: 100%;
+        margin: auto;
         display: flex;
         flex-wrap: nowrap;
         justify-content: center;
+        border: 1px solid #b5b5be69;
 
-        .page-item {
-          padding: 10px;
+        div {
+          padding: 0 10px;
           font-size: 2em;
-        }
-        .page-separator{
-          padding-left: 20px;
-          padding-right: 20px;
         }
       }
     }

@@ -42,16 +42,17 @@
 
       <!--PAGINATION THEMATICS-->
       <div class="pagination" *ngIf="visiblePagination">
-        <div class="page-item" (click)="getLessThematics(thematicPageNumber)"
-             *ngIf="this.visibleThematics == true && thematics.length==6 || thematics.length<6">
-          <
+        <div>
+          <span (click)="getLessThematics(thematicPageNumber)"
+                *ngIf="this.visibleThematics == true && thematics.length==6 || thematics.length<6">
+            <
+          </span>
         </div>
-        <div class="page-separator"></div>
-        <div class="page-item">
-          <div class="page-link" (click)="getMoreThematics(thematicPageNumber)"
-               *ngIf="thematics.length==6">
+        <div>
+          <span class="page-link" (click)="getMoreThematics(thematicPageNumber)"
+                *ngIf="thematics.length==6">
             >
-          </div>
+          </span>
         </div>
       </div>
     </div>
