@@ -1,6 +1,7 @@
 .form-container {
   display: flex;
   flex-direction: row;
+  margin-top: 20px;
   margin-bottom: 30px;
   color: #979797;
 
@@ -80,7 +81,6 @@
       }
     }
   }
-
 }
 
 .user-comment {
