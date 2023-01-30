@@ -49,9 +49,7 @@
         width: 100%;
         word-wrap: break-word;
         box-sizing: border-box;
-        min-height: 50px;
-        max-height: max-content;
-        resize: vertical;
+        height: 80px;
       }
     }
 
@@ -121,7 +119,7 @@
     padding: 20px;
 
     h4 {
-      margin: 0px 10px 5px 0px;
+      margin: 0 10px 5px 0;
       color: #FFFFFF;
     }
 
