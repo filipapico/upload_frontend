@@ -23,6 +23,8 @@ export class VideoDetailComponent implements OnChanges {
 
 
   @Input() id_video?: string
+  @Input() type?: string;
+
 
   constructor(private route: ActivatedRoute, public uploadService: UploadService, private sanitizer: DomSanitizer) {
   }

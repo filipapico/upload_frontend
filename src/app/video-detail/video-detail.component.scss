@@ -63,14 +63,14 @@
       h4 {
         margin-top: 6px;
         margin-left: 10px;
-        margin-bottom: 0px
+        margin-bottom: 0;
       }
 
       p {
         font-size: 12px;
         margin-left: 10px;
-        margin-top: 0px;
-        margin-bottom: 0px;
+        margin-top: 0;
+        margin-bottom: 0;
         position: center;
         color: #b6b1b1;
       }
@@ -87,8 +87,13 @@
 
   .suggestion-container {
     border-radius: 20px;
-    padding: 20px;
-    //width: 320px;
+    padding: 0 20px;
+  }
+
+  &.playlist {
+    .suggestion-container {
+      display: none;
+    }
   }
 }
 
