@@ -28,12 +28,14 @@ export class LikeComponent {
   }
 
   likes!: Likes[]
+  dislikes!: Likes[]
 
   constructor(private uploadService: UploadService) {
   }
 
   ngOnInit(): void {
     this.getVideosLikes();
+    this.getVideosDislikes()
   }
 
   addFlagToVideo(type: string, urlLike: string, bodyLike: {}, headersLike: any) {
@@ -64,6 +66,7 @@ export class LikeComponent {
 
     this.uploadService.postFlag(urlLike, body, likeHeaders).subscribe((data) => {
       this.getVideosLikes();
+      this.getVideosDislikes();
     })
     console.log(this.id_video)
 
@@ -72,6 +75,13 @@ export class LikeComponent {
   getVideosLikes() {
     this.uploadService.getLikes(this.id_video).subscribe((likes) => {
       this.likes = likes
+      console.log(this.likes)
+    })
+  }
+
+  getVideosDislikes() {
+    this.uploadService.getDislikes(this.id_video).subscribe((dislikes) => {
+      this.dislikes = dislikes
       console.log(this.likes)
     })
   }
