@@ -1,5 +1,12 @@
-.container{
-  fa-icon{
-    padding: 10px;
+.container {
+
+  fa-icon, span {
+    padding: 0 4px;
+    width: 23px;
+
+    &.separator {
+      padding: 0 12px;
+    }
+
   }
 }

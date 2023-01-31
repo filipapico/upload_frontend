@@ -1,10 +1,17 @@
 <div class="container">
-  <div>👍</div>
-  <fa-icon [icon]="faThumbsUp" (click)="addFlagToVideo('like','{}','','');"></fa-icon>
-  <span *ngIf="likes"> {{likes[0].count}} |</span>
-  <fa-icon [icon]="faThumbsDown" (click)="addFlagToVideo('dislike','{}','','');"></fa-icon>
-  <span> {{dislikes[0].count}}</span>
+  <fa-icon [icon]="faThumbsUp" class="fa-xl"
+           (click)="addFlagToVideo('like','{}','','');"></fa-icon>
+  <span *ngIf="likes">{{likes[0].count}}</span>
+  <span class="separator">|</span>
+  <fa-icon [icon]="faThumbsDown" class="fa-xl"
+           (click)="addFlagToVideo('dislike','{}','','');"></fa-icon>
+  <span>{{dislikes[0].count}}</span>
 </div>
 
 <!--FOR LATER - change icon isliked/notliked Localstorage
-<fa-icon [icon]="upbnbService.isFavorite(id) ? faHeartSolid : faHeart"></fa-icon>-->
+<fa-icon [icon]="upbnbService.isFavorite(id) ? faHeartSolid : faHeart"></fa-icon>
+
+CLASSES ICONS - SIZE
+class="fa-2x"
+class="fa-xl"
+-->
