@@ -29,6 +29,8 @@ export class LikeComponent {
 
   likes!: Likes[]
   dislikes!: Likes[]
+  iconLikeActive = false
+  iconDislikeActive = false
 
   constructor(private uploadService: UploadService) {
   }
@@ -84,6 +86,14 @@ export class LikeComponent {
       this.dislikes = dislikes
       console.log(this.likes)
     })
+  }
+
+  toggleLike(){
+    this.iconLikeActive = !this.iconLikeActive
+  }
+
+  toggleDislike(){
+    this.iconDislikeActive = !this.iconDislikeActive
   }
 
 }
