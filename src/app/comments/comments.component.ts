@@ -4,7 +4,6 @@ import {HttpHeaders} from "@angular/common/http";
 import {UploadService} from "../upload.service";
 import {Comment} from "../interfaces";
 
-
 @Component({
   selector: 'app-comments',
   templateUrl: './comments.component.html',
@@ -13,8 +12,9 @@ import {Comment} from "../interfaces";
 export class CommentsComponent {
   faFlag = faFlag;
   faTimesCircle = faTimesCircle;
-  index_cid : number = 0;
-
+  index_cid: number = 0;
+  commentUrl = 'https://dev-project-upskill2-grupo4v2.pantheonsite.io/comment';
+  tokenValue?: any;
 
   @Input() gravatar?: string;
   @Input() username?: string;
@@ -23,25 +23,17 @@ export class CommentsComponent {
   @Input() contentID!: number;
   @Input() entityType!: string;
   @Input() email?: string;
-
-  @Input() onSubmit?: Function;
-
   @Input() entityComments: Comment[] = [];
 
 
   constructor(public uploadService: UploadService) {
   }
 
-
-  commentUrl = 'https://dev-project-upskill2-grupo4v2.pantheonsite.io/comment';
-  tokenValue?: any;
-
   ngOnInit(): void {
     this.refreshComments();
   }
 
   onCommentSubmit(comment: { username: string, email: string, comment: string }) {
-
     /*    this.uploadService.getToken().subscribe((token) => {
           this.tokenValue = token;
           console.log(this.tokenValue);
@@ -79,6 +71,7 @@ export class CommentsComponent {
       }
     }
     this.uploadService.postComments(this.commentUrl, commentBody, customHeaders).subscribe(() => {
+      //callback refreshComments
       this.refreshComments();
     });
   }
@@ -90,18 +83,16 @@ export class CommentsComponent {
     })
   }
 
-
-
   show = false;
 
   Openpopup(index: any, cid: string) {
     this.show = true;
     let index_cid = index
-    console.log (index_cid)
+    console.log(index_cid)
     console.log(cid)
     let reason = document.querySelector("#field_reason")
 
-   let bodyReport: {} = {
+    let bodyReport: {} = {
       "entity_id": [cid],
       "entity_type": ["comment"],
       "field_reason": [reason],
