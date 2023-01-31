@@ -18,7 +18,6 @@ export class ChannelsComponent {
 
   constructor(private route: ActivatedRoute, public uploadService: UploadService, private sanitizer: DomSanitizer) {
   }
-
   ngOnInit(): void {
     this.uploadService.getChannels(this.nid).subscribe((channels) => {
         this.channels = channels;
@@ -29,11 +28,37 @@ export class ChannelsComponent {
       this.categories = categories;
     })
   }
+/*  ngOnInit(): void {
+    this.uploadService.checkCurrentLanguage().subscribe((language)=>{
+      console.log(`current language: ${language}`);
+      this.currentLanguage = language;
+      this.loadPage(this.currentLanguage);
+    });
+  }
 
-  targetChannels(id: string){
+  loadPage(language: any) {
+    this.uploadService.getChannels(this.nid, language).subscribe((channels) => {
+        this.channels = channels;
+      }
+    )
+
+    this.uploadService.getCategories().subscribe((categories) => {
+      this.categories = categories;
+    })
+  }*/
+
+  targetChannels(id: string) {
     this.uploadService.getCategoryChannels(id).subscribe((channels: Channels[]) => {
       this.channels = channels;
     })
-
   }
+
+
+  // DEPRECATED
+
+
+  /*  switchChannelLanguage(idValue: string) {
+    (idValue == 'portuguese')? this.currentLanguage = "/pt-pt/" :  this.currentLanguage = "/en/";
+    this.refresh();
+  }*/
 }
