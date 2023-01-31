@@ -12,7 +12,7 @@ import {Comment} from "../interfaces";
 export class CommentsComponent {
   faFlag = faFlag;
   faTimesCircle = faTimesCircle;
-  index_cid: number = 0;
+  index_cid: any = 0;
   commentUrl = 'https://dev-project-upskill2-grupo4v2.pantheonsite.io/comment';
   tokenValue?: any;
 
@@ -86,8 +86,8 @@ export class CommentsComponent {
   show = false;
 
   Openpopup(index: any, cid: string) {
-    this.show = true;
     let index_cid = index
+    this.show = true;
     console.log(index_cid)
     console.log(cid)
     let reason = document.querySelector("#field_reason")

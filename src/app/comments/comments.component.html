@@ -30,8 +30,9 @@
       <div class="comment-text">
         <p style="font-weight:bold">{{c.field_comment_name || c.field_comment_name_media}}
           <span class="comment-date">{{c.created}}</span>
-          <span class="flag-icon"><fa-icon [icon]="faFlag"
-                                           (click)="Openpopup(entityComments.indexOf(c), c.cid)"></fa-icon></span>
+          <span class="flag-icon">
+            <fa-icon [icon]="faFlag" (click)="Openpopup(entityComments.indexOf(c), c.cid)"></fa-icon>
+          </span>
         </p>
         <p>
           {{c.comment_body}}
@@ -45,10 +46,10 @@
       <div class="close">
         <fa-icon [icon]="faTimesCircle" (click)="Closepopup()"></fa-icon>
       </div>
-      <h4>Report comment</h4>
+      <h4>Report {{entityComments[index_cid].field_comment_name || entityComments[index_cid].field_comment_name_media}} comment</h4>
       <div>
         <input type="text" id="field_reason" class="form-control" required
-               minlength="4" maxlength="250" style="height:100px" placeholder="Message *">
+               minlength="4" maxlength="250" style="height:100px" placeholder="Reason*">
         <button class="report-button" (click)="addCommentReport('','{}','')">Submit</button>
       </div>
     </div>
