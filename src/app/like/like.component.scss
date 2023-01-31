@@ -1,11 +1,13 @@
 .container {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
 
   fa-icon, span {
     padding: 0 4px;
-    width: 23px;
 
     &.separator {
-      padding: 0 12px;
+      padding: 0 20px;
     }
 
   }

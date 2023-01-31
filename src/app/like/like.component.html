@@ -1,10 +1,14 @@
 <div class="container">
-  <fa-icon [icon]="faThumbsUp" class="fa-xl"
-           (click)="addFlagToVideo('like','{}','','');"></fa-icon>
+  <div>
+    <fa-icon [icon]="faThumbsUp" class="fa-xl"
+             (click)="addFlagToVideo('like','{}','','');"></fa-icon>
+  </div>
   <span *ngIf="likes">{{likes[0].count}}</span>
   <span class="separator">|</span>
-  <fa-icon [icon]="faThumbsDown" class="fa-xl"
-           (click)="addFlagToVideo('dislike','{}','','');"></fa-icon>
+  <div>
+    <fa-icon [icon]="faThumbsDown" class="fa-xl"
+             (click)="addFlagToVideo('dislike','{}','','');"></fa-icon>
+  </div>
   <span>{{dislikes[0].count}}</span>
 </div>
 
