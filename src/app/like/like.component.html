@@ -1,7 +1,7 @@
 <div class="container">
-  <fa-icon [icon]="faThumbsUp" (click)="addlikeToVideo('','{}','');"></fa-icon>
+  <fa-icon [icon]="faThumbsUp" (click)="addFlagToVideo('like','{}','','');"></fa-icon>
   <span *ngIf="likes"> {{likes[0].count}} |</span>
-  <fa-icon [icon]="faThumbsDown"></fa-icon>
+  <fa-icon [icon]="faThumbsDown" (click)="addFlagToVideo('dislike','{}','','');"></fa-icon>
   <span> count</span>
 </div>
 

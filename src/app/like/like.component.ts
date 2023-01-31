@@ -36,31 +36,44 @@ export class LikeComponent {
     this.getVideosLikes();
   }
 
+  addFlagToVideo(type: string, urlLike: string, bodyLike: {}, headersLike: any) {
+    console.log(type)
 
-  addlikeToVideo(urlLike: string, bodyLike: {}, headersLike: any) {
+    let body: {}
+
+    if (type == 'like') {
+      body = {
+        "entity_id": [this.id_video],
+        "entity_type": ["media"],
+        "flag_id": [{"target_id": "like_videos", "target_type": "flag"}],
+        "uid": ["0"]
+      }
+    } else {
+      body = {
+        "entity_id": [this.id_video],
+        "entity_type": ["media"],
+        "flag_id": [{"target_id": "dislike_videos", "target_type": "flag"}],
+        "uid": ["0"]
+      }
+    }
+
     let likeHeaders = new HttpHeaders({
       'X-CSRF-Token': 'VQrAx6wI4cv-J3BdqLRhIbN5gfUUCGf9sZnR_teei2U',
       'Accept': 'application/vnd.api+json'
     });
 
-    let bodybody: {} = {
-      "entity_id": [this.id_video],
-      "entity_type": ["media"],
-      "flag_id": [{"target_id": "like_videos", "target_type": "flag"}],
-      "uid": ["0"]
-    }
-
-    this.uploadService.postLike(urlLike, bodybody, likeHeaders).subscribe((data) => {
+    this.uploadService.postLike(urlLike, body, likeHeaders).subscribe((data) => {
       this.getVideosLikes();
     })
     console.log(this.id_video)
 
   }
-//NOT THE BEST SOLUTION (REPEATING THE API CALL)
+
   getVideosLikes() {
     this.uploadService.getLikes(this.id_video).subscribe((likes) => {
       this.likes = likes
       console.log(this.likes)
     })
   }
+
 }
