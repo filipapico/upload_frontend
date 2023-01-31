@@ -100,6 +100,10 @@ export class UploadService {
     return this.http.get<Likes[]>(BASE_URL + "/api/like/videos/" + id_video)
   }
 
+  getDislikes(id_video: string) {
+    return this.http.get<Likes[]>(BASE_URL + "/api/dislike/videos/" + id_video)
+  }
+
   //COMMENTS
   postComments(url: string, body: {}, headers: any) {
     return this.http.post(url, body, headers);
