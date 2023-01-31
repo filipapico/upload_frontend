@@ -6,11 +6,11 @@
     </div>
     <p class="duration">{{field_duration}}</p>
   </div>
-  <div class="icons">
+  <div class="icons" >
       <span class="bookmark-icon" (click)="$event.stopPropagation(); uploadService.toggleFavoriteVideo(mid)">
         <fa-icon [icon]="uploadService.isFavoriteVideo(mid)? faBookmarkFull : faBookmark"></fa-icon>
       </span>
-    <fa-icon class="share-icon" [icon]="faShareNodes"></fa-icon>
+    <fa-icon class="share-icon" (click)="copyUrl(field_media_oembed_video, title)" [icon]="faShareNodes"></fa-icon>
   </div>
 
   <div class="info-container">
@@ -29,4 +29,9 @@
   <div class="playlist-icon">
     <img src="assets/bookmark-playlist-big.png">
   </div>
+
+  <div class="popup-url" *ngIf="popup">
+    <p>URL copied!</p>
+  </div>
+
 </div>

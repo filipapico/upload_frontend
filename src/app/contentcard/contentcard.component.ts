@@ -25,7 +25,7 @@ export class ContentcardComponent {
   @Input() field_media_tags?: string;
   @Input() image!: string;
   @Input() logotype?: string;
-  @Input() field_media_oembed_video?: string;
+  @Input() field_media_oembed_video?: any;
   @Input() field_comments?: string;
   @Input() routerLink?: any;
   @Input() type?: string;
@@ -40,4 +40,15 @@ export class ContentcardComponent {
     let titleWords = this.title.split(' ');
     (titleWords.length > 5) ? this.title = titleWords.slice(0, 6).join(' ').concat('...') : this.title;
   }
+
+
+  popup : any = false
+
+  copyUrl(val: string, title: string) {
+    navigator.clipboard.writeText(val);
+    this.popup = true
+    setTimeout(() => { this.popup = false; }, 500);
+    //window.alert("Share " + title)
+  }
+
 }
