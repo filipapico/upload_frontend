@@ -62,7 +62,7 @@ export class LikeComponent {
       'Accept': 'application/vnd.api+json'
     });
 
-    this.uploadService.postLike(urlLike, body, likeHeaders).subscribe((data) => {
+    this.uploadService.postFlag(urlLike, body, likeHeaders).subscribe((data) => {
       this.getVideosLikes();
     })
     console.log(this.id_video)

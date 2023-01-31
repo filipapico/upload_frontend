@@ -92,7 +92,7 @@ export class UploadService {
   }
 
   //LIKES & DISLIKES
-  postLike(urlLike: string, bodyLike: {}, headersLike: any) {
+  postFlag(urlLike: string, bodyLike: {}, headersLike: any) {
     return this.http.post(LIKE_URL, bodyLike, headersLike)
   }
 
