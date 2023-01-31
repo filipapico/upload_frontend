@@ -5,13 +5,16 @@
   <div class="tags" *ngIf="tags">
     <div class="tags-items">
       <div class="tags-item" (click)="getLessTags(tagPageNumber)"
-           *ngIf="this.visible == true && tags.length==8 || tags.length<8">←
+           *ngIf="this.visible == true && tags.length==8 || tags.length<8">
+        <
       </div>
       <div class="tags-item" *ngFor="let t of tags">
         <div (click)="getThematicsByTag(t.tid)" [ngClass]="active ? 'selected':'unselected'">
           #{{t.name.toLowerCase()}}</div>
       </div>
-      <div class="tags-item" (click)="getMoreTags(tagPageNumber);toggleVisible()" *ngIf="tags.length==8">→</div>
+      <div class="tags-item" (click)="getMoreTags(tagPageNumber);toggleVisible()" *ngIf="tags.length==8">
+        >
+      </div>
     </div>
   </div>
 
