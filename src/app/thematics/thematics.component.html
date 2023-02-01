@@ -21,6 +21,22 @@
   <!--THEMATICS-->
   <div class="main-content">
 
+    <!--PAGINATION THEMATICS-->
+    <div class="pagination" *ngIf="visiblePagination">
+      <div *ngIf="thematics">
+          <span (click)="getLessThematics(thematicPageNumber)"
+                *ngIf="this.visibleThematics == true && thematics.length==6 || thematics.length<6">
+            <
+          </span>
+      </div>
+      <div *ngIf="thematics">
+          <span class="page-link" (click)="getMoreThematics(thematicPageNumber)"
+                *ngIf="thematics.length==6">
+            >
+          </span>
+      </div>
+    </div>
+
     <div class="main-content-center">
       <div class="thematics-all" *ngIf="thematics">
         <div class="thematics">
@@ -40,22 +56,6 @@
                 style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_header_image}}');"></div>
             </div>
           </div>
-        </div>
-      </div>
-
-      <!--PAGINATION THEMATICS-->
-      <div class="pagination" *ngIf="visiblePagination">
-        <div>
-          <span (click)="getLessThematics(thematicPageNumber)"
-                *ngIf="this.visibleThematics == true && thematics.length==6 || thematics.length<6">
-            <
-          </span>
-        </div>
-        <div>
-          <span class="page-link" (click)="getMoreThematics(thematicPageNumber)"
-                *ngIf="thematics.length==6">
-            >
-          </span>
         </div>
       </div>
     </div>
