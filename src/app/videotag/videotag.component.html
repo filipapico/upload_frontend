@@ -1,8 +1,8 @@
 <div class="container" *ngIf="videosByTag">
-  <!--
-  LATER ADD TAG NAME?!
-  <span>#FAKE</span>
-  -->
+
+  <app-tags class="tags" type="show">
+  </app-tags>
+
   <div class="pagination">
     <div class="pagination-item" (click)="pagination('down',pageNumber)">
       <div
@@ -25,7 +25,8 @@
                      [mid]="vt.mid"
                      [image]="vt.thumbnail__target_id"
                      [routerLink]="['/video-detail', vt.name]"
-                     [uid]="vt.uid">
+                     [uid]="vt.uid"
+                     [source]="getTags(vt.field_media_tags)">
     </app-contentcard>
   </div>
 </div>
