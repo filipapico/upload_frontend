@@ -41,7 +41,6 @@ export class LikeComponent {
   }
 
   addFlagToVideo(type: string, urlLike: string, bodyLike: {}, headersLike: any) {
-    console.log(type)
 
     let body: {}
 
@@ -70,21 +69,18 @@ export class LikeComponent {
       this.getVideosLikes();
       this.getVideosDislikes();
     })
-    console.log(this.id_video)
 
   }
 
   getVideosLikes() {
     this.uploadService.getLikes(this.id_video).subscribe((likes) => {
       this.likes = likes
-      console.log(this.likes)
     })
   }
 
   getVideosDislikes() {
     this.uploadService.getDislikes(this.id_video).subscribe((dislikes) => {
       this.dislikes = dislikes
-      console.log(this.likes)
     })
   }
 
