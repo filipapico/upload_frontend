@@ -12,12 +12,9 @@ import {
   Comment,
   Likes
 } from "./interfaces";
-import {Observable} from "rxjs";
-import * as events from "events";
 
-// const BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
-let currentLanguage = "/en";
-let BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io/en";
+
+const BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
 
 const HEADERS = new HttpHeaders({
   'X-CSRF-Token': 'VQrAx6wI4cv-J3BdqLRhIbN5gfUUCGf9sZnR_teei2U',
@@ -26,45 +23,39 @@ const HEADERS = new HttpHeaders({
 
 const LIKE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io/entity/flagging";
 
-/*USED FOR TESTING
-let BODYLIKE = {
-  "entity_id":["87"],
-  "entity_type":["media"],
-  "flag_id":[{"target_id": "like_videos","target_type": "flag"}],
-  "uid": ["0"]
-}*/
-
 @Injectable({
   providedIn: 'root'
 })
 
 export class UploadService {
+  currentLanguage: string = '/en/';
+
   favorites: string[] = [] = JSON.parse(localStorage.getItem("favorites") || "[]");
 
   constructor(public http: HttpClient) {
   }
 
+  //MULTILINGUAL
   switchLanguage(idValue: string) {
-    // (currentLanguage == "/en") ? BASE_URL += "/pt-pt" : BASE_URL += "/en";
-   if(idValue == 'portuguese'){
-     BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io/pt-pt";
-     currentLanguage = "/pt-pt"
-   } else {
-     BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io/en";
-     currentLanguage = "/en"
-   }
-    console.log(BASE_URL);
-
-    // this.refreshLanguage(idValue);
+    this.currentLanguage = (idValue == 'portuguese') ? "/pt-pt/" : "/en/";
+    this.callback_list.forEach((callback? : Function) => callback?.())
   };
 
-/*  refreshLanguage(idValue: string){
-    // @ts-ignore
-    document.getElementById(idValue).classList.add('active');
-    console.log(BASE_URL);
-  }*/
+  callback_list : [Function?] = []
 
 
+  /*  checkCurrentLanguage(): Observable<string> {
+      // window.location.reload();
+      return new Observable((observer) => {
+        try {
+          observer.next(`${this.currentLanguage}`);
+        } catch (error) {
+          observer.error(error);
+        } finally {
+          observer.complete();
+        }
+      });
+    };*/
 
   //VIDEOS
   getVideo(id: number) {
@@ -84,10 +75,8 @@ export class UploadService {
   }
 
   // TOKEN
-  // Save the token value in a constant? Tiago's suggestion... (why is not being used now?!!?)
   getToken() {
     let token = this.http.get(BASE_URL + "/session/token");
-    console.log(typeof (token));
     return token;
   }
 
@@ -139,7 +128,7 @@ export class UploadService {
   }
 
   // QUESTION Maybe update all ids to type string? Since our APIs always return strings...
-  getChannelVideos(id: number) {
+  getChannelVideos(id: any) {
     return this.http.get<Video[]>(BASE_URL + "/api/channel/" + id);
   }
 
