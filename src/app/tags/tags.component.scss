@@ -11,7 +11,7 @@
     display: flex;
     flex-wrap: wrap;
 
-    .tags-item {
+    .tags-item, .tags-item-all {
       color: lightgrey;
       padding: 4px 6px;
       border: 1px solid #b5b5be69;
@@ -26,6 +26,18 @@
       &:hover {
         font-weight: bold;
         border: 1px solid white;
+      }
+
+      &.show{
+        background-color: chocolate;
+      }
+    }
+
+    .tags-item-all{
+      display: none;
+
+      &.show{
+        display: revert;
       }
     }
   }
