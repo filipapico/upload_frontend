@@ -32,6 +32,7 @@ export class ContentcardComponent {
   @Input() channelAuthor?: string;
   @Input() field_duration?: string;
   @Input() uid?: string;
+  @Input() view_media?: string;
 
   constructor(public uploadService: UploadService) {
   }
