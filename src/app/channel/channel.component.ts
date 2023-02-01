@@ -1,9 +1,7 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {UploadService} from "../upload.service";
-import {Video, Comment, Channels} from "../interfaces";
-import {faBookmark} from '@fortawesome/free-regular-svg-icons';
-import {faBookmark as faBookmarkFull} from "@fortawesome/free-solid-svg-icons";
+import {Video, Channels} from "../interfaces";
 
 @Component({
   selector: 'app-channel',
@@ -11,8 +9,7 @@ import {faBookmark as faBookmarkFull} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./channel.component.scss']
 })
 export class ChannelComponent {
-  faBookmark = faBookmark;
-  faBookmarkFull = faBookmarkFull;
+
   nid: number; //channel id
   videos?: Video[] = []; //array containing the channel's videos
   channelEntityType = "node";
@@ -23,7 +20,7 @@ export class ChannelComponent {
     this.nid = route.snapshot.params['nid'];
   }
 
-  ngOnInit(): void {
+  refresh(){
     this.uploadService.getChannels(this.nid.toString()).subscribe((channel) => {
       this.channel = channel;
     });
@@ -31,6 +28,13 @@ export class ChannelComponent {
     this.uploadService.getChannelVideos(this.nid).subscribe((videos) => {
       this.videos = videos;
     });
+  }
+
+  ngOnInit(): void {
+    this.uploadService.onChangeLanguage(() => {
+      this.refresh();
+    });
+    this.refresh();
   }
 
   getHashtag(tags: string) {
