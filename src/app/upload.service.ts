@@ -19,6 +19,11 @@ import * as events from "events";
 let currentLanguage = "/en";
 let BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io/en";
 
+const HEADERS = new HttpHeaders({
+  'X-CSRF-Token': 'VQrAx6wI4cv-J3BdqLRhIbN5gfUUCGf9sZnR_teei2U',
+  'Accept': 'application/vnd.api+json'
+});
+
 const LIKE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io/entity/flagging";
 
 /*USED FOR TESTING
@@ -87,8 +92,14 @@ export class UploadService {
   }
 
   //REPORT COMMENTS
-  postReport(urlReport: string, bodyReport: {}, headersReport: any) {
-    return this.http.post(LIKE_URL, bodyReport, headersReport)
+  postReport(comment_id : string, reason : string) {
+    return this.http.post(LIKE_URL, {
+      "entity_id": [comment_id],
+      "entity_type": ["comment"],
+      "field_reason": [reason],
+      "flag_id": [{"target_id": "report_comments", "target_type": "flag"}],
+      "uid": ["0"]
+    }, {headers: HEADERS, })
   }
 
   //LIKES & DISLIKES
