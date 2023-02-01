@@ -12,7 +12,6 @@ import {Comment} from "../interfaces";
 export class CommentsComponent {
   faFlag = faFlag;
   faTimesCircle = faTimesCircle;
-  index_cid: any = 0;
   commentUrl = 'https://dev-project-upskill2-grupo4v2.pantheonsite.io/comment';
   tokenValue?: any;
 
@@ -84,31 +83,19 @@ export class CommentsComponent {
   }
 
   show = false;
+  index_cid: [number, string] = [0,""];
+  field_reason: string = "";
 
   Openpopup(index: any, cid: string) {
-    let index_cid = index
+    this.index_cid = [index, cid];
     this.show = true;
-    console.log(index_cid)
-    console.log(cid)
-    let reason = document.querySelector("#field_reason")
-
-    let bodyReport: {} = {
-      "entity_id": [cid],
-      "entity_type": ["comment"],
-      "field_reason": [reason],
-      "flag_id": [{"target_id": "report_comments", "target_type": "flag"}],
-      "uid": ["0"]
-    }
   }
 
-  addCommentReport(urlReport: string, bodyReport: {}, headersReport: any) {
-    let reportHeaders = new HttpHeaders({
-      'X-CSRF-Token': 'VQrAx6wI4cv-J3BdqLRhIbN5gfUUCGf9sZnR_teei2U',
-      'Accept': 'application/vnd.api+json'
-    });
 
-    this.uploadService.postReport(urlReport, bodyReport, reportHeaders).subscribe((data) => {
+  addCommentReport() {
+    this.uploadService.postReport(this.index_cid[1], this.field_reason).subscribe((data) => {
     })
+    this.Closepopup()
   }
 
   Closepopup() {
