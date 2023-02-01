@@ -14,7 +14,7 @@ import {
 } from "./interfaces";
 
 
-const BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
+let BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
 
 const HEADERS = new HttpHeaders({
   'X-CSRF-Token': 'VQrAx6wI4cv-J3BdqLRhIbN5gfUUCGf9sZnR_teei2U',
@@ -28,34 +28,32 @@ const LIKE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io/entity/f
 })
 
 export class UploadService {
-  currentLanguage: string = '/en/';
-
   favorites: string[] = [] = JSON.parse(localStorage.getItem("favorites") || "[]");
 
   constructor(public http: HttpClient) {
   }
 
   //MULTILINGUAL
+  callback_list: [Function?] = [];
+
   switchLanguage(idValue: string) {
-    this.currentLanguage = (idValue == 'portuguese') ? "/pt-pt/" : "/en/";
-    this.callback_list.forEach((callback? : Function) => callback?.())
+    let currentLanguage = "";
+    BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
+    currentLanguage = (idValue == 'portuguese') ? "/pt-pt" : "/en";
+    BASE_URL += currentLanguage;
+    // console.log(BASE_URL);
+    this.callback_list.forEach((callback?: Function) => callback?.())    // '?.' in JS means that nothing happens if there are no callback functions defined.
   };
 
-  callback_list : [Function?] = []
-
-
-  /*  checkCurrentLanguage(): Observable<string> {
-      // window.location.reload();
-      return new Observable((observer) => {
-        try {
-          observer.next(`${this.currentLanguage}`);
-        } catch (error) {
-          observer.error(error);
-        } finally {
-          observer.complete();
-        }
-      });
-    };*/
+  onChangeLanguage(callback: (lang: any) => void) {
+    return this.callback_list.push(callback);
+  }
+  // onChangeLanguage receives a callback function from the component as parameter.
+  // for instance it receives a callback to refresh page
+  // this callback is pushed to the callback_list
+  // then each time we switchLanguage, the list is looped through and all necessary callbacks executed
+  //e.g: we are in the channels page, we switched to PT, refresh() will load the page again but the call to
+  // API will be different as current language value has changed
 
   //VIDEOS
   getVideo(id: number) {
@@ -81,14 +79,14 @@ export class UploadService {
   }
 
   //REPORT COMMENTS
-  postReport(comment_id : string, reason : string) {
+  postReport(comment_id: string, reason: string) {
     return this.http.post(LIKE_URL, {
       "entity_id": [comment_id],
       "entity_type": ["comment"],
       "field_reason": [reason],
       "flag_id": [{"target_id": "report_comments", "target_type": "flag"}],
       "uid": ["0"]
-    }, {headers: HEADERS, })
+    }, {headers: HEADERS,})
   }
 
   //LIKES & DISLIKES
