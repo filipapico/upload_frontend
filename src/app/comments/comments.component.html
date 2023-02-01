@@ -39,22 +39,24 @@
         </p>
       </div>
     </div>
-  </div>
+</div>
+
 
   <div class="overlay" *ngIf="show">
     <div class="content">
       <div class="close">
         <fa-icon [icon]="faTimesCircle" (click)="Closepopup()"></fa-icon>
       </div>
-      <h4>Report {{entityComments[index_cid].field_comment_name || entityComments[index_cid].field_comment_name_media}} comment</h4>
+      <h4>Report {{entityComments[index_cid[0]].field_comment_name || entityComments[index_cid[0]].field_comment_name_media}} comment</h4>
       <div>
-        <input type="text" id="field_reason" class="form-control" required
+        <input type="text" [(ngModel)]="field_reason" class="form-control" required
                minlength="4" maxlength="250" style="height:100px" placeholder="Reason*">
-        <button class="report-button" (click)="addCommentReport('','{}','')">Submit</button>
+        <button class="report-button" (click)="addCommentReport()">Submit</button>
       </div>
     </div>
   </div>
 </div>
+
 
 
 
