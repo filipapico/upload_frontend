@@ -13,7 +13,7 @@
              toggleDislike()">
     </fa-icon>
   </div>
-  <span>{{dislikes[0].count}}</span>
+  <span *ngIf="dislikes">{{dislikes[0].count}}</span>
 </div>
 
 <!--FOR LATER - change icon isliked/notliked Localstorage
