@@ -27,17 +27,18 @@
                        [mid]="vid.mid"
                        [image]="vid.thumbnail__target_id"
                        [field_duration]="vid.field_duration"
-                       [routerLink]="['/channelplayer', vid.nid]"
+                       [routerLink]="['/channelplayer', vid.name]"
       ></app-contentcard>
     </div>
-    <!--Comments -->
-    <div class="channel-comments">
-      <app-comments [entityType]="channelEntityType"
-                    [contentID]="nid">
-      </app-comments>
-    </div>
+
     <ng-template #noVideo>
       Please be patient, this channel will upload videos soon!
     </ng-template>
+  </div>
+  <!--Comments -->
+  <div class="channel-comments">
+    <app-comments [entityType]="channelEntityType"
+                  [contentID]="nid">
+    </app-comments>
   </div>
 </div>
