@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
 import {UploadService} from "../upload.service";
 import {Tags} from "../interfaces";
 
@@ -9,6 +9,8 @@ import {Tags} from "../interfaces";
 })
 export class TagsComponent {
   tagsVideos!: Tags[]
+
+  @Input() type!: string
 
   constructor(private uploadService: UploadService) {
   }
