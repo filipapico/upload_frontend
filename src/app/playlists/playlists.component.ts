@@ -58,5 +58,15 @@ export class PlaylistsComponent implements OnInit {
 
     this.getPlaylists();
   }
+
+  show = true;
+
+  showMessage(list: any) {
+    if (list.length != 0) {
+      this.show = false;
+      console.log(list)
+    }
+  }
+
 }
 
