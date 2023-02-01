@@ -17,14 +17,16 @@
     }
 
 
-    .autocomplete-search {
+    .autocomplete-search, .search {
       margin: 10px;
       height: 30px;
       border-radius: 10px;
       position: center;
-      width: 97%;
+      width: 100%;
+      justify-content: center;
       background-color: #262525;
       font-size: medium;
+      color: #FFFFFF;
     }
 
 /*    ng-autocomplete input {
