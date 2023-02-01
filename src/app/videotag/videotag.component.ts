@@ -53,7 +53,10 @@ export class VideotagComponent implements OnInit {
     }
   }
 
-  //OLD
+  toggleVisible(): void {
+    this.visible = !this.visible;
+  }
+
   changePage(direction: string, p: number): void {
     if (direction == 'down' && this.pageNumber > 0) {
       this.pageNumber--
@@ -64,11 +67,19 @@ export class VideotagComponent implements OnInit {
     this.refreshVideos()
   }
 
-  toggleVisible(): void {
-    this.visible = !this.visible;
+  getTags(tags: string) {
+    return tags
+      .split(',')
+      .map(this.getTag)
+      .join('')
   }
 
-  /*getLessVideos(p: number): void {
+  getTag(text: string) {
+    return `#${text.trim().toLowerCase()} `;
+  }
+
+  /*OLD
+  getLessVideos(p: number): void {
     if (this.pageNumber == 1) {
       if (this.videosByTag.length <= 6) {
         p--
