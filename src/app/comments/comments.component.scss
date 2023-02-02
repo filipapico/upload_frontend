@@ -126,6 +126,10 @@
           font-size: smaller;
           position: relative;
 
+          fa-icon {
+            cursor: pointer;
+          }
+
           .overlay {
             width: 360px;
             background-color: #363535;
