@@ -24,10 +24,9 @@
                        [source]="getHashtag(vid.field_media_tags)"
                        [title]="vid.name"
                        [subtitle]="vid.created"
-                       [mid]="vid.mid"
                        [image]="vid.thumbnail__target_id"
                        [field_duration]="vid.field_duration"
-                       [routerLink]="['/channelplayer', vid.name]"
+                       [routerLink]="['/channelplayer', vid.view_media.split('/').slice(-1)[0]]"
       ></app-contentcard>
     </div>
 
