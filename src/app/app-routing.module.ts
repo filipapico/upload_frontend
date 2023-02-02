@@ -26,7 +26,7 @@ const routes: Routes = [
   {path: 'playlists', component: PlaylistsComponent},
   {path: 'playlist/:name', component: PlaylistComponent},
   {path: 'favorites', component: MyfavoritesComponent},
-  {path: 'videotag/:tid', component: VideotagComponent}
+  {path: 'videotag/:name', component: VideotagComponent}
 ];
 
 @NgModule({

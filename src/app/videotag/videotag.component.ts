@@ -21,7 +21,7 @@ export class VideotagComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.visible = false
+    //what was this for?? this.visible = false
     if (this.id_tag) {
       this.uploadService.getVideosByTag(this.id_tag, this.pageNumber).subscribe((videosByTag) => {
         this.videosByTag = videosByTag
@@ -29,7 +29,7 @@ export class VideotagComponent implements OnInit {
     } else {
       this.route.params.subscribe(params => {
         // Get the updated tag_id from the URL
-        this.id_tag = params['tid'];
+        this.id_tag = params['name'];
         this.refreshVideos()
       });
     }
