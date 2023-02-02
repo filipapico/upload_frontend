@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {faHouse, faBarsStaggered, faClapperboard, faPlay} from "@fortawesome/free-solid-svg-icons";
 import {faBookmark} from "@fortawesome/free-regular-svg-icons";
+import {UploadService} from "../upload.service";
 
 @Component({
   selector: 'app-menu',
@@ -14,5 +15,7 @@ export class MenuComponent {
   faPlay = faPlay;
   faBookmark = faBookmark;
 
+  constructor( public uploadService: UploadService) {
+  }
 
 }
