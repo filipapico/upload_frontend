@@ -27,7 +27,6 @@ export class VideotagComponent implements OnInit {
         this.videosByTag = videosByTag
       })
     } else {
-      console.log(this.pageNumber)
       this.route.params.subscribe(params => {
         // Get the updated tag_id from the URL
         this.id_tag = params['tid'];
