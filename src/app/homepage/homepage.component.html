@@ -7,7 +7,10 @@
     </div>
 
     <ng-template #noVideo>
-     Not found!
+      <input placeholder="Search video name..." class="search" (change)="changeSearch($event)">
+      <p>
+        Your search did not match any videos.
+      </p>
     </ng-template>
 
 <!--    <div class="autocomplete-search">
