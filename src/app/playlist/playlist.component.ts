@@ -19,27 +19,22 @@ export class PlaylistComponent implements OnInit {
     this.id = route.snapshot.params['nid']
   }
 
-  refresh(){
-    this.uploadService.getPlaylist(this.id).subscribe((playlist: any) => {
-      this.playlist = playlist.map((v: any) => {
-        let video_url = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + v.field_media_oembed_video.split("?v=")[1]);
-        return {
-          ...v,
-          video_url: video_url
-        };
-      });
-    })
-  }
-
-    ngOnInit(): void {
+  ngOnInit(): void {
     this.uploadService.onChangeLanguage(() => {
       this.refresh();
     });
-    this.refresh();
+    if (!this.id) {
+      this.route.params.subscribe((params) => {
+        let slug = params['name']
+        this.uploadService.getContentBySlug("playlist", slug).subscribe((data: any) => {
+          this.id = data.nid[0].value
+          this.refresh();
+        })
+      })
+    }
   }
 
-
-/*  ngOnInit(): void {
+  refresh() {
     this.uploadService.getPlaylist(this.id).subscribe((playlist: any) => {
       this.playlist = playlist.map((v: any) => {
         let video_url = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + v.field_media_oembed_video.split("?v=")[1]);
@@ -49,11 +44,22 @@ export class PlaylistComponent implements OnInit {
         };
       });
     })
-  }*/
-
+  }
 
   getVideo(index: any) {
     this.indexVideo = index;
     return this.indexVideo;
   }
+
+  /*  ngOnInit(): void {
+      this.uploadService.getPlaylist(this.id).subscribe((playlist: any) => {
+        this.playlist = playlist.map((v: any) => {
+          let video_url = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + v.field_media_oembed_video.split("?v=")[1]);
+          return {
+            ...v,
+            video_url: video_url
+          };
+        });
+      })
+    }*/
 }
