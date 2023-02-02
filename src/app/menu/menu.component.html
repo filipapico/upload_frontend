@@ -11,7 +11,7 @@
     </span>
     <span class="title">Channels</span>
   </div>
-  <div class="menu-item-text" routerLink="thematics" routerLinkActive="active">
+  <div class="menu-item-text" routerLink="thematics" (click)="uploadService.refreshComp()"  routerLinkActive="active">
         <span class="menu-item-logo">
         <fa-icon [icon]="faClapperboard"></fa-icon>
       </span>
