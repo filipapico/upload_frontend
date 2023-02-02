@@ -2,9 +2,13 @@
   <div class="main-section">
     <h2>Latest Videos</h2>
 
-    <div>
-      <input placeholder="Search" class="search" (change)="changeSearch($event)">
+    <div *ngIf="latestVideos?.length; else noVideo">
+      <input placeholder="Search video name..." class="search" (change)="changeSearch($event)">
     </div>
+
+    <ng-template #noVideo>
+     Not found!
+    </ng-template>
 
 <!--    <div class="autocomplete-search">
       <div *ngIf="allVideos">
