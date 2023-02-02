@@ -1,6 +1,6 @@
 import {Component, Input} from '@angular/core';
-import {faHeart, faBookmark} from "@fortawesome/free-regular-svg-icons";
-import {faShareNodes, faHeart as faHeartFull, faBookmark as faBookmarkFull} from "@fortawesome/free-solid-svg-icons";
+import {faBookmark} from "@fortawesome/free-regular-svg-icons";
+import {faShareNodes, faBookmark as faBookmarkFull} from "@fortawesome/free-solid-svg-icons";
 import {UploadService} from "../upload.service";
 
 
@@ -10,8 +10,7 @@ import {UploadService} from "../upload.service";
   styleUrls: ['./contentcard.component.scss']
 })
 export class ContentcardComponent {
-  faHeart = faHeart;
-  faHeartFull = faHeartFull;
+
   faBookmark = faBookmark;
   faBookmarkFull = faBookmarkFull;
   faShareNodes = faShareNodes;
