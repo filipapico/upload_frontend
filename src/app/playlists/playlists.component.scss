@@ -42,6 +42,11 @@
     border-radius: 20px;
     margin: 10px 5px;
 
+    h4 {
+      text-align: center;
+      margin: 50px;
+    }
+
     p {
       color: #FFFFFF;
       text-align: center;
@@ -58,8 +63,8 @@
 
       .favorites-img {
         img {
-          width: 136px;
-          height: 115px;
+          width: 116px;
+          height: 100px;
         }
       }
     }

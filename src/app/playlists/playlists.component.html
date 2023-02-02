@@ -22,17 +22,17 @@
 <div class="container">
   <div class="favorites-card" routerLink="/favorites" routerLinkActive="active">
     <div>
-      <div *ngIf="show">
-        <h6>Add favorite videos</h6>
-      </div>
+      <p>My favorite videos</p>
+      <ng-template #noFavorite>
+        <h4> You don't have favorite videos, add some... </h4>
+      </ng-template>
       <div *ngFor="let fl of favorites_list | slice:0:6" class="favorites-img" (change)="showMessage(favorites_list)">
         <img src="https://dev-project-upskill2-grupo4v2.pantheonsite.io{{fl.thumbnail__target_id}}">
       </div>
     </div>
-    <div class="favorite-icon">
+    <div class="favorite-icon" *ngIf="favorites_list?.length; else noFavorite">
       <img src="assets/favorite-playlist.png">
     </div>
-    <p>My favorite videos</p>
   </div>
 
 
