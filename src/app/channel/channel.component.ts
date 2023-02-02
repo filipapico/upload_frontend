@@ -34,6 +34,15 @@ export class ChannelComponent {
     this.uploadService.onChangeLanguage(() => {
       this.refresh();
     });
+    this.route.params.subscribe((params)=>{
+      let slug = params['name']
+      this.uploadService.getContentBySlug("channel", slug).subscribe((data:any)=>{
+        this.nid=data.nid[0].value
+        this.refresh();
+      })
+    })
+
+
     this.refresh();
   }
 
