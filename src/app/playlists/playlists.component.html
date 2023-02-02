@@ -44,7 +44,7 @@
                      [image]="playlist.thumbnail__target_id"
                      [subtitle]="playlist.field_playlist_category"
                      [field_media_oembed_video]="playlist.view_node"
-                     [routerLink]="['/playlist', playlist.nid]"
+                     [routerLink]="['/playlist', playlist.view_node.split('/').slice(-1)[0]]"
    ></app-contentcard>
 <!--    <div class="playlist-icon">
       <img src="assets/bookmark-playlist-big.png">
