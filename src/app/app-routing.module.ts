@@ -16,7 +16,7 @@ import {VideotagComponent} from "./videotag/videotag.component";
 const routes: Routes = [
   {path: '', redirectTo: '/homepage', pathMatch: 'full'},
   {path: 'homepage', component: HomepageComponent},
-  {path: 'channel/:nid', component: ChannelComponent},
+  {path: 'channel/:name', component: ChannelComponent},
   {path: 'channels', component: ChannelsComponent},
   {path: 'channelplayer/:nid', component: ChannelplayerComponent},
   {path: 'contentcard', component: ContentcardComponent},
