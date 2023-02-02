@@ -329,6 +329,7 @@
       top: -5px;
       left: 25px;
       font-size: 12px;
+      z-index: 1;
     }
 
   }
@@ -341,7 +342,8 @@
   padding: 0px 2px;
   position: relative;
   top: 25px;
-  left: 200px
+  left: 200px;
+  z-index: 1;
 }
 
 
