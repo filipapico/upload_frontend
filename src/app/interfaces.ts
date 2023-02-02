@@ -56,6 +56,7 @@ interface Channels {
   field_category: string
   body: string
   uid: string
+  view_node: string
 }
 
 interface Thematics {
