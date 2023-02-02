@@ -124,6 +124,7 @@ interface Playlists {
   user_picture: string
   thumbnail__target_id: string
   created: string
+  view_node: string
 }
 
 export {
