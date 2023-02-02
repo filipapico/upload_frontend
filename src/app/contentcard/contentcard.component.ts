@@ -33,6 +33,9 @@ export class ContentcardComponent {
   @Input() field_duration?: string;
   @Input() uid?: string;
   @Input() view_media?: string;
+  @Input() view_node?: any;
+
+
 
   constructor(public uploadService: UploadService) {
   }
@@ -46,9 +49,18 @@ export class ContentcardComponent {
   popup : any = false
 
   copyUrl(val: string, title: string) {
-    navigator.clipboard.writeText(val);
-    this.popup = true
-    setTimeout(() => { this.popup = false; }, 500);
+    if (this.field_media_oembed_video.slice(0,4) == "http") {
+      navigator.clipboard.writeText(val);
+      this.popup = true
+      setTimeout(() => { this.popup = false; }, 500);
+      console.log(this.field_media_oembed_video.slice(0,4))
+    } else {
+      navigator.clipboard.writeText("www.nomedosite" + val);
+      this.popup = true
+      setTimeout(() => { this.popup = false; }, 500);
+      console.log(this.view_node)
+    }
+
     //window.alert("Share " + title)
   }
 

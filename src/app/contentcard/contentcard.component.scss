@@ -247,10 +247,10 @@
       cursor: pointer;
       color: #979797;
       position: absolute;
-      top: 247px;
-      right: 29px;
+      top: 175px;
+      right: 100px;
       font-size: 1.2rem;
-      display: none;
+      //display: none;
 
       .bookmark-icon {
         margin-right: 10px;
@@ -318,6 +318,17 @@
         top: 65px;
         left: 24px;
       }
+    }
+
+    .popup-url {
+      margin: 3px 138px;
+      background-color: #504e4e;
+      border-radius: 5px;
+      padding: 0px 2px;
+      position: relative;
+      top: -5px;
+      left: 25px;
+      font-size: 12px;
     }
 
   }
