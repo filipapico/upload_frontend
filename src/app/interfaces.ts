@@ -83,6 +83,7 @@ interface Thematic {
   field_thematic_thumbnail: string
   field_thematic_links: string
   tid: string
+  view_node: string
 }
 
 interface ThematicLink {
