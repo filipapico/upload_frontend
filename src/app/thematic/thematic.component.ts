@@ -36,10 +36,8 @@ export class ThematicComponent {
     })
     this.route.params.subscribe(params => {
       let slug = params['name']
-      console.log("slug",slug)
       this.uploadService.getContentBySlug("thematic", slug).subscribe((data: any) => {
         this.id_thematic = data.nid[0].value
-        console.log(this.id_thematic)
         this.refresh();
       })
     })
