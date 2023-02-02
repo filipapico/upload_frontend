@@ -35,8 +35,18 @@ export class VideoDetailComponent implements OnChanges {
       this.refresh();
     }
   }
+  /*ngOnChanges is a lifecycle hook in Angular that is called when an input property of a component changes.
+  The hook receives an object changes of type SimpleChanges,
+  which holds the current and previous values of the changed properties.*/
+  //the hook checks if the id_video property has changed (using changes['id_video'])
+  //if so, it parses the value of id_video to an integer and assigns it to the id property.
+  //Then, it calls the refresh() method. This is a common pattern for updating a component when an input value changes.
+
 
   ngOnInit(): void {
+    this.uploadService.onChangeLanguage(() => {
+      this.refresh();
+    });
     if (!this.id_video) {
       // Subscribe changes in URL parameters
       this.route.params.subscribe(params => {
@@ -53,7 +63,6 @@ export class VideoDetailComponent implements OnChanges {
           this.id = data.mid[0].value;
           this.refresh()
         })
-
       });
     }
   }
