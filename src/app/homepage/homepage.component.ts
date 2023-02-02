@@ -24,47 +24,49 @@ export class HomepageComponent implements OnInit {
   constructor(private uploadService: UploadService) {
   }
 
-  ngOnInit(): void {
+  refresh() {
     this.getVideos();
-
-      this.uploadService.getThematics(0).subscribe((thematics) => {
+    this.uploadService.getThematics(0).subscribe((thematics) => {
       this.thematics = thematics;
     })
   }
 
-  pageSelected(selected: any) {
-      if (selected == 'Previous' && this.pNum > 0)    //if prev is clicked, numbers will decrease by 1
-        this.pNum--;
-      else if (selected == 'Next' && this.latestVideos?.length == 10)   //if next is clicked numbers will increase by 1
-        this.pNum++;
+  ngOnInit(): void {
+    this.uploadService.onChangeLanguage(() => {
+      this.refresh();
+    });
+    this.refresh();
+  }
 
-      this.getVideos();
-      console.log(this.latestVideos?.length)
+  pageSelected(selected: any) {
+    if (selected == 'Previous' && this.pNum > 0)    //if prev is clicked, numbers will decrease by 1
+      this.pNum--;
+    else if (selected == 'Next' && this.latestVideos?.length == 10)   //if next is clicked numbers will increase by 1
+      this.pNum++;
+
+    this.getVideos();
   }
 
   getVideos() {
     this.uploadService.getLatestVideos(this.pNum).subscribe((latestVideos) => {
       this.latestVideos = latestVideos;
-      //console.log(latestVideos)
     })
     // IS THE PAGE NUMBER RELEVANT HERE?
     this.uploadService.getThematics(0).subscribe((thematics) => {
       this.thematics = thematics
     })
     this.uploadService.getChannels("").subscribe((channels) => {
-        this.channels = channels;
-      })
+      this.channels = channels;
+    })
     this.uploadService.getVideo(this.id).subscribe((allVideos) => {
       this.allVideos = allVideos;
-      //console.log(allVideos)
     })
   }
 
-  changeSearch(e : any){
+  changeSearch(e: any) {
     const v = e.target.value;
     this.uploadService.getSearchVideos(v).subscribe((search) => {
       this.latestVideos = search;
-      console.log(v)
     })
   }
 }
