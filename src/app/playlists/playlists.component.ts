@@ -22,7 +22,7 @@ export class PlaylistsComponent implements OnInit {
   constructor(private route: ActivatedRoute, private uploadService: UploadService,) {
   }
 
-  ngOnInit(): void {
+  refresh() {
     this.uploadService.getPlaylists(this.id, this.pNum).subscribe((playlists) => {
       this.playlists = playlists;
     });
@@ -35,6 +35,14 @@ export class PlaylistsComponent implements OnInit {
       this.favorites_list = favoritos
       console.log(this.favorites_list)
     });
+  }
+
+
+  ngOnInit(): void {
+    this.uploadService.onChangeLanguage(() => {
+      this.refresh();
+    });
+    this.refresh();
   }
 
   categorySelected(tid: any) {

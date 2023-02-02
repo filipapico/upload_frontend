@@ -19,7 +19,7 @@ export class PlaylistComponent implements OnInit {
     this.id = route.snapshot.params['nid']
   }
 
-  ngOnInit(): void {
+  refresh(){
     this.uploadService.getPlaylist(this.id).subscribe((playlist: any) => {
       this.playlist = playlist.map((v: any) => {
         let video_url = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + v.field_media_oembed_video.split("?v=")[1]);
@@ -28,16 +28,32 @@ export class PlaylistComponent implements OnInit {
           video_url: video_url
         };
       });
-      console.log(this.playlist);
     })
   }
 
-
-  getVideo(index: any) {
-    console.log(index)
-    this.indexVideo = index;
-    console.log(this.playlist)
-    return this.indexVideo;
+    ngOnInit(): void {
+    this.uploadService.onChangeLanguage(() => {
+      this.refresh();
+    });
+    this.refresh();
   }
 
+
+/*  ngOnInit(): void {
+    this.uploadService.getPlaylist(this.id).subscribe((playlist: any) => {
+      this.playlist = playlist.map((v: any) => {
+        let video_url = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + v.field_media_oembed_video.split("?v=")[1]);
+        return {
+          ...v,
+          video_url: video_url
+        };
+      });
+    })
+  }*/
+
+
+  getVideo(index: any) {
+    this.indexVideo = index;
+    return this.indexVideo;
+  }
 }
