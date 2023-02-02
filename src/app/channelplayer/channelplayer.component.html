@@ -1,2 +1,16 @@
-<p>channelplayer works!</p>
+<div class="wrapper">
+  <div class="video-playing" *ngIf="channelPlayer">
+    <app-video-detail
+      [id_video]="channelPlayer[indexVideo].mid"
+    ></app-video-detail>
+  </div>
 
+  <div *ngIf="channelPlayer" class="videos-list">
+    <h4>{{indexVideo + 1}}/{{channelPlayer.length}}</h4>
+    <div *ngFor="let video of channelPlayer" (click)="getVideo(channelPlayer.indexOf(video))" class="video-card">
+      <p class="index">{{channelPlayer.indexOf(video) + 1}}</p>
+      <img src="https://dev-project-upskill2-grupo4v2.pantheonsite.io{{video.thumbnail__target_id}}" class="image">
+      <p>{{video.name}}</p>
+    </div>
+  </div>
+</div>
