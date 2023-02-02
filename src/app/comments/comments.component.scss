@@ -117,10 +117,10 @@
         display: flex;
 
         .comment-date, .flag-icon {
-        color: #979797;
-        margin-left: 10px;
-        font-weight: lighter;
-      }
+          color: #979797;
+          margin-left: 10px;
+          font-weight: lighter;
+        }
 
         .flag-icon {
           font-size: smaller;
@@ -181,6 +181,11 @@
         }
       }
     }
+  }
+
+  p {
+    text-align: center;
+    color: whitesmoke;
   }
 }
 
