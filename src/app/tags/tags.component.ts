@@ -15,9 +15,16 @@ export class TagsComponent {
   constructor(private uploadService: UploadService) {
   }
 
-  ngOnInit(): void {
+  refresh() {
     this.uploadService.getTagsInVideos().subscribe((tagsVideos) => {
       this.tagsVideos = tagsVideos
     })
+  }
+
+  ngOnInit(): void {
+    this.uploadService.onChangeLanguage(() => {
+      this.refresh();
+    });
+    this.refresh();
   }
 }
