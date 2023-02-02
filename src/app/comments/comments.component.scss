@@ -113,55 +113,65 @@
     .comment-text {
       margin-left: 10px;
 
-      .comment-date, .flag-icon {
+      div {
+        display: flex;
+
+        .comment-date, .flag-icon {
         color: #979797;
         margin-left: 10px;
         font-weight: lighter;
       }
 
-      .flag-icon {
-        font-size: smaller;
-      }
-    }
-  }
+        .flag-icon {
+          font-size: smaller;
+          position: relative;
 
-  .overlay {
-    width: 300px;
-    background-color: #363535;
-    border-radius: 20px;
-    position: relative;
+          .overlay {
+            width: 360px;
+            background-color: #363535;
+            border-radius: 20px;
+            position: absolute;
+            z-index: 1;
+            top: -125px;
+            left: 20px;
 
-    .content {
-      width: 200px;
-      padding: 20px;
+            .content {
+              width: 360px;
+              padding: 20px;
 
-      h4 {
-        margin: 0 10px 5px 0;
-        color: #FFFFFF;
-      }
+              h4 {
+                margin: 0 10px 5px 0;
+                color: #FFFFFF;
+              }
 
-      .close {
-        position: absolute;
-        top: 5px;
-        right: 10px;
-        color: #ffffff;
-      }
+              .close {
+                position: absolute;
+                top: 5px;
+                right: 10px;
+                color: #ffffff;
+                font-size: large;
+              }
 
-      div {
-        display: flex;
+              div {
+                display: flex;
 
-        input {
-          line-height: 50px;
-          border-bottom: 1px solid #979797;
-        }
+                input {
+                  line-height: 50px;
+                  border-bottom: 1px solid #979797;
+                }
 
-        .report-button {
-          all: unset;
-          border-radius: 23px;
-          border: 1px solid #979797;
-          margin: 30px 10px;
-          padding: 5px;
-          background-color: #530e0e;
+                .report-button {
+                  all: unset;
+                  border-radius: 23px;
+                  border: 1px solid #ffffff;
+                  margin: 30px 10px;
+                  padding: 5px;
+                  background-color: #262525;
+                  color: #FFFFFF;
+                }
+              }
+            }
+          }
         }
       }
     }

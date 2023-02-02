@@ -89,6 +89,7 @@ export class CommentsComponent {
   Openpopup(index: any, cid: string) {
     this.index_cid = [index, cid];
     this.show = true;
+    console.log(this.index_cid[1] === cid)
   }
 
 
