@@ -21,7 +21,7 @@ const routes: Routes = [
   {path: 'channelplayer/:nid', component: ChannelplayerComponent},
   {path: 'contentcard', component: ContentcardComponent},
   {path: 'video-detail/:name', component: VideoDetailComponent},
-  {path: 'thematic/:nid', component:ThematicComponent},
+  {path: 'thematic/:name', component:ThematicComponent},
   {path: 'thematics', component: ThematicsComponent},
   {path: 'playlists', component: PlaylistsComponent},
   {path: 'playlist/:nid', component: PlaylistComponent},
