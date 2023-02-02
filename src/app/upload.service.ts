@@ -48,6 +48,7 @@ export class UploadService {
   onChangeLanguage(callback: (lang: any) => void) {
     return this.callback_list.push(callback);
   }
+
   // onChangeLanguage receives a callback function from the component as parameter.
   // for instance it receives a callback to refresh page
   // this callback is pushed to the callback_list
@@ -201,5 +202,9 @@ export class UploadService {
       this.favChannel.push(id); //we push it into the list, wasn't fav yet
     }
     localStorage.setItem("favChannel", JSON.stringify(this.favChannel));//setting favorites item in the localStorage
+  }
+
+  getContentBySlug(content_type: string, slug: string) {
+    return this.http.get(BASE_URL + "/" + content_type + "/" + slug + "?_format=json");
   }
 }
