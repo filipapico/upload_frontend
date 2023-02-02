@@ -11,7 +11,7 @@
                      [image]="fav.thumbnail__target_id"
                      [logotype]="fav.field_logotype"
                      [field_media_oembed_video]="fav.field_media_oembed_video"
-                     [routerLink]="['/video-detail', fav.name]"
+                     [routerLink]="['/video-detail', fav.view_media.split('/').slice(-1)[0]]"
     ></app-contentcard>
   </div>
 </div>
