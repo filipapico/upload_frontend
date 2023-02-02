@@ -14,6 +14,7 @@ export class ThematicComponent {
   thematicDetails!: Thematic[]
   thematicLinks!: ThematicLink[]
   thematicVideos!: Video[]
+  thematicSlug!: string
 
   constructor(private route: ActivatedRoute, private uploadService: UploadService) {
     this.id_thematic = route.snapshot.params['nid']
@@ -32,8 +33,16 @@ export class ThematicComponent {
   ngOnInit(): void {
     this.uploadService.onChangeLanguage(() => {
       this.refresh();
-    });
-    this.refresh();
+    })
+    this.route.params.subscribe(params => {
+      let slug = params['nid']
+      console.log("slug",slug)
+      this.uploadService.getContentBySlug("thematic", slug).subscribe((data: any) => {
+        this.id_thematic = data.nid[0].value
+        console.log(this.id_thematic)
+        this.refresh();
+      })
+    })
   }
 
   getVideos(id_tag: string) {
