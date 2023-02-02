@@ -24,7 +24,7 @@ const routes: Routes = [
   {path: 'thematic/:name', component:ThematicComponent},
   {path: 'thematics', component: ThematicsComponent},
   {path: 'playlists', component: PlaylistsComponent},
-  {path: 'playlist/:nid', component: PlaylistComponent},
+  {path: 'playlist/:name', component: PlaylistComponent},
   {path: 'favorites', component: MyfavoritesComponent},
   {path: 'videotag/:tid', component: VideotagComponent}
 ];
