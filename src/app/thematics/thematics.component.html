@@ -40,7 +40,7 @@
     <div class="main-content-center">
       <div class="thematics-all" *ngIf="thematics">
         <div class="thematics">
-          <div *ngFor="let t of thematics" class="thematic-item" [routerLink]="['/thematic', t.nid]">
+          <div *ngFor="let t of thematics" class="thematic-item" [routerLink]="['/thematic', t.view_node.split('/').slice(-1)[0]]">
             <div class="thematic-header">
               <div class="thematic-thumbnail">
                 <div
