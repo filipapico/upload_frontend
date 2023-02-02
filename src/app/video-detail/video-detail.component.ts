@@ -38,10 +38,22 @@ export class VideoDetailComponent implements OnChanges {
 
   ngOnInit(): void {
     if (!this.id_video) {
-      // Subscrever alteracoes nos parametros de URL
+      // Subscribe changes in URL parameters
       this.route.params.subscribe(params => {
-        this.id = params['mid']
-        this.refresh()
+        // Detect changes in slug and save them in variable
+        let slug = params['name'];
+        // Get the media contents using the media slug. 1. API request field "link to media" in all-videos view
+        // (used as input each time the app-contentcard is used)
+        // 2. Get the media ID using the media json file "SITE/video/slug?_format=json"
+        // 3. Make new API request to the all-video view and get all the remaining data (e.g. tags, duration, ...)
+        this.uploadService.getContentBySlug("video", slug).subscribe((data: any) => {
+          if (!data.mid) {
+            return;
+          }
+          this.id = data.mid[0].value;
+          this.refresh()
+        })
+
       });
     }
   }
