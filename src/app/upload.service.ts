@@ -36,25 +36,30 @@ export class UploadService {
   //MULTILINGUAL
   callback_list: [Function?] = [];
 
+  refreshComp(){
+    this.callback_list.forEach((callback?: Function) => callback?.());
+  }
+
   switchLanguage(idValue: string) {
     let currentLanguage = "";
     BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
     currentLanguage = (idValue == 'portuguese') ? "/pt-pt" : "/en";
     BASE_URL += currentLanguage;
     // console.log(BASE_URL);
-    this.callback_list.forEach((callback?: Function) => callback?.())    // '?.' in JS means that nothing happens if there are no callback functions defined.
+    this.callback_list.forEach((callback?: Function) => callback?.())
+    // '?.' in JS means that nothing happens if there are no callback functions defined.
+    //if there is one, it is executed
   };
 
   onChangeLanguage(callback: (lang: any) => void) {
     return this.callback_list.push(callback);
   }
 
-  // onChangeLanguage receives a callback function from the component as parameter.
-  // for instance it receives a callback to refresh page
-  // this callback is pushed to the callback_list
-  // then each time we switchLanguage, the list is looped through and all necessary callbacks executed
-  //e.g: we are in the channels page, we switched to PT, refresh() will load the page again but the call to
-  // API will be different as current language value has changed
+  // the purpose of onChangeLanguage: populate callback_list array with callbacks. It will be called in every page of the app.
+  // to do so, it receives a callback function as parameter.
+  // (for instance it receives a callback to refresh a component)
+  // user clicks on PT or EN on interface, it calls switchLanguage(). the callback_list is looped through and all necessary callbacks executed
+  //e.g: we are in the channels page, we switched to PT, refresh() will load the page again with appropriate value of BASE_URL
 
   //VIDEOS
   getVideo(id: number) {
@@ -123,6 +128,7 @@ export class UploadService {
   }
 
   getCategoryChannels(id: string) {
+    //using categories txid as contextual filter
     return this.http.get<Channels[]>(BASE_URL + "/api/categories/channels/" + id);
   }
 
