@@ -23,7 +23,7 @@ export class ThematicsComponent implements OnInit {
   constructor(private uploadService: UploadService) {
   }
 
-  ngOnInit(): void {
+  refresh() {
     this.uploadService.getTagsInThematics(0).subscribe((tags) => {
       this.tags = tags
     })
@@ -31,6 +31,13 @@ export class ThematicsComponent implements OnInit {
     this.uploadService.getThematics(0).subscribe((thematics) => {
       this.thematics = thematics
     })
+  }
+
+  ngOnInit(): void {
+    this.uploadService.onChangeLanguage(() => {
+      this.refresh();
+    });
+    this.refresh();
   }
 
   toggleVisible(): void {
@@ -45,7 +52,7 @@ export class ThematicsComponent implements OnInit {
     this.active = !this.active
   }
 
-  togglePagination():void{
+  togglePagination(): void {
     this.visiblePagination = !this.visiblePagination
   }
 
@@ -92,9 +99,9 @@ export class ThematicsComponent implements OnInit {
   }
 
   getThematicsByTag(id: string) {
-    console.log("before",this.visiblePagination)
+   // console.log("before", this.visiblePagination)
     this.togglePagination()
-    console.log("after",this.visiblePagination)
+    // console.log("after", this.visiblePagination)
     this.uploadService.getThematicsByTag(id).subscribe((thematicTags) => {
       this.thematics = thematicTags
     })

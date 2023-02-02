@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
 import {Thematic, ThematicLink, Video} from "../interfaces";
 import {UploadService} from "../upload.service";
@@ -19,16 +19,21 @@ export class ThematicComponent {
     this.id_thematic = route.snapshot.params['nid']
   }
 
-  ngOnInit(): void {
+  refresh() {
     this.uploadService.getThematicDetails(this.id_thematic).subscribe((thematicDetails) => {
       this.thematicDetails = thematicDetails
-      console.log(this.thematicDetails[0].tid)
     })
 
     this.uploadService.getThematicLinks(this.id_thematic).subscribe((thematicLinks) => {
       this.thematicLinks = thematicLinks.field_thematic_links
     })
+  }
 
+  ngOnInit(): void {
+    this.uploadService.onChangeLanguage(() => {
+      this.refresh();
+    });
+    this.refresh();
   }
 
   getVideos(id_tag: string) {
