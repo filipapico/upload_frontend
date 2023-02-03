@@ -81,8 +81,7 @@ export class UploadService {
 
   // TOKEN
   getToken() {
-    let token = this.http.get(BASE_URL + "/session/token");
-    return token;
+    return this.http.get(BASE_URL + "/session/token");
   }
 
   //POST COMMENTS
@@ -148,8 +147,12 @@ export class UploadService {
   }
 
   //CATEGORIES
-  getCategories() {
+  getAllCategories() {
     return this.http.get<Categories[]>(BASE_URL + "/api/categories");
+  }
+
+  getCategoriesinChannels(pNum: number) {
+    return this.http.get<Categories[]>(BASE_URL + "/api/categories-channels?page=" + pNum);
   }
 
   //CHANNELS
@@ -157,8 +160,8 @@ export class UploadService {
     return this.http.get<Channels[]>(BASE_URL + "/api/channels/" + id);
   }
 
-  getCategoryChannels(id: string) {
-    //using categories txid as contextual filter
+  getChannelsFromCategory(id: string) {
+    //using categories tid as contextual filter
     return this.http.get<Channels[]>(BASE_URL + "/api/categories/channels/" + id);
   }
 
