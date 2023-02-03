@@ -147,9 +147,9 @@ export class UploadService {
   }
 
   //CATEGORIES
-  getAllCategories() {
+ /* getAllCategories() {
     return this.http.get<Categories[]>(BASE_URL + "/api/categories");
-  }
+  }*/
 
   getCategoriesinChannels(pNum: number) {
     return this.http.get<Categories[]>(BASE_URL + "/api/categories-channels?page=" + pNum);
@@ -196,6 +196,10 @@ export class UploadService {
   }
 
   //PLAYLISTS
+  getCategoriesinPlaylists() {
+    return this.http.get<Categories[]>(BASE_URL + "/api/categories-playlists");
+  }
+
   getPlaylists(id: string, pNum: any) {
     return this.http.get<Playlists[]>(BASE_URL + "/api/playlists/" + id + "?page=" + pNum);
   }
