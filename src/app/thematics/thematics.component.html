@@ -1,60 +1,46 @@
 <div class="container">
   <h2>Thematics</h2>
-
   <!--TAGS-->
   <div class="tags" *ngIf="tags">
     <div class="tags-items">
       <div class="tags-item" (click)="getLessTags(tagPageNumber)"
-           *ngIf="this.visible == true && tags.length==8 || tags.length<8">
+           *ngIf="this.visibleTag == true && tags.length==8 || tags.length<8">
         <
       </div>
       <div class="tags-item" *ngFor="let t of tags">
-        <div (click)="getThematicsByTag(t.tid)" [ngClass]="active ? 'selected':'unselected'">
+        <div (click)="getThematicsByTag(t.tid)" [ngClass]="activeTag ? 'selected':'unselected'">
           #{{t.name.toLowerCase()}}</div>
       </div>
-      <div class="tags-item" (click)="getMoreTags(tagPageNumber);toggleVisible()" *ngIf="tags.length==8">
+      <div class="tags-item" (click)="getMoreTags(tagPageNumber);toggleVisibleTag()" *ngIf="tags.length==8">
         >
       </div>
     </div>
   </div>
-
+  <!--PAGINATION THEMATICS-->
+  <div class="pagination">
+      <span class="page-number" *ngFor="let pn of pageNumbers">
+        <span (click)="refresh(pn)">{{pn + 1}}</span>
+      </span>
+  </div>
   <!--THEMATICS-->
   <div class="main-content">
-
-    <!--PAGINATION THEMATICS-->
-    <div class="pagination" *ngIf="visiblePagination">
-      <div *ngIf="thematics">
-          <span (click)="getLessThematics(thematicPageNumber)"
-                *ngIf="this.visibleThematics == true && thematics.length==6 || thematics.length<6">
-            <
-          </span>
-      </div>
-      <div *ngIf="thematics">
-          <span class="page-link" (click)="getMoreThematics(thematicPageNumber)"
-                *ngIf="thematics.length==6">
-            >
-          </span>
-      </div>
-    </div>
-
-    <div class="main-content-center">
-      <div class="thematics-all" *ngIf="thematics">
-        <div class="thematics">
-          <div *ngFor="let t of thematics" class="thematic-item" [routerLink]="['/thematic', t.view_node.split('/').slice(-1)[0]]">
-            <div class="thematic-header">
-              <div class="thematic-thumbnail">
-                <div
-                  style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_thumbnail}}');"></div>
-              </div>
-              <div>
-                <h5>{{t.title}}</h5>
-                <p>{{t.uid}}</p>
-              </div>
-            </div>
-            <div class="thematic-header-image">
+    <div class="thematics-all" *ngIf="thematics">
+      <div class="thematics">
+        <div *ngFor="let t of thematics" class="thematic-item"
+             [routerLink]="['/thematic', t.view_node.split('/').slice(-1)[0]]">
+          <div class="thematic-header">
+            <div class="thematic-thumbnail">
               <div
-                style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_header_image}}');"></div>
+                style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_thumbnail}}');"></div>
             </div>
+            <div>
+              <h5>{{t.title}}</h5>
+              <p>{{t.uid}}</p>
+            </div>
+          </div>
+          <div class="thematic-header-image">
+            <div
+              style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_header_image}}');"></div>
           </div>
         </div>
       </div>

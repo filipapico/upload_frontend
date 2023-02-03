@@ -27,114 +27,84 @@
     }
   }
 
+  .pagination {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+
+    span {
+      padding: 0 2px;
+    }
+
+    :hover span {
+      padding: 0 4px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  }
+
   .main-content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    padding: 12px;
 
-    .main-content-center {
-      display: flex;
-      flex-wrap: wrap;
-      //width: 60%;
-      padding: 12px;
+    .thematics-all {
+      h4 {
+        text-align: center;
+      }
 
-      .thematics-all {
+      .thematics {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
 
+        .thematic-item {
+          padding: 10px;
 
-        h4 {
-          text-align: center;
-        }
+          .thematic-header {
+            display: flex;
 
-        .thematics {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: center;
-
-          .thematic-item {
-            padding: 10px;
-
-            .thematic-header {
+            .thematic-thumbnail {
               display: flex;
-
-              .thematic-thumbnail {
-                display: flex;
-                justify-content: center;
-                width: 50px;
-                height: 50px;
-                margin: 6px;
-
-                div {
-                  display: block;
-                  background-size: cover;
-                  width: 100%;
-                  border-radius: 50%;
-                  padding-bottom: 57%;
-                  background-position: center;
-                }
-              }
-
-              h5, p {
-                margin: 2px
-              }
-
-              p {
-                font-size: 12px;
-              }
-            }
-
-            .thematic-header-image {
-              width: 340px;
-              margin: 0 auto;
+              justify-content: center;
+              width: 50px;
+              height: 50px;
+              margin: 6px;
 
               div {
                 display: block;
                 background-size: cover;
                 width: 100%;
-                border-radius: 12px;
+                border-radius: 50%;
                 padding-bottom: 57%;
                 background-position: center;
               }
             }
+
+            h5, p {
+              margin: 2px
+            }
+
+            p {
+              font-size: 12px;
+            }
+          }
+
+          .thematic-header-image {
+            width: 340px;
+            margin: 0 auto;
+
+            div {
+              display: block;
+              background-size: cover;
+              width: 100%;
+              border-radius: 12px;
+              padding-bottom: 57%;
+              background-position: center;
+            }
           }
         }
       }
-
-      .pagination {
-        margin: auto;
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: center;
-        border: 1px solid #b5b5be69;
-
-        div {
-          padding: 0 10px;
-          font-size: 2em;
-        }
-      }
     }
-
-    //  SUGGESTION CONTENT - NOT BEING USED
-    /*.suggestion-list-card {
-      background-color: #1C1C24;
-      margin: 10px;
-      border-radius: 12px;
-      width: 310px;
-      height: 100%;
-
-      h4 {
-        padding-left: 16px;
-        margin-bottom: 0;
-        padding-bottom: 10px;
-        border-bottom: 1px solid darkgray;
-      }
-
-      .suggestion-footer {
-        background-color: #282831;
-        text-align: center;
-        padding: 10px;
-        border-bottom-left-radius: 12px;
-        border-bottom-right-radius: 12px;
-      }
-    }*/
   }
 }

@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UploadService} from "../upload.service";
-import {Thematics, Tags, Thematic} from "../interfaces";
+import {Thematics, Tags, Thematic, PagesCount} from "../interfaces";
 import {faAngleLeft, faAngleRight} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
@@ -9,51 +9,67 @@ import {faAngleLeft, faAngleRight} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./thematics.component.scss']
 })
 export class ThematicsComponent implements OnInit {
-  thematics!: Thematics[];
-  tags!: Tags[];
-  tagPageNumber: number = 0;
-  thematicPageNumber: number = 0
-  visible = false;
-  visibleThematics = false;
-  visiblePagination = true;
-  active = false;
   faAngleLeft = faAngleLeft;
   faAngleRight = faAngleRight;
+  thematics!: Thematics[];
+  tags!: Tags[];
+  pagesCount!: PagesCount[];
+  pageNumber: number = 0;
+  pageNumbers!: number[];
+  //TAGS PAGINATION - TO BE IMPROVED
+  tagPageNumber: number = 0;
+  visibleTag = false;
+  activeTag = false;
+  visibleTagPagination = true;
+
 
   constructor(private uploadService: UploadService) {
   }
 
-  refresh() {
-    this.uploadService.getTagsInThematics(0).subscribe((tags) => {
+  ngOnInit(): void {
+    this.uploadService.onChangeLanguage(() => {
+      this.refresh(this.pageNumber);
+    });
+    this.refresh(this.pageNumber);
+  }
+
+  refresh(page: number) {
+    this.uploadService.getTagsInThematics(page).subscribe((tags) => {
       this.tags = tags
     })
 
-    this.uploadService.getThematics(0).subscribe((thematics) => {
+    this.uploadService.getThematics(page).subscribe((thematics) => {
       this.thematics = thematics
+    })
+
+    this.uploadService.getCount("thematics").subscribe((pagesCount) => {
+      this.pagesCount = pagesCount
+      let numberOfThematics = parseInt(this.pagesCount[0].nid)
+      const itemsPerPage = 6
+      let numberOfPages = Math.ceil(numberOfThematics / itemsPerPage)
+      let pageNumbers = new Array(numberOfPages)
+      for (let i = 0; i < numberOfPages; i++) {
+        pageNumbers[i] = i
+      }
+      this.pageNumbers = pageNumbers
+      this.pageNumber = page
     })
   }
 
-  ngOnInit(): void {
-    this.uploadService.onChangeLanguage(() => {
-      this.refresh();
-    });
-    this.refresh();
+  //TAGS PAGINATION - TO BE IMPROVED
+  toggleVisibleTag(): void {
+    this.visibleTag = !this.visibleTag;
   }
 
-  toggleVisible(): void {
-    this.visible = !this.visible;
+  getThematicsByTag(id: string) {
+    this.toggleTagPagination()
+    this.uploadService.getThematicsByTag(id).subscribe((thematicTags) => {
+      this.thematics = thematicTags
+    })
   }
 
-  toggleVisibleThematics(): void {
-    this.visibleThematics = !this.visibleThematics;
-  }
-
-  toggleActive(): void {
-    this.active = !this.active
-  }
-
-  togglePagination(): void {
-    this.visiblePagination = !this.visiblePagination
+  toggleTagPagination(): void {
+    this.visibleTagPagination = !this.visibleTagPagination
   }
 
   getMoreTags(p: number) {
@@ -73,40 +89,7 @@ export class ThematicsComponent implements OnInit {
       this.uploadService.getTagsInThematics(p).subscribe((tags) => {
         this.tags = tags
       })
-      this.toggleVisible()
+      this.toggleVisibleTag()
     }
-  }
-
-  getMoreThematics(p: number) {
-    if (this.thematics.length <= 6) {
-      p++
-      this.thematicPageNumber = p
-      this.uploadService.getThematics(p).subscribe((thematics) => {
-        this.thematics = thematics
-      })
-    }
-  }
-
-  getLessThematics(p: number) {
-    if (this.thematics.length <= 6) {
-      p--
-      this.thematicPageNumber = p
-      this.uploadService.getThematics(p).subscribe((thematics) => {
-        this.thematics = thematics
-      })
-      this.toggleVisibleThematics()
-    }
-  }
-
-  getThematicsByTag(id: string) {
-   // console.log("before", this.visiblePagination)
-    this.togglePagination()
-    // console.log("after", this.visiblePagination)
-    this.uploadService.getThematicsByTag(id).subscribe((thematicTags) => {
-      this.thematics = thematicTags
-    })
   }
 }
-
-
-
