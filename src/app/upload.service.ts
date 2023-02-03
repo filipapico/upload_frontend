@@ -15,13 +15,15 @@ import {
 
 
 let BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
+const LIKE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io/entity/flagging";
+
+
 
 const HEADERS = new HttpHeaders({
   'X-CSRF-Token': 'VQrAx6wI4cv-J3BdqLRhIbN5gfUUCGf9sZnR_teei2U',
   'Accept': 'application/vnd.api+json'
 });
 
-const LIKE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io/entity/flagging";
 
 @Injectable({
   providedIn: 'root'
@@ -45,7 +47,6 @@ export class UploadService {
     BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
     currentLanguage = (idValue == 'portuguese') ? "/pt-pt" : "/en";
     BASE_URL += currentLanguage;
-    // console.log(BASE_URL);
     this.callback_list.forEach((callback?: Function) => callback?.())
     // '?.' in JS means that nothing happens if there are no callback functions defined.
     //if there is one, it is executed
@@ -84,6 +85,38 @@ export class UploadService {
     return token;
   }
 
+  //POST COMMENTS
+  postComment(entityType: string, contentID: number, username: string, email: string, comment: string){
+    let commentBody;
+    if (entityType == "node") {
+      commentBody = {
+        "entity_id": [{"target_id": contentID}],
+        "entity_type": [{"value": "node"}],
+        "comment_type": [{"target_id": "channel_comments"}],
+        "field_name": [{"value": "field_comment"}],
+        "field_comment_name": [{"value": username}],
+        "field_email": [{"value": email}],
+        "comment_body": [
+          {"value": comment, "format": "plain_text"}
+        ]
+      }
+    } else {
+      commentBody = {
+        "entity_id": [{"target_id": contentID}],
+        "entity_type": [{"value": "media"}],
+        "comment_type": [{"target_id": "media_comments"}],
+        "field_name": [{"value": "field_comments"}],
+        "field_comment_name_media": [{"value": username}],
+        "field_media_email": [{"value": email}],
+        "comment_body": [
+          {"value": comment, "format": "plain_text"}
+        ]
+      }
+    }
+    return this.http.post(BASE_URL + '/comment', commentBody, {headers: HEADERS,} )
+  };
+
+
   //REPORT COMMENTS
   postReport(comment_id: string, reason: string) {
     return this.http.post(LIKE_URL, {
@@ -108,10 +141,7 @@ export class UploadService {
     return this.http.get<Likes[]>(BASE_URL + "/api/dislike/videos/" + id_video)
   }
 
-  //COMMENTS
-  postComments(url: string, body: {}, headers: any) {
-    return this.http.post(url, body, headers);
-  }
+
 
   getComments(type: string, id: number) {
     return this.http.get<Comment[]>(BASE_URL + "/api/comments/" + type + "/" + id);
