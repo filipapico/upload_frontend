@@ -97,6 +97,10 @@ interface ThematicLinks {
   field_thematic_links: ThematicLink[]
 }
 
+interface PagesCount {
+  nid: string
+}
+
 /*Might not be necessary!?
 interface VideoTags {
   mid: string
@@ -139,6 +143,7 @@ export {
   Thematic,
   ThematicLink,
   ThematicLinks,
+  PagesCount,
   Playlist,
   Playlists
 };
