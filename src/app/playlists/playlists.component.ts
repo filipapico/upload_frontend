@@ -14,7 +14,7 @@ export class PlaylistsComponent implements OnInit {
   categories?: Categories[];
   id?: any = ""
   pNum: any = 0;
-  favorites_list? : Video[];
+  favorites_list?: Video[];
   faAngleRight = faAngleRight;
   faAngleLeft = faAngleLeft;
 
@@ -27,7 +27,7 @@ export class PlaylistsComponent implements OnInit {
       this.playlists = playlists;
     });
 
-    this.uploadService.getAllCategories().subscribe((categories) => {
+    this.uploadService.getCategoriesinPlaylists().subscribe((categories) => {
       this.categories = categories;
     })
 
@@ -47,23 +47,16 @@ export class PlaylistsComponent implements OnInit {
   categorySelected(tid: any) {
     this.uploadService.getPlaylists(tid, 0).subscribe((playlists) => {
       this.playlists = playlists;
-      console.log(tid)
-    });
-  }
-
-  getPlaylists () {
-    this.uploadService.getPlaylists(this.id, this.pNum).subscribe((playlists) => {
-      this.playlists = playlists;
     });
   }
 
   pageSelected(selected: any) {
     if (selected == 'Previous' && this.pNum > 0)    //if prev is clicked, numbers will decrease by 1
       this.pNum--;
-    else if (selected == 'Next' && this.playlists?.length == 5 )   //if next is clicked numbers will increase by 1
+    else if (selected == 'Next' && this.playlists?.length == 5)   //if next is clicked numbers will increase by 1
       this.pNum++;
 
-    this.getPlaylists();
+    this.refresh();
   }
 
   show = true;
@@ -71,9 +64,7 @@ export class PlaylistsComponent implements OnInit {
   showMessage(list: any) {
     if (list.length != 0) {
       this.show = false;
-      console.log(list)
     }
   }
-
 }
 
