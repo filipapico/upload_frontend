@@ -10,7 +10,7 @@ import {
   Video,
   Thematics,
   Comment,
-  Likes
+  Likes, PagesCount
 } from "./interfaces";
 
 
@@ -242,5 +242,9 @@ export class UploadService {
 
   getContentBySlug(content_type: string, slug: string) {
     return this.http.get(BASE_URL + "/" + content_type + "/" + slug + "?_format=json");
+  }
+
+  getCount(content_type: string) {
+    return this.http.get<PagesCount[]>(BASE_URL + "/api/" + content_type +"-count")
   }
 }
