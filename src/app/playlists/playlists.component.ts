@@ -27,13 +27,12 @@ export class PlaylistsComponent implements OnInit {
       this.playlists = playlists;
     });
 
-    this.uploadService.getCategories().subscribe((categories) => {
+    this.uploadService.getAllCategories().subscribe((categories) => {
       this.categories = categories;
     })
 
     this.uploadService.getFavorites().subscribe((favoritos) => {
       this.favorites_list = favoritos
-      console.log(this.favorites_list)
     });
   }
 
