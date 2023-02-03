@@ -13,16 +13,20 @@ export class ChannelsComponent {
   categories?: Categories[]; //array of all the categories
   channels!: Channels[];
   nid: string = " ";
+  categoryPageNumber: number = 0;
 
   constructor(public uploadService: UploadService) {
   }
 
   refresh() {
+    //getting all channels
     this.uploadService.getChannels(this.nid).subscribe((channels) => {
         this.channels = channels;
       }
     )
-    this.uploadService.getCategories().subscribe((categories) => {
+
+    //getting all existing categories in channels:
+    this.uploadService.getCategoriesinChannels(this.categoryPageNumber).subscribe((categories) => {
       this.categories = categories;
     })
   }
@@ -34,8 +38,9 @@ export class ChannelsComponent {
     this.refresh();
   }
 
-  targetChannels(id: string) {
-    this.uploadService.getCategoryChannels(id).subscribe((channels) => {
+  //clicking on category will filter channels and calls new data from api:
+  targetChannels(tid: string) {
+    this.uploadService.getChannelsFromCategory(tid).subscribe((channels) => {
       this.channels = channels;
     })
   }
