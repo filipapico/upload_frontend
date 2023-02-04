@@ -41,7 +41,7 @@
   <!-- Right side bar suggesting channel's videos: -->
   <div class="suggestion-container" *ngIf="channelVideos">
     <h4>More from {{channelVideos[0].title}}</h4>
-    <app-contentcard type="video-compact" *ngFor="let cv of channelVideos| slice:0:4"
+    <app-contentcard type="video-compact" *ngFor="let cv of channelVideos| slice:0:10"
                      [title]=" cv.name"
                      [source]=" cv.title"
                      [subtitle]=" cv.created"
