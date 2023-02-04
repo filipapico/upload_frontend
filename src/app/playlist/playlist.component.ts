@@ -49,5 +49,4 @@ export class PlaylistComponent implements OnInit {
     this.indexVideo = index;
     return this.indexVideo;
   }
-
 }

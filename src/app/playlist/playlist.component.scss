@@ -34,7 +34,10 @@
   border: 2px solid #1c1c24;
   border-radius: 20px;
   height: fit-content;
-  width: 30%;
+  width: 40%;
+  //overflow-y: scroll;
+
+
 
   h4 {
     text-align: center;
@@ -48,10 +51,12 @@
     box-shadow: 2px 2px 2px #000;
   }
 
+
   .video-card {
-    transition: 1s;
+    transition: 2ms;
     display: flex;
     margin: 10px 2px;
+    cursor: pointer;
 
     .image {
       width: 145px;
@@ -72,6 +77,22 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .container {
+    display: block;
+  }
+
+  .videos-list {
+    margin: 23px;
+    border: 2px solid #1c1c24;
+    border-radius: 20px;
+    height: fit-content;
+    width: 90%;
+  }
+}
+
+
 
 
 
