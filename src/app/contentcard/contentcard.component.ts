@@ -59,7 +59,7 @@ export class ContentcardComponent {
       setTimeout(() => { this.popup = false; }, 500);
       console.log(this.field_media_oembed_video.slice(0,4))
     } else {
-      navigator.clipboard.writeText("www.nomedosite" + val);
+      navigator.clipboard.writeText("https://app-upload.netlify.app" + val);
       this.popup = true
       setTimeout(() => { this.popup = false; }, 500);
       console.log(this.view_node)
