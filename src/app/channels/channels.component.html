@@ -18,8 +18,8 @@
                  style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{channel.field_logotype}}');">
             </div>
           </div>
-          <div class="icons">
-            <fa-icon class="share-icon" [icon]="faShareNodes"></fa-icon>
+          <div class="icons" (click)="$event.stopPropagation()">
+            <fa-icon class="share-icon" (click)="copyUrl(channel.view_node)" [icon]="faShareNodes"></fa-icon>
           </div>
           <div class="info-container">
             <h5>
@@ -30,6 +30,5 @@
         </div>
       </div>
     </div>
-
-
 </div>
+
