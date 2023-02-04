@@ -38,10 +38,9 @@
       </app-comments>
     </div>
   </div>
-
-  <!-- Right side bar is suggesting more of the latest videos: -->
-  <div class="suggestion-container">
-    <h4>Suggestions</h4>
+  <!-- Right side bar suggesting channel's videos: -->
+  <div class="suggestion-container" *ngIf="channelVideos">
+    <h4>More from {{channelVideos[0].title}}</h4>
     <app-contentcard type="video-compact" *ngFor="let cv of channelVideos| slice:0:4"
                      [title]=" cv.name"
                      [source]=" cv.title"
