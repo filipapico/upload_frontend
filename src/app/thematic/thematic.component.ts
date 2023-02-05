@@ -17,7 +17,20 @@ export class ThematicComponent {
   thematicSlug!: string
 
   constructor(private route: ActivatedRoute, private uploadService: UploadService) {
-    this.id_thematic = route.snapshot.params['nid']
+    }
+
+  ngOnInit(): void {
+    this.uploadService.onChangeLanguage(() => {
+      this.refresh();
+    })
+    this.route.params.subscribe(params => {
+      let slug = params['name']
+      this.uploadService.getContentBySlug("thematic", slug).subscribe((data: any) => {
+        this.id_thematic = data.nid[0].value
+        console.log("this id them",this.id_thematic)
+        this.refresh();
+      })
+    })
   }
 
   refresh() {
@@ -28,23 +41,8 @@ export class ThematicComponent {
     this.uploadService.getThematicLinks(this.id_thematic).subscribe((thematicLinks) => {
       this.thematicLinks = thematicLinks.field_thematic_links
     })
-  }
 
-  ngOnInit(): void {
-    this.uploadService.onChangeLanguage(() => {
-      this.refresh();
-    })
-    this.route.params.subscribe(params => {
-      let slug = params['name']
-      this.uploadService.getContentBySlug("thematic", slug).subscribe((data: any) => {
-        this.id_thematic = data.nid[0].value
-        this.refresh();
-      })
-    })
-  }
-
-  getVideos(id_tag: string) {
-    this.uploadService.getVideosByTag(id_tag, 0).subscribe((thematicVideos) => {
+    this.uploadService.getVideosByTag(this.id_thematic, 0).subscribe((thematicVideos) => {
       this.thematicVideos = thematicVideos
     })
   }
