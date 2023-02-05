@@ -31,21 +31,10 @@
       <!--VIDEOS-->
       <h4>Thematic videos</h4>
       <div class="thematic-videos" *ngIf="thematicDetails">
-        <div *ngFor="let td of thematicDetails">
-          <app-videotag [id_tag]=td.tid.toString()>
-          </app-videotag>
-        </div>
+        <app-videotag *ngFor="let td of thematicDetails"
+                      [id_tag]=td.tid.toString()>
+        </app-videotag>
       </div>
     </div>
   </div>
 </div>
-
-<!--    SUGGESTION LIST-->
-<!--<app-suggestionlist></app-suggestionlist>
-<div class="thematic-lateral">
-  <h4>Suggested thematics</h4>
-  <div class="thematic-suggested">
-    <p>Last thematic added</p>
-    <p>Last thematic read</p>
-  </div>
-</div>-->
