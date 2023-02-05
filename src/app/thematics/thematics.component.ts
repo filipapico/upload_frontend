@@ -21,15 +21,16 @@ export class ThematicsComponent implements OnInit {
   visibleTag = false;
   activeTag = false;
   visibleTagPagination = true;
+  test!: any
 
   constructor(private uploadService: UploadService) {
   }
 
   ngOnInit(): void {
     this.uploadService.onChangeLanguage(() => {
-      this.refresh(this.pageNumberTags,this.pageNumberThematics);
+      this.refresh(this.pageNumberTags, this.pageNumberThematics);
     });
-    this.refresh(this.pageNumberTags,this.pageNumberThematics);
+    this.refresh(this.pageNumberTags, this.pageNumberThematics);
   }
 
   refresh(pageTags: number, pageThematics: number) {
@@ -40,6 +41,11 @@ export class ThematicsComponent implements OnInit {
     this.uploadService.getThematics(pageThematics).subscribe((thematics) => {
       this.thematics = thematics
     })
+
+    //TESTING - NOT BEING USED
+    this.test = this.uploadService.getCountTest("thematics")
+    console.log("test", this.test)
+
 
     this.uploadService.getCount("thematics").subscribe((pagesCount) => {
       this.pagesCount = pagesCount
@@ -55,16 +61,16 @@ export class ThematicsComponent implements OnInit {
     })
   }
 
-  //TAGS PAGINATION - TO BE IMPROVED
-  toggleVisibleTag(): void {
-    this.visibleTag = !this.visibleTag;
-  }
-
   getThematicsByTag(id: string) {
     this.toggleTagPagination()
     this.uploadService.getThematicsByTag(id).subscribe((thematicTags) => {
       this.thematics = thematicTags
     })
+  }
+
+  //TAGS PAGINATION - TO BE IMPROVED
+  toggleVisibleTag(): void {
+    this.visibleTag = !this.visibleTag;
   }
 
   toggleTagPagination(): void {
