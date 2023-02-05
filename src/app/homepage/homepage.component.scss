@@ -5,6 +5,7 @@
 
   .main-section {
     max-width: 72%;
+
     h2 {
       margin-bottom: 0;
     }
@@ -15,7 +16,6 @@
       margin-right: 30%;
       margin-left: 30%;
     }
-
 
     .autocomplete-search, .search {
       margin: 10px;
@@ -29,17 +29,18 @@
       color: #FFFFFF;
     }
 
-/*    ng-autocomplete input {
-      background-color: #1C1C24 !important;
-    }*/
+    /*    ng-autocomplete input {
+          background-color: #1C1C24 !important;
+        }*/
 
-      .latest-video-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-evenly;
-      }
+    .latest-video-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
 
   }
+
   .right-sidebar {
     display: flex;
     flex-direction: column;
@@ -49,19 +50,26 @@
     top: 0;
     bottom: 0;
 
-    .suggestion-list-card, .suggestion-card {
+    .suggestion-list, .suggestion-card {
       background-color: #1C1C24;
       margin: 10px;
       border-radius: 15px;
       width: 320px;
 
-      h4 {
-        padding-left: 16px;
-        margin-bottom: 0;
-        padding-bottom: 10px;
-        border-bottom: 1px solid darkgray;
+      .suggestion-card-header, .suggestion-list-header {
         display: flex;
-        justify-content: space-between;
+        border-bottom: 1px solid darkgray;
+        align-items: center;
+        margin-bottom: 0;
+        padding: 10px 16px;
+
+        h4 {
+          width: 80%;
+        }
+
+        div {
+          font-weight: bold;
+        }
       }
 
       h3 {
@@ -75,23 +83,6 @@
 
     @media only screen and (max-width: 1277px) {
       width: 270px;
-
     }
-
   }
 }
-
-
-/*NOT BEING USED HERE
-      .last-seen-container {
-        background-color: #1C1C24;
-        border-radius: 15px;
-
-        .card-info {
-          display: flex;
-          justify-content: space-between;
-          border-bottom: #FFFFFF 1px solid;
-          margin: 10px;
-        }
-      }*/
-
