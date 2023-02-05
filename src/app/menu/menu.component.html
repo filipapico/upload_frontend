@@ -17,13 +17,13 @@
       </span>
     <span class="title">Thematics</span>
   </div>
-  <div class="menu-item-text" routerLink="playlists" routerLinkActive="active">
+  <div class="menu-item-text" routerLink="playlists" (click)="uploadService.refreshComp()" routerLinkActive="active">
           <span class="menu-item-logo">
        <fa-icon [icon]="faPlay"></fa-icon>
      </span>
     <span class="title">Playlists</span>
   </div>
-  <div class="menu-item-text" routerLink="favorites" routerLinkActive="active">
+  <div class="menu-item-text" routerLink="favorites" (click)="uploadService.refreshComp()" routerLinkActive="active">
           <span class="menu-item-logo">
        <fa-icon [icon]="faBookmark"></fa-icon>
      </span>
