@@ -17,7 +17,12 @@
         </p>
       </div>
 
-      <h2>Videos </h2>
+      <div class="channel-heading">
+        <h2>Videos </h2>
+        <h4 class="all-channels" routerLink="/channels" >All Channels</h4>
+      </div>
+
+
       <!-- Videos -->
       <div class="channel-videos" *ngIf="videos?.length; else noVideo">
     <!--    <app-contentcard type="channel" *ngFor="let vid of videos"
