@@ -3,9 +3,9 @@
   <h2 routerLink="channels">Channels</h2>
   <!-- Categories -->
   <div class="categories-list" *ngIf="categories">
-    <div class="categories" *ngFor="let category of categories" (click)="targetChannels(category.tid)">
+    <p class="categories" *ngFor="let category of categories" (click)="targetChannels(category.tid)">
       {{category.name}}
-    </div>
+    </p>
   </div>
     <!-- INSERT PAGER HERE? -->
     <!-- Loop through channels -->

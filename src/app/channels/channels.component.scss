@@ -7,10 +7,11 @@
 
   .categories-list {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     margin-bottom: 30px;
 
-    .categories {
+    p.categories {
       color: lightgrey;
       padding: 4px 6px;
       border: 1px solid #b5b5be69;
