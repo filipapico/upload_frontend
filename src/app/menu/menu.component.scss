@@ -4,13 +4,14 @@
   justify-content: flex-start;
   align-content: center;
   cursor: pointer;
-  margin-top: 40px;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
   position: relative;
 
   .menu-item-text {
-    margin-top: 10px;
+    margin-top: 1rem;
     color:  #B5B5BE;
-
+    font-size: 1rem;
 
     &.active {
       color:#FAFAFB;
