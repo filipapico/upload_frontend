@@ -14,6 +14,5 @@ export class CollapseComponent {
 
   toggleCollapse(): void {
     this.visible = !this.visible;
-    console.log("this visible",this.visible)
   }
 }
