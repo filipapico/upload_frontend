@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="thematic-header">
+  <div class="thematic-header" *ngIf="thematicDetails">
     <!--HEADER IMAGE-->
     <div class="thematic-header-image">
       <div
@@ -32,7 +32,7 @@
       <h4>Thematic videos</h4>
       <div class="thematic-videos" *ngIf="thematicDetails">
         <app-videotag *ngFor="let td of thematicDetails"
-                      [id_tag]=td.tid.toString()>
+                      [id_tag]=td.tid>
         </app-videotag>
       </div>
     </div>
