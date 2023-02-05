@@ -16,12 +16,12 @@
       margin: 0 auto;
     }
 
-/*    fa-icon {
-      font-size: 20px;
-      float: right;
-      cursor: pointer;
-      display: none;
-    }*/
+    /*    fa-icon {
+          font-size: 20px;
+          float: right;
+          cursor: pointer;
+          display: none;
+        }*/
   }
 
   .login {
@@ -63,7 +63,6 @@
     }
   }
 
-
   .footer {
     padding: 3px;
     position: fixed;
@@ -71,7 +70,7 @@
     flex: 1;
     text-align: center;
     width: inherit;
-    font-size: 9px;
+    font-size: 0.5rem;
     color: darkgray;
 
     a {
