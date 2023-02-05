@@ -27,7 +27,6 @@ export class ThematicComponent {
       let slug = params['name']
       this.uploadService.getContentBySlug("thematic", slug).subscribe((data: any) => {
         this.id_thematic = data.nid[0].value
-        console.log("this id them",this.id_thematic)
         this.refresh();
       })
     })
@@ -40,10 +39,6 @@ export class ThematicComponent {
 
     this.uploadService.getThematicLinks(this.id_thematic).subscribe((thematicLinks) => {
       this.thematicLinks = thematicLinks.field_thematic_links
-    })
-
-    this.uploadService.getVideosByTag(this.id_thematic, 0).subscribe((thematicVideos) => {
-      this.thematicVideos = thematicVideos
     })
   }
 }
