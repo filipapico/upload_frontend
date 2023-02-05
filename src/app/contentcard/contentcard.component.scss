@@ -2,6 +2,185 @@
   background: #1C1C24;
   border-radius: 20px;
 
+  &.video {
+    /*Regular video content card*/
+    width: 410px;
+    height: 290px;
+    margin: 10px 5px;
+    position: relative;
+
+    .image {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      border-radius: 20px 20px 0 0;
+      width: 100%;
+      padding-bottom: 48%;
+
+
+      .logotype {
+        width: 60px;
+        height: 60px;
+        border-radius: 100%;
+        border: 2px solid white;
+        background-size: cover;
+        background-position: center;
+        position: absolute;
+        top: 152px;
+        right: 25px;
+
+      }
+
+      .duration {
+        background-color: #171725;
+        border-radius: 5px;
+        left: 16px;
+        position: absolute;
+        top: 137px;
+        font-size: 0.7rem;
+        padding: 3px;
+      }
+    }
+
+
+    .info-container {
+      height: 100px;
+      margin: 0 0 0 20px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content:space-between;
+
+      .info {
+
+        h5 {
+          color: #FAFAFB;
+          font-size: 0.7rem;
+          margin: 2px 0;
+        }
+
+        p {
+          color: #979797;
+          font-size: 0.7em;
+          margin: 3px 0;
+        }
+
+        .blue-ref {
+          color: #1E75FF;
+        }
+      }
+       .icons {
+        cursor: pointer;
+        color: #979797;
+        //position: absolute;
+       /* top: 247px;
+        right: 29px;*/
+        font-size: 1rem;
+         width: 20%;
+
+        .bookmark-icon {
+          margin-right: 10px;
+        }
+      }
+    }
+
+    .playlist-icon {
+      display: none;
+    }
+
+    @media only screen and (max-width: 1400px) {
+      width: 340px;
+      height: 250px;
+
+      .image {
+        .logotype {
+          top: 128px;
+          right: 25px;
+        }
+        .duration {
+          top: 117px;
+        }
+      }
+
+      .icons {
+        top: 229px;
+      }
+    }
+  }
+
+  &.video-compact {
+    /*Compact video content card*/
+    width: 330px;
+    height: 272px;
+    margin: 10px 5px;
+    position: relative;
+
+    .image {
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      border-radius: 20px 20px 0 0;
+      width: 100%;
+      padding-bottom: 51%;
+    }
+
+
+    .logotype {
+      width: 48px;
+      height: 48px;
+      border-radius: 100%;
+      border: 2px solid white;
+      background-size: cover;
+      background-position: center;
+      position: absolute;
+      top: 145px;
+      right: 25px;
+    }
+
+    .duration {
+      background-color: #171725;
+      border-radius: 5px;
+      left: 16px;
+      position: absolute;
+      top: 125px;
+      font-size: 0.7rem;
+      padding: 3px;
+    }
+
+    .info-container {
+      height: 100px;
+      margin: 10px 0 0 20px;
+      position: absolute;
+      bottom: -12px;
+
+
+      .info{
+        h5 {
+          color: #FAFAFB;
+          font-size: 13px;
+          margin: 2px 0;
+        }
+
+        p {
+          color: #979797;
+          font-size: 0.8em;
+          margin: 3px 0;
+        }
+
+        .blue-ref {
+          color: #1E75FF;
+        }
+      }
+      .icons {
+        display: none;
+      }
+    }
+    .playlist-icon {
+      display: none;
+    }
+  }
+
+
   &.channel {
     /*Video shown in channel page*/
     width: 350px;
@@ -65,167 +244,7 @@
   }
 
 
-  &.video {
-    /*Regular video content card*/
-    width: 410px;
-    height: 290px;
-    margin: 10px 5px;
-    position: relative;
 
-    .image {
-      position: relative;
-      background-size: cover;
-      background-position: center;
-      border-radius: 20px 20px 0 0;
-      width: 100%;
-      padding-bottom: 45%;
-    }
-
-    .icons {
-      cursor: pointer;
-      color: #979797;
-      position: absolute;
-      top: 247px;
-      right: 29px;
-      font-size: 1.2rem;
-
-      .bookmark-icon {
-        margin-right: 10px;
-      }
-    }
-
-    .logotype {
-      width: 60px;
-      height: 60px;
-      border-radius: 100%;
-      border: 2px solid white;
-      background-size: cover;
-      background-position: center;
-      position: absolute;
-      top: 152px;
-      right: 25px;
-    }
-
-    .duration {
-      background-color: #171725;
-      border-radius: 5px;
-      left: 16px;
-      position: absolute;
-      top: 137px;
-      font-size: 0.7rem;
-      padding: 3px;
-    }
-
-    .info-container {
-      height: 100px;
-      margin: 10px 0 0 20px;
-      position: absolute;
-      bottom: -12px;
-
-      h5 {
-        color: #FAFAFB;
-        font-size: 13px;
-        margin: 2px 0;
-      }
-
-      p {
-        color: #979797;
-        font-size: 0.8em;
-        margin: 3px 0;
-      }
-
-      .blue-ref {
-        color: #1E75FF;
-      }
-    }
-
-    .playlist-icon {
-      display: none;
-    }
-
-    @media only screen and (max-width: 1279px) {
-      width: 356px;
-      height: 266px;
-
-      .logotype {
-        top: 129px;
-        right: 25px;
-      }
-      .duration {
-        top: 117px;
-      }
-      .icons {
-        top: 229px;
-      }
-    }
-  }
-
-  &.video-compact {
-    /*Compact video content card*/
-    width: 330px;
-    height: 272px;
-    margin: 10px 5px;
-    position: relative;
-
-    .image {
-      position: relative;
-      background-size: cover;
-      background-position: center;
-      border-radius: 20px 20px 0 0;
-      width: 100%;
-      padding-bottom: 51%;
-    }
-
-
-    .logotype {
-      width: 48px;
-      height: 48px;
-      border-radius: 100%;
-      border: 2px solid white;
-      background-size: cover;
-      background-position: center;
-      position: absolute;
-      top: 145px;
-      right: 25px;
-    }
-
-    .duration {
-      background-color: #171725;
-      border-radius: 5px;
-      left: 16px;
-      position: absolute;
-      top: 125px;
-      font-size: 0.7rem;
-      padding: 3px;
-    }
-
-    .info-container {
-      height: 100px;
-      margin: 10px 0 0 20px;
-      position: absolute;
-      bottom: -12px;
-
-      h5 {
-        color: #FAFAFB;
-        font-size: 13px;
-        margin: 2px 0;
-      }
-
-      p {
-        color: #979797;
-        font-size: 0.8em;
-        margin: 3px 0;
-      }
-
-      .blue-ref {
-        color: #1E75FF;
-      }
-    }
-
-    .playlist-icon,  .icons {
-      display: none;
-    }
-  }
 
   &.playlists {
     /*Playlist content card*/
@@ -345,7 +364,3 @@
   left: 200px;
   z-index: 1;
 }
-
-
-
-
