@@ -18,7 +18,6 @@ let BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
 const LIKE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io/entity/flagging";
 
 
-
 const HEADERS = new HttpHeaders({
   'X-CSRF-Token': 'VQrAx6wI4cv-J3BdqLRhIbN5gfUUCGf9sZnR_teei2U',
   'Accept': 'application/vnd.api+json'
@@ -38,7 +37,7 @@ export class UploadService {
   //MULTILINGUAL
   callback_list: [Function?] = [];
 
-  refreshComp(){
+  refreshComp() {
     this.callback_list.forEach((callback?: Function) => callback?.());
   }
 
@@ -85,7 +84,7 @@ export class UploadService {
   }
 
   //POST COMMENTS
-  postComment(entityType: string, contentID: number, username: string, email: string, comment: string){
+  postComment(entityType: string, contentID: number, username: string, email: string, comment: string) {
     let commentBody;
     if (entityType == "node") {
       commentBody = {
@@ -112,7 +111,7 @@ export class UploadService {
         ]
       }
     }
-    return this.http.post(BASE_URL + '/comment', commentBody, {headers: HEADERS,} )
+    return this.http.post(BASE_URL + '/comment', commentBody, {headers: HEADERS,})
   };
 
 
@@ -141,15 +140,14 @@ export class UploadService {
   }
 
 
-
   getComments(type: string, id: number) {
     return this.http.get<Comment[]>(BASE_URL + "/api/comments/" + type + "/" + id);
   }
 
   //CATEGORIES
- /* getAllCategories() {
-    return this.http.get<Categories[]>(BASE_URL + "/api/categories");
-  }*/
+  /* getAllCategories() {
+     return this.http.get<Categories[]>(BASE_URL + "/api/categories");
+   }*/
 
   getCategoriesinChannels(pNum: number) {
     return this.http.get<Categories[]>(BASE_URL + "/api/categories-channels?page=" + pNum);
@@ -252,6 +250,21 @@ export class UploadService {
   }
 
   getCount(content_type: string) {
-    return this.http.get<PagesCount[]>(BASE_URL + "/api/" + content_type +"-count")
+    return this.http.get<PagesCount[]>(BASE_URL + "/api/" + content_type + "-count")
+  }
+
+  //USED FOR TESTING ONLY
+  getCountTest(content_type: string) {
+    return this.http.get<PagesCount[]>(BASE_URL + "/api/" + content_type + "-count").subscribe((pagesCount) => {
+      let numberOfThematics = parseInt(pagesCount[0].nid)
+      const itemsPerPage = 6
+      let numberOfPages = Math.ceil(numberOfThematics / itemsPerPage)
+      let pageNumbers = new Array(numberOfPages)
+      for (let i = 0; i < numberOfPages; i++) {
+        pageNumbers[i] = i
+      }
+      console.log("service n.pages", numberOfPages.toString())
+      console.log("pagesCount",pagesCount)
+    })
   }
 }
