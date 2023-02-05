@@ -70,7 +70,7 @@
                           [uid]=thematics[0].uid
                           [field_thematic_header_image]=thematics[0].field_thematic_header_image
                           [field_thematic_thumbnail]=thematics[0].field_thematic_thumbnail
-                          [routerLink]="['/thematic', thematics[0].nid]"
+                          [routerLink]="['/thematic', thematics[0].view_node.split('/').slice(-1)[0]]"
       ></app-suggestioncard>
     </div>
 
