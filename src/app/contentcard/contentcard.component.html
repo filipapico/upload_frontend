@@ -6,32 +6,32 @@
     </div>
     <p class="duration">{{field_duration}}</p>
   </div>
-  <div class="icons" (click)="$event.stopPropagation()">
+
+
+  <div class="info-container">
+    <div class="info">
+      <p class="blue-ref" *ngIf="source; else noSource">
+        {{source}}
+      </p>
+      <ng-template #noSource>
+        <p class="blue-ref">by {{uid}}</p>
+      </ng-template>
+      <h5>
+        {{title}}
+      </h5>
+      <p class="card-subtitle"><span *ngIf="channelAuthor">by </span>{{subtitle || channelAuthor}}</p>
+    </div>
+    <div class="icons" (click)="$event.stopPropagation()">
       <span class="bookmark-icon" (click)="$event.stopPropagation(); uploadService.toggleFavoriteVideo(mid)">
         <fa-icon [icon]="uploadService.isFavoriteVideo(mid)? faBookmarkFull : faBookmark"></fa-icon>
       </span>
-        <fa-icon class="share-icon" (click)="copyUrl(field_media_oembed_video, title)" [icon]="faShareNodes"></fa-icon>
+      <fa-icon class="share-icon" (click)="copyUrl(field_media_oembed_video, title)" [icon]="faShareNodes"></fa-icon>
+    </div>
   </div>
-
-  <div class="info-container">
-    <p class="blue-ref" *ngIf="source; else noSource">
-      {{source}}
-    </p>
-    <ng-template #noSource>
-      <p class="blue-ref">by {{uid}}</p>
-    </ng-template>
-    <h5>
-      {{title}}
-    </h5>
-    <p class="card-subtitle"><span *ngIf="channelAuthor">by </span>{{subtitle || channelAuthor}}</p>
-  </div>
-
   <div class="playlist-icon">
     <img src="assets/bookmark-playlist-big.png">
   </div>
-
   <div class="popup-url" *ngIf="popup">
     <p>URL copied!</p>
   </div>
-
 </div>
