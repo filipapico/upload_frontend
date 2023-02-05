@@ -58,9 +58,9 @@ export class HomepageComponent implements OnInit {
     this.uploadService.getChannels("").subscribe((channels) => {
       this.channels = channels;
     })
-    this.uploadService.getVideo(this.id).subscribe((allVideos) => {
+    /*this.uploadService.getVideo(this.id).subscribe((allVideos) => {
       this.allVideos = allVideos;
-    })
+    })*/
   }
 
   changeSearch(e: any) {
