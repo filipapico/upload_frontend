@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
 import {faFlag, faTimesCircle} from "@fortawesome/free-regular-svg-icons";
 import {UploadService} from "../upload.service";
 import {Comment} from "../interfaces";
@@ -8,7 +8,7 @@ import {Comment} from "../interfaces";
   templateUrl: './comments.component.html',
   styleUrls: ['./comments.component.scss']
 })
-export class CommentsComponent {
+export class CommentsComponent implements OnChanges {
   faFlag = faFlag;
   faTimesCircle = faTimesCircle;
 
@@ -23,6 +23,14 @@ export class CommentsComponent {
 
 
   constructor(public uploadService: UploadService) {
+  }
+
+  // Deteta mudanca nos inputs (quando a <app-comments> esta usada em outro component,
+  // é preciso detetar mudança no contentID
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.contentID && changes['contentID']) {
+      this.refreshComments();
+    }
   }
 
   ngOnInit(): void {
