@@ -3,7 +3,7 @@
   <!--TAGS-->
   <div class="tags" *ngIf="tags">
     <div class="tags-items">
-      <div class="tags-item" (click)="getLessTags(tagPageNumber)"
+      <div class="tags-item" (click)="getLessTags(pageNumberTags)"
            *ngIf="this.visibleTag == true && tags.length==8 || tags.length<8">
         <
       </div>
@@ -11,15 +11,16 @@
         <div (click)="getThematicsByTag(t.tid)" [ngClass]="activeTag ? 'selected':'unselected'">
           #{{t.name.toLowerCase()}}</div>
       </div>
-      <div class="tags-item" (click)="getMoreTags(tagPageNumber);toggleVisibleTag()" *ngIf="tags.length==8">
+      <div class="tags-item" (click)="getMoreTags(pageNumberTags);toggleVisibleTag()" *ngIf="tags.length==8">
         >
       </div>
     </div>
   </div>
   <!--PAGINATION THEMATICS-->
   <div class="pagination">
-      <span class="page-number" *ngFor="let pn of pageNumbers">
-        <span (click)="refresh(pn)">{{pn + 1}}</span>
+      <span class="page-number" *ngFor="let pn of pageNumbersThematics">
+        <!--Needs to be correct for tags-->
+        <span (click)="refresh(pageNumberTags,pn)">{{pn + 1}}</span>
       </span>
   </div>
   <!--THEMATICS-->

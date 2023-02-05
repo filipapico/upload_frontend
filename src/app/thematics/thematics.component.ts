@@ -14,31 +14,30 @@ export class ThematicsComponent implements OnInit {
   thematics!: Thematics[];
   tags!: Tags[];
   pagesCount!: PagesCount[];
-  pageNumber: number = 0;
-  pageNumbers!: number[];
+  pageNumberThematics: number = 0;
+  pageNumbersThematics!: number[];
   //TAGS PAGINATION - TO BE IMPROVED
-  tagPageNumber: number = 0;
+  pageNumberTags: number = 0;
   visibleTag = false;
   activeTag = false;
   visibleTagPagination = true;
-
 
   constructor(private uploadService: UploadService) {
   }
 
   ngOnInit(): void {
     this.uploadService.onChangeLanguage(() => {
-      this.refresh(this.pageNumber);
+      this.refresh(this.pageNumberTags,this.pageNumberThematics);
     });
-    this.refresh(this.pageNumber);
+    this.refresh(this.pageNumberTags,this.pageNumberThematics);
   }
 
-  refresh(page: number) {
-    this.uploadService.getTagsInThematics(page).subscribe((tags) => {
+  refresh(pageTags: number, pageThematics: number) {
+    this.uploadService.getTagsInThematics(pageTags).subscribe((tags) => {
       this.tags = tags
     })
 
-    this.uploadService.getThematics(page).subscribe((thematics) => {
+    this.uploadService.getThematics(pageThematics).subscribe((thematics) => {
       this.thematics = thematics
     })
 
@@ -51,8 +50,8 @@ export class ThematicsComponent implements OnInit {
       for (let i = 0; i < numberOfPages; i++) {
         pageNumbers[i] = i
       }
-      this.pageNumbers = pageNumbers
-      this.pageNumber = page
+      this.pageNumbersThematics = pageNumbers
+      this.pageNumberThematics = pageThematics
     })
   }
 
@@ -75,7 +74,7 @@ export class ThematicsComponent implements OnInit {
   getMoreTags(p: number) {
     if (this.tags.length <= 10) {
       p++
-      this.tagPageNumber = p
+      this.pageNumberTags = p
       this.uploadService.getTagsInThematics(p).subscribe((tags) => {
         this.tags = tags
       })
@@ -85,7 +84,7 @@ export class ThematicsComponent implements OnInit {
   getLessTags(p: number) {
     if (this.tags.length <= 10) {
       p--
-      this.tagPageNumber = p
+      this.pageNumberTags = p
       this.uploadService.getTagsInThematics(p).subscribe((tags) => {
         this.tags = tags
       })

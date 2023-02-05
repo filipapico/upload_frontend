@@ -1,9 +1,11 @@
 .container {
 
   .tags {
+
     .tags-items {
       display: flex;
       flex-wrap: wrap;
+      justify-content: center;
       margin-bottom: 30px;
 
       .tags-item {
@@ -46,6 +48,7 @@
   .main-content {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
     padding: 12px;
 
     .thematics-all {
