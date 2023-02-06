@@ -265,11 +265,8 @@
     .icons {
       cursor: pointer;
       color: #979797;
-      position: absolute;
-      top: 175px;
-      right: 100px;
+      margin: -15px 265px;
       font-size: 1.2rem;
-      //display: none;
 
       .bookmark-icon {
         margin-right: 10px;
@@ -323,7 +320,7 @@
     }
 
     .playlist-icon {
-      position: absolute;
+      //position: absolute;
       background: linear-gradient(#1c1c24, transparent);
       width: 30%;
       height: 65%;
@@ -338,29 +335,26 @@
         left: 24px;
       }
     }
-
     .popup-url {
-      margin: 3px 138px;
-      background-color: #504e4e;
+      background-color: #363434;
       border-radius: 5px;
-      padding: 0px 2px;
       position: relative;
-      top: -5px;
-      left: 25px;
-      font-size: 12px;
+      top: -95px;
+      left: 305px;
       z-index: 1;
+      width: fit-content;
     }
+  }
 
+
+  .popup-url {
+    background-color: #363434;
+    border-radius: 5px;
+    position: relative;
+    top: -95px;
+    left: 315px;
+    z-index: 1;
+    width: fit-content;
   }
 }
 
-.popup-url {
-  margin: 3px 155px;
-  background-color: #504e4e;
-  border-radius: 5px;
-  padding: 0px 2px;
-  position: relative;
-  top: 20px;
-  left: 200px;
-  z-index: 1;
-}
