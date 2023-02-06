@@ -25,15 +25,7 @@
 
       <!-- Videos -->
       <div class="channel-videos" *ngIf="videos?.length; else noVideo">
-    <!--    <app-contentcard type="channel" *ngFor="let vid of videos"
-                         [source]="getHashtag(vid.field_media_tags)"
-                         [title]="vid.name"
-                         [subtitle]="vid.created"
-                         [image]="vid.thumbnail__target_id"
-                         [field_duration]="vid.field_duration"
-                         [routerLink]="['/channelplayer', vid.view_media.split('/').slice(-1)[0]]"
-        ></app-contentcard>-->
-        <app-contentcard type="channel" *ngFor="let vid of videos"
+         <app-contentcard type="channel" *ngFor="let vid of videos"
                          [source]="getHashtag(vid.field_media_tags)"
                          [title]="vid.name"
                          [subtitle]="vid.created"
