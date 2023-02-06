@@ -180,16 +180,13 @@ export class UploadService {
   }
 
   //THEMATICS
-  getThematics(pNum: number) {
-    return this.http.get<Thematics[]>(BASE_URL + "/api/thematics?page=" + pNum)
-  }
 
   getTagsInThematics(pNum: number) {
     return this.http.get<Tags[]>(BASE_URL + "/api/tags-thematics?page=" + pNum)
   }
 
-  getThematicsByTag(id: string) {
-    return this.http.get<Thematics[]>(BASE_URL + "/api/thematics-tag/" + id)
+  getThematicsByTag(id: string, pNum: number) {
+    return this.http.get<Thematics[]>(BASE_URL + "/api/thematics-tag/" + id + '?page='+pNum)
   }
 
   getThematicDetails(id: string) {
