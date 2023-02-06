@@ -97,8 +97,10 @@ interface ThematicLinks {
   field_thematic_links: ThematicLink[]
 }
 
+//MAYBE LATER BE IMPROVED - distinguish between counting media or content.
 interface PagesCount {
   nid: string
+  mid: string
 }
 
 /*Might not be necessary!?
