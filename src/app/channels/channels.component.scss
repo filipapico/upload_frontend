@@ -42,6 +42,16 @@
       margin: 10px 5px;
       position: relative;
 
+      .popup-url {
+        background-color: #363434;
+        border-radius: 5px;
+        position: absolute;
+        bottom: 10px;
+        left: 315px;
+        z-index: 1;
+        width: fit-content;
+      }
+
       .image {
         position: relative;
         background-size: cover;

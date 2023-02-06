@@ -14,6 +14,7 @@ export class ChannelsComponent {
   channels!: Channels[];
   nid: string = " ";
   categoryPageNumber: number = 0;
+  value: any;
 
   constructor(public uploadService: UploadService) {
   }
@@ -48,9 +49,8 @@ export class ChannelsComponent {
   popup : any = false
   copyUrl(val: string) {
       navigator.clipboard.writeText("https://app-upload.netlify.app" + val.slice(3));
-      this.popup = true
+      this.popup = true;
       setTimeout(() => { this.popup = false; }, 500);
-      console.log(val)
+      this.value = val;
     }
-
 }
