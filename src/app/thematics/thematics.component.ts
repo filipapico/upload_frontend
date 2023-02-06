@@ -39,7 +39,7 @@ export class ThematicsComponent implements OnInit {
       this.tags = tags
     })
 
-    this.uploadService.getCount("thematics", this.tagIdSelected).subscribe(({
+    this.uploadService.getPagination("thematics", this.tagIdSelected).subscribe(({
                                                                               itemsPerPage,
                                                                               numberOfPages,
                                                                               pageNumbers,

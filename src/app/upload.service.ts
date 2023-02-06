@@ -257,7 +257,7 @@ export class UploadService {
     return this.http.get(BASE_URL + "/" + content_type + "/" + slug + "?_format=json");
   }
 
-  getCount(content_type: string, id: string) {
+  getPagination(content_type: string, id: string) {
     return this.http.get<PagesCount[]>(BASE_URL + "/api/" + content_type + "-count/" + id).pipe(map((pagesCount) => {
       let numberOfThematics = parseInt(pagesCount[0].nid)
       const itemsPerPage = 4
