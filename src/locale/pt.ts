@@ -17,7 +17,13 @@ const pt: Traducao = {
   "report-submitted": "Sua denúncia foi enviada!",
   "thematics": "Temáticas",
   "url": "URL Copiado!",
-  "videos": "Vídeos"
+  "videos": "Vídeos",
+  "latest videos": "Últimos Vídeos",
+  "your search did not match any videos.": "A sua pesquisa não corresponde a nenhum video...",
+  "newest thematic": "Temática recente",
+  "see all": "VER +",
+  "show more": "VER MAIS",
+  "newest channels": "Canais recentes",
 }
 
 export default pt;

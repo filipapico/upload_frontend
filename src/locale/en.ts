@@ -17,7 +17,13 @@ const en: Traducao = {
   "report-submitted": "Your report was submitted!",
   "thematics": "Thematics",
   "url": "URL Copied!",
-  "videos": "Videos"
+  "videos": "Videos",
+  "latest videos": "Latest Videos",
+  "your search did not match any videos.": "Your search did not match any videos.",
+  "newest thematic": "Newest thematic",
+  "see all": "SEE ALL",
+  "show more": "SHOW MORE",
+  "newest channels": "Newest channels",
 }
 
 export default en;

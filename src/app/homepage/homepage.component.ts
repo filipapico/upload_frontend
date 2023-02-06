@@ -21,7 +21,7 @@ export class HomepageComponent implements OnInit {
   public keyword = 'name';
   data = this.allVideos;
 
-  constructor(private uploadService: UploadService) {
+  constructor(public uploadService: UploadService) {
   }
 
   refresh() {

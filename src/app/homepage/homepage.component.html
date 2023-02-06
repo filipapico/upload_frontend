@@ -1,16 +1,13 @@
 <div class="wrapper">
   <div class="main-section">
-    <h2>Latest Videos</h2>
+    <h2>{{uploadService.translations["latest videos"]}}</h2>
 
     <div class="searchbar" *ngIf="latestVideos?.length; else noVideo">
       <input placeholder="Search video..." class="search" (change)="changeSearch($event)">
     </div>
 
     <ng-template #noVideo>
-      <input placeholder="Search video name..." class="search" (change)="changeSearch($event)">
-      <p>
-        Your search did not match any videos.
-      </p>
+      <p>{{uploadService.translations["your search did not match any videos."]}}</p>
     </ng-template>
 
     <div class="pagination">
@@ -49,8 +46,8 @@
   <div class="right-sidebar">
     <div class="suggestion-card">
       <div class="suggestion-card-header">
-        <h4>Newest thematic</h4>
-        <div routerLink="/thematics/">SEE ALL</div>
+        <h4>{{uploadService.translations["newest thematic"]}}</h4>
+        <div routerLink="/thematics/">{{uploadService.translations["see all"]}}</div>
       </div>
       <app-suggestioncard *ngIf="thematics"
                           [title]=thematics[0].title
@@ -63,14 +60,14 @@
 
     <div class="suggestion-list">
       <div class="suggestion-list-header">
-        <h4>Newest channels</h4>
+        <h4>{{uploadService.translations["newest channels"]}}</h4>
       </div>
       <app-suggestionlist *ngFor="let c of channels| slice:0:5"
                           [listThumbnail]="c.field_logotype"
                           [listElement]="c.title"
                           [routerLink]="['/channel', c.view_node.split('/').slice(-1)[0]]"
       ></app-suggestionlist>
-      <h3 routerLink="/channels">SHOW MORE</h3>
+      <h3 routerLink="/channels">{{uploadService.translations["show more"]}}</h3>
     </div>
   </div>
 
