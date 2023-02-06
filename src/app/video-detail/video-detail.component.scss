@@ -124,10 +124,13 @@
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 900px) {
   .wrapper {
     display: flex;
     flex-wrap: wrap;
+  }
+  .video-detail {
+    width: 90%;
   }
 }
 
