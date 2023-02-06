@@ -26,7 +26,7 @@ export class HomepageComponent implements OnInit {
 
   refresh() {
     this.getVideos();
-    this.uploadService.getThematics(0).subscribe((thematics) => {
+    this.uploadService.getThematicsByTag("",0).subscribe((thematics) => {
       this.thematics = thematics;
     })
   }
@@ -51,10 +51,10 @@ export class HomepageComponent implements OnInit {
     this.uploadService.getLatestVideos(this.pNum).subscribe((latestVideos) => {
       this.latestVideos = latestVideos;
     })
-    // IS THE PAGE NUMBER RELEVANT HERE?
-    this.uploadService.getThematics(0).subscribe((thematics) => {
+    // COMMENTED code since it's not being used - Thematics ar collected in refresh function
+    /*this.uploadService.getThematics(0).subscribe((thematics) => {
       this.thematics = thematics
-    })
+    })*/
     this.uploadService.getChannels("").subscribe((channels) => {
       this.channels = channels;
     })
