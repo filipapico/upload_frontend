@@ -12,11 +12,11 @@ export class ThematicsComponent implements OnInit {
   thematics!: Thematics[];
   tags!: Tags[];
   tagIdSelected!: string
-  pageNumberThematics: number = 0;
-  pageNumbersThematics!: number[];
+  pNumThematics: number = 0;
+  pNumsThematics!: number[];
 
   //TAGS PAGINATION - TO BE IMPROVED
-  pageNumberTags: number = 0;
+  pNumTags: number = 0;
   visibleTag = false;
   visibleTagPagination = true;
 
@@ -26,43 +26,45 @@ export class ThematicsComponent implements OnInit {
   ngOnInit(): void {
     this.tagIdSelected = ""
     this.uploadService.onChangeLanguage(() => {
-      this.refresh(this.pageNumberTags, this.pageNumberThematics, this.tagIdSelected);
+      this.refresh(this.pNumTags, this.pNumThematics, this.tagIdSelected);
     });
-    this.refresh(this.pageNumberTags, this.pageNumberThematics, this.tagIdSelected  );
+    this.refresh(this.pNumTags, this.pNumThematics, this.tagIdSelected);
   }
 
-  getThematicsByTag(id: string) {
+  refresh(pageTags: number, pageThematics: number, id: string) {
+    this.tagIdSelected = id
+    this.pNumThematics = pageThematics
+    console.log(this.pNumThematics)
+    this.uploadService.getTagsInThematics(pageTags).subscribe((tags) => {
+      this.tags = tags
+    })
+
+    this.uploadService.getCount("thematics", this.tagIdSelected).subscribe(({
+                                                                              itemsPerPage,
+                                                                              numberOfPages,
+                                                                              pageNumbers,
+                                                                              pagesCount
+                                                                            }) => {
+      this.pNumsThematics = pageNumbers
+      this.pNumThematics = pageThematics
+    })
+
+    this.uploadService.getThematicsByTag(id, this.pNumThematics).subscribe((thematicTags) => {
+      this.thematics = thematicTags
+    })
+
+    /*this.uploadService.getThematics(pageThematics).subscribe((thematics) => {
+      this.thematics = thematics
+    })*/
+  }
+
+  /*getThematicsByTag(id: string) {
     this.tagIdSelected = id
     this.uploadService.getThematicsByTag(id).subscribe((thematicTags) => {
       this.thematics = thematicTags
     })
     this.toggleTagPagination()
-  }
-
-  refresh(pageTags: number, pageThematics: number, id:string) {
-    this.tagIdSelected = id
-    this.uploadService.getTagsInThematics(pageTags).subscribe((tags) => {
-      this.tags = tags
-    })
-
-    this.uploadService.getThematics(pageThematics).subscribe((thematics) => {
-      this.thematics = thematics
-    })
-
-    this.uploadService.getThematicsByTag(id).subscribe((thematicTags) => {
-      this.thematics = thematicTags
-    })
-
-    this.uploadService.getCount("thematics", this.tagIdSelected).subscribe(({
-                                                                          itemsPerPage,
-                                                                          numberOfPages,
-                                                                          pageNumbers,
-                                                                          pagesCount
-                                                                        }) => {
-      this.pageNumbersThematics = pageNumbers
-      this.pageNumberThematics = pageThematics
-    })
-  }
+  }*/
 
   //TAGS PAGINATION - TO BE IMPROVED
   toggleVisibleTag(): void {
@@ -76,7 +78,7 @@ export class ThematicsComponent implements OnInit {
   getMoreTags(p: number) {
     if (this.tags.length <= 10) {
       p++
-      this.pageNumberTags = p
+      this.pNumTags = p
       this.uploadService.getTagsInThematics(p).subscribe((tags) => {
         this.tags = tags
       })
@@ -86,7 +88,7 @@ export class ThematicsComponent implements OnInit {
   getLessTags(p: number) {
     if (this.tags.length <= 10) {
       p--
-      this.pageNumberTags = p
+      this.pNumTags = p
       this.uploadService.getTagsInThematics(p).subscribe((tags) => {
         this.tags = tags
       })
