@@ -50,7 +50,7 @@ export class ChannelsComponent {
   copyUrl(val: string) {
       navigator.clipboard.writeText("https://app-upload.netlify.app" + val.slice(3));
       this.popup = true;
-      setTimeout(() => { this.popup = false; }, 500);
+      //setTimeout(() => { this.popup = false; }, 500);
       this.value = val;
     }
 }

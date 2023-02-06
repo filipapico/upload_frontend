@@ -22,8 +22,8 @@
             <fa-icon class="share-icon" (click)="copyUrl(channel.view_node)" [icon]="faShareNodes"></fa-icon>
           </div>
 
-          <div class="popup-url" *ngIf="channel.view_node == this.value && popup">
-            <p>URL copied!</p>
+          <div>
+            <p class="popup-url" *ngIf="channel.view_node == this.value && popup">URL copied!</p>
           </div>
 
           <div class="info-container">
