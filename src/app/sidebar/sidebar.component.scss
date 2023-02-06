@@ -29,7 +29,6 @@
   }
 
 
-
   .icon-logo {
     border-bottom: 1px solid #b5b5be69;
     width: 100%;
@@ -43,12 +42,9 @@
   }
 
   .login {
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-left: 1rem;
-
-    /*h4 {
-      margin-bottom: 15px;
-    }*/
+    font-size: 0.83em;
 
     .login-button {
       color: lightgrey;
@@ -68,6 +64,7 @@
   .languages {
     margin: 2rem 0 0 1rem;
     width: 100%;
+    font-size: 0.83em;
 
     #english, #portuguese {
       &:hover {
