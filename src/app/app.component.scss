@@ -3,6 +3,10 @@
   margin: 0;
   width: 100%;
 
+  app-collapse {
+    display: none;
+  }
+
   app-sidebar {
     max-width: 11rem;
     position: fixed;
@@ -13,12 +17,36 @@
 
   .main-content {
     padding: 2rem 1rem 5rem 12rem;
+
+  }
+  .footer {
+    padding: 3px;
+    flex: 1;
+    text-align: center;
+    width: inherit;
+    font-size: 0.8rem;
+    color: darkgray;
+
+    a {
+      text-decoration: none;
+      color: white;
+      cursor: pointer;
+
+      &:hover {
+        font-weight: bold;
+        color: #dc2f31;
+      }
+    }
   }
 
   @media only screen and (max-width: 700px) {
     .app-wrapper {
       display: flex;
       justify-content: center;
+    }
+
+    app-collapse {
+      display: block;
     }
     .main-content {
       padding: 0;
