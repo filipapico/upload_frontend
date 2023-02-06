@@ -56,12 +56,17 @@ export class CommentsComponent implements OnChanges {
   }
 
   addCommentReport() {
-    this.uploadService.postReport(this.index_cid[1], this.field_reason).subscribe((data) => {
-    })
-    this.Closepopup()
-    this.message = true;
-    setTimeout(() => { this.message = false; }, 1000);
-    this.field_reason = "";
+    if (this.field_reason.length > 5) {
+      this.uploadService.postReport(this.index_cid[1], this.field_reason).subscribe((data) => {
+      })
+      this.Closepopup()
+      this.message = true;
+      setTimeout(() => { this.message = false; }, 1000);
+      this.field_reason = "";
+    } else {
+      console.log(this.field_reason.length)
+      window.alert("Your report message should have more than 5 characters, try again...")
+    }
   }
 
   show = false;

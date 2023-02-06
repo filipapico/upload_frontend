@@ -132,8 +132,9 @@
 
           .overlay {
             width: 360px;
-            background-color: #363535;
+            background-color: #1C1C24;
             border-radius: 20px;
+            border: 1px solid white;
             position: absolute;
             z-index: 1;
             top: -125px;
@@ -170,9 +171,9 @@
                   all: unset;
                   border-radius: 23px;
                   border: 1px solid #ffffff;
-                  margin: 30px 10px;
+                  margin: 35px 15px;
                   padding: 5px;
-                  background-color: #262525;
+                  background-color: #212121;
                   color: #FFFFFF;
                   cursor: pointer;
                 }
