@@ -2,7 +2,7 @@
   <div class="main-section">
     <h2>Latest Videos</h2>
 
-    <div *ngIf="latestVideos?.length; else noVideo">
+    <div class="searchbar" *ngIf="latestVideos?.length; else noVideo">
       <input placeholder="Search video name..." class="search" (change)="changeSearch($event)">
     </div>
 
