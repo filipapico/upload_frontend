@@ -5,58 +5,57 @@
 
   &.video {
     /*Regular video content card*/
-    width: 410px;
-    height: 290px;
-    margin: 10px 5px;
+    width: 100%;
+    height: 100%;
     position: relative;
 
     .image {
-      position: relative;
       background-size: cover;
       background-position: center;
       border-radius: 20px 20px 0 0;
+      padding-bottom: 55%;
       width: 100%;
-      padding-bottom: 48%;
+      position: relative;
 
 
       .logotype {
-        width: 60px;
-        height: 60px;
-        border-radius: 100%;
+        position: absolute;
+        right: 1rem;
+        bottom: 0;
         border: 2px solid white;
+        transform: translateY(50%);
+        width: 20%;
+        max-width: 60px;
+        min-width: 40px;
+        border-radius: 100%;
+        aspect-ratio: 1/1;
         background-size: cover;
         background-position: center;
-        position: absolute;
-        top: 152px;
-        right: 25px;
 
       }
 
       .duration {
-        background-color: #171725;
-        border-radius: 5px;
-        left: 16px;
         position: absolute;
-        top: 137px;
-        font-size: 0.7rem;
-        padding: 3px;
+        bottom: 0.1rem;
+        border-radius: 5px;
+        font-size: 0.6em;
+        left: 1rem;
+        padding: 5px;
+        background-color: #171725;
       }
     }
 
-
     .info-container {
-      height: 100px;
-      margin: 0 0 0 20px;
+      box-sizing: border-box;
       display: flex;
-      flex-direction: row;
-      align-items: center;
+      width: 100%;
       justify-content: space-between;
+      padding: 0.7em 1em;
 
       .info {
-
         h5 {
           color: #FAFAFB;
-          font-size: 0.7rem;
+          font-size: 0.8rem;
           margin: 2px 0;
         }
 
@@ -72,42 +71,19 @@
       }
 
       .icons {
+        display: flex;
+        flex-direction: row;
+        //width:fit-content;
+        align-items: end;
+        gap: 0.8rem;
         cursor: pointer;
         color: #979797;
-        //position: absolute;
-        /* top: 247px;
-         right: 29px;*/
         font-size: 1rem;
-        width: 20%;
-
-        .bookmark-icon {
-          margin-right: 10px;
-        }
       }
     }
 
     .playlist-icon {
       display: none;
-    }
-
-    @media only screen and (max-width: 1400px) {
-      width: 340px;
-      height: 250px;
-
-      .image {
-        .logotype {
-          top: 128px;
-          right: 25px;
-        }
-
-        .duration {
-          top: 117px;
-        }
-      }
-
-      .icons {
-        top: 229px;
-      }
     }
   }
 
@@ -188,14 +164,8 @@
 
   &.channel {
     /*Videos shown in channel page*/
-    /*width: 350px;
-    height: 260px;
-    margin: 10px 5px;
-    position: relative;*/
     width: 100%;
     height: 100%;
-    //object-fit: cover;
-    //margin: 1rem;
     position: relative;
 
     .image {
@@ -227,10 +197,6 @@
     }
 
     .info-container {
-      /*height: 100px;
-      margin: 10px 0 0 20px;
-      position: absolute;
-      bottom: -12px;*/
       box-sizing: border-box;
       display: flex;
       width: 100%;
@@ -362,8 +328,7 @@
       width: fit-content;
     }
   }
-
-
+  
   .popup-url {
     background-color: #363434;
     border-radius: 5px;
@@ -374,4 +339,6 @@
     width: fit-content;
   }
 }
+
+
 
