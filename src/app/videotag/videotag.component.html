@@ -3,13 +3,11 @@
   <app-tags class="tags" type="show">
   </app-tags>
 
-<!--  <div class="pagination">
-    <span class="page-number" *ngFor="let pn of pageNumbers">
-      <span (click)="refresh(id_tag,pn)">
-        {{pn + 1}}
-      </span>
+  <div class="pagination">
+    <span class="page-number" *ngFor="let pnv of pNumsVideos">
+      <span>{{pnv}}</span>
     </span>
-  </div>-->
+  </div>
 
   <div class="videos-tag">
     <app-contentcard class="video-card" type="video" *ngFor="let vt of videosByTag"
@@ -24,6 +22,15 @@
     </app-contentcard>
   </div>
 </div>
+
+<!--OLD
+<div class="pagination">
+  <span class="page-number" *ngFor="let pn of pageNumbers">
+    <span (click)="refresh(id_tag,pn)">
+      {{pn + 1}}
+    </span>
+  </span>
+</div>-->
 
 <!--OLD
 <div class="pagination">

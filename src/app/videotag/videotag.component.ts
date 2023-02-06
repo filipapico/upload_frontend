@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {UploadService} from "../upload.service";
-import {Tags, Video} from "../interfaces";
+import {PagesCount, Tags, Video} from "../interfaces";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
@@ -10,10 +10,8 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class VideotagComponent implements OnInit {
   videosByTag!: Video[];
-  tag_videos!: Tags[];
-  pageNumber: number = 0;
-  visible = false;
-  direction!: string;
+  pNumVideos: number = 0
+  pNumsVideos!: number[]
 
   @Input() id_tag!: string
 
@@ -21,27 +19,49 @@ export class VideotagComponent implements OnInit {
   }
 
   ngOnInit() {
-    //what was this for?? this.visible = false
-    if (this.id_tag) {
-      this.uploadService.getVideosByTag(this.id_tag, this.pageNumber).subscribe((videosByTag) => {
-        this.videosByTag = videosByTag
-      })
-    } else {
+
+    if (!this.id_tag) {
       this.route.params.subscribe(params => {
         // Get the updated tag_id from the URL
         this.id_tag = params['name'];
-        this.refreshVideos()
-      });
+        console.log(this.id_tag)
+        this.refresh(this.id_tag, this.pNumVideos)
+      })
+    } else {
+      this.refresh(this.id_tag, this.pNumVideos)
     }
   }
 
-  refreshVideos() {
-    this.uploadService.getVideosByTag(this.id_tag, this.pageNumber).subscribe((videosByTag) => {
+  refresh(tag: string, pageVideos: number) {
+    this.pNumVideos = pageVideos
+    this.uploadService.getVideosByTag(this.id_tag, this.pNumVideos).subscribe((videosByTag) => {
       this.videosByTag = videosByTag
+      console.log(this.videosByTag)
+    })
+
+    this.uploadService.getPagination("videos-tag", this.id_tag).subscribe(({itemsPerPage, numberOfPages, pageNumbers, pagesCount})=>{
+      this.pNumsVideos = pageNumbers
+      this.pNumVideos = pageVideos
+      console.log(this.pNumsVideos)
     })
   }
 
-  pagination(direction: string, p: number): void {
+  getTags(tags: string) {
+    return tags
+      .split(',')
+      .map(this.getTag)
+      .join('')
+  }
+
+  getTag(text: string) {
+    return `#${text.trim().toLowerCase()} `;
+  }
+
+  /*Pagination old
+  visible = false;
+  direction!: string;*/
+
+  /*pagination(direction: string, p: number): void {
     if (this.pageNumber == 0) {
       this.toggleVisible()
       this.changePage(direction, p)
@@ -64,18 +84,7 @@ export class VideotagComponent implements OnInit {
       this.pageNumber++
     }
     this.refreshVideos()
-  }
-
-  getTags(tags: string) {
-    return tags
-      .split(',')
-      .map(this.getTag)
-      .join('')
-  }
-
-  getTag(text: string) {
-    return `#${text.trim().toLowerCase()} `;
-  }
+  }*/
 
   /*OLD
   getLessVideos(p: number): void {

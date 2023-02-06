@@ -1,23 +1,19 @@
 .container{
   padding-top: 40px;
 
-  .pagination{
+  .pagination {
     display: flex;
     flex-wrap: nowrap;
     justify-content: center;
-    align-items: center;
 
-    .pagination-item{
-      width: 35px;
+    span {
+      padding: 0 2px;
+    }
 
-      div{
-        padding: 0 10px;
-        font-size: 1.5em;
-      }
-
-      .pagination-number{
-        font-size: 1.5em;
-      }
+    :hover span {
+      padding: 0 4px;
+      font-weight: bold;
+      cursor: pointer;
     }
   }
 
