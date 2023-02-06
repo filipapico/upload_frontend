@@ -2,14 +2,15 @@
   padding: 10px 5px;
   margin-left: 15px;
 
-  h4 {
-    color: lightgrey;
+  h5 {
+    color: #B5B5BE;
     margin-bottom: 10px;
   }
 
   .tags-items {
     display: flex;
     flex-wrap: wrap;
+    font-size: 0.9rem;
 
     .tags-item, .tags-item-all {
       color: lightgrey;
