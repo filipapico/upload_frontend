@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {UploadService} from "../upload.service";
 import {Thematics, Tags, Thematic, PagesCount} from "../interfaces";
-import {faAngleLeft, faAngleRight} from "@fortawesome/free-solid-svg-icons";
+import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-thematics',
@@ -9,31 +9,38 @@ import {faAngleLeft, faAngleRight} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./thematics.component.scss']
 })
 export class ThematicsComponent implements OnInit {
-  faAngleLeft = faAngleLeft;
-  faAngleRight = faAngleRight;
   thematics!: Thematics[];
   tags!: Tags[];
-  pagesCount!: PagesCount[];
+  tagIdSelected!: string
   pageNumberThematics: number = 0;
   pageNumbersThematics!: number[];
+
   //TAGS PAGINATION - TO BE IMPROVED
   pageNumberTags: number = 0;
   visibleTag = false;
-  activeTag = false;
   visibleTagPagination = true;
-  test!: any
 
-  constructor(private uploadService: UploadService) {
+  constructor(private route: ActivatedRoute, private uploadService: UploadService) {
   }
 
   ngOnInit(): void {
+    this.tagIdSelected = ""
     this.uploadService.onChangeLanguage(() => {
-      this.refresh(this.pageNumberTags, this.pageNumberThematics);
+      this.refresh(this.pageNumberTags, this.pageNumberThematics, this.tagIdSelected);
     });
-    this.refresh(this.pageNumberTags, this.pageNumberThematics);
+    this.refresh(this.pageNumberTags, this.pageNumberThematics, this.tagIdSelected  );
   }
 
-  refresh(pageTags: number, pageThematics: number) {
+  getThematicsByTag(id: string) {
+    this.tagIdSelected = id
+    this.uploadService.getThematicsByTag(id).subscribe((thematicTags) => {
+      this.thematics = thematicTags
+    })
+    this.toggleTagPagination()
+  }
+
+  refresh(pageTags: number, pageThematics: number, id:string) {
+    this.tagIdSelected = id
     this.uploadService.getTagsInThematics(pageTags).subscribe((tags) => {
       this.tags = tags
     })
@@ -42,31 +49,18 @@ export class ThematicsComponent implements OnInit {
       this.thematics = thematics
     })
 
-    //NEEDS TO BE CORRECTED FOR CURRENT THEMATIC_TAG
-    this.uploadService.getCount("thematics", "").subscribe((pagesCount) => {
-      this.pagesCount = pagesCount
-      let numberOfThematics = parseInt(this.pagesCount[0].nid)
-      const ITEMS_PER_PAGE = 6
-      let numberOfPages = Math.ceil(numberOfThematics / ITEMS_PER_PAGE)
-      let pageNumbers = new Array(numberOfPages)
-      for (let i = 0; i < numberOfPages; i++) {
-        pageNumbers[i] = i
-      }
-      this.pageNumbersThematics = pageNumbers
-      this.pageNumberThematics = pageThematics
-    })
-
-    //TESTING - NOT BEING USED
-    this.uploadService.getCountTest("thematics").subscribe(({itemsPerPage, numberOfPages, pageNumbers, pagesCount}) => {
-      console.log("test", numberOfPages)
-    });
-
-  }
-
-  getThematicsByTag(id: string) {
-    this.toggleTagPagination()
     this.uploadService.getThematicsByTag(id).subscribe((thematicTags) => {
       this.thematics = thematicTags
+    })
+
+    this.uploadService.getCount("thematics", this.tagIdSelected).subscribe(({
+                                                                          itemsPerPage,
+                                                                          numberOfPages,
+                                                                          pageNumbers,
+                                                                          pagesCount
+                                                                        }) => {
+      this.pageNumbersThematics = pageNumbers
+      this.pageNumberThematics = pageThematics
     })
   }
 

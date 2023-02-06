@@ -8,7 +8,8 @@
         <
       </div>
       <div class="tags-item" *ngFor="let t of tags">
-        <div (click)="getThematicsByTag(t.tid)" [ngClass]="activeTag ? 'selected':'unselected'">
+        <div (click)="refresh(pageNumberTags,pageNumbersThematics[0],t.tid)">
+<!--        <div (click)="getThematicsByTag(t.tid)">-->
           #{{t.name.toLowerCase()}}</div>
       </div>
       <div class="tags-item" (click)="getMoreTags(pageNumberTags);toggleVisibleTag()" *ngIf="tags.length==8">
@@ -20,7 +21,7 @@
   <div class="pagination">
       <span class="page-number" *ngFor="let pn of pageNumbersThematics">
         <!--Needs to be correct for tags-->
-        <span (click)="refresh(pageNumberTags,pn)">{{pn + 1}}</span>
+        <span (click)="refresh(pageNumberTags,pn,tagIdSelected)">{{pn + 1}}</span>
       </span>
   </div>
   <!--THEMATICS-->
