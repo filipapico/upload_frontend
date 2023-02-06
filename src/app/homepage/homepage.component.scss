@@ -6,7 +6,7 @@
   position: relative;
 
   .main-section {
-    max-width: 72%;
+    width: 70%;
 
     .searchbar {
       display: flex;
@@ -17,7 +17,7 @@
       .search {
         all: unset;
         background-color: #1C1C24;
-        border: 0.5px solid  #b5b5be69;
+        border: 0.5px solid #b5b5be69;
         border-radius: 10px;
         color: #B5B5BE;
         font-size: 0.9em;
@@ -44,16 +44,22 @@
 
     .latest-video-container {
       display: flex;
+      flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-evenly;
-    }
 
+      app-contentcard {
+        width: 47%;
+        margin: 5px 2px;
+      }
+    }
   }
 
   .right-sidebar {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 30%;
 
     .suggestion-list, .suggestion-card {
       background-color: #1C1C24;
@@ -91,22 +97,61 @@
 }
 
 @media only screen and (max-width: 700px) {
-
   .wrapper {
     display: flex;
     flex-direction: column;
-
 
     .main-section {
       width: 100%;
       position: static;
       margin: 0 auto;
 
+      .latest-video-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        app-contentcard {
+          width: 100%;
+          margin: 5px 2px;
+        }
+      }
     }
 
     .right-sidebar {
-      position: static;
+      display: none;
     }
   }
+}
 
+
+@media only screen and (min-width: 700px) and (max-width: 992px) {
+  .wrapper {
+    display: flex;
+    flex-direction: row;
+
+    .main-section {
+      width: 50%;
+      position: static;
+      margin: 0 auto;
+
+      .latest-video-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+
+        app-contentcard {
+          width: 100%;
+          margin: 5px 2px;
+        }
+      }
+    }
+
+    .right-sidebar {
+      width: 50%;
+      margin: 2px;
+    }
+  }
 }
