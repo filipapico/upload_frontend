@@ -1,8 +1,6 @@
-import {Component, Input} from '@angular/core';
-import {faThumbsUp} from "@fortawesome/free-regular-svg-icons";
-import {faThumbsUp as faThumbsUpSolid} from "@fortawesome/free-solid-svg-icons";
-import {faThumbsDown} from "@fortawesome/free-regular-svg-icons";
-import {faThumbsDown as faThumbsDownSolid} from "@fortawesome/free-solid-svg-icons";
+import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {faThumbsUp, faThumbsDown} from "@fortawesome/free-regular-svg-icons";
+import {faThumbsUp as faThumbsUpSolid, faThumbsDown as faThumbsDownSolid} from "@fortawesome/free-solid-svg-icons";
 import {UploadService} from "../upload.service";
 import {HttpHeaders} from "@angular/common/http";
 import {Likes} from "../interfaces";
@@ -12,7 +10,7 @@ import {Likes} from "../interfaces";
   templateUrl: './like.component.html',
   styleUrls: ['./like.component.scss']
 })
-export class LikeComponent {
+export class LikeComponent implements OnChanges {
   faThumbsUp = faThumbsUp;
   faThumbsUpSolid = faThumbsUpSolid;
   faThumbsDown = faThumbsDown;
@@ -35,9 +33,16 @@ export class LikeComponent {
   constructor(private uploadService: UploadService) {
   }
 
+  //OnChanges interface detects changes to input properties
+  //method ngOnChanges() is called whenever there is a change in id_video
+  ngOnChanges(changes: SimpleChanges): void {
+    if (this.id_video && changes['id_video']) {
+      this.refresh();
+    }
+  }
+
   ngOnInit(): void {
-    this.getVideosLikes();
-    this.getVideosDislikes()
+    this.refresh();
   }
 
   addFlagToVideo(type: string, urlLike: string, bodyLike: {}, headersLike: any) {
@@ -66,29 +71,24 @@ export class LikeComponent {
     });
 
     this.uploadService.postFlag(urlLike, body, likeHeaders).subscribe((data) => {
-      this.getVideosLikes();
-      this.getVideosDislikes();
+      this.refresh();
     })
-
   }
 
-  getVideosLikes() {
+  refresh() {
     this.uploadService.getLikes(this.id_video).subscribe((likes) => {
       this.likes = likes
-    })
-  }
-
-  getVideosDislikes() {
+    });
     this.uploadService.getDislikes(this.id_video).subscribe((dislikes) => {
       this.dislikes = dislikes
-    })
+    });
   }
 
-  toggleLike(){
+  toggleLike() {
     this.iconLikeActive = !this.iconLikeActive
   }
 
-  toggleDislike(){
+  toggleDislike() {
     this.iconDislikeActive = !this.iconDislikeActive
   }
 
