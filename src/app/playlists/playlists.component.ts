@@ -19,7 +19,7 @@ export class PlaylistsComponent implements OnInit {
   faAngleLeft = faAngleLeft;
 
 
-  constructor(private route: ActivatedRoute, private uploadService: UploadService,) {
+  constructor(private route: ActivatedRoute, public uploadService: UploadService,) {
   }
 
   refresh() {

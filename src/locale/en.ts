@@ -24,6 +24,9 @@ const en: Traducao = {
   "see all": "SEE ALL",
   "show more": "SHOW MORE",
   "newest channels": "Newest channels",
+  "favorite videos": "Favorite Videos",
+  "you don't have favorite videos, add some...": "You don't have favorite videos, add some..."
+
 }
 
 export default en;

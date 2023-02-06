@@ -10,7 +10,7 @@ import {Video} from "../interfaces";
 export class MyfavoritesComponent {
   favorites_list? : Video[];
 
-  constructor(private uploadService: UploadService) {
+  constructor(public uploadService: UploadService) {
   }
 
   ngOnInit(): void {

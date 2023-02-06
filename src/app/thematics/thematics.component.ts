@@ -20,7 +20,7 @@ export class ThematicsComponent implements OnInit {
   visibleTag = false;
   visibleTagPagination = true;
 
-  constructor(private route: ActivatedRoute, private uploadService: UploadService) {
+  constructor(private route: ActivatedRoute, public uploadService: UploadService) {
   }
 
   ngOnInit(): void {

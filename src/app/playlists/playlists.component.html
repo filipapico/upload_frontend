@@ -22,9 +22,9 @@
 <div class="container">
   <div class="favorites-card" routerLink="/favorites" routerLinkActive="active">
     <div>
-      <p>My favorite videos</p>
+      <p>{{uploadService.translations["favorite videos"]}}</p>
       <ng-template #noFavorite>
-        <h4> You don't have favorite videos, add some... </h4>
+        <h4>{{uploadService.translations["you don't have favorite videos, add some..."]}}</h4>
       </ng-template>
       <div *ngFor="let fl of favorites_list | slice:0:6" class="favorites-img" (change)="showMessage(favorites_list)">
         <img src="https://dev-project-upskill2-grupo4v2.pantheonsite.io{{fl.thumbnail__target_id}}">
