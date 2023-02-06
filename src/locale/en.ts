@@ -4,9 +4,12 @@ interface Traducao {
 
 const en: Traducao = {
   "channels": "Channels",
-  "home": "Home",
-  "thematics": "Thematics",
+  "english": "English",
   "favorites": "Favorites",
+  "home": "Home",
+  "playlists": "Playlists",
+  "portuguese": "Português",
+  "thematics": "Thematics"
 }
 
 export default en;

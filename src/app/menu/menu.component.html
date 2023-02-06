@@ -21,7 +21,7 @@
           <span class="menu-item-logo">
        <fa-icon [icon]="faPlay"></fa-icon>
      </span>
-    <span class="title">Playlists</span>
+    <span class="title">{{uploadService.translations["playlists"]}}</span>
   </div>
   <div class="menu-item-text" routerLink="favorites" (click)="uploadService.refreshComp()" routerLinkActive="active">
           <span class="menu-item-logo">

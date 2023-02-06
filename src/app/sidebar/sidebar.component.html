@@ -10,11 +10,11 @@
   </div>
   <div class="languages">
     <span id="portuguese" (click)="uploadService.switchLanguage('portuguese')">
-      PT
+      {{uploadService.translations["portuguese"]}}
     </span>
     |
     <span id="english" (click)="uploadService.switchLanguage('english')">
-    EN
+    {{uploadService.translations["english"]}}
     </span>
   </div>
   <!--<div class="footer">
