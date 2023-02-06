@@ -55,11 +55,17 @@
           </p>
         </div>
       </div>
+
+      <div class="report-message" *ngIf="index_cid[1] === c.cid && message">
+        <p>Your report was submitted!</p>
+      </div>
+
     </div>
   </div>
   <ng-template #noComment >
     <p class="nocomment">Feel free to leave us a comment!</p>
   </ng-template>
+
 </div>
 
 

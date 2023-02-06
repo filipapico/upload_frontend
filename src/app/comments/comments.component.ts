@@ -11,6 +11,7 @@ import {Comment} from "../interfaces";
 export class CommentsComponent implements OnChanges {
   faFlag = faFlag;
   faTimesCircle = faTimesCircle;
+  message = false;
 
   @Input() gravatar?: string;
   @Input() username?: string;
@@ -58,6 +59,9 @@ export class CommentsComponent implements OnChanges {
     this.uploadService.postReport(this.index_cid[1], this.field_reason).subscribe((data) => {
     })
     this.Closepopup()
+    this.message = true;
+    setTimeout(() => { this.message = false; }, 1000);
+    this.field_reason = "";
   }
 
   show = false;
