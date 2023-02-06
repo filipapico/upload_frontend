@@ -19,12 +19,15 @@
         border-radius: 50%;
         padding-bottom: 57%;
         background-position: center;
+        cursor: pointer;
       }
     }
 
     .suggestion-element {
       display: flex;
       align-items: center;
+      margin: 7px;
+      cursor: pointer;
     }
   }
 }
