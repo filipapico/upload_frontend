@@ -19,7 +19,13 @@
 
   .videos-tag{
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
+
+    app-contentcard {
+      width: 30%;
+      margin: 5px 2px;
+    }
   }
 }
