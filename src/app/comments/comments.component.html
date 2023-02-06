@@ -17,7 +17,8 @@
                     minlength="4" maxlength="1000" placeholder="Message *" ngModel></textarea>
       </div>
       <div class="button">
-        <input id="submit-button" type="submit" value="Submit">
+        <button id="submit-button">{{uploadService.translations["submit"]}}</button>
+        <!--<input id="submit-button" type="submit" value="Submit">-->
       </div>
     </form>
   </div>
@@ -44,7 +45,7 @@
                   <div>
                     <input type="text" [(ngModel)]="field_reason" class="form-control" required
                            minlength="4" maxlength="250" style="height:100px" placeholder="Reason*">
-                    <button class="report-button" (click)="addCommentReport()">Submit</button>
+                    <button class="report-button" (click)="addCommentReport()">{{uploadService.translations["submit"]}}</button>
                   </div>
                 </div>
               </div>
@@ -57,15 +58,14 @@
       </div>
 
       <div class="report-message" *ngIf="index_cid[1] === c.cid && message">
-        <p>Your report was submitted!</p>
+        <p>{{uploadService.translations["report-submitted"]}}</p>
       </div>
 
     </div>
   </div>
   <ng-template #noComment >
-    <p class="nocomment">Feel free to leave us a comment!</p>
+    <p class="nocomment">{{uploadService.translations["leave-comment"]}}</p>
   </ng-template>
-
 </div>
 
 

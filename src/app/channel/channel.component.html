@@ -10,7 +10,7 @@
     <div class="main-section">
       <div class="text-header">
         <h1>
-          {{channel[0].title}} <span class="channel-author">by {{channel[0].uid}}</span>
+          {{channel[0].title}} <span class="channel-author">{{uploadService.translations["by"]}} {{channel[0].uid}}</span>
         </h1>
         <p>
           {{channel[0].body}}
@@ -18,8 +18,8 @@
       </div>
 
       <div class="channel-heading">
-        <h2>Videos </h2>
-        <h4 class="all-channels" routerLink="/channels" >All Channels</h4>
+        <h2>{{uploadService.translations["videos"]}} </h2>
+        <h4 class="all-channels" routerLink="/channels" >{{uploadService.translations["all channels"]}}</h4>
       </div>
 
 
@@ -44,7 +44,7 @@
       </div>
 
       <ng-template #noVideo>
-        Please be patient, this channel will upload videos soon!
+        {{uploadService.translations["no video"]}}
       </ng-template>
     </div>
     <!--Comments -->

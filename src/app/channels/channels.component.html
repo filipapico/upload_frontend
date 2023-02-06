@@ -1,6 +1,6 @@
 <div class="wrapper">
   <!--Como voltar a pagina 0 quando carregar no titulo Channels? -->
-  <h2 routerLink="channels">Channels</h2>
+  <h2 routerLink="channels">{{uploadService.translations["channels"]}}</h2>
   <!-- Categories -->
   <div class="categories-list" *ngIf="categories">
     <p class="categories" *ngFor="let category of categories" (click)="targetChannels(category.tid)">
@@ -23,14 +23,14 @@
           </div>
 
           <div>
-            <p class="popup-url" *ngIf="channel.view_node == this.value && popup">URL copied!</p>
+            <p class="popup-url" *ngIf="channel.view_node == this.value && popup">{{uploadService.translations["url"]}}</p>
           </div>
 
           <div class="info-container">
             <h5>
               {{channel.title}}
             </h5>
-            <p class="card-subtitle"><span>by </span>{{channel.uid}}</p>
+            <p class="card-subtitle"><span>{{uploadService.translations["by"]}} </span>{{channel.uid}}</p>
           </div>
         </div>
       </div>
