@@ -12,6 +12,9 @@ import {
   Comment,
   Likes, PagesCount
 } from "./interfaces";
+import localePT from "../locale/pt";
+import localeEN from "../locale/en";
+import {map} from "rxjs";
 
 
 let BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
@@ -30,6 +33,8 @@ const HEADERS = new HttpHeaders({
 
 export class UploadService {
   favorites: string[] = [] = JSON.parse(localStorage.getItem("favorites") || "[]");
+  currentLanguage: string = '/en';
+  translations = localeEN;
 
   constructor(public http: HttpClient) {
   }
@@ -42,14 +47,20 @@ export class UploadService {
   }
 
   switchLanguage(idValue: string) {
-    let currentLanguage = "";
     BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
-    currentLanguage = (idValue == 'portuguese') ? "/pt-pt" : "/en";
-    BASE_URL += currentLanguage;
+    this.currentLanguage = (idValue == 'portuguese') ? "/pt-pt" : "/en";
+    BASE_URL += this.currentLanguage;
     this.callback_list.forEach((callback?: Function) => callback?.())
     // '?.' in JS means that nothing happens if there are no callback functions defined.
     //if there is one, it is executed
-  };
+
+    let traducoes: any = {
+      "/pt-pt": localePT, "/en": localeEN
+    };
+
+    this.translations = traducoes[this.currentLanguage];
+  }
+  ;
 
   onChangeLanguage(callback: (lang: any) => void) {
     return this.callback_list.push(callback);
@@ -249,13 +260,13 @@ export class UploadService {
     return this.http.get(BASE_URL + "/" + content_type + "/" + slug + "?_format=json");
   }
 
-  getCount(content_type: string) {
-    return this.http.get<PagesCount[]>(BASE_URL + "/api/" + content_type + "-count")
+  getCount(content_type: string, tag: string) {
+    return this.http.get<PagesCount[]>(BASE_URL + "/api/" + content_type + "-count/" + tag)
   }
 
   //USED FOR TESTING ONLY
   getCountTest(content_type: string) {
-    return this.http.get<PagesCount[]>(BASE_URL + "/api/" + content_type + "-count").subscribe((pagesCount) => {
+    return this.http.get<PagesCount[]>(BASE_URL + "/api/" + content_type + "-count").pipe(map((pagesCount) => {
       let numberOfThematics = parseInt(pagesCount[0].nid)
       const itemsPerPage = 6
       let numberOfPages = Math.ceil(numberOfThematics / itemsPerPage)
@@ -264,7 +275,13 @@ export class UploadService {
         pageNumbers[i] = i
       }
       console.log("service n.pages", numberOfPages.toString())
-      console.log("pagesCount",pagesCount)
-    })
+      console.log("pagesCount", pagesCount)
+      return {
+        itemsPerPage,
+        numberOfPages,
+        pageNumbers,
+        pagesCount
+      }
+    }));
   }
 }
