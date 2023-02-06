@@ -1,5 +1,5 @@
 <div class="menu-container">
-  <div class="menu-item-text" routerLink="homepage" routerLinkActive="active">
+  <div class="menu-item-text" routerLink="homepage" (click)="uploadService.refreshComp()" routerLinkActive="active">
       <span class="menu-item-logo">
       <fa-icon [icon]="faHouse"></fa-icon>
     </span>
