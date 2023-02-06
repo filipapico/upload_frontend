@@ -3,7 +3,7 @@
       <span class="menu-item-logo">
       <fa-icon [icon]="faHouse"></fa-icon>
     </span>
-    <span class="title">Home</span>
+    <span class="title">{{uploadService.translations["home"]}}</span>
   </div>
   <div class="menu-item-text" routerLink="channels" (click)="uploadService.refreshComp()" routerLinkActive="active">
       <span class="menu-item-logo">
@@ -15,7 +15,7 @@
         <span class="menu-item-logo">
         <fa-icon [icon]="faClapperboard"></fa-icon>
       </span>
-    <span class="title">Thematics</span>
+    <span class="title">{{uploadService.translations["thematics"]}}</span>
   </div>
   <div class="menu-item-text" routerLink="playlists" (click)="uploadService.refreshComp()" routerLinkActive="active">
           <span class="menu-item-logo">
@@ -27,6 +27,6 @@
           <span class="menu-item-logo">
        <fa-icon [icon]="faBookmark"></fa-icon>
      </span>
-    <span class="title">Favorites</span>
+    <span class="title">{{uploadService.translations["favorites"]}}</span>
   </div>
 </div>

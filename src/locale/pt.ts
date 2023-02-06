@@ -3,7 +3,10 @@ interface Traducao {
 }
 
 const pt: Traducao = {
-  "channels": "Canais"
+  "channels": "Canais",
+  "home": "Início",
+  "thematics" : "Temáticas",
+  "favorites" : "Favoritos",
 }
 
 export default pt;
