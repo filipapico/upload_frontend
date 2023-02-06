@@ -4,30 +4,40 @@
   </app-tags>
 
   <div class="pagination">
-    <div class="pagination-item" (click)="pagination('down',pageNumber)">
-      <div
-        *ngIf="this.visible == true && videosByTag.length == 6 || videosByTag.length < 6">
-        <
-      </div>
-    </div>
-    <div class="pagination-number">{{pageNumber + 1}}</div>
-    <div class="pagination-item" (click)="pagination('up',pageNumber)">
-      <div
-        *ngIf="videosByTag.length == 6">
-        >
-      </div>
-    </div>
+    <span class="page-number" *ngFor="let pn of pageNumbers">
+      <span (click)="refresh(id_tag,pn)">
+        {{pn + 1}}
+      </span>
+    </span>
   </div>
+
   <div class="videos-tag">
     <app-contentcard class="video-card" type="video" *ngFor="let vt of videosByTag"
                      [title]="vt.name"
                      [field_duration]="vt.field_duration"
                      [mid]="vt.mid"
                      [image]="vt.thumbnail__target_id"
-                     [routerLink]="['/video-detail', vt.name]"
+                     [routerLink]="['/video-detail', vt.view_media.split('/').slice(-1)[0]]"
                      [uid]="vt.uid"
                      [field_media_oembed_video]="vt.field_media_oembed_video"
                      [source]="getTags(vt.field_media_tags)">
     </app-contentcard>
   </div>
 </div>
+
+<!--OLD
+<div class="pagination">
+  <div class="pagination-item" (click)="pagination('down',pageNumber)">
+    <div
+      *ngIf="this.visible == true && videosByTag.length == 6 || videosByTag.length < 6">
+      <
+    </div>
+  </div>
+  <div class="pagination-number">{{pageNumber + 1}}</div>
+  <div class="pagination-item" (click)="pagination('up',pageNumber)">
+    <div
+      *ngIf="videosByTag.length == 6">
+      >
+    </div>
+  </div>
+</div>-->
