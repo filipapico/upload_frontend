@@ -9,29 +9,30 @@
     max-width: 72%;
 
     .searchbar {
-      width: 80%;
+      display: flex;
+      justify-content: center;
+      width: 100%;
       margin: 0 auto;
+
+      .search {
+        all: unset;
+        background-color: #1C1C24;
+        border: 0.5px solid  #b5b5be69;
+        border-radius: 10px;
+        color: #B5B5BE;
+        font-size: 0.9em;
+        justify-content: center;
+        line-height: 2em;
+        margin: 10px;
+        padding-left: 1rem;
+        position: center;
+        width: 100%;
+      }
     }
 
     h2 {
       margin-bottom: 0;
     }
-
-    /*
-       .ng-autocomplete .autocomplete-container .input-container input{
-         font-size: 14px;
-         box-sizing: border-box;
-         border: 1px solid #979797;
-         border-radius: 20px;
-         box-shadow: none;
-         outline: none;
-         background-color: #000;
-         color: #262525;
-         width: 100%;
-         padding: 0 15px;
-         line-height: 40px;
-         height: 40px;
-       }*/
 
     .pagination {
       display: flex;
@@ -40,21 +41,6 @@
       margin-left: 30%;
     }
 
-    .autocomplete-search, .search {
-      margin: 10px;
-      height: 30px;
-      border-radius: 10px;
-      position: center;
-      width: 100%;
-      justify-content: center;
-      background-color: #262525;
-      font-size: medium;
-      color: #FFFFFF;
-    }
-
-    /*    ng-autocomplete input {
-          background-color: #1C1C24 !important;
-        }*/
 
     .latest-video-container {
       display: flex;
