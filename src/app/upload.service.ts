@@ -260,7 +260,7 @@ export class UploadService {
   getCount(content_type: string, id: string) {
     return this.http.get<PagesCount[]>(BASE_URL + "/api/" + content_type + "-count/" + id).pipe(map((pagesCount) => {
       let numberOfThematics = parseInt(pagesCount[0].nid)
-      const itemsPerPage = 6
+      const itemsPerPage = 4
       let numberOfPages = Math.ceil(numberOfThematics / itemsPerPage)
       let pageNumbers = new Array(numberOfPages)
       for (let i = 0; i < numberOfPages; i++) {
