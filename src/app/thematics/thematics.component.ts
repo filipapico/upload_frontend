@@ -42,16 +42,12 @@ export class ThematicsComponent implements OnInit {
       this.thematics = thematics
     })
 
-    //TESTING - NOT BEING USED
-    this.test = this.uploadService.getCountTest("thematics")
-    console.log("test", this.test)
-
-
-    this.uploadService.getCount("thematics").subscribe((pagesCount) => {
+    //NEEDS TO BE CORRECTED FOR CURRENT THEMATIC_TAG
+    this.uploadService.getCount("thematics", "").subscribe((pagesCount) => {
       this.pagesCount = pagesCount
       let numberOfThematics = parseInt(this.pagesCount[0].nid)
-      const itemsPerPage = 6
-      let numberOfPages = Math.ceil(numberOfThematics / itemsPerPage)
+      const ITEMS_PER_PAGE = 6
+      let numberOfPages = Math.ceil(numberOfThematics / ITEMS_PER_PAGE)
       let pageNumbers = new Array(numberOfPages)
       for (let i = 0; i < numberOfPages; i++) {
         pageNumbers[i] = i
@@ -59,6 +55,12 @@ export class ThematicsComponent implements OnInit {
       this.pageNumbersThematics = pageNumbers
       this.pageNumberThematics = pageThematics
     })
+
+    //TESTING - NOT BEING USED
+    this.uploadService.getCountTest("thematics").subscribe(({itemsPerPage, numberOfPages, pageNumbers, pagesCount}) => {
+      console.log("test", numberOfPages)
+    });
+
   }
 
   getThematicsByTag(id: string) {
