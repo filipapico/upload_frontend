@@ -79,6 +79,12 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: space-evenly;
+
+
+      app-contentcard{
+        width: 31%;
+        margin: 10px 2px;
+      }
     }
 
   }
