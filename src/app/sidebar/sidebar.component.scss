@@ -29,6 +29,7 @@
   }
 
 
+
   .icon-logo {
     border-bottom: 1px solid #b5b5be69;
     width: 100%;
@@ -42,11 +43,12 @@
   }
 
   .login {
-    margin-left: 15px;
+    margin-top: 2rem;
+    margin-left: 1rem;
 
-    h4 {
+    /*h4 {
       margin-bottom: 15px;
-    }
+    }*/
 
     .login-button {
       color: lightgrey;
@@ -64,7 +66,7 @@
   }
 
   .languages {
-    margin: 40px 0 0 15px;
+    margin: 2rem 0 0 1rem;
     width: 100%;
 
     #english, #portuguese {
