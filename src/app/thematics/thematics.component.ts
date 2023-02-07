@@ -11,40 +11,39 @@ import {ActivatedRoute} from "@angular/router";
 export class ThematicsComponent implements OnInit {
   thematics!: Thematics[];
   tags!: Tags[];
-  tagIdSelected!: string
+  idTagSelected!: string
   pNumThematics: number = 0;
   pNumsThematics!: number[];
+  thematicsPerPAge: number = 4 //needs to be according to pagination in the view/rest export set in DRUPAL
 
-  //TAGS PAGINATION - TO BE IMPROVED
+  //Tags pagination
   pNumTags: number = 0;
   visibleTag = false;
   visibleTagPagination = true;
+  //For testing adding class to active tag
+  act: any;
 
   constructor(private route: ActivatedRoute, public uploadService: UploadService) {
   }
 
   ngOnInit(): void {
-    this.tagIdSelected = ""
+    this.idTagSelected = ""
     this.uploadService.onChangeLanguage(() => {
-      this.refresh(this.pNumTags, this.pNumThematics, this.tagIdSelected);
+      this.refresh(this.pNumTags, this.pNumThematics, this.idTagSelected);
     });
-    this.refresh(this.pNumTags, this.pNumThematics, this.tagIdSelected);
+    this.refresh(this.pNumTags, this.pNumThematics, this.idTagSelected);
   }
 
   refresh(pageTags: number, pageThematics: number, id: string) {
-    this.tagIdSelected = id
+    //this.toggleTest()
+    this.idTagSelected = id
     this.pNumThematics = pageThematics
     console.log(this.pNumThematics)
     this.uploadService.getTagsInThematics(pageTags).subscribe((tags) => {
       this.tags = tags
     })
 
-    this.uploadService.getPagination("thematics", this.tagIdSelected).subscribe(({
-                                                                              itemsPerPage,
-                                                                              numberOfPages,
-                                                                              pageNumbers,
-                                                                              pagesCount
-                                                                            }) => {
+    this.uploadService.getPagination("thematics", this.idTagSelected, this.thematicsPerPAge).subscribe(({pageNumbers}) => {
       this.pNumsThematics = pageNumbers
       this.pNumThematics = pageThematics
     })
@@ -52,24 +51,18 @@ export class ThematicsComponent implements OnInit {
     this.uploadService.getThematicsByTag(id, this.pNumThematics).subscribe((thematicTags) => {
       this.thematics = thematicTags
     })
-
-    /*this.uploadService.getThematics(pageThematics).subscribe((thematics) => {
-      this.thematics = thematics
-    })*/
   }
 
-  /*getThematicsByTag(id: string) {
-    this.tagIdSelected = id
-    this.uploadService.getThematicsByTag(id).subscribe((thematicTags) => {
-      this.thematics = thematicTags
-    })
-    this.toggleTagPagination()
-  }*/
+  //Tags pagination
 
-  //TAGS PAGINATION - TO BE IMPROVED
   toggleVisibleTag(): void {
     this.visibleTag = !this.visibleTag;
   }
+
+/*  toggleTest(): void {
+    this.act = !this.act;
+    console.log(this.act)
+  }*/
 
   toggleTagPagination(): void {
     this.visibleTagPagination = !this.visibleTagPagination
