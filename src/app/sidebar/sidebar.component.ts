@@ -1,6 +1,5 @@
 import {Component} from '@angular/core';
 import {UploadService} from "../upload.service";
-import {faBars} from "@fortawesome/free-solid-svg-icons";
 
 @Component({
   selector: 'app-sidebar',
@@ -8,9 +7,14 @@ import {faBars} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
-  faBars = faBars;
+  isActive: boolean[] = [false, false];
 
   constructor(public uploadService: UploadService) {
+  }
+
+  toggleActive(i: number){
+    this.isActive = [false, false];
+    this.isActive[i] = true;
   }
 
 
