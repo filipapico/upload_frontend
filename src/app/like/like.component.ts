@@ -1,8 +1,7 @@
-import {Component, Input, OnChanges, SimpleChanges} from '@angular/core';
+import {Component, Input, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {faThumbsUp, faThumbsDown} from "@fortawesome/free-regular-svg-icons";
 import {faThumbsUp as faThumbsUpSolid, faThumbsDown as faThumbsDownSolid} from "@fortawesome/free-solid-svg-icons";
 import {UploadService} from "../upload.service";
-import {HttpHeaders} from "@angular/common/http";
 import {Likes} from "../interfaces";
 
 @Component({
@@ -10,7 +9,7 @@ import {Likes} from "../interfaces";
   templateUrl: './like.component.html',
   styleUrls: ['./like.component.scss']
 })
-export class LikeComponent implements OnChanges {
+export class LikeComponent implements OnInit, OnChanges {
   faThumbsUp = faThumbsUp;
   faThumbsUpSolid = faThumbsUpSolid;
   faThumbsDown = faThumbsDown;
@@ -30,7 +29,7 @@ export class LikeComponent implements OnChanges {
   iconLikeActive = false
   iconDislikeActive = false
 
-  constructor(private uploadService: UploadService) {
+  constructor(public uploadService: UploadService) {
   }
 
   //OnChanges interface detects changes to input properties
@@ -45,32 +44,8 @@ export class LikeComponent implements OnChanges {
     this.refresh();
   }
 
-  addFlagToVideo(type: string, urlLike: string, bodyLike: {}, headersLike: any) {
-
-    let body: {}
-
-    if (type == 'like') {
-      body = {
-        "entity_id": [this.id_video],
-        "entity_type": ["media"],
-        "flag_id": [{"target_id": "like_videos", "target_type": "flag"}],
-        "uid": ["0"]
-      }
-    } else {
-      body = {
-        "entity_id": [this.id_video],
-        "entity_type": ["media"],
-        "flag_id": [{"target_id": "dislike_videos", "target_type": "flag"}],
-        "uid": ["0"]
-      }
-    }
-
-    let likeHeaders = new HttpHeaders({
-      'X-CSRF-Token': 'VQrAx6wI4cv-J3BdqLRhIbN5gfUUCGf9sZnR_teei2U',
-      'Accept': 'application/vnd.api+json'
-    });
-
-    this.uploadService.postFlag(urlLike, body, likeHeaders).subscribe((data) => {
+  addFlagToVideo(flagtype: string, idVideo: string) {
+    this.uploadService.postFlag(flagtype,idVideo).subscribe((data) => {
       this.refresh();
     })
   }
