@@ -236,23 +236,6 @@ export class UploadService {
     localStorage.setItem("favorites", JSON.stringify(this.favorites));
   }
 
-  //FAVORITE CHANNELS
-  favChannel: number[] = [] = JSON.parse(localStorage.getItem("favChannel") || "[]");
-
-  isFavChannel(id: number) {
-    return this.favChannel.includes(id);
-  }
-
-  toggleFavChannel(id: number) {
-    if (this.isFavChannel(id)) {
-      //remove id from fav (was in the list and user clicks again > removing)
-      this.favChannel.splice(this.favChannel.indexOf(id), 1) //favorite was in the list, deleting it
-    } else {
-      this.favChannel.push(id); //we push it into the list, wasn't fav yet
-    }
-    localStorage.setItem("favChannel", JSON.stringify(this.favChannel));//setting favorites item in the localStorage
-  }
-
   getContentBySlug(content_type: string, slug: string) {
     return this.http.get(BASE_URL + "/" + content_type + "/" + slug + "?_format=json");
   }
