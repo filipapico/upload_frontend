@@ -5,6 +5,10 @@
   h5 {
     color: #B5B5BE;
     margin-bottom: 10px;
+
+    &.hide {
+      display: none
+    }
   }
 
   .tags-items {
@@ -30,17 +34,20 @@
         cursor: pointer;
       }
 
-      &.show{
+      &.all {
         background-color: chocolate;
       }
     }
 
-    .tags-item-all{
+    .tags-item-all {
       display: none;
 
-      &.show{
+      &.show {
         display: revert;
       }
+    }
+    &.hide{
+      background-color: chocolate;
     }
   }
 }

@@ -10,7 +10,9 @@ import {Tags} from "../interfaces";
 export class TagsComponent {
   tagsVideos!: Tags[]
 
-  @Input() type!: string
+  @Input() all!: string
+  @Input() title!: string
+  @Input() tagslist!: string
 
   constructor(private uploadService: UploadService) {
   }

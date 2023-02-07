@@ -1,11 +1,11 @@
 <div class="container">
-  <h5>TAGS</h5>
-  <div class="tags-items" *ngIf="tagsVideos">
+  <h5 [ngClass]="title">TAGS</h5>
+  <div class="tags-items" *ngIf="tagsVideos" [ngClass]="tagslist">
     <div *ngFor="let tv of tagsVideos">
       <div class="tags-item" [routerLink]="['/videotag',tv.tid]" routerLinkActive="active">
         {{(tv.name).toLowerCase()}}
       </div>
     </div>
-    <div class="tags-item-all" [ngClass]="type">all - FAKE</div>
+    <div class="tags-item-all" [ngClass]="all">all - FAKE</div>
   </div>
 </div>
