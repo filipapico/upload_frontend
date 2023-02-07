@@ -9,19 +9,21 @@
     <a class="login-button" href="https://test-project-upskill2-grupo4v2.pantheonsite.io" target="_blank">Login</a>
   </div>
   <div class="languages">
-    <span id="portuguese" (click)="uploadService.switchLanguage('portuguese')">
+    <span id="portuguese" [ngClass]="{'active': isActive[0]}" (click)="uploadService.switchLanguage('portuguese'); toggleActive(0)">
       {{uploadService.translations["portuguese"]}}
     </span>
     |
-    <span id="english" (click)="uploadService.switchLanguage('english')">
+    <span id="english" [ngClass]="{'active': isActive[1]}" (click)="uploadService.switchLanguage('english'); toggleActive(1)">
     {{uploadService.translations["english"]}}
     </span>
   </div>
-  <!--<div class="footer">
-    Coded by
-    <a href="https://github.com/iuriabetco" target="_blank">Betco</a>,
-    <a href="https://github.com/AgatheMarieM" target="_blank">Maillol</a> and
-    <a href="https://github.com/filipapico" target="_blank">Pico</a>
-  </div>-->
+  <div class="footer-container">
+    <div class="footer">
+      Coded by
+      <a href="https://github.com/iuriabetco" target="_blank">Betco</a>,
+      <a href="https://github.com/AgatheMarieM" target="_blank">Maillol</a> and
+      <a href="https://github.com/filipapico" target="_blank">Pico</a>
+    </div>
+  </div>
 </div>
 
