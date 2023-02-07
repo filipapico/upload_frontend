@@ -32,7 +32,6 @@ const HEADERS = new HttpHeaders({
 })
 
 export class UploadService {
-  favorites: string[] = [] = JSON.parse(localStorage.getItem("favorites") || "[]");
   currentLanguage: string = '/en';
   translations = localeEN;
 
@@ -60,7 +59,6 @@ export class UploadService {
 
     this.translations = traducoes[this.currentLanguage];
   }
-  ;
 
   onChangeLanguage(callback: (lang: any) => void) {
     return this.callback_list.push(callback);
@@ -125,6 +123,10 @@ export class UploadService {
     return this.http.post(BASE_URL + '/comment', commentBody, {headers: HEADERS,})
   };
 
+  getComments(type: string, id: number) {
+    return this.http.get<Comment[]>(BASE_URL + "/api/comments/" + type + "/" + id);
+  }
+
 
   //REPORT COMMENTS
   postReport(comment_id: string, reason: string) {
@@ -138,8 +140,24 @@ export class UploadService {
   }
 
   //LIKES & DISLIKES
-  postFlag(urlLike: string, bodyLike: {}, headersLike: any) {
-    return this.http.post(LIKE_URL, bodyLike, headersLike)
+  postFlag(flagType: string, idVideo: string) {
+    let flagBody: {}
+    if (flagType == 'like') {
+      flagBody = {
+        "entity_id": [idVideo],
+        "entity_type": ["media"],
+        "flag_id": [{"target_id": "like_videos", "target_type": "flag"}],
+        "uid": ["0"]
+      }
+    } else {
+      flagBody = {
+        "entity_id": [idVideo],
+        "entity_type": ["media"],
+        "flag_id": [{"target_id": "dislike_videos", "target_type": "flag"}],
+        "uid": ["0"]
+      }
+    }
+    return this.http.post(BASE_URL + '/entity/flagging', flagBody, {headers: HEADERS,})
   }
 
   getLikes(id_video: string) {
@@ -150,10 +168,8 @@ export class UploadService {
     return this.http.get<Likes[]>(BASE_URL + "/api/dislike/videos/" + id_video)
   }
 
+//PLACE HERE LIKES LOCAL STORAGE
 
-  getComments(type: string, id: number) {
-    return this.http.get<Comment[]>(BASE_URL + "/api/comments/" + type + "/" + id);
-  }
 
   //CATEGORIES
   /* getAllCategories() {
@@ -215,6 +231,9 @@ export class UploadService {
   }
 
   //FAVORITES
+
+  favorites: string[] = [] = JSON.parse(localStorage.getItem("favorites") || "[]");
+
   getFavorites() {
     let ids = this.favorites.join(",");
     return this.http.get<Video[]>(BASE_URL + "/api/allvideos/" + ids);
@@ -236,10 +255,29 @@ export class UploadService {
     localStorage.setItem("favorites", JSON.stringify(this.favorites));
   }
 
+  flaggedVideos: string[] = [] = JSON.parse(localStorage.getItem("flagged") || "[]")
+
+  isFlagged(id: string) {
+    console.log(this.flaggedVideos)
+    return this.flaggedVideos.includes(id)
+  }
+
+  flagVideo(id: string) {
+    console.log("video is flagged")
+    if (this.isFlagged(id)) {
+      this.flaggedVideos.splice(this.flaggedVideos.indexOf(id), 1)
+    } else {
+      this.flaggedVideos.push(id)
+    }
+    localStorage.setItem("flagged", JSON.stringify(this.flaggedVideos))
+  }
+
+  //URL FRIENDLY
   getContentBySlug(content_type: string, slug: string) {
     return this.http.get(BASE_URL + "/" + content_type + "/" + slug + "?_format=json");
   }
 
+  //PAGINATION
   getPagination(content_type: string, id: string, itemsPerPage: number) {
     return this.http.get<PagesCount[]>(BASE_URL + "/api/" + content_type + "-count/" + id).pipe(map((pagesCount) => {
       let numberOfItems = 0
