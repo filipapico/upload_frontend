@@ -38,7 +38,6 @@ export class ThematicsComponent implements OnInit {
     //this.toggleTest()
     this.idTagSelected = id
     this.pNumThematics = pageThematics
-    console.log(this.pNumThematics)
     this.uploadService.getTagsInThematics(pageTags).subscribe((tags) => {
       this.tags = tags
     })
