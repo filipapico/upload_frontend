@@ -1,25 +1,15 @@
 <div class="container">
   <div>
-    <fa-icon [icon]="iconLikeActive? faThumbsUpSolid : faThumbsUp" class="fa-xl"
-             (click)="addFlagToVideo('like', this.id_video);
-             toggleLike()">
+    <fa-icon [icon]="uploadService.isFlagged(id_video)? faThumbsUpSolid : faThumbsUp" class="fa-xl"
+             (click)="addFlagToVideo('like', this.id_video)">
     </fa-icon>
   </div>
   <span *ngIf="likes">{{likes[0].count}}</span>
   <span class="separator">|</span>
   <div>
     <fa-icon [icon]="uploadService.isFlagged(id_video)? faThumbsDownSolid : faThumbsDown" class="fa-xl"
-             (click)="addFlagToVideo('dislike', this.id_video);
-             uploadService.flagVideo(id_video)">
+             (click)="addFlagToVideo('dislike', this.id_video)">
     </fa-icon>
   </div>
   <span *ngIf="dislikes">{{dislikes[0].count}}</span>
 </div>
-
-<!--FOR LATER - change icon isliked/notliked Localstorage
-<fa-icon [icon]="upbnbService.isFavorite(id) ? faHeartSolid : faHeart"></fa-icon>
-
-CLASSES ICONS - SIZE
-class="fa-2x"
-class="fa-xl"
--->

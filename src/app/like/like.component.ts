@@ -14,20 +14,10 @@ export class LikeComponent implements OnInit, OnChanges {
   faThumbsUpSolid = faThumbsUpSolid;
   faThumbsDown = faThumbsDown;
   faThumbsDownSolid = faThumbsDownSolid;
+  likes!: Likes[];
+  dislikes!: Likes[];
 
   @Input() id_video!: string
-
-  body: {} = {
-    "entity_id": [this.id_video],
-    "entity_type": ["media"],
-    "flag_id": [{"target_id": "like_videos", "target_type": "flag"}],
-    "uid": ["0"]
-  }
-
-  likes!: Likes[]
-  dislikes!: Likes[]
-  iconLikeActive = false
-  iconDislikeActive = false
 
   constructor(public uploadService: UploadService) {
   }
@@ -48,6 +38,7 @@ export class LikeComponent implements OnInit, OnChanges {
     this.uploadService.postFlag(flagtype,idVideo).subscribe((data) => {
       this.refresh();
     })
+    this.uploadService.flagVideo(idVideo)
   }
 
   refresh() {
@@ -58,13 +49,4 @@ export class LikeComponent implements OnInit, OnChanges {
       this.dislikes = dislikes
     });
   }
-
-  toggleLike() {
-    this.iconLikeActive = !this.iconLikeActive
-  }
-
-  toggleDislike() {
-    this.iconDislikeActive = !this.iconDislikeActive
-  }
-
 }
