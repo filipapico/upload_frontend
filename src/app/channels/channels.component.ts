@@ -11,10 +11,12 @@ import {faShareNodes} from "@fortawesome/free-solid-svg-icons";
 export class ChannelsComponent {
   faShareNodes = faShareNodes;
   categories?: Categories[]; //array of all the categories
+  selectedCategory?: Categories; //we're comparing selectedCategory to a single category in the ngClass (selectedCategory === category)
   channels!: Channels[];
   nid: string = " ";
   categoryPageNumber: number = 0;
   value: any;
+
 
   constructor(public uploadService: UploadService) {
   }
