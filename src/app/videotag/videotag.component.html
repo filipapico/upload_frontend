@@ -5,7 +5,7 @@
 
   <div class="pagination">
     <span class="page-number" *ngFor="let pnv of pNumsVideos">
-      <span>{{pnv}}</span>
+      <span (click)="refresh(id_tag,pnv)">{{pnv + 1}}</span>
     </span>
   </div>
 
