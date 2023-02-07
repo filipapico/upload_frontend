@@ -3,7 +3,7 @@
   <h2 routerLink="channels">{{uploadService.translations["channels"]}}</h2>
   <!-- Categories -->
   <div class="categories-list" *ngIf="categories">
-    <p class="categories" *ngFor="let category of categories" (click)="targetChannels(category.tid)">
+    <p class="categories" *ngFor="let category of categories" [ngClass]="{'active': selectedCategory === category}" (click)="targetChannels(category.tid); selectedCategory = category">
       {{category.name}}
     </p>
   </div>
