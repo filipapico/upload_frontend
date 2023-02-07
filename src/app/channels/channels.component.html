@@ -2,35 +2,40 @@
   <h2 (click)="uploadService.refreshComp()">{{uploadService.translations["channels"]}}</h2>
   <!-- Categories -->
   <div class="categories-list" *ngIf="categories">
-    <p class="categories" *ngFor="let category of categories" [ngClass]="{'active': selectedCategory === category}" (click)="targetChannels(category.tid); selectedCategory = category">
+    <p class="categories" *ngFor="let category of categories" [ngClass]="{'active': selectedCategory === category}"
+       (click)="targetChannels(category.tid); selectedCategory = category">
       {{category.name}}
     </p>
   </div>
-    <!-- INSERT PAGER HERE? -->
-    <!-- Loop through channels -->
-    <div class="main-section" *ngIf="channels">
-        <div *ngFor="let channel of channels" class="channel-card" [routerLink]="['/channel', channel.view_node.split('/').slice(-1)[0]]">
-          <div class="image"
-               style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{channel.field_cover_photo}}');">
-            <div class="logotype"
-                 style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{channel.field_logotype}}');">
-            </div>
-          </div>
-          <div class="icons" (click)="$event.stopPropagation()">
-            <fa-icon class="share-icon" (click)="copyUrl(channel.view_node)" [icon]="faShareNodes"></fa-icon>
-          </div>
-
-          <div>
-            <p class="popup-url" *ngIf="channel.view_node == this.value && popup">{{uploadService.translations["url"]}}</p>
-          </div>
-
-          <div class="info-container">
-            <h5>
-              {{channel.title}}
-            </h5>
-            <p class="card-subtitle"><span>{{uploadService.translations["by"]}} </span>{{channel.uid}}</p>
-          </div>
+  <!-- INSERT PAGER HERE? -->
+  <!-- Loop through channels -->
+  <div class="main-section" *ngIf="channels">
+    <div class="channel-card" *ngFor="let channel of channels"
+         [routerLink]="['/channel', channel.view_node.split('/').slice(-1)[0]]">
+      <div class="image"
+           style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{channel.field_cover_photo}}');">
+        <div class="logotype"
+             style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{channel.field_logotype}}');">
         </div>
+      </div>
+      <div>
+        <p class="popup-url" *ngIf="channel.view_node == this.value && popup">{{uploadService.translations["url"]}}</p>
+      </div>
+      <div class="info-container">
+        <div class="icons" (click)="$event.stopPropagation()">
+          <fa-icon class="share-icon" (click)="copyUrl(channel.view_node)" [icon]="faShareNodes"></fa-icon>
+        </div>
+        <div class="info">
+          <h5>
+            {{channel.title}}
+          </h5>
+          <p class="card-subtitle">
+            <span>{{uploadService.translations["by"]}} </span>
+            {{channel.uid}}
+          </p>
+        </div>
+      </div>
     </div>
+  </div>
 </div>
 
