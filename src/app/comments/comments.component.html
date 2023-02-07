@@ -41,7 +41,7 @@
                     <fa-icon [icon]="faTimesCircle" (click)="Closepopup()"></fa-icon>
                   </div>
                   <h4>
-                    Report "{{entityComments[index_cid[0]].field_comment_name || entityComments[index_cid[0]].field_comment_name_media}}" comment:</h4>
+                    {{uploadService.translations["report"]}} "{{entityComments[index_cid[0]].field_comment_name || entityComments[index_cid[0]].field_comment_name_media}}" {{uploadService.translations["comment"]}}:</h4>
                   <div>
                     <input type="text" [(ngModel)]="field_reason" class="form-control" required
                            minlength="4" maxlength="250" style="height:100px" placeholder="Reason*">

@@ -25,7 +25,9 @@ const pt: Traducao = {
   "show more": "VER MAIS",
   "newest channels": "Canais recentes",
   "favorite videos": "Vídeos Favoritos",
-  "you don't have favorite videos, add some...": "Não tem vídeos favoritos, adicione alguns..."
+  "you don't have favorite videos, add some...": "Não tem vídeos favoritos, adicione alguns...",
+  "report": "Reportar,",
+  "comment": "comentário",
 }
 
 export default pt;
