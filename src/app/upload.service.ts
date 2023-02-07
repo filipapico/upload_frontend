@@ -186,7 +186,7 @@ export class UploadService {
   }
 
   getThematicsByTag(id: string, pNum: number) {
-    return this.http.get<Thematics[]>(BASE_URL + "/api/thematics-tag/" + id + '?page='+pNum)
+    return this.http.get<Thematics[]>(BASE_URL + "/api/thematics-tag/" + id + '?page=' + pNum)
   }
 
   getThematicDetails(id: string) {
@@ -240,21 +240,23 @@ export class UploadService {
     return this.http.get(BASE_URL + "/" + content_type + "/" + slug + "?_format=json");
   }
 
-  getPagination(content_type: string, id: string) {
+  getPagination(content_type: string, id: string, itemsPerPage: number) {
     return this.http.get<PagesCount[]>(BASE_URL + "/api/" + content_type + "-count/" + id).pipe(map((pagesCount) => {
-      let numberOfThematics = parseInt(pagesCount[0].nid)
-      const itemsPerPage = 4
-      let numberOfPages = Math.ceil(numberOfThematics / itemsPerPage)
+      let numberOfItems = 0
+      if (!pagesCount[0].nid) {
+        numberOfItems = parseInt(pagesCount[0].mid)
+      } else {
+        numberOfItems = parseInt(pagesCount[0].nid)
+      }
+      //const itemsPerPage = 6
+      let numberOfPages = Math.ceil(numberOfItems / itemsPerPage)
       let pageNumbers = new Array(numberOfPages)
       for (let i = 0; i < numberOfPages; i++) {
         pageNumbers[i] = i
       }
       return {
-        itemsPerPage,
-        numberOfPages,
-        pageNumbers,
-        pagesCount
+        pageNumbers
       }
-    }));
+    }))
   }
 }
