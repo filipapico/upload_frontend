@@ -10,7 +10,15 @@
       <p>{{uploadService.translations["your search did not match any videos."]}}</p>
     </ng-template>
 
+    <!--PAGINATION-->
     <div class="pagination">
+      <span class="page-number" *ngFor="let pnv of pNumsVideos">
+        <span (click)="refresh(pnv)">{{pnv+1}}</span>
+      </span>
+    </div>
+
+    <!--OLD PAGINATION-->
+    <!--<div class="pagination">
       <div class="page-item">
         <a class="page-link" (click)="pageSelected('Previous')">
           <fa-icon [icon]="faAngleLeft"></fa-icon>
@@ -24,7 +32,7 @@
           <fa-icon [icon]="faAngleRight"></fa-icon>
         </a>
       </div>
-    </div>
+    </div>-->
 
     <div class="latest-video-container">
       <app-contentcard class="video-card" type="video" *ngFor="let lv of latestVideos"
