@@ -18,8 +18,8 @@ import {map} from "rxjs";
 
 
 let BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
-const LIKE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io/entity/flagging";
-
+let COMMENT_SLUG = '/comment';
+let FLAG_SLUG = '/entity/flagging';
 
 const HEADERS = new HttpHeaders({
   'X-CSRF-Token': 'VQrAx6wI4cv-J3BdqLRhIbN5gfUUCGf9sZnR_teei2U',
@@ -120,7 +120,7 @@ export class UploadService {
         ]
       }
     }
-    return this.http.post(BASE_URL + '/comment', commentBody, {headers: HEADERS,})
+    return this.http.post(BASE_URL + COMMENT_SLUG, commentBody, {headers: HEADERS,})
   };
 
   getComments(type: string, id: number) {
@@ -130,7 +130,7 @@ export class UploadService {
 
   //REPORT COMMENTS
   postReport(comment_id: string, reason: string) {
-    return this.http.post(BASE_URL + '/entity/flagging', {
+    return this.http.post(BASE_URL + FLAG_SLUG, {
       "entity_id": [comment_id],
       "entity_type": ["comment"],
       "field_reason": [reason],
@@ -157,7 +157,7 @@ export class UploadService {
         "uid": ["0"]
       }
     }
-    return this.http.post(BASE_URL + '/entity/flagging', flagBody, {headers: HEADERS,})
+    return this.http.post(BASE_URL + FLAG_SLUG, flagBody, {headers: HEADERS,})
   }
 
   getLikes(id_video: string) {
