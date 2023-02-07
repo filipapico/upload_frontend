@@ -44,6 +44,7 @@ export class ChannelComponent {
         this.refresh();
       })
     })
+    this.refresh();//run when the component is initialized, even if no changes in language or parameters yet
   }
 
   getHashtag(tags: string) {
