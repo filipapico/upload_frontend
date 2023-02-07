@@ -35,10 +35,10 @@ export class LikeComponent implements OnInit, OnChanges {
   }
 
   addFlagToVideo(flagtype: string, idVideo: string) {
-    this.uploadService.postFlag(flagtype,idVideo).subscribe((data) => {
+    this.uploadService.postFlag(flagtype, idVideo).subscribe((data) => {
       this.refresh();
     })
-    this.uploadService.flagVideo(idVideo)
+    this.uploadService.flagVideo(flagtype, idVideo)
   }
 
   refresh() {
