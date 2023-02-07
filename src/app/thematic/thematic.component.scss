@@ -54,6 +54,10 @@
   .thematic-main {
     padding: 20px;
 
+    h3{
+      padding: 30px 0 0 0;
+    }
+
     .thematic-links {
       border: 1px solid darkgray;
       padding: 20px;
@@ -70,14 +74,4 @@
 
     }
   }
-
-  /*.thematic-lateral {
-    width: 30%;
-    padding: 10px;
-
-    .thematic-suggested {
-      border: 1px solid darkgray;
-      border-radius: 12px;
-    }
-  }*/
 }

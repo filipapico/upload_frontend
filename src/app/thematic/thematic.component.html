@@ -21,7 +21,7 @@
       <!--BODY-->
       <div>{{thematicDetails[0].body}}</div>
       <!--LINKS-->
-      <h4>Related links</h4>
+      <h3>Related links</h3>
       <div class="thematic-links">
         <div *ngFor="let t of thematicLinks">
           <a [href]=t.uri>{{t.title}}</a>
@@ -29,7 +29,7 @@
       </div>
 
       <!--VIDEOS-->
-      <h4>Thematic videos</h4>
+      <h3>Thematic videos</h3>
       <div class="thematic-videos" *ngIf="thematicDetails">
         <app-videotag *ngFor="let td of thematicDetails"
                       [idTag]=td.tid>
