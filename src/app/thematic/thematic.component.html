@@ -31,9 +31,12 @@
       <!--VIDEOS-->
       <h3>Thematic videos</h3>
       <div class="thematic-videos" *ngIf="thematicDetails">
-        <app-videotag *ngFor="let td of thematicDetails"
-                      [idTag]=td.tid>
-        </app-videotag>
+
+        <!--HOW TO-->
+          <app-videotag title="hide" tagslist="hide" all="hide"
+                        *ngFor="let td of thematicDetails"
+                        [idTag]=td.tid>
+          </app-videotag>
       </div>
     </div>
   </div>
