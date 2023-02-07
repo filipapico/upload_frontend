@@ -168,8 +168,23 @@ export class UploadService {
     return this.http.get<Likes[]>(BASE_URL + "/api/dislike/videos/" + id_video)
   }
 
-//PLACE HERE LIKES LOCAL STORAGE
+  flaggedVideos: string[] = JSON.parse(localStorage.getItem("flagged") || "[]")
 
+  isFlagged(id: string) {
+    console.log(this.flaggedVideos)
+    console.log(id)
+    return this.flaggedVideos.includes(id)
+  }
+
+  flagVideo(id: string) {
+    console.log("video is flagged")
+    if (this.isFlagged(id)) {
+      this.flaggedVideos.splice(this.flaggedVideos.indexOf(id), 1)
+    } else {
+      this.flaggedVideos.push(id)
+    }
+    localStorage.setItem("flagged", JSON.stringify(this.flaggedVideos))
+  }
 
   //CATEGORIES
   /* getAllCategories() {
@@ -231,7 +246,6 @@ export class UploadService {
   }
 
   //FAVORITES
-
   favorites: string[] = [] = JSON.parse(localStorage.getItem("favorites") || "[]");
 
   getFavorites() {
@@ -253,23 +267,6 @@ export class UploadService {
       this.favorites.push(id);
     }
     localStorage.setItem("favorites", JSON.stringify(this.favorites));
-  }
-
-  flaggedVideos: string[] = [] = JSON.parse(localStorage.getItem("flagged") || "[]")
-
-  isFlagged(id: string) {
-    console.log(this.flaggedVideos)
-    return this.flaggedVideos.includes(id)
-  }
-
-  flagVideo(id: string) {
-    console.log("video is flagged")
-    if (this.isFlagged(id)) {
-      this.flaggedVideos.splice(this.flaggedVideos.indexOf(id), 1)
-    } else {
-      this.flaggedVideos.push(id)
-    }
-    localStorage.setItem("flagged", JSON.stringify(this.flaggedVideos))
   }
 
   //URL FRIENDLY
