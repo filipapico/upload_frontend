@@ -185,14 +185,14 @@ export class UploadService {
       } else {
         this.likedVideos.push(id)
       }
-      localStorage.setItem("flagged", JSON.stringify(this.likedVideos))
+      localStorage.setItem("liked", JSON.stringify(this.likedVideos))
     } else {
       if (this.isFlagged(flagType, id)) {
         this.dislikedVideos.splice(this.dislikedVideos.indexOf(id), 1)
       } else {
         this.dislikedVideos.push(id)
       }
-      localStorage.setItem("flagged", JSON.stringify(this.dislikedVideos))
+      localStorage.setItem("disliked", JSON.stringify(this.dislikedVideos))
     }
   }
 
