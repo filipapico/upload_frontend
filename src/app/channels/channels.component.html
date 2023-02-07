@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <h2 routerLink="channels">{{uploadService.translations["channels"]}}</h2>
+  <h2 (click)="uploadService.refreshComp()">{{uploadService.translations["channels"]}}</h2>
   <!-- Categories -->
   <div class="categories-list" *ngIf="categories">
     <p class="categories" *ngFor="let category of categories" [ngClass]="{'active': selectedCategory === category}" (click)="targetChannels(category.tid); selectedCategory = category">
@@ -9,8 +9,7 @@
     <!-- INSERT PAGER HERE? -->
     <!-- Loop through channels -->
     <div class="main-section" *ngIf="channels">
-      <div *ngFor="let channel of channels">
-        <div class="channel-card" [routerLink]="['/channel', channel.view_node.split('/').slice(-1)[0]]">
+        <div *ngFor="let channel of channels" class="channel-card" [routerLink]="['/channel', channel.view_node.split('/').slice(-1)[0]]">
           <div class="image"
                style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{channel.field_cover_photo}}');">
             <div class="logotype"
@@ -32,7 +31,6 @@
             <p class="card-subtitle"><span>{{uploadService.translations["by"]}} </span>{{channel.uid}}</p>
           </div>
         </div>
-      </div>
     </div>
 </div>
 
