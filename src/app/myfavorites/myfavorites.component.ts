@@ -13,12 +13,19 @@ export class MyfavoritesComponent {
   constructor(public uploadService: UploadService) {
   }
 
-  ngOnInit(): void {
+  refresh() {
     this.uploadService.getFavorites().subscribe((favoritos) => {
       this.favorites_list = favoritos
-      console.log(this.favorites_list)
+
     });
 
+  }
+
+  ngOnInit(): void {
+    this.uploadService.onChangeLanguage(() => {
+      this.refresh(); //triggered when the language changes
+    });
+    this.refresh();
   }
 
 }
