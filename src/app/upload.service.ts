@@ -130,7 +130,7 @@ export class UploadService {
 
   //REPORT COMMENTS
   postReport(comment_id: string, reason: string) {
-    return this.http.post(LIKE_URL, {
+    return this.http.post(BASE_URL + '/entity/flagging', {
       "entity_id": [comment_id],
       "entity_type": ["comment"],
       "field_reason": [reason],
