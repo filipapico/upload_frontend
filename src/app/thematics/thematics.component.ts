@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UploadService} from "../upload.service";
-import {Thematics, Tags, Thematic, PagesCount} from "../interfaces";
+import {Thematics, Tags} from "../interfaces";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
