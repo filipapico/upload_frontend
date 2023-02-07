@@ -34,6 +34,9 @@ const HEADERS = new HttpHeaders({
 export class UploadService {
   currentLanguage: string = '/en';
   translations = localeEN;
+  likedVideos: string[] = JSON.parse(localStorage.getItem("flagged") || "[]")
+  dislikedVideos: string[] = JSON.parse(localStorage.getItem("flagged") || "[]")
+  favorites: string[] = [] = JSON.parse(localStorage.getItem("favorites") || "[]");
 
   constructor(public http: HttpClient) {
   }
@@ -168,22 +171,29 @@ export class UploadService {
     return this.http.get<Likes[]>(BASE_URL + "/api/dislike/videos/" + id_video)
   }
 
-  flaggedVideos: string[] = JSON.parse(localStorage.getItem("flagged") || "[]")
-
-  isFlagged(id: string) {
-    console.log(this.flaggedVideos)
-    console.log(id)
-    return this.flaggedVideos.includes(id)
+  isFlagged(flagType: string, id: string) {
+    if (flagType == 'like') {
+      return this.likedVideos.includes(id)
+    }
+    return this.dislikedVideos.includes(id)
   }
 
-  flagVideo(id: string) {
-    console.log("video is flagged")
-    if (this.isFlagged(id)) {
-      this.flaggedVideos.splice(this.flaggedVideos.indexOf(id), 1)
+  flagVideo(flagType: string, id: string) {
+    if (flagType == 'like') {
+      if (this.isFlagged(flagType, id)) {
+        this.likedVideos.splice(this.likedVideos.indexOf(id), 1)
+      } else {
+        this.likedVideos.push(id)
+      }
+      localStorage.setItem("flagged", JSON.stringify(this.likedVideos))
     } else {
-      this.flaggedVideos.push(id)
+      if (this.isFlagged(flagType, id)) {
+        this.dislikedVideos.splice(this.dislikedVideos.indexOf(id), 1)
+      } else {
+        this.dislikedVideos.push(id)
+      }
+      localStorage.setItem("flagged", JSON.stringify(this.dislikedVideos))
     }
-    localStorage.setItem("flagged", JSON.stringify(this.flaggedVideos))
   }
 
   //CATEGORIES
@@ -246,8 +256,6 @@ export class UploadService {
   }
 
   //FAVORITES
-  favorites: string[] = [] = JSON.parse(localStorage.getItem("favorites") || "[]");
-
   getFavorites() {
     let ids = this.favorites.join(",");
     return this.http.get<Video[]>(BASE_URL + "/api/allvideos/" + ids);
