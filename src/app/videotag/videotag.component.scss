@@ -1,5 +1,4 @@
-.container{
-  padding-top: 40px;
+.container {
 
   .pagination {
     display: flex;
@@ -17,15 +16,54 @@
     }
   }
 
-  .videos-tag{
+  .videos-tag {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
 
     app-contentcard {
-      width: 30%;
+      width: 31%;
       margin: 5px 2px;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+    .videos-tag {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+
+      app-contentcard {
+        width: 100%;
+        margin: 5px 2px;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 992px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+
+    .videos-tag {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+
+      app-contentcard {
+        width: 48%;
+        margin: 5px 2px;
+      }
     }
   }
 }
