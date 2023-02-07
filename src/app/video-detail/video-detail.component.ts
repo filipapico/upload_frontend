@@ -61,10 +61,12 @@ export class VideoDetailComponent implements OnChanges {
             return;
           }
           this.id = data.mid[0].value;
-          this.refresh()
+          this.refresh();
         })
       });
     }
+    this.refresh();
+    // third call necessary to initialize the component correctly if the 2 previous conditions are not filled
   }
 
   refresh() {
