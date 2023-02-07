@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {UploadService} from "../upload.service";
-import {PagesCount, Tags, Video} from "../interfaces";
+import {Video} from "../interfaces";
 import {ActivatedRoute} from "@angular/router";
 
 @Component({
@@ -14,33 +14,34 @@ export class VideotagComponent implements OnInit {
   pNumsVideos!: number[]
   videosPerPage: number = 6 //needs to be according to pagination in the view/rest export set in DRUPAL
 
-  @Input() id_tag!: string
+  @Input() idTag!: string
 
   constructor(private uploadService: UploadService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
-    if (!this.id_tag) {
+    if (!this.idTag) {
       this.route.params.subscribe(params => {
         // Get the updated tag_id from the URL
-        this.id_tag = params['id'];
-        this.refresh(this.id_tag, this.pNumVideos)
+        this.idTag = params['id'];
+        this.refresh(this.idTag, 0)
       })
     } else {
-      this.refresh(this.id_tag, this.pNumVideos)
+      this.refresh(this.idTag, this.pNumVideos)
     }
   }
 
+
   refresh(tag: string, pageVideos: number) {
     this.pNumVideos = pageVideos
-    this.uploadService.getVideosByTag(this.id_tag, this.pNumVideos).subscribe((videosByTag) => {
+    this.uploadService.getVideosByTag(this.idTag, this.pNumVideos).subscribe((videosByTag) => {
       this.videosByTag = videosByTag
     })
 
     this.uploadService.getPagination
-    ("videos-tag", this.id_tag, this.videosPerPage).subscribe(({
-                                             pageNumbers
-                                           }) => {
+    ("videos-tag", this.idTag, this.videosPerPage).subscribe(({
+                                                                 pageNumbers
+                                                               }) => {
       this.pNumsVideos = pageNumbers
     })
   }
