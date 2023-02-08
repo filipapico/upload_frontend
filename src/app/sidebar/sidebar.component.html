@@ -1,16 +1,10 @@
 <div class="wrapper">
   <div class="mobile-header">
-<!--
-      <img class="image" src="./assets/upload.svg" alt="Upload_logo" (click)="uploadService.refreshComp()">
--->
-    <div class="image"
-         style="background-image: url('./assets/upload.svg');">
-      <div class="burger-icon" (click)="toggleMenu()">
-        <fa-icon [icon]="isMenuOpen? faXmark : faBars"></fa-icon>
-      </div>
+    <img class="image" src="./assets/upload.svg" alt="Upload_logo" (click)="uploadService.refreshComp()">
+    <div class="burger-icon" (click)="toggleMenu()">
+      <fa-icon [icon]="isMenuOpen? faXmark : faBars"></fa-icon>
     </div>
   </div>
-
   <div class="main" [class.is-open]="isMenuOpen">
     <div class="icon-logo">
       <img src="./assets/upload.svg" alt="Upload_logo" routerLink="homepage" (click)="uploadService.refreshComp()">
