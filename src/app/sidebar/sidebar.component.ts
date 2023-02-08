@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {UploadService} from "../upload.service";
+import {faBars, faXmark} from "@fortawesome/free-solid-svg-icons";
+
 
 @Component({
   selector: 'app-sidebar',
@@ -8,6 +10,9 @@ import {UploadService} from "../upload.service";
 })
 export class SidebarComponent {
   isActive: boolean[] = [false, false];
+  faBars = faBars;
+  faXmark = faXmark;
+  isMenuOpen = false;
 
   constructor(public uploadService: UploadService) {
   }
@@ -17,5 +22,8 @@ export class SidebarComponent {
     this.isActive[i] = true;
   }
 
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 
 }
