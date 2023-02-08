@@ -2,22 +2,21 @@
   <h2>{{uploadService.translations["thematics"]}}</h2>
 
   <!--TAGS-->
-  <div class="tags" *ngIf="tags">
-    <div class="tags-items">
-      <div class="tags-item" (click)="getLessTags(pNumTags)"
-           *ngIf="this.visibleTag == true && tags.length==8 || tags.length<8">
-        <
-      </div>
-      <div class="tags-item" *ngFor="let t of tags">
-        <div (click)="refresh(pNumTags,pNumsThematics[0],t.tid)">
-          <!--[ngClass]="act(t.tid)?'sel':'unsel'"-->
-          #{{t.name.toLowerCase()}}</div>
-      </div>
-      <div class="tags-item" (click)="getMoreTags(pNumTags);toggleVisibleTag()" *ngIf="tags.length==8">
-        >
-      </div>
+  <div class="tags-items" *ngIf="tags">
+    <div class="tags-item" (click)="getLessTags(pNumTags)"
+         *ngIf="this.visibleTag == true && tags.length==8 || tags.length<8">
+      <
+    </div>
+    <div class="tags-item" *ngFor="let t of tags">
+      <div (click)="refresh(pNumTags,pNumsThematics[0],t.tid)">
+        <!--[ngClass]="act(t.tid)?'sel':'unsel'"-->
+        #{{t.name.toLowerCase()}}</div>
+    </div>
+    <div class="tags-item" (click)="getMoreTags(pNumTags);toggleVisibleTag()" *ngIf="tags.length==8">
+      >
     </div>
   </div>
+
 
   <!--PAGINATION THEMATICS-->
   <div class="pagination">
@@ -27,24 +26,22 @@
   </div>
 
   <!--THEMATICS-->
-  <div class="main-content">
-    <div class="thematics" *ngIf="thematics">
-      <div class="thematic-item" *ngFor="let t of thematics"
-           [routerLink]="['/thematic', t.view_node.split('/').slice(-1)[0]]">
-        <!--HEADER-->
-        <div class="thematic-header">
-          <div class="thematic-thumbnail"
-               style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_thumbnail}}');">
-          </div>
-          <div class="info">
-            <h5>{{t.title}}</h5>
-            <p>{{t.uid}}</p>
-          </div>
+  <div class="main-content" *ngIf="thematics">
+    <div class="thematic-item" *ngFor="let t of thematics"
+         [routerLink]="['/thematic', t.view_node.split('/').slice(-1)[0]]">
+      <!--HEADER-->
+      <div class="thematic-header">
+        <div class="thematic-thumbnail"
+             style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_thumbnail}}');">
         </div>
-        <!--IMAGE-->
-        <div class="thematic-header-image"
-             style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_header_image}}');">
+        <div class="info">
+          <h5>{{t.title}}</h5>
+          <p>{{t.uid}}</p>
         </div>
+      </div>
+      <!--IMAGE-->
+      <div class="thematic-header-image"
+           style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{t.field_thematic_header_image}}');">
       </div>
     </div>
   </div>
