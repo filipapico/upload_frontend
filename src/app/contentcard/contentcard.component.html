@@ -31,7 +31,7 @@
   <div class="playlist-icon">
     <img src="assets/bookmark-playlist-big.png">
   </div>
-  <div class="popup-url" *ngIf="popup">
-    <p>{{uploadService.translations["url"]}}</p>
+  <div *ngIf="popup">
+    <p class="popup-url">{{uploadService.translations["url"]}}</p>
   </div>
 </div>

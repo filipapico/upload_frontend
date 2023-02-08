@@ -17,7 +17,6 @@
       width: 100%;
       position: relative;
 
-
       .logotype {
         aspect-ratio: 1/1;
         background-size: cover;
@@ -78,6 +77,9 @@
         cursor: pointer;
         color: #979797;
         font-size: 1rem;
+        position: relative;
+
+
       }
     }
 
@@ -320,9 +322,9 @@
     .popup-url {
       background-color: #363434;
       border-radius: 5px;
-      position: relative;
-      top: -95px;
-      left: 305px;
+      position: absolute;
+      bottom: -5px;
+      right: -40px;
       z-index: 1;
       width: fit-content;
     }
@@ -331,9 +333,9 @@
   .popup-url {
     background-color: #363434;
     border-radius: 5px;
-    position: relative;
-    top: -95px;
-    left: 315px;
+    position: absolute;
+    bottom: 0px;
+    right: -0px;
     z-index: 1;
     width: fit-content;
   }
