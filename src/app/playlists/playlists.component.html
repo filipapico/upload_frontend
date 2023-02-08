@@ -1,56 +1,55 @@
-<h2 (click)="categorySelected(id)">Playlists</h2>
+  <h2 (click)="categorySelected(id)">Playlists</h2>
 
-<div class="category-container">
-  <div class="category-list" *ngFor="let category of categories" [ngClass]="{'active': selectedC === category}"
-       (click)="categorySelected(category.tid); selectedC = category">
-    {{category.name}}
+  <div class="category-container">
+    <div class="category-list" *ngFor="let category of categories" [ngClass]="{'active': selectedC === category}"
+         (click)="categorySelected(category.tid); selectedC = category">
+      {{category.name}}
+    </div>
+    <div class="category-list" (click)="categorySelected(id)"> ALL</div>
   </div>
- <div class="category-list" (click)="categorySelected(id)"> ALL</div>
-</div>
 
-<div class="pagination">
-  <div class="page-item">
-    <a class="page-link" (click)="pageSelected('Previous')"><fa-icon [icon]="faAngleLeft"></fa-icon></a>
+  <div class="pagination">
+    <div class="page-item">
+      <a class="page-link" (click)="pageSelected('Previous')">
+        <fa-icon [icon]="faAngleLeft"></fa-icon>
+      </a>
+    </div>
+    <div class="page-number" *ngIf="pNum">
+      <a class="page-link" (click)="pageSelected(pNum)"> {{pNum + 1}}</a>
+    </div>
+    <div class="page-item">
+      <a class="page-link" (click)="pageSelected('Next')">
+        <fa-icon [icon]="faAngleRight"></fa-icon>
+      </a>
+    </div>
   </div>
-  <div class="page-number" *ngIf="pNum">
-    <a class="page-link" (click)="pageSelected(pNum)"> {{pNum + 1}}</a>
-  </div>
-  <div class="page-item">
-    <a class="page-link" (click)="pageSelected('Next')"><fa-icon [icon]="faAngleRight"></fa-icon></a>
-  </div>
-</div>
 
-<div class="container">
-  <div class="favorites-card" routerLink="/favorites" routerLinkActive="active">
-    <div>
-      <p>{{uploadService.translations["favorite videos"]}}</p>
-      <ng-template #noFavorite>
-        <h4>{{uploadService.translations["you don't have favorite videos, add some..."]}}</h4>
-      </ng-template>
-      <div *ngFor="let fl of favorites_list | slice:0:6" class="favorites-img" (change)="showMessage(favorites_list)">
-        <img src="https://dev-project-upskill2-grupo4v2.pantheonsite.io{{fl.thumbnail__target_id}}">
+  <div class="main">
+    <div class="favorites-card" routerLink="/favorites" routerLinkActive="active">
+      <div>
+        <p>{{uploadService.translations["favorite videos"]}}</p>
+        <ng-template #noFavorite>
+          <h4>{{uploadService.translations["you don't have favorite videos, add some..."]}}</h4>
+        </ng-template>
+        <div *ngFor="let fl of favorites_list | slice:0:6" class="favorites-img" (change)="showMessage(favorites_list)">
+          <img src="https://dev-project-upskill2-grupo4v2.pantheonsite.io{{fl.thumbnail__target_id}}">
+        </div>
+      </div>
+      <div class="favorite-icon" *ngIf="favorites_list?.length; else noFavorite">
+        <img src="assets/favorite-playlist.png">
       </div>
     </div>
-    <div class="favorite-icon" *ngIf="favorites_list?.length; else noFavorite">
-      <img src="assets/favorite-playlist.png">
+    <div class="playlist-container" *ngFor="let playlist of playlists">
+      <app-contentcard type="playlists"
+                       [title]="playlist.title"
+                       [source]="playlist.name"
+                       [logotype]="playlist.user_picture"
+                       [image]="playlist.thumbnail__target_id"
+                       [subtitle]="playlist.field_playlist_category"
+                       [field_media_oembed_video]="playlist.view_node"
+                       [routerLink]="['/playlist', playlist.view_node.split('/').slice(-1)[0]]"
+      ></app-contentcard>
     </div>
   </div>
 
-
-  <div class="playlist-container" *ngFor="let playlist of playlists">
-    <app-contentcard type="playlists"
-                     [title]="playlist.title"
-                     [source]="playlist.name"
-                     [logotype]="playlist.user_picture"
-                     [image]="playlist.thumbnail__target_id"
-                     [subtitle]="playlist.field_playlist_category"
-                     [field_media_oembed_video]="playlist.view_node"
-                     [routerLink]="['/playlist', playlist.view_node.split('/').slice(-1)[0]]"
-   ></app-contentcard>
-<!--    <div class="playlist-icon">
-      <img src="assets/bookmark-playlist-big.png">
-    </div>-->
-
-  </div>
-</div>
 
