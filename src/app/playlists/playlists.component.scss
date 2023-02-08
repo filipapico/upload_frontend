@@ -1,128 +1,114 @@
-.pagination {
-  display: flex;
-  justify-content: space-between;
-  margin-right: 30%;
-  margin-left: 30%;
-}
+  .pagination {
+    display: flex;
+    justify-content: space-between;
+    margin-right: 30%;
+    margin-left: 30%;
+  }
 
-.category-container {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  justify-content: center;
+  .category-container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: center;
 
-  .category-list {
-    color: lightgrey;
-    padding: 4px 6px;
-    border: 1px solid #b5b5be69;
-    margin: 2px;
-    border-radius: 6px;
-    text-decoration: none;
+    .category-list {
+      color: lightgrey;
+      padding: 4px 6px;
+      border: 1px solid #b5b5be69;
+      margin: 2px;
+      border-radius: 6px;
+      text-decoration: none;
 
-    &:hover {
-      font-weight: bold;
-      border: 1px solid white;
-      cursor: pointer;
-    }
+      &:hover {
+        font-weight: bold;
+        border: 1px solid white;
+        cursor: pointer;
+      }
 
-    &.active {
-      border: 2px solid white;
-      font-weight: bold;
+      &.active {
+        border: 2px solid white;
+        font-weight: bold;
+      }
     }
   }
-}
 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  .main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
 
-  .favorites-card {
-    position: relative;
-    width: 350px;
-    height: 250px;
-    background: #1C1C24;
-    border-radius: 20px;
-    margin: 10px 5px;
-    cursor: pointer;
+    .favorites-card {
+      position: relative;
+      width: 350px;
+      height: 250px;
+      background: #1C1C24;
+      border-radius: 20px;
+      margin: 10px 5px;
+      cursor: pointer;
 
-    h4 {
-      text-align: center;
-      margin: 50px;
-    }
+      h4 {
+        text-align: center;
+        margin: 50px;
+      }
 
-    p {
-      color: #FFFFFF;
-      text-align: center;
-      font-weight: bold;
-      position: absolute;
-      top: 200px;
-      right: 100px;
-    }
+      p {
+        color: #FFFFFF;
+        text-align: center;
+        font-weight: bold;
+        position: absolute;
+        top: 200px;
+        right: 100px;
+      }
 
-    div {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      div {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
 
-      .favorites-img {
+        .favorites-img {
+          img {
+            width: 116px;
+            height: 100px;
+          }
+        }
+      }
+
+      .favorite-icon {
+        position: absolute;
+        //background-image: linear-gradient(to right, #1c1c24, #7c7c7c);
+        background: linear-gradient(#1c1c24, transparent);
+        width: 33.5%;
+        height: 80%;
+        top: 0px;
+        left: 0px;
+        //opacity: 90%;
+        border-radius: 15px 0px 0px 0px;
+
         img {
-          width: 116px;
-          height: 100px;
+          position: absolute;
+          width: 50px;
+          top: 65px;
+          left: 24px;
         }
       }
     }
-    .favorite-icon {
-      position: absolute;
-      //background-image: linear-gradient(to right, #1c1c24, #7c7c7c);
-      background: linear-gradient(#1c1c24, transparent);
-      width: 33.5%;
-      height: 80%;
-      top: 0px;
-      left: 0px;
-      //opacity: 90%;
-      border-radius: 15px 0px 0px 0px;
 
-      img {
-        position: absolute;
-        width: 50px;
-        top: 65px;
-        left: 24px;
-      }
+    .playlist-container {
+      //position: relative;
+      cursor: pointer;
     }
   }
 
-  .playlist-container {
-    position: relative;
+  h1 {
     cursor: pointer;
   }
-/*
-  .playlist-icon {
-    position: absolute;
-    //background-image: linear-gradient(to right, #1c1c24, #7c7c7c);
-    background: linear-gradient(#1c1c24, transparent);
-    width: 100px;
-    height: 185px;
-    top: 10px;
-    left: 5px;
-    //opacity: 90%;
-    border-radius: 15px 0px 0px 0px;
 
-    img {
-      position: absolute;
-      width: 50px;
-      top: 65px;
-      left: 24px;
-    }
 
-  }*/
+@media only screen and (max-width: 500px) {
+
+  h2 {
+    padding: 0.5rem;
+  }
 
 }
-
-
-h1 {
-  cursor: pointer;
-}
-
-
 
