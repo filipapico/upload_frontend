@@ -42,7 +42,7 @@
 
     .channel-card {
       border-radius: 20px 0 20px 0;
-      background: #575757;
+      background-color: #575757;
       margin: 6px 2px;
       position: relative;
       width: 30%;
@@ -52,8 +52,8 @@
         background-color: #363434;
         border-radius: 5px;
         position: absolute;
-        bottom: 40px;
-        left: -15px;
+        bottom: 5px;
+        left: 0;
         z-index: 1;
         width: fit-content;
       }
