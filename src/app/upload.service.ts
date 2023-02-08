@@ -180,18 +180,22 @@ export class UploadService {
 
   flagVideo(flagType: string, id: string) {
     if (flagType == 'like') {
-      if (this.isFlagged(flagType, id)) {
-        this.likedVideos.splice(this.likedVideos.indexOf(id), 1)
-      } else {
-        this.likedVideos.push(id)
+      this.likedVideos.push(id)
+      //add like
+      if (this.isFlagged('dislike', id)) {
+        //remove dislike
+        this.dislikedVideos.splice(this.dislikedVideos.indexOf(id), 1)
       }
       localStorage.setItem("liked", JSON.stringify(this.likedVideos))
+      localStorage.setItem("disliked", JSON.stringify(this.dislikedVideos))
     } else {
-      if (this.isFlagged(flagType, id)) {
-        this.dislikedVideos.splice(this.dislikedVideos.indexOf(id), 1)
-      } else {
-        this.dislikedVideos.push(id)
+      //add dislike
+      this.dislikedVideos.push(id)
+      if (this.isFlagged('like', id)){
+        //remove like
+        this.likedVideos.splice(this.likedVideos.indexOf(id), 1)
       }
+      localStorage.setItem("liked", JSON.stringify(this.likedVideos))
       localStorage.setItem("disliked", JSON.stringify(this.dislikedVideos))
     }
   }

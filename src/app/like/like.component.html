@@ -2,6 +2,8 @@
   <div>
     <fa-icon [icon]="uploadService.isFlagged('like',id_video)? faThumbsUpSolid : faThumbsUp" class="fa-xl"
              (click)="addFlagToVideo('like', this.id_video)">
+      <!--If we'd like the fa-icon to be inaccessible after 1 click...
+      [ngClass]="{'clicked':la===this.id_video}" and with click la=this.id_video-->
     </fa-icon>
   </div>
   <span *ngIf="likes">{{likes[0].count}}</span>
