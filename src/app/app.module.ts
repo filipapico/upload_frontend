@@ -27,8 +27,7 @@ import {SuggestionlistComponent} from './suggestionlist/suggestionlist.component
 import {SidecardComponent} from './sidecard/sidecard.component';
 import {AvatarModule} from 'ngx-avatar';
 import {MyfavoritesComponent} from './myfavorites/myfavorites.component';
-import {CollapseComponent} from './collapse/collapse.component';
-import {CardModule, CollapseModule} from "@coreui/angular";
+import {CardModule} from "@coreui/angular";
 import {PaginationComponent} from './pagination/pagination.component';
 import { LikeComponent } from './like/like.component';
 import { SuggestionvideosComponent } from './suggestionvideos/suggestionvideos.component';
@@ -54,7 +53,6 @@ import { VideotagComponent } from './videotag/videotag.component';
     SuggestionlistComponent,
     SidecardComponent,
     MyfavoritesComponent,
-    CollapseComponent,
     PaginationComponent,
     LikeComponent,
     SuggestionvideosComponent,
@@ -70,7 +68,6 @@ import { VideotagComponent } from './videotag/videotag.component';
         AutocompleteLibModule,
         AvatarModule,
         CardModule,
-        CollapseModule,
         BrowserAnimationsModule,
         PaginationModule
     ],
