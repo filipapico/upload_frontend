@@ -1,22 +1,22 @@
-<h2>{{uploadService.translations["favorite videos"]}}</h2>
+<div class="wrapper">
+  <h2>{{uploadService.translations["favorite videos"]}}</h2>
 
-<ng-template #noFavorite>
-  <h4>{{uploadService.translations["you don't have favorite videos, add some..."]}}</h4>
-</ng-template>
-
-<div class="container">
-  <div class="favorites" *ngIf="favorites_list?.length; else noFavorite">
-    <app-contentcard type="video" *ngFor="let fav of favorites_list"
-                     [source]="fav.title"
-                     [title]="fav.name"
-                     [subtitle]="fav.created"
-                     [mid]="fav.mid"
-                     [field_media_tags]="fav.field_media_tags"
-                     [image]="fav.thumbnail__target_id"
-                     [logotype]="fav.field_logotype"
-                     [field_media_oembed_video]="fav.field_media_oembed_video"
-                     [routerLink]="['/video-detail', fav.view_media.split('/').slice(-1)[0]]"
-    ></app-contentcard>
+  <ng-template #noFavorite>
+    <h4>{{uploadService.translations["you don't have favorite videos, add some..."]}}</h4>
+  </ng-template>
+    <div class="favorites" *ngIf="favorites_list?.length; else noFavorite">
+      <app-contentcard type="video" *ngFor="let fav of favorites_list"
+                       [source]="fav.title"
+                       [title]="fav.name"
+                       [subtitle]="fav.created"
+                       [mid]="fav.mid"
+                       [field_media_tags]="fav.field_media_tags"
+                       [image]="fav.thumbnail__target_id"
+                       [logotype]="fav.field_logotype"
+                       [field_media_oembed_video]="fav.field_media_oembed_video"
+                       [routerLink]="['/video-detail', fav.view_media.split('/').slice(-1)[0]]"
+      ></app-contentcard>
   </div>
 </div>
+
 
