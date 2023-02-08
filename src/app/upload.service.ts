@@ -34,9 +34,9 @@ const HEADERS = new HttpHeaders({
 export class UploadService {
   currentLanguage: string = '/en';
   translations = localeEN;
-  likedVideos: string[] = JSON.parse(localStorage.getItem("flagged") || "[]")
-  dislikedVideos: string[] = JSON.parse(localStorage.getItem("flagged") || "[]")
-  favorites: string[] = [] = JSON.parse(localStorage.getItem("favorites") || "[]");
+  likedVideos: string[] = JSON.parse(localStorage.getItem("liked") || "[]")
+  dislikedVideos: string[] = JSON.parse(localStorage.getItem("disliked") || "[]")
+  favorites: string[] = JSON.parse(localStorage.getItem("favorites") || "[]");
 
   constructor(public http: HttpClient) {
   }
