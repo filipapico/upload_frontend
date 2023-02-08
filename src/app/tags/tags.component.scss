@@ -16,6 +16,10 @@
     flex-wrap: wrap;
     font-size: 0.9rem;
 
+    &.hide {
+      display: none
+    }
+
     .tags-item, .tags-item-all {
       color: lightgrey;
       padding: 4px 6px;
@@ -34,8 +38,8 @@
         cursor: pointer;
       }
 
-      &.all {
-        background-color: chocolate;
+      &.hide {
+        display: none
       }
     }
 
