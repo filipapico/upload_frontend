@@ -17,11 +17,10 @@ export class ThematicsComponent implements OnInit {
   thematicsPerPAge: number = 4 //needs to be according to pagination in the view/rest export set in DRUPAL
 
   //Tags pagination
+  tagActive!: Tags;
   pNumTags: number = 0;
   visibleTag = false;
   visibleTagPagination = true;
-  //For testing adding class to active tag
-  act: any;
 
   constructor(private route: ActivatedRoute, public uploadService: UploadService) {
   }

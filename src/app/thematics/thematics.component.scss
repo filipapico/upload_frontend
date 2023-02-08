@@ -19,7 +19,8 @@
         cursor: pointer;
       }
 
-      div.selected {
+      &.active {
+        background-color: cornflowerblue;
         border: 1px solid red;
         transition-duration: 50ms;
       }
