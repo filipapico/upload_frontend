@@ -1,14 +1,19 @@
 <div class="container" *ngIf="videosByTag">
 
-  <app-tags class="tags" all="show" title="hide">
-  </app-tags>
+  <!--TAGS - MAYBE REMOVE?-->
+  <!--<app-tags class="tags" [all]="all" [tagslist]="tagslist" [title]="title">
+  </app-tags>-->
 
+  <h3 class="tag" [ngClass]="">#{{videosByTag[0].name_1.toLowerCase()}}</h3>
+
+  <!--PAGINATION-->
   <div class="pagination">
     <span class="page-number" *ngFor="let pnv of pNumsVideos">
       <span (click)="refresh(idTag,pnv)">{{pnv + 1}}</span>
     </span>
   </div>
 
+  <!--VIDEOS BY TAG-->
   <div class="videos-tag">
     <app-contentcard class="video-card" type="video" *ngFor="let vt of videosByTag"
                      [title]="vt.name"
@@ -22,29 +27,3 @@
     </app-contentcard>
   </div>
 </div>
-
-<!--OLD
-<div class="pagination">
-  <span class="page-number" *ngFor="let pn of pageNumbers">
-    <span (click)="refresh(id_tag,pn)">
-      {{pn + 1}}
-    </span>
-  </span>
-</div>-->
-
-<!--OLD
-<div class="pagination">
-  <div class="pagination-item" (click)="pagination('down',pageNumber)">
-    <div
-      *ngIf="this.visible == true && videosByTag.length == 6 || videosByTag.length < 6">
-      <
-    </div>
-  </div>
-  <div class="pagination-number">{{pageNumber + 1}}</div>
-  <div class="pagination-item" (click)="pagination('up',pageNumber)">
-    <div
-      *ngIf="videosByTag.length == 6">
-      >
-    </div>
-  </div>
-</div>-->

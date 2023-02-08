@@ -14,7 +14,10 @@ export class VideotagComponent implements OnInit {
   pNumsVideos!: number[]
   videosPerPage: number = 6 //needs to be according to pagination in the view/rest export set in DRUPAL
 
-  @Input() idTag!: string
+  @Input() idTag!: string;
+  @Input() title!: string;
+  @Input() tagslist!: string;
+  @Input() all!: string;
 
   constructor(private uploadService: UploadService, private route: ActivatedRoute) {
   }
