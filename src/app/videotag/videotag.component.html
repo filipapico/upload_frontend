@@ -8,8 +8,9 @@
 
   <!--PAGINATION-->
   <div class="pagination">
-    <span class="page-number" *ngFor="let pnv of pNumsVideos">
-      <span (click)="refresh(idTag,pnv)">{{pnv + 1}}</span>
+    <span class="page-number" *ngFor="let pnv of pNumsVideos" [ngClass]="{'active': pNumVideos === pnv}"
+      (click)="refresh(idTag,pnv); pNumVideos = pnv">
+      {{pnv + 1}}
     </span>
   </div>
 

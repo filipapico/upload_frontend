@@ -7,13 +7,17 @@
     margin: 0.9rem auto;
 
     span {
-      padding: 0 2px;
-    }
+      padding: 2px 4px;
 
-    :hover span {
-      padding: 0 4px;
-      font-weight: bold;
-      cursor: pointer;
+      &:hover {
+        padding: 0 6px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      &.active{
+        color: white;
+        border: 1px solid #b5b5be69;
+      }
     }
   }
 
