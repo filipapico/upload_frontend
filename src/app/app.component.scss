@@ -1,62 +1,41 @@
-
 .app-wrapper {
   margin: 0;
   width: 100%;
 
-  app-collapse {
-    display: none;
-  }
-
   app-sidebar {
-    max-width: 11rem;
+    max-width: 12rem;
     position: fixed;
     left: 0;
     top: 0;
     bottom: 0;
     height: 100%;
+    z-index: 1;
   }
 
   .main-content {
-    padding: 2rem 1rem 5rem 12rem;
+    padding: 2rem 1rem 5rem 13rem;
+    z-index: 0;
   }
+}
 
-  .footer {
-    padding: 3px;
-    flex: 1;
-    text-align: center;
-    width: inherit;
-    font-size: 0.8rem;
-    color: darkgray;
+  @media only screen and (max-width: 500px) {
+    .app-wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
 
-    a {
-      text-decoration: none;
-      color: white;
-      cursor: pointer;
-
-      &:hover {
-        font-weight: bold;
-        color: #dc2f31;
+      app-sidebar {
+        width: 100%;
+        z-index: 1;
+      }
+      .main-content {
+        margin-top: 3.2rem;
+        padding: 0;
+        width: 100%;
+        z-index: 0;
       }
     }
   }
 
-  @media only screen and (max-width: 700px) {
-    .app-wrapper {
-      display: flex;
-      justify-content: center;
-    }
-
-    app-collapse {
-      display: block;
-    }
-    .main-content {
-      padding: 0;
-    }
-
-    app-sidebar {
-      display: none;
-    }
-  }
-}
 
 
