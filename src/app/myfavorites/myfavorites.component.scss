@@ -1,33 +1,43 @@
-
+.wrapper {
   .favorites {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-evenly;
 
-    app-contentcard{
+    app-contentcard {
       width: 30%;
       margin: 5px 2px;
     }
   }
 
+}
 
 
-@media only screen and (max-width: 700px) {
-  .favorites {
+@media only screen and (max-width: 500px) {
+  .wrapper {
+    width: 90%;
+    margin: 0 auto;
 
-    app-contentcard{
+    .favorites {
       width: 100%;
-      margin: 5px 2px;
+
+      app-contentcard {
+        width: 100%;
+        margin: 5px 2px;
+      }
     }
   }
 }
 
-@media only screen and (min-width: 700px) and (max-width: 992px) {
-  .favorites{
-    app-contentcard{
-      width: 48%;
-      margin: 5px 2px;
+@media only screen and (min-width: 500px) and (max-width: 992px) {
+
+  .wrapper {
+    .favorites {
+      app-contentcard {
+        width: 48%;
+        margin: 5px 2px;
+      }
     }
   }
 }
