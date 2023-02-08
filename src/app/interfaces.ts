@@ -34,8 +34,9 @@ interface Video {
   body: string
   uid: string
   tid: string
-  view_media: string // video "friendly" URL
+  view_media: string //video "friendly" URL
   view_node: string
+  name_1: string //tag name
 }
 
 interface Likes {
