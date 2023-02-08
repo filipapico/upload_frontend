@@ -2,6 +2,7 @@
   <div class="main-section">
     <h2>{{uploadService.translations["latest videos"]}}</h2>
 
+    <!--SEARCHBAR -->
     <div class="searchbar" *ngIf="latestVideos?.length; else noVideo">
       <input placeholder="Search video..." class="search" (change)="changeSearch($event)">
     </div>
@@ -16,24 +17,6 @@
             (click)="refresh(pnv); pnumVideos = pnv">{{pnv + 1}}
       </span>
     </div>
-
-    <!--OLD PAGINATION-->
-    <!--<div class="pagination">
-      <div class="page-item">
-        <a class="page-link" (click)="pageSelected('Previous')">
-          <fa-icon [icon]="faAngleLeft"></fa-icon>
-        </a>
-      </div>
-      <div class="page-number" *ngIf="pNum">
-        <a class="page-link" (click)="pageSelected(pNum)"> {{pNum + 1}}</a>
-      </div>
-      <div class="page-item">
-        <a class="page-link" (click)="pageSelected('Next')">
-          <fa-icon [icon]="faAngleRight"></fa-icon>
-        </a>
-      </div>
-    </div>-->
-
     <div class="latest-video-container">
       <app-contentcard class="video-card" type="video" *ngFor="let lv of latestVideos"
                        [source]="lv.title"
@@ -48,6 +31,12 @@
                        [routerLink]="['/video-detail', lv.view_media.split('/').slice(-1)[0]]"
                        [uid]="lv.uid"
       ></app-contentcard>
+    </div>
+    <!--PAGINATION-->
+    <div class="pagination">
+      <span class="page-number" *ngFor="let pnv of pNumsVideos" [ngClass]="{'active':pnumVideos=== pnv}"
+            (click)="refresh(pnv); pnumVideos = pnv">{{pnv + 1}}
+      </span>
     </div>
   </div>
 
@@ -78,6 +67,7 @@
       <h3 routerLink="/channels">{{uploadService.translations["show more"]}}</h3>
     </div>
   </div>
+
 
 </div>
 
