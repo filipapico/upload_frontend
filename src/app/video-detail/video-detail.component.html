@@ -1,7 +1,7 @@
 <div class="wrapper" [ngClass]="type">
+  <!--  Video Block-->
   <div class="video-detail" *ngIf="video">
     <h2>{{video.name}}</h2>
-
     <div class="tags">
       <h5>{{getHashtag(video.field_media_tags)}}</h5>
       <span class="bookmark-icon" (click)="uploadService.toggleFavoriteVideo(video.mid)">
@@ -16,7 +16,7 @@
     </div>
     <div class="details">
       <div class="video-channel">
-        <div *ngIf="video.field_logotype" class="channel-logotype"
+        <div *ngIf="video.field_logotype" class="channel-logotype" [routerLink]="['/channel', video.view_node.split('/').slice(-1)[0]]"
              style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{video.field_logotype}}');">
         </div>
         <div>
@@ -28,7 +28,6 @@
         [id_video]="video.mid">
       </app-like>
     </div>
-
     <p class="description-box">
       {{video.field_description || "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."}}
     </p>
