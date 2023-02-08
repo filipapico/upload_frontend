@@ -3,10 +3,6 @@
   flex-direction: row;
   justify-content: center;
 
-  p {
-    font-size: 14px;
-  }
-
   h5 {
     color: #1E75FF;
     font-weight: 500;
@@ -68,34 +64,35 @@
         display: flex;
         flex-direction: row;
         align-content: center;
+        align-content: center;
+        width: 80%;
 
         .channel-logotype {
-          width: 69px;
-          height: 69px;
-          border-radius: 100%;
-          border: 2px solid white;
+          aspect-ratio: 1/1;
           background-size: cover;
           background-position: center;
-          position: relative;
+          border: 2px solid white;
+          border-radius: 1000rem;
+          max-width: 60px;
+          min-width: 20px;
+          right: 1rem;
+          width: 100%;
         }
 
         h4 {
-          margin-top: 6px;
-          margin-left: 10px;
+          margin-top: 0.1rem;
+          margin-left: 1rem;
           margin-bottom: 0;
         }
 
         p {
-          font-size: 12px;
-          margin-left: 10px;
-          margin-top: 0;
+          margin-top: 0.1rem;
+          margin-left: 1rem;
           margin-bottom: 0;
-          position: center;
+          //position: center;
           color: #b6b1b1;
         }
       }
-
-
     }
 
     .description-box {
@@ -105,7 +102,6 @@
 
     }
   }
-
 
   .suggestion-container {
     border-radius: 20px;
@@ -124,13 +120,49 @@
   }
 }
 
-@media (max-width: 900px) {
+@media (max-width: 500px) {
   .wrapper {
     display: flex;
-    flex-wrap: wrap;
-  }
-  .video-detail {
+    flex-direction: column;
+    align-items: center;
     width: 90%;
+    margin-right: 0;
+
+    .video-detail {
+      width: 100%;
+    }
+
+    .suggestion-container {
+      width: 100%;
+
+    }
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 992px) {
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    //width: 90%;
+    margin-right: 0;
+
+    .video-detail {
+      width: 100%;
+    }
+
+    .suggestion-container {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      app-contentcard {
+        width: 50%;
+      }
+
+    }
   }
 }
 
