@@ -1,12 +1,6 @@
 .container {
-  padding: 10px;
-
   .thematic-header {
-    padding-top: 20px;
-    padding-right: 10px;
-
     .thematic-header-image {
-      padding: 20px;
 
       div {
         display: block;
@@ -23,6 +17,7 @@
     .thematic-thumbnail-title {
       display: flex;
       align-items: center;
+      margin-top: 1rem;
 
       .thematic-thumbnail {
         display: flex;
@@ -40,22 +35,26 @@
         }
       }
 
-      h1{
+      h1 {
         max-width: 80%;
       }
     }
 
     .thematic-teaser {
-      font-size: 12px;
       padding-bottom: 10px;
+      color: #979797;
     }
   }
 
   .thematic-main {
     padding: 20px;
 
-    h3{
+    h3 {
       padding: 30px 0 0 0;
+    }
+
+    .body {
+      font-size: 1rem;
     }
 
     .thematic-links {
@@ -63,15 +62,24 @@
       padding: 20px;
       border-radius: 12px;
 
-      a{
+      a {
         color: #dc2f31;
       }
     }
-    .thematic-videos{
+
+    .thematic-videos {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
+    }
+  }
+}
 
+@media only screen and (max-width: 700px) {
+  .container {
+
+    .thematic-header {
+      padding: 0.6rem;
     }
   }
 }
