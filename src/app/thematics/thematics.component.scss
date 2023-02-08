@@ -1,7 +1,6 @@
 .container {
 
   .tags {
-
     .tags-items {
       display: flex;
       flex-wrap: wrap;
@@ -47,67 +46,67 @@
 
   .main-content {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    padding: 12px;
 
-    .thematics-all {
-      h4 {
-        text-align: center;
-      }
+    .thematics {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
 
-      .thematics {
+      .thematic-item {
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-direction: column;
+        align-items: center;
+        background-color: #1C1C24;
+        border-radius: 20px;
+        cursor: pointer;
+        margin: 6px 2px;
+        padding: 0.5rem;
+        position: relative;
+        width: 46%;
 
-        .thematic-item {
-          padding: 10px;
+        .thematic-header {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          justify-content: flex-start;
+          margin-bottom: 0.3rem;
+          padding-left: 0.3rem;
+          width: 100%;
 
-          .thematic-header {
-            display: flex;
 
-            .thematic-thumbnail {
-              display: flex;
-              justify-content: center;
-              width: 50px;
-              height: 50px;
-              margin: 6px;
-
-              div {
-                display: block;
-                background-size: cover;
-                width: 100%;
-                border-radius: 50%;
-                padding-bottom: 57%;
-                background-position: center;
-              }
-            }
-
-            h5, p {
-              margin: 2px
-            }
-
-            p {
-              font-size: 12px;
-            }
+          .thematic-thumbnail {
+            aspect-ratio: 1/1;
+            background-size: cover;
+            background-position: center;
+            border-radius: 100%;
+            max-width: 60px;
+            min-width: 40px;
+            width: 20%;
           }
 
-          .thematic-header-image {
-            width: 340px;
-            margin: 0 auto;
+          .info {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 0.7em 0;
+            margin-left: 1rem;
 
-            div {
-              display: block;
-              background-size: cover;
-              width: 100%;
-              border-radius: 12px;
-              padding-bottom: 57%;
-              background-position: center;
+            h5, p {
+              margin: 0;
             }
           }
         }
+
+        .thematic-header-image {
+          background-size: cover;
+          background-position: center;
+          border-radius: 12px;
+          padding-bottom: 57%;
+          width: 100%;
+        }
       }
     }
+
   }
 }
