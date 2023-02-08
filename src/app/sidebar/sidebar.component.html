@@ -1,28 +1,43 @@
-<div class="container">
-  <div class="icon-logo">
-    <img src="./assets/upload.svg" alt="Upload_logo" routerLink="homepage" (click)="uploadService.refreshComp()">
+<div class="wrapper">
+  <div class="mobile-header">
+<!--
+      <img class="image" src="./assets/upload.svg" alt="Upload_logo" (click)="uploadService.refreshComp()">
+-->
+    <div class="image"
+         style="background-image: url('./assets/upload.svg');">
+      <div class="burger-icon" (click)="toggleMenu()">
+        <fa-icon [icon]="isMenuOpen? faXmark : faBars"></fa-icon>
+      </div>
+    </div>
+  </div>
 
-  </div>
-  <app-menu></app-menu>
-  <app-tags></app-tags>
-  <div class="login">
-    <a class="login-button" href="https://test-project-upskill2-grupo4v2.pantheonsite.io" target="_blank">Login</a>
-  </div>
-  <div class="languages">
-    <span id="portuguese" [ngClass]="{'active': isActive[0]}" (click)="uploadService.switchLanguage('portuguese'); toggleActive(0)">
+  <div class="main" [class.is-open]="isMenuOpen">
+    <div class="icon-logo">
+      <img src="./assets/upload.svg" alt="Upload_logo" routerLink="homepage" (click)="uploadService.refreshComp()">
+    </div>
+    <app-menu></app-menu>
+    <app-tags></app-tags>
+    <div class="login">
+      <a class="login-button" href="https://test-project-upskill2-grupo4v2.pantheonsite.io" target="_blank">Login</a>
+    </div>
+    <div class="languages">
+    <span id="portuguese" [ngClass]="{'active': isActive[0]}"
+          (click)="uploadService.switchLanguage('portuguese'); toggleActive(0)">
       {{uploadService.translations["portuguese"]}}
     </span>
-    |
-    <span id="english" [ngClass]="{'active': isActive[1]}" (click)="uploadService.switchLanguage('english'); toggleActive(1)">
+      |
+      <span id="english" [ngClass]="{'active': isActive[1]}"
+            (click)="uploadService.switchLanguage('english'); toggleActive(1)">
     {{uploadService.translations["english"]}}
     </span>
-  </div>
-  <div class="footer-container">
-    <div class="footer">
-      Coded by
-      <a href="https://github.com/iuriabetco" target="_blank">Betco</a>,
-      <a href="https://github.com/AgatheMarieM" target="_blank">Maillol</a> and
-      <a href="https://github.com/filipapico" target="_blank">Pico</a>
+    </div>
+    <div class="footer-container">
+      <div class="footer">
+        Coded by
+        <a href="https://github.com/iuriabetco" target="_blank">Betco</a>,
+        <a href="https://github.com/AgatheMarieM" target="_blank">Maillol</a> and
+        <a href="https://github.com/filipapico" target="_blank">Pico</a>
+      </div>
     </div>
   </div>
 </div>
