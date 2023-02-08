@@ -1,7 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UploadService} from "../upload.service";
 import {Thematics, Tags} from "../interfaces";
-import {ActivatedRoute} from "@angular/router";
 
 @Component({
   selector: 'app-thematics',
@@ -11,7 +10,7 @@ import {ActivatedRoute} from "@angular/router";
 export class ThematicsComponent implements OnInit {
   thematics!: Thematics[];
   tags!: Tags[];
-  idTagSelected!: string
+  idTagSelected!: string;
   pNumThematics: number = 0;
   pNumsThematics!: number[];
   thematicsPerPAge: number = 4 //needs to be according to pagination in the view/rest export set in DRUPAL
@@ -20,9 +19,8 @@ export class ThematicsComponent implements OnInit {
   tagActive!: Tags;
   pNumTags: number = 0;
   visibleTag = false;
-  visibleTagPagination = true;
 
-  constructor(private route: ActivatedRoute, public uploadService: UploadService) {
+  constructor(public uploadService: UploadService) {
   }
 
   ngOnInit(): void {
@@ -34,7 +32,6 @@ export class ThematicsComponent implements OnInit {
   }
 
   refresh(pageTags: number, pageThematics: number, id: string) {
-    //this.toggleTest()
     this.idTagSelected = id
     this.pNumThematics = pageThematics
     this.uploadService.getTagsInThematics(pageTags).subscribe((tags) => {
@@ -52,18 +49,8 @@ export class ThematicsComponent implements OnInit {
   }
 
   //Tags pagination
-
   toggleVisibleTag(): void {
     this.visibleTag = !this.visibleTag;
-  }
-
-/*  toggleTest(): void {
-    this.act = !this.act;
-    console.log(this.act)
-  }*/
-
-  toggleTagPagination(): void {
-    this.visibleTagPagination = !this.visibleTagPagination
   }
 
   getMoreTags(p: number) {
