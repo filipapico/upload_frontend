@@ -1,10 +1,11 @@
 <h2 (click)="categorySelected(id)">Playlists</h2>
 
 <div class="category-container">
-  <div class="category-list" *ngFor="let category of categories" (click)="categorySelected(category.tid)">
-    <p>{{category.name}}</p>
+  <div class="category-list" *ngFor="let category of categories" [ngClass]="{'active': selectedC === category}"
+       (click)="categorySelected(category.tid); selectedC = category">
+    {{category.name}}
   </div>
-  <p (click)="categorySelected(id)">🗑️</p>
+ <div (click)="categorySelected(id)"> ALL</div>
 </div>
 
 <div class="pagination">

@@ -12,21 +12,23 @@
   justify-content: center;
 
   .category-list {
-  }
-
-  p {
     color: lightgrey;
     padding: 4px 6px;
     border: 1px solid #b5b5be69;
     margin: 2px;
     border-radius: 6px;
     text-decoration: none;
-  }
 
-  p:hover {
-    font-weight: bold;
-    border: 1px solid white;
-    cursor: pointer;
+    &:hover {
+      font-weight: bold;
+      border: 1px solid white;
+      cursor: pointer;
+    }
+
+    &.active {
+      border: 2px solid white;
+      font-weight: bold;
+    }
   }
 }
 

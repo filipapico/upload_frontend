@@ -17,6 +17,7 @@ export class PlaylistsComponent implements OnInit {
   favorites_list?: Video[];
   faAngleRight = faAngleRight;
   faAngleLeft = faAngleLeft;
+  selectedC?: Categories;
 
 
   constructor(private route: ActivatedRoute, public uploadService: UploadService,) {
