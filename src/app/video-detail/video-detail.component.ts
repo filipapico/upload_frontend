@@ -70,15 +70,17 @@ export class VideoDetailComponent implements OnChanges {
   }
 
   refresh() {
-    this.uploadService.getVideo(this.id).subscribe((video) => {
-      this.video = video[0];
-      this.uploadService.getChannelVideos(parseInt(this.video.nid)).subscribe((videos) => {
-        this.channelVideos = videos;
-      });
+    if(this.id){
+      this.uploadService.getVideo(this.id).subscribe((video) => {
+        this.video = video[0];
+        this.uploadService.getChannelVideos(parseInt(this.video.nid)).subscribe((videos) => {
+          this.channelVideos = videos;
+        });
 
-      this.video_url = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + this.video.field_media_oembed_video.split("?v=")[1]);
-      return this.video_url;
-    })
+        this.video_url = this.sanitizer.bypassSecurityTrustResourceUrl("https://www.youtube.com/embed/" + this.video.field_media_oembed_video.split("?v=")[1]);
+        return this.video_url;
+      })
+    }
   }
 
   getHashtag(tags: string) {
