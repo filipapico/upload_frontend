@@ -49,7 +49,7 @@ export class CommentsComponent implements OnChanges {
   }
 
   onCommentSubmit(comment: { username: string, email: string, comment: string }){
-    if (comment.username.length > 1 && comment.email.length > 1 && comment.email.includes("@") && comment.comment.length > 1) {
+    if (comment.username && comment.email && comment.email.includes('@') && comment.comment) {
       this.uploadService.postComment(this.entityType, this.contentID, comment.username, comment.email, comment.comment ).subscribe(() => {
         //callback refreshComments
         this.refreshComments();
@@ -68,7 +68,6 @@ export class CommentsComponent implements OnChanges {
       setTimeout(() => { this.message = false; }, 1000);
       this.field_reason = "";
     } else {
-      //console.log(this.field_reason.length)
       window.alert("Your report message should have more than 5 characters, try again...")
     }
   }
@@ -80,7 +79,6 @@ export class CommentsComponent implements OnChanges {
   Openpopup(index: any, cid: string) {
     this.index_cid = [index, cid];
     this.show = true;
-    // console.log(this.index_cid[1] === cid)
   }
 
   Closepopup() {
