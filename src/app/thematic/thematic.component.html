@@ -21,18 +21,16 @@
       <!--BODY-->
       <div class="body">{{thematicDetails[0].body}}</div>
       <!--LINKS-->
-      <h3>Related links</h3>
+      <h2>Related links</h2>
       <div class="thematic-links">
         <div *ngFor="let t of thematicLinks">
-          <a [href]=t.uri>{{t.title}}</a>
+          <a [href]=t.uri target="_blank">{{t.title}}</a>
         </div>
       </div>
 
       <!--VIDEOS-->
-      <h3>Thematic videos</h3>
+      <h2>Thematic videos</h2>
       <div class="thematic-videos" *ngIf="thematicDetails">
-
-        <!--HOW TO-->
           <app-videotag title="hide" tagslist="hide" all="hide"
                         *ngFor="let td of thematicDetails"
                         [idTag]=td.tid>
