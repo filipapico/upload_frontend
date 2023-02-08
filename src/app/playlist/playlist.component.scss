@@ -79,29 +79,29 @@
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 500px) {
   .container {
     display: block;
-  }
 
-  .video-playing {
-    width: 90%;
-  }
+    .video-playing {
+      width: 90%;
+    }
 
-  .videos-list {
-    margin: 23px;
-    border: 2px solid #1c1c24;
-    border-radius: 20px;
-    height: fit-content;
-    width: 90%;
 
-    .video-card {
-      p {
-        font-size: 15px;
+    .videos-list {
+      margin: 23px;
+      border: 2px solid #1c1c24;
+      border-radius: 20px;
+      height: fit-content;
+      width: 90%;
+
+      .video-card {
+        p {
+          font-size: 15px;
+        }
       }
     }
   }
-
 }
 
 
