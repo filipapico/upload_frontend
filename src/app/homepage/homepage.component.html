@@ -12,8 +12,8 @@
 
     <!--PAGINATION-->
     <div class="pagination">
-      <span class="page-number" *ngFor="let pnv of pNumsVideos">
-        <span (click)="refresh(pnv)">{{pnv+1}}</span>
+      <span class="page-number" *ngFor="let pnv of pNumsVideos" [ngClass]="{'active':pnumVideos=== pnv}"
+            (click)="refresh(pnv); pnumVideos = pnv">{{pnv + 1}}
       </span>
     </div>
 
