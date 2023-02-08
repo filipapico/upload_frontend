@@ -55,21 +55,13 @@
           font-weight: bold;
           cursor: pointer;
         }
-        &.active{
+
+        &.active {
           color: white;
           border: 1px solid #b5b5be69;
         }
       }
     }
-
-    /*OLD - PAGINATION
-    .pagination {
-      display: flex;
-      justify-content: space-between;
-      margin-right: 30%;
-      margin-left: 30%;
-    }*/
-
 
     .latest-video-container {
       display: flex;
@@ -90,11 +82,15 @@
     align-items: center;
     width: 30%;
 
+    .suggestion-list {
+      margin-top: 1rem;
+    }
+
     .suggestion-list, .suggestion-card {
       background-color: #1C1C24;
-      margin: 10px;
       border-radius: 15px;
-      width: 320px;
+      width: 100%;
+
 
       .suggestion-card-header, .suggestion-list-header {
         display: flex;
@@ -121,7 +117,7 @@
         text-align: center;
         cursor: pointer;
         background-color: #3d3d41;
-        border-radius: 0px 0px 10px 10px;
+        border-radius: 0 0 10px 10px;
       }
 
       h3:hover {
@@ -167,10 +163,10 @@
 @media only screen and (min-width: 500px) and (max-width: 992px) {
   .wrapper {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 
     .main-section {
-      width: 50%;
+      width: 100%;
       position: static;
       margin: 0 auto;
 
@@ -188,7 +184,7 @@
     }
 
     .right-sidebar {
-      width: 50%;
+      width: 100%;
       margin: 2px;
     }
   }
