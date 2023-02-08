@@ -35,11 +35,8 @@ export class HomepageComponent implements OnInit {
   }
 
   refresh(pageVideos: number) {
-    this.pnumVideos = pageVideos
     this.uploadService.getPagination
-    ("latest-videos", '', this.videosPerPage).subscribe(({
-                                                           pageNumbers
-                                                         }) => {
+    ("latest-videos", '', this.videosPerPage).subscribe(({pageNumbers}) => {
       this.pNumsVideos = pageNumbers
     })
     this.getVideos(pageVideos)

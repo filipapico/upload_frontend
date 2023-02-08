@@ -49,10 +49,14 @@ export class CommentsComponent implements OnChanges {
   }
 
   onCommentSubmit(comment: { username: string, email: string, comment: string }){
-    this.uploadService.postComment(this.entityType, this.contentID, comment.username, comment.email, comment.comment ).subscribe(() => {
-      //callback refreshComments
-      this.refreshComments();
-    });
+    if (comment.username.length > 1 && comment.email.length > 1 && comment.email.includes("@") && comment.comment.length > 1) {
+      this.uploadService.postComment(this.entityType, this.contentID, comment.username, comment.email, comment.comment ).subscribe(() => {
+        //callback refreshComments
+        this.refreshComments();
+      });
+    } else {
+      window.alert("Error: Please fill all the required fields.")
+    }
   }
 
   addCommentReport() {
@@ -64,7 +68,7 @@ export class CommentsComponent implements OnChanges {
       setTimeout(() => { this.message = false; }, 1000);
       this.field_reason = "";
     } else {
-      console.log(this.field_reason.length)
+      //console.log(this.field_reason.length)
       window.alert("Your report message should have more than 5 characters, try again...")
     }
   }
