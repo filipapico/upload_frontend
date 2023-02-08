@@ -14,7 +14,7 @@ export class TagsComponent {
   @Input() title!: string
   @Input() tagslist!: string
 
-  constructor(private uploadService: UploadService) {
+  constructor(public uploadService: UploadService) {
   }
 
   refresh() {

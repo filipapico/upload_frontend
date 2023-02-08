@@ -1,5 +1,5 @@
 <div class="container">
-  <h5 [ngClass]="title">POPULAR TAGS</h5>
+  <h5 [ngClass]="title">{{uploadService.translations["popular tags"]}}</h5>
   <div class="tags-items" *ngIf="tagsVideos" [ngClass]="tagslist">
     <div *ngFor="let tv of tagsVideos">
       <div class="tags-item" [routerLink]="['/videotag',tv.tid]" routerLinkActive="active">
