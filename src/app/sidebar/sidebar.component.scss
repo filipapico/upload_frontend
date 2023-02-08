@@ -1,4 +1,6 @@
 .wrapper {
+  height: 100%;
+
   .mobile-header {
     display: none;
   }
@@ -10,7 +12,6 @@
     flex-direction: column;
     position: relative;
     background-color: #1C1C24;
-    padding-bottom: 5rem;
     color: #B5B5BE;
     z-index: 1;
 
