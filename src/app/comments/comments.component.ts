@@ -65,7 +65,7 @@ export class CommentsComponent implements OnChanges {
       })
       this.Closepopup()
       this.message = true;
-      setTimeout(() => { this.message = false; }, 1500);
+      setTimeout(() => { this.message = false; }, 2000);
       this.field_reason = "";
     } else {
       window.alert("Your report message should have more than 5 characters, try again...")
