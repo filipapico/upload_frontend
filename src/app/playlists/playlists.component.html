@@ -1,11 +1,10 @@
-  <h2 (click)="categorySelected(id)">Playlists</h2>
+  <h2 (click)="categorySelected(id); uploadService.refreshComp()">Playlists</h2>
 
   <div class="category-container">
     <div class="category-list" *ngFor="let category of categories" [ngClass]="{'active': selectedC === category}"
          (click)="categorySelected(category.tid); selectedC = category">
       {{category.name}}
     </div>
-    <div class="category-list" (click)="categorySelected(id)"> ALL</div>
   </div>
 
   <div class="pagination">
