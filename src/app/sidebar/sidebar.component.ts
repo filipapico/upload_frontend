@@ -9,7 +9,7 @@ import {faBars, faXmark} from "@fortawesome/free-solid-svg-icons";
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent {
-  isActive: boolean[] = [false, false];
+  isActive: boolean[] = [false, true];
   faBars = faBars;
   faXmark = faXmark;
   isMenuOpen = false;
