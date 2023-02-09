@@ -3,6 +3,10 @@
   border-radius: 20px;
   cursor: pointer;
 
+  &:hover {
+    background: linear-gradient(#726e6e, transparent);
+  }
+
   &.video {
     /*Regular video content card*/
     width: 100%;
@@ -234,6 +238,10 @@
     height: 250px;
     margin: 10px 5px;
     position: relative;
+
+    &:hover {
+      background: linear-gradient(#726e6e, transparent);
+    }
 
     .image {
       position: relative;

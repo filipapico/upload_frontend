@@ -47,6 +47,10 @@
       margin: 10px 5px;
       cursor: pointer;
 
+      &:hover {
+        background: linear-gradient(#726e6e, transparent);
+      }
+
       h4 {
         text-align: center;
         margin: 50px;
@@ -97,7 +101,9 @@
     .playlist-container {
       //position: relative;
       cursor: pointer;
+
     }
+
   }
 
   h1, h2 {
