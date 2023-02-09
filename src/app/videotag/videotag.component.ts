@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+  import {Component, Input, OnInit} from '@angular/core';
 import {UploadService} from "../upload.service";
 import {Video} from "../interfaces";
 import {ActivatedRoute} from "@angular/router";
@@ -18,7 +18,6 @@ export class VideotagComponent implements OnInit {
   @Input() title!: string;
   @Input() tagslist!: string;
   @Input() all!: string;
-  // INPUT NAME? MAYBE?!?
   @Input() nameTag!: string
 
   constructor(private uploadService: UploadService, private route: ActivatedRoute) {
@@ -47,7 +46,6 @@ export class VideotagComponent implements OnInit {
                                                                 pageNumbers
                                                               }) => {
       this.pNumsVideos = pageNumbers
-      console.log(this.nameTag)
     })
   }
 
