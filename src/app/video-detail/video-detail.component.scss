@@ -12,7 +12,7 @@
     display: flex;
     flex-direction: column;
 
-    .tags {
+    .subtitle {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -20,9 +20,21 @@
       height: 2em;
       margin-bottom: 0.8em;
 
-      .heart-icon {
-        font-size: 1.5em;
+      .tags {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+
+        .tag {
+          margin-left: 1rem;
+
+          &:hover {
+            color: whitesmoke;
+            cursor: pointer;
+          }
+        }
       }
+
 
       .bookmark-icon {
         cursor: pointer;
@@ -36,7 +48,7 @@
 
     .favorite-message {
       p {
-        margin: 0px 30%;
+        margin: 0 30%;
       }
     }
 
@@ -83,6 +95,10 @@
           min-width: 20px;
           right: 1rem;
           width: 100%;
+
+          &:hover {
+            cursor: pointer;
+          }
         }
 
         h4 {
