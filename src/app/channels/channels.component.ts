@@ -26,14 +26,6 @@ export class ChannelsComponent {
   constructor(public uploadService: UploadService) {
   }
 
-  paginationHide() {
-    this.paginationShow = false
-  }
-
-  pagginationShow() {
-    this.paginationShow = true
-  }
-
   refresh(pageChannels: number) {
     this.pNumChannels = pageChannels
     //get pagination
@@ -80,5 +72,13 @@ export class ChannelsComponent {
       this.popup = false;
     }, 900);
     this.value = val;
+  }
+
+  paginationHide() {
+    this.paginationShow = false
+  }
+
+  pagginationShow() {
+    this.paginationShow = true
   }
 }
