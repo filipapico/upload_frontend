@@ -66,11 +66,15 @@
 
     .channel-card {
       border-radius: 20px 0 20px 0;
-      background-color: #575757;
+      background-color: #2b2b36;
       margin: 6px 10px;
       position: relative;
       width: 30%;
       height: 100%;
+
+      &:hover {
+        background: linear-gradient(#726e6e, transparent);
+      }
 
       .popup-url {
         background-color: #212121;
