@@ -16,7 +16,7 @@ export class ThematicComponent {
   thematicVideos!: Video[]
   thematicSlug!: string
 
-  constructor(private route: ActivatedRoute, private uploadService: UploadService) {
+  constructor(private route: ActivatedRoute, public uploadService: UploadService) {
     }
 
   ngOnInit(): void {
