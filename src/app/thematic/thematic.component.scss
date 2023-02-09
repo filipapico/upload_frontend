@@ -14,7 +14,7 @@
       }
     }
 
-    .header{
+    .header {
       display: flex;
       flex-direction: row;
       align-items: center;
@@ -90,13 +90,18 @@
     .thematic-videos {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-evenly;
+      flex-direction: row;
+      width: 100%;
 
+      app-videotag {
+        margin-top: 2rem;
+        width: 100%;
+      }
     }
   }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 500px) {
   .container {
 
     .thematic-header {
@@ -116,6 +121,7 @@
           h2 {
             font-size: 1.1rem;
           }
+
           p {
             font-size: 0.6rem;
           }
@@ -124,6 +130,59 @@
         .all-thematics {
           margin-left: 1rem;
           width: 100%;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 500px) and (max-width: 992px) {
+  .container {
+    width: 100%;
+
+    .thematic-header {
+      padding: 0.3rem;
+
+      .header {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        .thematic-thumbnail {
+          display: flex;
+          flex-direction: row;
+          align-content: center;
+          align-items: center;
+          width: 100%;
+
+          h2 {
+            font-size: 1.1rem;
+          }
+
+          p {
+            font-size: 0.8rem;
+          }
+        }
+
+        .all-thematics {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-end;
+          width: 100%;
+        }
+      }
+    }
+
+    .thematic-main {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+
+      .thematic-videos {
+
+        app-video-tag {
+          width: 100%;
+          margin: 2px 2px;
         }
       }
     }
