@@ -6,14 +6,15 @@
         style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{thematicDetails[0].field_thematic_header_image}}');"></div>
     </div>
     <!--THUMBNAIL & TITLE-->
-    <div class="thematic-thumbnail-title">
+    <div class="header">
       <div class="thematic-thumbnail">
-        <div
-          style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{thematicDetails[0].field_thematic_thumbnail}}');"></div>
+        <div class="logotype"
+             style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{thematicDetails[0].field_thematic_thumbnail}}');"></div>
+
+        <h2>{{thematicDetails[0].title}}</h2>
+        <p>{{uploadService.translations["by"]}} {{thematicDetails[0].uid}}</p>
       </div>
-      <h1>{{thematicDetails[0].title}}</h1>
-      <p>{{uploadService.translations["by"]}} {{thematicDetails[0].uid}}</p>
-      <h4 class="all-thematics" routerLink="/thematics" >{{uploadService.translations["all thematics"]}}</h4>
+      <h5 class="all-thematics" routerLink="/thematics">+ {{uploadService.translations["all thematics"]}}</h5>
     </div>
 
     <!--BODY-->
