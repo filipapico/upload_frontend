@@ -16,7 +16,7 @@ export class ThematicsComponent implements OnInit {
   thematicsPerPAge: number = 4 //needs to be according to pagination in the view/rest export set in DRUPAL
 
   //Tags pagination
-  tagActive!: Tags;
+  tagActive!: string;
   pNumTags: number = 0;
   visibleTag = false;
 

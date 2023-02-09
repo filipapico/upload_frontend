@@ -20,8 +20,8 @@
       }
 
       &.active {
-        background-color: cornflowerblue;
-        border: 1px solid red;
+        color: white;
+        border: 2px solid white;
         transition-duration: 50ms;
       }
     }
