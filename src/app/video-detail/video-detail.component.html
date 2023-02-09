@@ -26,7 +26,7 @@
              style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{video.field_logotype}}');">
         </div>
         <div>
-          <h4>{{video.title}}</h4>
+          <h4 class="channel-title" [routerLink]="['/channel', video.view_node.split('/').slice(-1)[0]]">{{video.title}}</h4>
           <p>{{video.created}}</p>
         </div>
       </div>

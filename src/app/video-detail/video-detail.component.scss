@@ -101,10 +101,15 @@
           }
         }
 
-        h4 {
+        .channel-title {
           margin-top: 0.1rem;
           margin-left: 1rem;
           margin-bottom: 0;
+
+          &:hover {
+            cursor: pointer;
+            font-style: italic;
+          }
         }
 
         p {
