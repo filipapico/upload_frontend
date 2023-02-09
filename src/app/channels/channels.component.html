@@ -9,7 +9,7 @@
   </div>
 
   <!--PAGINATION-->
-  <div class="pagination" *ngIf="pNumsChannels">
+  <div class="pagination" *ngIf="pNumsChannels.length>0">
     <span class="page-number" *ngFor="let pnv of pNumsChannels" [ngClass]="{'active': pNumChannels === pnv}"
           (click)="refresh(pnv); pNumChannels = pnv">
       {{pnv + 1}}

@@ -58,6 +58,7 @@ export class ChannelsComponent {
 
   //clicking on category will filter channels and calls new data from api:
   targetChannels(tid: string) {
+    this.pNumChannels = 0
     this.uploadService.getChannelsFromCategory(tid).subscribe((channels) => {
       this.channels = channels;
     })
