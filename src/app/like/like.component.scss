@@ -3,6 +3,14 @@
   flex-wrap: nowrap;
   align-items: center;
 
+  .like, .dislike {
+    &:hover {
+      color: white;
+      cursor: pointer;
+      font-size: larger;
+    }
+  }
+
   fa-icon, span {
     padding: 0 4px;
 
