@@ -23,7 +23,7 @@ export class ChannelComponent {
   refresh() {
     if (this.nid) {
       let nid = this.nid.toString();
-      this.uploadService.getChannels(nid).subscribe((channel) => {
+      this.uploadService.getChannel(nid).subscribe((channel) => {
         this.channel = channel;
       });
 
