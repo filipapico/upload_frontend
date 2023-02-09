@@ -246,6 +246,11 @@ export class UploadService {
     return this.http.get<Video[]>(BASE_URL + "/api/videos-tag/" + id_tag + "?page=" + pNum)
   }
 
+  //4TESTING - NOT BEING USED
+  getVideosByTagName(name:string, pNum:number){
+    return this.http.get<Video[]>(BASE_URL + "/api/videos-tag-name/" + name + "?page=" + pNum)
+  }
+
   //PLAYLISTS
   getCategoriesinPlaylists() {
     return this.http.get<Categories[]>(BASE_URL + "/api/categories-playlists");
@@ -290,11 +295,8 @@ export class UploadService {
   getPagination(content_type: string, id: string, itemsPerPage: number) {
     return this.http.get<PagesCount[]>(BASE_URL + "/api/" + content_type + "-count/" + id).pipe(map((pagesCount) => {
       let numberOfItems = 0
-      if (!pagesCount[0].nid) {
-        numberOfItems = parseInt(pagesCount[0].mid)
-      } else {
-        numberOfItems = parseInt(pagesCount[0].nid)
-      }
+      numberOfItems = parseInt(pagesCount[0].count)
+      console.log(numberOfItems)
       //const itemsPerPage = 6
       let numberOfPages = Math.ceil(numberOfItems / itemsPerPage)
       let pageNumbers = new Array(numberOfPages)
