@@ -21,6 +21,7 @@ export class VideoDetailComponent implements OnChanges {
   channelVideos!: Video[]; //array containing the channel's videos
   nid?: number;
   message = false;
+  tags?: string[];
 
   @Input() id_video?: string
   @Input() type?: string;
@@ -74,6 +75,7 @@ export class VideoDetailComponent implements OnChanges {
     if(this.id){
       this.uploadService.getVideo(this.id).subscribe((video) => {
         this.video = video[0];
+        this.tags = video[0].field_media_tags.split(', ');
         this.uploadService.getChannelVideos(parseInt(this.video.nid)).subscribe((videos) => {
           this.channelVideos = videos;
         });
@@ -82,16 +84,5 @@ export class VideoDetailComponent implements OnChanges {
         return this.video_url;
       })
     }
-  }
-
-  getHashtag(tags: string) {
-    return tags
-      .split(',')
-      .map(this.getTag)
-      .join('');
-  }
-
-  getTag(item: string) {
-    return `#${item.trim().toLowerCase()} `;
   }
 }
