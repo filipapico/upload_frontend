@@ -36,7 +36,9 @@
   .main {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    margin-left: 5%;
+    width: 95%;
 
     .favorites-card {
       position: relative;

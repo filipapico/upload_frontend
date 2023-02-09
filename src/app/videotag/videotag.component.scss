@@ -32,11 +32,13 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: flex-start;
+    margin-left: 3%;
+    width: 97%;
 
     app-contentcard {
       width: 31%;
-      margin: 5px 2px;
+      margin: 6px 4px;
     }
   }
 }
