@@ -7,8 +7,8 @@
         <h5 class="tag"  *ngFor="let tag of tags" [routerLink]="['/videotag',tag.toLowerCase()]">#{{tag.toLowerCase()}}</h5>
       </div>
       <span class="bookmark-icon" (click)="uploadService.toggleFavoriteVideo(video.mid)">
-      <fa-icon [icon]="uploadService.isFavoriteVideo(video.mid)? faBookmarkFull : faBookmark" class="fa-xl"></fa-icon>
-    </span>
+        <fa-icon [icon]="uploadService.isFavoriteVideo(video.mid)? faBookmarkFull : faBookmark" class="fa-xl"></fa-icon>
+      </span>
     </div>
 
     <div class="favorite-message" *ngIf="uploadService.message">

@@ -290,7 +290,7 @@ export class UploadService {
       //add id to favorites
       this.favorites.push(id);
       this.message = true;
-      setTimeout(() => { this.message = false; }, 1500)
+      setTimeout(() => { this.message = false; }, 1000)
     }
     localStorage.setItem("favorites", JSON.stringify(this.favorites));
   }
