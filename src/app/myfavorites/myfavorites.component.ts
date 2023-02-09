@@ -16,6 +16,7 @@ export class MyfavoritesComponent {
   refresh() {
     if (this.uploadService.favorites.length > 0)
       this.uploadService.getFavorites().subscribe((favoritos) => {
+        this.favorites_list = favoritos;
       });
   }
 
