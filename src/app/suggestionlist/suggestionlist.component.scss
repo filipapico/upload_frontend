@@ -5,6 +5,12 @@
     padding-top: 3px;
     padding-left: 6px;
 
+    &:hover {
+      //background-color: #15151a;
+      transform: scale(1.01);
+      font-weight: bold;
+    }
+
     div.suggestion-thumbnail {
       display: flex;
       justify-content: center;
