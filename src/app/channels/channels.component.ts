@@ -18,11 +18,20 @@ export class ChannelsComponent {
   value: any;
 
   //Pagination
-  pNumChannels: number = 0
-  pNumsChannels!: number[]
+  paginationShow = true;
+  pNumChannels: number = 0;
+  pNumsChannels!: number[];
   channelsPerPage: number = 6 //needs to be according to pagination in the view/rest export set in DRUPAL
 
   constructor(public uploadService: UploadService) {
+  }
+
+  paginationHide() {
+    this.paginationShow = false
+  }
+
+  pagginationShow() {
+    this.paginationShow = true
   }
 
   refresh(pageChannels: number) {
@@ -33,13 +42,11 @@ export class ChannelsComponent {
                                                               pageNumbers
                                                             }) => {
       this.pNumsChannels = pageNumbers
-      console.log(this.pNumChannels)
     })
 
     //getting all channels
     this.uploadService.getChannels(this.pNumChannels).subscribe((channels) => {
         this.channels = channels;
-      console.log(this.channels)
       }
     )
 
@@ -64,11 +71,14 @@ export class ChannelsComponent {
     })
   }
 
-  popup : any = false
+  popup: any = false
+
   copyUrl(val: string) {
-      navigator.clipboard.writeText("https://app-upload.netlify.app" + val.slice(3));
-      this.popup = true;
-      setTimeout(() => { this.popup = false; }, 900);
-      this.value = val;
-    }
+    navigator.clipboard.writeText("https://app-upload.netlify.app" + val.slice(3));
+    this.popup = true;
+    setTimeout(() => {
+      this.popup = false;
+    }, 900);
+    this.value = val;
+  }
 }

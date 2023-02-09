@@ -1,15 +1,15 @@
 <div class="wrapper">
-  <h2 (click)="uploadService.refreshComp()">{{uploadService.translations["channels"]}}</h2>
+  <h2 (click)="uploadService.refreshComp();pagginationShow()">{{uploadService.translations["channels"]}}</h2>
   <!-- Categories -->
   <div class="categories-list" *ngIf="categories">
     <p class="categories" *ngFor="let category of categories" [ngClass]="{'active': selectedCategory === category}"
-       (click)="targetChannels(category.tid); selectedCategory = category">
+       (click)="targetChannels(category.tid); selectedCategory = category; paginationHide()">
       {{category.name}}
     </p>
   </div>
 
   <!--PAGINATION-->
-  <div class="pagination" *ngIf="pNumsChannels.length>0">
+  <div class="pagination" *ngIf="this.paginationShow">
     <span class="page-number" *ngFor="let pnv of pNumsChannels" [ngClass]="{'active': pNumChannels === pnv}"
           (click)="refresh(pnv); pNumChannels = pnv">
       {{pnv + 1}}
