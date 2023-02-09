@@ -8,13 +8,16 @@
 
     span {
       padding: 2px 4px;
+      font-size: 0.8rem;
+      color: #B5B5BE;
 
       &:hover {
         padding: 0 6px;
         font-weight: bold;
         cursor: pointer;
       }
-      &.active{
+
+      &.active {
         color: white;
         border: 1px solid #b5b5be69;
       }
