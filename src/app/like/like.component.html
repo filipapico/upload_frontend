@@ -1,12 +1,12 @@
 <div class="container">
-  <div>
+  <div class="like">
     <fa-icon [icon]="uploadService.isFlagged('like',id_video)? faThumbsUpSolid : faThumbsUp" class="fa-xl"
              (click)="addFlagToVideo('like', this.id_video)">
     </fa-icon>
   </div>
   <span *ngIf="likes">{{likes[0].count}}</span>
   <span class="separator">|</span>
-  <div>
+  <div class="dislike">
     <fa-icon [icon]="uploadService.isFlagged('dislike',id_video)? faThumbsDownSolid : faThumbsDown" class="fa-xl"
              (click)="addFlagToVideo('dislike', this.id_video)">
     </fa-icon>
