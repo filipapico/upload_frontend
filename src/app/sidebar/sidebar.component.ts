@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {UploadService} from "../upload.service";
-import {faBars, faXmark} from "@fortawesome/free-solid-svg-icons";
+import {faBars, faXmark, faKey} from "@fortawesome/free-solid-svg-icons";
 
 
 @Component({
@@ -12,6 +12,7 @@ export class SidebarComponent {
   isActive: boolean[] = [false, true];
   faBars = faBars;
   faXmark = faXmark;
+  faKey = faKey;
   isMenuOpen = false;
 
   constructor(public uploadService: UploadService) {
