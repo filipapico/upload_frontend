@@ -17,12 +17,12 @@
     <div class="languages">
     <span id="portuguese" [ngClass]="{'active': isActive[0]}"
           (click)="uploadService.switchLanguage('portuguese'); toggleActive(0)">
-      {{uploadService.translations["portuguese"]}}
+      PT
     </span>
       |
       <span id="english" [ngClass]="{'active': isActive[1]}"
             (click)="uploadService.switchLanguage('english'); toggleActive(1)">
-    {{uploadService.translations["english"]}}
+      EN
     </span>
     </div>
     <div class="footer-container">
