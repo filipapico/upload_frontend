@@ -91,8 +91,25 @@
       border-radius: 15px;
       width: 100%;
 
+      .suggestion-card-header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
 
-      .suggestion-card-header, .suggestion-list-header {
+        .icon {
+          font-weight: bold;
+          font-size: 1.3rem;
+
+          &:hover {
+            color: white;
+            cursor: pointer;
+            font-size: 1.4rem;
+          }
+        }
+      }
+
+
+      .suggestion-list-header, .suggestion-card-header {
         display: flex;
         border-bottom: 1px solid darkgray;
         align-items: center;

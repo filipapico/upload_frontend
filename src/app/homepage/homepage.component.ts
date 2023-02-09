@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UploadService} from "../upload.service";
+import {faPlus} from "@fortawesome/free-solid-svg-icons";
 import {Channels, Thematics, Video} from "../interfaces";
 
 @Component({
@@ -8,6 +9,7 @@ import {Channels, Thematics, Video} from "../interfaces";
   styleUrls: ['./homepage.component.scss']
 })
 export class HomepageComponent implements OnInit {
+  faPlus = faPlus;
   latestVideos?: Video[];
   thematics?: Thematics[];
   channels?: Channels[];

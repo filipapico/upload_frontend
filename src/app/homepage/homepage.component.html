@@ -45,7 +45,7 @@
     <div class="suggestion-card">
       <div class="suggestion-card-header">
         <h4>{{uploadService.translations["newest thematic"]}}</h4>
-        <div routerLink="/thematics/">{{uploadService.translations["see all"]}}</div>
+        <div class="icon" routerLink="/thematics/"><fa-icon [icon]="faPlus"></fa-icon></div>
       </div>
       <app-suggestioncard *ngIf="thematics"
                           [title]=thematics[0].title
