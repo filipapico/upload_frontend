@@ -36,7 +36,7 @@ interface Video {
   tid: string
   view_media: string //video "friendly" URL
   view_node: string
-  name_1: string //tag name
+  tag_name: string //tag name
 }
 
 interface Likes {
