@@ -88,6 +88,7 @@ interface Thematic {
   field_thematic_links: string
   tid: string
   view_node: string
+  name: string //tag name
 }
 
 interface ThematicLink {
