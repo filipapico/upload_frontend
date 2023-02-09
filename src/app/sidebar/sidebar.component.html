@@ -11,9 +11,6 @@
     </div>
     <app-menu></app-menu>
     <app-tags></app-tags>
-    <div class="login">
-      <a class="login-button" href="https://test-project-upskill2-grupo4v2.pantheonsite.io" target="_blank">Login</a>
-    </div>
     <div class="languages">
     <span id="portuguese" [ngClass]="{'active': isActive[0]}"
           (click)="uploadService.switchLanguage('portuguese'); toggleActive(0)">
@@ -25,6 +22,10 @@
       EN
     </span>
     </div>
+    <div class="login">
+      <a class="login-button" href="https://test-project-upskill2-grupo4v2.pantheonsite.io/user/login" target="_blank">Login</a>
+    </div>
+
     <div class="footer-container">
       <div class="footer">
         by
