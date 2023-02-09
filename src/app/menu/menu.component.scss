@@ -4,17 +4,17 @@
   justify-content: flex-start;
   align-content: center;
   cursor: pointer;
-  margin-top:1rem;
+  margin-top: 1rem;
   margin-bottom: 1rem;
   position: relative;
 
   .menu-item-text {
     margin-top: 0.8rem;
-    color:  #B5B5BE;
+    color: #B5B5BE;
     font-size: 0.9rem;
 
     &.active {
-      color:#FAFAFB;
+      color: #FAFAFB;
       border-left: 2px solid white;
     }
 
@@ -32,5 +32,13 @@
       flex-basis: 25px;
       margin: auto 15px;
     }
+  }
+}
+
+
+@media only screen and (max-width: 500px) {
+  .menu-container {
+    padding-top: 2rem;
+    margin-top: 0;
   }
 }
