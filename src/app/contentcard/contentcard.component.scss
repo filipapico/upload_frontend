@@ -48,13 +48,26 @@
     }
 
     .info-container {
-      box-sizing: border-box;
       display: flex;
       width: 100%;
       justify-content: space-between;
       padding: 0.7em 1em;
 
       .info {
+        //Messing up with import of <app-contentcard> in Thematics component
+        /*box-sizing: border-box;
+        flex: 1;
+        width: 0;*/
+
+        /*
+        h5, p {
+          margin: 0;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        */
+
         h5 {
           color: #FAFAFB;
           font-size: 0.8rem;
@@ -66,6 +79,10 @@
           margin: 3px 0;
         }
 
+        .card-subtitle {
+          font-size: 0.8rem;
+        }
+
         .blue-ref {
           color: #1E75FF;
         }
@@ -74,15 +91,12 @@
       .icons {
         display: flex;
         flex-direction: row;
-        //width:fit-content;
         align-items: end;
         gap: 0.8rem;
         cursor: pointer;
         color: #979797;
         font-size: 1rem;
         position: relative;
-
-
       }
     }
 
