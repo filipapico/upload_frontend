@@ -5,7 +5,7 @@
       <fa-icon [icon]="isMenuOpen? faXmark : faBars"></fa-icon>
     </div>
   </div>
-  <div class="main" [class.is-open]="isMenuOpen">
+  <div class="main" (click)="toggleMenu()" [class.is-open]="isMenuOpen">
     <div class="icon-logo">
       <img src="./assets/upload.svg" alt="Upload_logo" routerLink="homepage" (click)="uploadService.refreshComp()">
     </div>
