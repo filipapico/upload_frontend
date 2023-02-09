@@ -9,6 +9,10 @@
     </span>
     </div>
 
+    <div class="report-message" *ngIf="uploadService.message">
+      <p>Olaaaa</p>
+    </div>
+
     <div class="vid-frame">
       <iframe class="responsive-iframe" [src]="video_url" title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

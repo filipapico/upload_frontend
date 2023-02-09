@@ -20,6 +20,7 @@ export class VideoDetailComponent implements OnChanges {
   mediaEntityType = "media";
   channelVideos!: Video[]; //array containing the channel's videos
   nid?: number;
+  message = false;
 
   @Input() id_video?: string
   @Input() type?: string;

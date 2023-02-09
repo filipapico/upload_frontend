@@ -21,6 +21,7 @@ let BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
 let COMMENT_SLUG = '/comment';
 let FLAG_SLUG = '/entity/flagging';
 
+
 const HEADERS = new HttpHeaders({
   'X-CSRF-Token': 'VQrAx6wI4cv-J3BdqLRhIbN5gfUUCGf9sZnR_teei2U',
   'Accept': 'application/vnd.api+json'
@@ -36,7 +37,6 @@ export class UploadService {
   translations = localeEN;
   likedVideos: string[] = JSON.parse(localStorage.getItem("liked") || "[]")
   dislikedVideos: string[] = JSON.parse(localStorage.getItem("disliked") || "[]")
-  favorites: string[] = JSON.parse(localStorage.getItem("favorites") || "[]");
 
   constructor(public http: HttpClient) {
   }
@@ -265,6 +265,10 @@ export class UploadService {
   }
 
   //FAVORITES
+
+  favorites: string[] = JSON.parse(localStorage.getItem("favorites") || "[]");
+  message:boolean = false;
+
   getFavorites() {
     let ids = this.favorites.join(",");
     return this.http.get<Video[]>(BASE_URL + "/api/allvideos/" + ids);
@@ -282,6 +286,7 @@ export class UploadService {
     } else {
       //add id to favorites
       this.favorites.push(id);
+      this.message = true;
     }
     localStorage.setItem("favorites", JSON.stringify(this.favorites));
   }
