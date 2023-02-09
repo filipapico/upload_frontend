@@ -14,7 +14,6 @@ export class HomepageComponent implements OnInit {
   allVideos?: Video[];
   id: any = "";
 
-  public keyword = 'name';
   data = this.allVideos;
   pnumVideos: number = 0
   pNumsVideos!: number[];
@@ -37,7 +36,7 @@ export class HomepageComponent implements OnInit {
     })
     this.getVideos(pageVideos)
 
-    this.uploadService.getThematicsByTag("",0).subscribe((thematics) => {
+    this.uploadService.getThematicsByTag("", 0).subscribe((thematics) => {
       this.thematics = thematics;
     })
   }

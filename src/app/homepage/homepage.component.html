@@ -32,6 +32,7 @@
                        [uid]="lv.uid"
       ></app-contentcard>
     </div>
+
     <!--PAGINATION-->
     <div class="pagination">
       <span class="page-number" *ngFor="let pnv of pNumsVideos" [ngClass]="{'active':pnumVideos=== pnv}"
@@ -67,7 +68,5 @@
       <h3 routerLink="/channels">{{uploadService.translations["show more"]}}</h3>
     </div>
   </div>
-
-
 </div>
 
