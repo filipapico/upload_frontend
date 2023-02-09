@@ -37,13 +37,13 @@
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     width: 100%;
 
     .channel-card {
       border-radius: 20px 0 20px 0;
       background-color: #575757;
-      margin: 6px 2px;
+      margin: 6px 10px;
       position: relative;
       width: 30%;
       height: 100%;
@@ -157,7 +157,7 @@
       justify-content: space-evenly;
 
       .channel-card {
-        width: 48%;
+        width: 100%;
         margin: 5px 2px;
       }
     }
