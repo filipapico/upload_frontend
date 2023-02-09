@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 import {UploadService} from "../upload.service";
 import {Video} from "../interfaces";
 
@@ -8,17 +8,15 @@ import {Video} from "../interfaces";
   styleUrls: ['./myfavorites.component.scss']
 })
 export class MyfavoritesComponent {
-  favorites_list? : Video[];
+  favorites_list?: Video[];
 
   constructor(public uploadService: UploadService) {
   }
 
   refresh() {
-    this.uploadService.getFavorites().subscribe((favoritos) => {
-      this.favorites_list = favoritos
-
-    });
-
+    if (this.uploadService.favorites.length > 0)
+      this.uploadService.getFavorites().subscribe((favoritos) => {
+      });
   }
 
   ngOnInit(): void {
