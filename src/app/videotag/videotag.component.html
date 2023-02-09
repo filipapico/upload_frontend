@@ -7,7 +7,7 @@
   <h3 class="tag" [ngClass]="">#{{videosByTag[0].tag_name.toLowerCase()}}</h3>
 
   <!--PAGINATION-->
-  <div class="pagination">
+  <div class="pagination" *ngIf="pNumsVideos">
     <span class="page-number" *ngFor="let pnv of pNumsVideos" [ngClass]="{'active': pNumVideos === pnv}"
       (click)="refresh(idTag,pnv); pNumVideos = pnv">
       {{pnv + 1}}
@@ -21,7 +21,7 @@
                      [field_duration]="vt.field_duration"
                      [mid]="vt.mid"
                      [image]="vt.thumbnail__target_id"
-                     [routerLink]="['/video-detail', vt.tag_name]"
+                     [routerLink]="['/video-detail', vt.view_media.split('/').slice(-1)[0]]"
                      [uid]="vt.uid"
                      [field_media_oembed_video]="vt.field_media_oembed_video"
                      [source]="getTags(vt.field_media_tags)">
