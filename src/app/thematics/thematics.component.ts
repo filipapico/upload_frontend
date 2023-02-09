@@ -11,6 +11,9 @@ export class ThematicsComponent implements OnInit {
   thematics!: Thematics[];
   tags!: Tags[];
   idTagSelected!: string;
+
+  //Pagination
+  paginationShow = true;
   pNumThematics: number = 0;
   pNumsThematics!: number[];
   thematicsPerPAge: number = 4 //needs to be according to pagination in the view/rest export set in DRUPAL
@@ -46,6 +49,15 @@ export class ThematicsComponent implements OnInit {
     this.uploadService.getThematicsByTag(id, this.pNumThematics).subscribe((thematicTags) => {
       this.thematics = thematicTags
     })
+  }
+
+  paginationHide() {
+    this.paginationShow = false
+    console.log(this.paginationShow)
+  }
+
+  pagginationShow() {
+    this.paginationShow = true
   }
 
   //Tags pagination
