@@ -12,20 +12,21 @@
     <app-menu></app-menu>
     <app-tags></app-tags>
     <div class="languages">
-    <span id="portuguese" [ngClass]="{'active': isActive[0]}"
-          (click)="uploadService.switchLanguage('portuguese'); toggleActive(0)">
-      PT
-    </span>
+      <span id="portuguese" [ngClass]="{'active': isActive[0]}"
+            (click)="uploadService.switchLanguage('portuguese'); toggleActive(0)">
+        PT
+      </span>
       |
       <span id="english" [ngClass]="{'active': isActive[1]}"
             (click)="uploadService.switchLanguage('english'); toggleActive(1)">
-      EN
-    </span>
+        EN
+      </span>
     </div>
     <div class="login">
-      <fa-icon [icon]="faKey"></fa-icon><a class="login-button" href="https://dev-project-upskill2-grupo4v2.pantheonsite.io/en/user/login" target="_blank">Login</a>
+      <fa-icon [icon]="faKey"></fa-icon>
+      <a class="login-button" href="https://dev-project-upskill2-grupo4v2.pantheonsite.io/en/user/login"
+         target="_blank">Login</a>
     </div>
-
     <div class="footer-container">
       <div class="footer">
         by
