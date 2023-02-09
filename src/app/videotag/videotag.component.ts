@@ -36,18 +36,6 @@ export class VideotagComponent implements OnInit {
     }
   }
 
-  /*ngOnInit() {
-    if (!this.idTag) {
-      this.route.params.subscribe(params => {
-        // Get the updated tag_id from the URL
-        this.idTag = params['id'];
-        this.refresh(this.idTag, 0)
-      })
-    } else {
-      this.refresh(this.idTag, this.pNumVideos)
-    }
-  }*/
-
   refresh(tag: string, pageVideos: number) {
     this.pNumVideos = pageVideos
     this.uploadService.getVideosByTagName(this.nameTag, this.pNumVideos).subscribe((videosByTag) => {
