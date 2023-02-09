@@ -16,6 +16,7 @@ const en: Traducao = {
   "submit": "Submit",
   "report-submitted": "Your report was submitted!",
   "thematics": "Thematics",
+  "all thematics": "All Thematics",
   "url": "URL Copied!",
   "videos": "Videos",
   "latest videos": "Latest Videos",

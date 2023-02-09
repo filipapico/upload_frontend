@@ -16,6 +16,7 @@ const pt: Traducao = {
   "submit": "Submeter",
   "report-submitted": "A sua denúncia foi enviada!",
   "thematics": "Temáticas",
+  "all thematics": "Mais temáticas",
   "url": "URL Copiado!",
   "videos": "Vídeos",
   "latest videos": "Últimos vídeos",
