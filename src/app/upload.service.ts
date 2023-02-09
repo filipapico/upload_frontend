@@ -210,8 +210,12 @@ export class UploadService {
   }
 
   //CHANNELS
-  getChannels(id: string) {
+  getChannel(id: string) {
     return this.http.get<Channels[]>(BASE_URL + "/api/channels/" + id);
+  }
+
+  getChannels( pNum: number) {
+    return this.http.get<Channels[]>(BASE_URL + "/api/channels?page=" + pNum);
   }
 
   getChannelsFromCategory(id: string) {
@@ -219,7 +223,6 @@ export class UploadService {
     return this.http.get<Channels[]>(BASE_URL + "/api/categories/channels/" + id);
   }
 
-  // QUESTION Maybe update all ids to type string? Since our APIs always return strings...
   getChannelVideos(id: any) {
     return this.http.get<Video[]>(BASE_URL + "/api/channel/" + id);
   }
@@ -301,7 +304,6 @@ export class UploadService {
     return this.http.get<PagesCount[]>(BASE_URL + "/api/" + content_type + "-count/" + id).pipe(map((pagesCount) => {
       let numberOfItems = 0
       numberOfItems = parseInt(pagesCount[0].count)
-      console.log(numberOfItems)
       //const itemsPerPage = 6
       let numberOfPages = Math.ceil(numberOfItems / itemsPerPage)
       let pageNumbers = new Array(numberOfPages)
