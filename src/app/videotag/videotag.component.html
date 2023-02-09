@@ -7,7 +7,7 @@
   <h3 class="tag" [ngClass]="">#{{videosByTag[0].tag_name.toLowerCase()}}</h3>
 
   <!--PAGINATION-->
-  <div class="pagination" *ngIf="pNumsVideos">
+  <div class="pagination" *ngIf="pNumsVideos.length>1">
     <span class="page-number" *ngFor="let pnv of pNumsVideos" [ngClass]="{'active': pNumVideos === pnv}"
       (click)="refresh(idTag,pnv); pNumVideos = pnv">
       {{pnv + 1}}
