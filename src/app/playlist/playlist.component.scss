@@ -46,18 +46,24 @@
     background-color: #1c1c24;
   }
 
-  .video-card:hover {
-    transform: scale(1.01);
-    background-color: #1c1c24;
-    box-shadow: 2px 2px 2px #000;
-  }
-
 
   .video-card {
     transition: 2ms;
     display: flex;
     margin: 10px 2px;
     cursor: pointer;
+
+    &:hover {
+      transform: scale(1.01);
+      background-color: #1c1c24;
+      box-shadow: 2px 2px 2px #000;
+    }
+
+    &.active {
+      transform: scale(1.01);
+      background-color: #1c1c24;
+      box-shadow: 2px 2px 2px #000;
+    }
 
     .image {
       width: 145px;

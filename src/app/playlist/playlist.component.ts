@@ -2,7 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {UploadService} from "../upload.service";
 import {ActivatedRoute} from "@angular/router";
 import {DomSanitizer} from '@angular/platform-browser';
-import {Playlist} from "../interfaces";
+import {Categories, Playlist, Video} from "../interfaces";
 
 @Component({
   selector: 'app-playlist',
@@ -13,6 +13,7 @@ export class PlaylistComponent implements OnInit {
   playlist?: Playlist[];
   id: any;
   indexVideo: number = 0;
+  selectedV?: Playlist;
 
   constructor(private route: ActivatedRoute, private uploadService: UploadService, private sanitizer: DomSanitizer) {
     this.id = route.snapshot.params['nid']
