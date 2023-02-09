@@ -12,6 +12,8 @@
           style="background-image: url('https://dev-project-upskill2-grupo4v2.pantheonsite.io{{thematicDetails[0].field_thematic_thumbnail}}');"></div>
       </div>
       <h1>{{thematicDetails[0].title}}</h1>
+      <p>{{uploadService.translations["by"]}} {{thematicDetails[0].uid}}</p>
+      <h4 class="all-thematics" routerLink="/thematics" >{{uploadService.translations["all thematics"]}}</h4>
     </div>
 
     <!--BODY-->
@@ -31,10 +33,11 @@
       <!--VIDEOS-->
       <h2>Thematic videos</h2>
       <div class="thematic-videos" *ngIf="thematicDetails">
-          <app-videotag title="hide" tagslist="hide" all="hide"
-                        *ngFor="let td of thematicDetails"
-                        [idTag]=td.tid>
-          </app-videotag>
+        <app-videotag title="hide" tagslist="hide" all="hide"
+                      *ngFor="let td of thematicDetails"
+                      [idTag]=td.tid
+                      [nameTag]="td.name">
+        </app-videotag>
       </div>
     </div>
   </div>
