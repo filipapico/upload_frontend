@@ -73,6 +73,10 @@
       width: 46%;
       height: 100%;
 
+      &:hover {
+        background: linear-gradient(transparent, #2a2828);
+      }
+
       .thematic-header {
         display: flex;
         flex-direction: row;
