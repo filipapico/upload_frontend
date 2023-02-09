@@ -7,7 +7,15 @@
       {{category.name}}
     </p>
   </div>
-  <!-- INSERT PAGER HERE? -->
+
+  <!--PAGINATION-->
+  <div class="pagination" *ngIf="pNumsChannels">
+    <span class="page-number" *ngFor="let pnv of pNumsChannels" [ngClass]="{'active': pNumChannels === pnv}"
+          (click)="refresh(pnv); pNumChannels = pnv">
+      {{pnv + 1}}
+    </span>
+  </div>
+
   <!-- Loop through channels -->
   <div class="main-section" *ngIf="channels">
     <div class="channel-card" *ngFor="let channel of channels"

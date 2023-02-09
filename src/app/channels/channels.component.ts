@@ -17,14 +17,29 @@ export class ChannelsComponent {
   categoryPageNumber: number = 0;
   value: any;
 
+  //Pagination
+  pNumChannels: number = 0
+  pNumsChannels!: number[]
+  channelsPerPage: number = 6 //needs to be according to pagination in the view/rest export set in DRUPAL
 
   constructor(public uploadService: UploadService) {
   }
 
-  refresh() {
+  refresh(pageChannels: number) {
+    this.pNumChannels = pageChannels
+    //get pagination
+    this.uploadService.getPagination
+    ("channels", this.nid, this.channelsPerPage).subscribe(({
+                                                              pageNumbers
+                                                            }) => {
+      this.pNumsChannels = pageNumbers
+      console.log(this.pNumChannels)
+    })
+
     //getting all channels
-    this.uploadService.getChannels(this.nid).subscribe((channels) => {
+    this.uploadService.getChannels(this.pNumChannels).subscribe((channels) => {
         this.channels = channels;
+      console.log(this.channels)
       }
     )
 
@@ -36,9 +51,9 @@ export class ChannelsComponent {
 
   ngOnInit(): void {
     this.uploadService.onChangeLanguage(() => {
-      this.refresh();
+      this.refresh(this.pNumChannels);
     });
-    this.refresh();
+    this.refresh(this.pNumChannels);
   }
 
   //clicking on category will filter channels and calls new data from api:
