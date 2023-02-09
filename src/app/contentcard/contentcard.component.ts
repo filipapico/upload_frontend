@@ -56,12 +56,12 @@ export class ContentcardComponent {
     if (this.field_media_oembed_video.slice(0,4) == "http") {
       navigator.clipboard.writeText(val);
       this.popup = true
-      setTimeout(() => { this.popup = false; }, 700);
+      setTimeout(() => { this.popup = false; }, 900);
     } else {
       navigator.clipboard.writeText("https://app-upload.netlify.app" + val.slice(3));
       console.log(val)
       this.popup = true
-      setTimeout(() => { this.popup = false; }, 700);
+      setTimeout(() => { this.popup = false; }, 900);
       console.log(this.view_node)
     }
 
