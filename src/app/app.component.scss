@@ -27,6 +27,7 @@
       app-sidebar {
         width: 100%;
         z-index: 1;
+        pointer-events: none;
       }
       .main-content {
         margin-top: 3.2rem;
