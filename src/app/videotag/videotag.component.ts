@@ -18,11 +18,25 @@ export class VideotagComponent implements OnInit {
   @Input() title!: string;
   @Input() tagslist!: string;
   @Input() all!: string;
+  // INPUT NAME? MAYBE?!?
+  @Input() nameTag!: string
 
   constructor(private uploadService: UploadService, private route: ActivatedRoute) {
   }
 
   ngOnInit() {
+    if (!this.nameTag) {
+      this.route.params.subscribe(params => {
+        // Get the updated tag_id from the URL
+        this.nameTag = params['name'];
+        this.refresh(this.nameTag, 0)
+      })
+    } else {
+      this.refresh(this.nameTag, this.pNumVideos)
+    }
+  }
+
+  /*ngOnInit() {
     if (!this.idTag) {
       this.route.params.subscribe(params => {
         // Get the updated tag_id from the URL
@@ -32,10 +46,24 @@ export class VideotagComponent implements OnInit {
     } else {
       this.refresh(this.idTag, this.pNumVideos)
     }
-  }
-
+  }*/
 
   refresh(tag: string, pageVideos: number) {
+    this.pNumVideos = pageVideos
+    this.uploadService.getVideosByTagName(this.nameTag, this.pNumVideos).subscribe((videosByTag) => {
+      this.videosByTag = videosByTag
+    })
+
+    this.uploadService.getPagination
+    ("videos-tag-name", this.nameTag, this.videosPerPage).subscribe(({
+                                                                pageNumbers
+                                                              }) => {
+      this.pNumsVideos = pageNumbers
+      console.log(this.nameTag)
+    })
+  }
+
+  /*refresh(tag: string, pageVideos: number) {
     this.pNumVideos = pageVideos
     this.uploadService.getVideosByTag(this.idTag, this.pNumVideos).subscribe((videosByTag) => {
       this.videosByTag = videosByTag
@@ -47,7 +75,7 @@ export class VideotagComponent implements OnInit {
                                                                }) => {
       this.pNumsVideos = pageNumbers
     })
-  }
+  }*/
 
   getTags(tags: string) {
     return tags
