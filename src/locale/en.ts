@@ -29,7 +29,8 @@ const en: Traducao = {
   "you don't have favorite videos, add some...": "You don't have favorite videos, add some...",
   "report": "Report",
   "comment": "comment",
-  "popular tags": "POPULAR TAGS"
+  "popular tags": "POPULAR TAGS",
+  "favorite-message": "Video added to favorites..."
 }
 
 export default en;

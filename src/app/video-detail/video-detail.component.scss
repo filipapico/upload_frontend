@@ -34,6 +34,12 @@
       }
     }
 
+    .favorite-message {
+      p {
+        margin: 0px 30%;
+      }
+    }
+
     //https://www.w3schools.com/howto/howto_css_responsive_iframes.asp
     .vid-frame {
       position: relative;
@@ -119,6 +125,7 @@
     }
   }
 }
+
 
 @media (max-width: 500px) {
   .wrapper {

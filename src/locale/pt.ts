@@ -29,7 +29,8 @@ const pt: Traducao = {
   "you don't have favorite videos, add some...": "Não tem vídeos favoritos, adicione alguns...",
   "report": "Reportar,",
   "comment": "comentário",
-  "popular tags": "TAGS POPULARES"
+  "popular tags": "TAGS POPULARES",
+  "favorite-message": "Vídeo adicionado aos favoritos..."
 }
 
 export default pt;
