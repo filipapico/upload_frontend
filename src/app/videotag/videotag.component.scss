@@ -1,4 +1,5 @@
 .container {
+  width: 100%;
 
   .pagination {
     display: flex;
@@ -47,6 +48,7 @@
   .container {
     display: flex;
     flex-direction: column;
+    width: 95%;
     margin: 0 auto;
 
     .videos-tag {
@@ -70,12 +72,11 @@
 
     .videos-tag {
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
       flex-wrap: wrap;
-      justify-content: space-evenly;
 
       app-contentcard {
-        width: 48%;
+        width: 100%;
         margin: 5px 2px;
       }
     }
