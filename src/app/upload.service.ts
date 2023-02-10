@@ -17,7 +17,7 @@ import localeEN from "../locale/en";
 import {map} from "rxjs";
 
 
-let BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
+let BASE_URL = "https://test-project-upskill2-grupo4v2.pantheonsite.io";
 let COMMENT_SLUG = '/comment';
 let FLAG_SLUG = '/entity/flagging';
 
@@ -49,7 +49,7 @@ export class UploadService {
   }
 
   switchLanguage(idValue: string) {
-    BASE_URL = "https://dev-project-upskill2-grupo4v2.pantheonsite.io";
+    BASE_URL = "https://test-project-upskill2-grupo4v2.pantheonsite.io";
     this.currentLanguage = (idValue == 'portuguese') ? "/pt-pt" : "/en";
     BASE_URL += this.currentLanguage;
     this.callback_list.forEach((callback?: Function) => callback?.())
